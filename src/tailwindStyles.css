@@ -1,0 +1,17 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-primary: #555d86;
+  --color-secondary: #8891c1;
+  --color-acento: #8cd4c4;
+  --color-neutralLigth: #f5f6fa;
+  --color-neutralMid: #d6d9e0;
+  --color-text: #2c2c2c;
+  --color-error: #f95f62;
+}
+
+:root {
+  --fc-border-color: #8891c1;
+  --fc-daygrid-event-dot-width: 5px;
+  --fc-today-bg-color: #a1d3c8;
+}
