@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-import { useStore } from './store/Store';
+import { useStore, useLocalStore } from './store/Store';
 
 import { Login } from './login/Login';
 import { Main } from './main/Main';
@@ -8,11 +8,13 @@ import { Statics } from './statics/Statics';
 import { PageMenu } from './components/PageMenu';
 
 import { Alert } from '@mui/material';
+import { CustomDialog } from './components/CustomDialog';
 
 export const App = () => {
-  const page = useStore((store) => store.page);
-  const alert = useStore((store) => store.alert);
-  const setAlert = useStore((store) => store.setAlert);
+  const page = useLocalStore((store) => store.page);
+  const alert = useLocalStore((store) => store.alert);
+  const setAlert = useLocalStore((store) => store.setAlert);
+  const isDialogOpen = useStore((store) => store.isDialogOpen);
 
   useEffect(() => {
     if (alert) {
@@ -29,20 +31,20 @@ export const App = () => {
   return (
     <>
       <PageMenu />
-      <div className='absolute w-full mt-7 flex flex-col items-center gap-2 px-4'>
-        {alert && (
-          <>
-            <Alert
-              className='m-auto w-full max-w-lg'
-              severity={alert.type}
-              onClose={() => setAlert(null)}
-            >
-              {alert.text}
-            </Alert>
-          </>
-        )}
-      </div>
 
+      {alert && (
+        <div className='absolute w-full mt-7 flex flex-col items-center gap-2 px-4'>
+          <Alert
+            className='m-auto w-full max-w-lg'
+            severity={alert.type}
+            onClose={() => setAlert(null)}
+          >
+            {alert.text}
+          </Alert>
+        </div>
+      )}
+
+      {isDialogOpen && <CustomDialog />}
       {page === 'login' ? (
         <Login />
       ) : page === 'main' ? (

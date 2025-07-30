@@ -33,105 +33,102 @@ export const AsideMenu = () => {
   };
 
   return (
-    <div>
-      <Box
-        sx={{
-          maxWidth: '25vw',
-          minWidth: '20vw',
-          bgcolor: '#555D86',
-          height: '100%',
-          borderRadius: '16px',
-          color: '#ffffff',
-          display: 'flex',
-          flexDirection: 'column',
-          position: 'realtive',
-        }}
+    <Box
+      sx={{
+        bgcolor: '#555D86',
+        height: '100%',
+        borderRadius: '16px',
+        color: '#ffffff',
+        display: 'flex',
+        flexDirection: 'column',
+        position: 'realtive',
+      }}
+      className='col-span-2 row-span-7'
+    >
+      <List>
+        <ListItem>
+          <ListItemButton
+            onClick={handleClickAcountMenu}
+            id='basic-button'
+            aria-controls={open ? 'basic-menu' : undefined}
+            aria-haspopup='true'
+            aria-expanded={open ? 'true' : undefined}
+          >
+            <ListItemIcon>
+              <Avatar className='bg-[#B5CAD9]'>SC</Avatar>
+            </ListItemIcon>
+            Salvador Castellanos
+          </ListItemButton>
+
+          <Menu
+            id='basic-menu'
+            anchorEl={anchorElAcountMenu}
+            open={open}
+            onClose={handleCloseAcountMenu}
+            slotProps={{
+              list: {
+                'aria-labelledby': 'basic-button',
+              },
+            }}
+          >
+            <MenuItem onClick={handleCloseAcountMenu}>
+              <ListItemIcon>
+                <AccountCircleIcon />
+              </ListItemIcon>{' '}
+              My account
+            </MenuItem>
+            <MenuItem onClick={handleCloseAcountMenu}>
+              <ListItemIcon>
+                <LogoutIcon />
+              </ListItemIcon>
+              Logout
+            </MenuItem>
+          </Menu>
+        </ListItem>
+      </List>
+
+      <List
+        subheader={
+          <ListSubheader
+            sx={{ bgcolor: '#555D86', color: '#ffffff', fontSize: '20px' }}
+          >
+            Colegio
+          </ListSubheader>
+        }
       >
-        <List>
-          <ListItem>
-            <ListItemButton
-              onClick={handleClickAcountMenu}
-              id='basic-button'
-              aria-controls={open ? 'basic-menu' : undefined}
-              aria-haspopup='true'
-              aria-expanded={open ? 'true' : undefined}
-            >
-              <ListItemIcon>
-                <Avatar className='bg-[#B5CAD9]'>SC</Avatar>
-              </ListItemIcon>
-              Salvador Castellanos
-            </ListItemButton>
-
-            <Menu
-              id='basic-menu'
-              anchorEl={anchorElAcountMenu}
-              open={open}
-              onClose={handleCloseAcountMenu}
-              slotProps={{
-                list: {
-                  'aria-labelledby': 'basic-button',
-                },
-              }}
-            >
-              <MenuItem onClick={handleCloseAcountMenu}>
-                <ListItemIcon>
-                  <AccountCircleIcon />
-                </ListItemIcon>{' '}
-                My account
-              </MenuItem>
-              <MenuItem onClick={handleCloseAcountMenu}>
-                <ListItemIcon>
-                  <LogoutIcon />
-                </ListItemIcon>
-                Logout
-              </MenuItem>
-            </Menu>
-          </ListItem>
-        </List>
-
-        <List
-          subheader={
-            <ListSubheader
-              sx={{ bgcolor: '#555D86', color: '#ffffff', fontSize: '20px' }}
-            >
-              Colegio
-            </ListSubheader>
-          }
-        >
-          <ListItem>
-            <ListItemButton>
-              <ListItemIcon>
-                <HomeIcon sx={{ color: '#B5CAD9' }} />
-              </ListItemIcon>
-              Inicio
-            </ListItemButton>
-          </ListItem>
-          <ListItem>
-            <ListItemButton>
-              <ListItemIcon>
-                <SchoolIcon sx={{ color: '#B5CAD9' }} />
-              </ListItemIcon>
-              Lista Estudiantes
-            </ListItemButton>
-          </ListItem>
-          <ListItem>
-            <ListItemButton>
-              <ListItemIcon>
-                <ClassIcon sx={{ color: '#B5CAD9' }} />
-              </ListItemIcon>
-              Lista Cursos
-            </ListItemButton>
-          </ListItem>
-        </List>
-        <ListItem sx={{ marginTop: 'auto', marginBottom: '10px' }}>
+        <ListItem>
           <ListItemButton>
             <ListItemIcon>
-              <SettingsIcon sx={{ color: '#B5CAD9' }} />
+              <HomeIcon sx={{ color: '#B5CAD9' }} />
             </ListItemIcon>
-            Configuración
+            Inicio
           </ListItemButton>
         </ListItem>
-      </Box>
-    </div>
+        <ListItem>
+          <ListItemButton>
+            <ListItemIcon>
+              <SchoolIcon sx={{ color: '#B5CAD9' }} />
+            </ListItemIcon>
+            Lista Estudiantes
+          </ListItemButton>
+        </ListItem>
+        <ListItem>
+          <ListItemButton>
+            <ListItemIcon>
+              <ClassIcon sx={{ color: '#B5CAD9' }} />
+            </ListItemIcon>
+            Lista Cursos
+          </ListItemButton>
+        </ListItem>
+      </List>
+      <ListItem sx={{ marginTop: 'auto', marginBottom: '10px' }}>
+        <ListItemButton>
+          <ListItemIcon>
+            <SettingsIcon sx={{ color: '#B5CAD9' }} />
+          </ListItemIcon>
+          Configuración
+        </ListItemButton>
+      </ListItem>
+    </Box>
   );
 };
