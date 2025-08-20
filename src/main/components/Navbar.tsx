@@ -13,7 +13,7 @@ export const Navbar = () => {
       </ListItem>
       <ListItem sx={{ boxSizing: 'content-box', maxWidth: '60px' }}>
         <img
-          src='../../../public/img/school_logo.jpg'
+          src='../../../public/img/school_logo.png'
           alt='Logo IPETYM 69'
           className='max-w-15'
         />

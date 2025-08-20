@@ -1,18 +1,18 @@
 import { useEffect, useState } from 'react';
-import { useStore } from '../store/Store';
+import { useLocalStore } from '../store/Store';
 
 import Autocomplete from '@mui/material/Autocomplete';
 import { TextField } from '@mui/material';
 
 export const PageMenu = () => {
-  const setPage = useStore((store) => store.setPage);
+  const setPage = useLocalStore((store) => store.setPage);
   const pages = ['login', 'main', 'statics'];
 
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.ctrlKey && e.key.toLowerCase() === 'm') {
+      if (e.ctrlKey && e.key.toLowerCase() === 'l') {
         e.preventDefault();
         setVisible((prev) => !prev);
       }

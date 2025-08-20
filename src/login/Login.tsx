@@ -1,31 +1,31 @@
 import { useState, useEffect } from 'react';
-import { useStore } from '../store/Store';
+import { useLocalStore } from '../store/Store';
 
 import Button from '@mui/material/Button';
 import Autocomplete from '@mui/material/Autocomplete';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
 
-import UsersDATA from '../data/users.json';
-import AreaDATA from '../data/area.json';
+import { users } from '../data/Data.ts';
+import { area } from '../data/Data.ts';
 
 export const Login = () => {
   useEffect(() => {
     document.title = 'Inicio de sesion';
   }, []);
 
-  const setPage = useStore((store) => store.setPage);
+  const setPage = useLocalStore((store) => store.setPage);
 
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [selectedArea, setSelectedArea] = useState<string | null>(null);
 
-  const setError = useStore((store) => store.setAlert);
+  const setError = useLocalStore((store) => store.setAlert);
 
   const handleLogin = () => {
     console.log(`[${username}] [${password}] [${selectedArea}]`);
     // Buscar usuario que coincida
-    const user = UsersDATA.find(
+    const user = users.find(
       (u) =>
         u.Username == username &&
         u.Password === password &&
@@ -73,7 +73,7 @@ export const Login = () => {
             onChange={(e) => setPassword(e.target.value)}
           />
           <Autocomplete
-            options={AreaDATA}
+            options={area}
             getOptionLabel={(option) => option.AreaName}
             onChange={(_, newValue) =>
               setSelectedArea(newValue ? newValue.AreaName : null)
