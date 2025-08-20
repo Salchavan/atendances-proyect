@@ -6,6 +6,8 @@ import { DynamicGraph } from '../components/DynamicGraph';
 import { Box } from '@mui/material';
 import { AsideEvents } from './components/AsideEvents';
 
+import 'rsuite/dist/rsuite.min.css';
+
 export const Main = () => {
   useEffect(() => {
     document.title = 'Inicio';

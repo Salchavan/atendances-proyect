@@ -8,7 +8,7 @@ import { Statics } from './statics/Statics';
 import { PageMenu } from './components/PageMenu';
 
 import { Alert } from '@mui/material';
-import { CustomDialog } from './components/CustomDialog';
+import { CustomModal } from './components/CustomModal';
 
 export const App = () => {
   const page = useLocalStore((store) => store.page);
@@ -44,7 +44,8 @@ export const App = () => {
         </div>
       )}
 
-      {isDialogOpen && <CustomDialog />}
+      {isDialogOpen && <CustomModal />}
+
       {page === 'login' ? (
         <Login />
       ) : page === 'main' ? (
