@@ -9,20 +9,23 @@ import {
   Avatar,
   Menu,
   MenuItem,
-  ListSubheader,
 } from '@mui/material';
 
-import SchoolIcon from '@mui/icons-material/School';
-import ClassIcon from '@mui/icons-material/Class';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import LogoutIcon from '@mui/icons-material/Logout';
 import HomeIcon from '@mui/icons-material/Home';
 import SettingsIcon from '@mui/icons-material/Settings';
+import DataSaverOffIcon from '@mui/icons-material/DataSaverOff';
+import FormatListBulletedIcon from '@mui/icons-material/FormatListBulleted';
+
+import { useLocalStore } from '../../store/Store';
 
 export const AsideMenu = () => {
   const [anchorElAcountMenu, setAnchorElAcountMenu] =
     useState<null | HTMLElement>(null);
   const open = Boolean(anchorElAcountMenu);
+
+  const setPage = useLocalStore((store) => store.setPage);
 
   const handleClickAcountMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElAcountMenu(event.currentTarget);
@@ -43,7 +46,7 @@ export const AsideMenu = () => {
         flexDirection: 'column',
         position: 'realtive',
       }}
-      className='col-span-2 row-span-7'
+      className='col-span-2 row-span-10'
     >
       <List>
         <ListItem>
@@ -71,33 +74,25 @@ export const AsideMenu = () => {
               },
             }}
           >
-            <MenuItem onClick={handleCloseAcountMenu}>
+            <MenuItem onClick={() => setPage('perfil')}>
               <ListItemIcon>
                 <AccountCircleIcon />
               </ListItemIcon>{' '}
-              My account
+              Mi cuenta
             </MenuItem>
-            <MenuItem onClick={handleCloseAcountMenu}>
+            <MenuItem onClick={() => setPage('login')}>
               <ListItemIcon>
                 <LogoutIcon />
               </ListItemIcon>
-              Logout
+              Salir
             </MenuItem>
           </Menu>
         </ListItem>
       </List>
 
-      <List
-        subheader={
-          <ListSubheader
-            sx={{ bgcolor: '#555D86', color: '#ffffff', fontSize: '20px' }}
-          >
-            Colegio
-          </ListSubheader>
-        }
-      >
+      <List>
         <ListItem>
-          <ListItemButton>
+          <ListItemButton onClick={() => setPage('main')}>
             <ListItemIcon>
               <HomeIcon sx={{ color: '#B5CAD9' }} />
             </ListItemIcon>
@@ -107,22 +102,22 @@ export const AsideMenu = () => {
         <ListItem>
           <ListItemButton>
             <ListItemIcon>
-              <SchoolIcon sx={{ color: '#B5CAD9' }} />
+              <FormatListBulletedIcon sx={{ color: '#B5CAD9' }} />
             </ListItemIcon>
-            Lista Estudiantes
+            Listas
           </ListItemButton>
         </ListItem>
         <ListItem>
-          <ListItemButton>
+          <ListItemButton onClick={() => setPage('statics')}>
             <ListItemIcon>
-              <ClassIcon sx={{ color: '#B5CAD9' }} />
+              <DataSaverOffIcon sx={{ color: '#B5CAD9' }} />
             </ListItemIcon>
-            Lista Cursos
+            Estadisticas
           </ListItemButton>
         </ListItem>
       </List>
       <ListItem sx={{ marginTop: 'auto', marginBottom: '10px' }}>
-        <ListItemButton>
+        <ListItemButton onClick={() => setPage('config')}>
           <ListItemIcon>
             <SettingsIcon sx={{ color: '#B5CAD9' }} />
           </ListItemIcon>

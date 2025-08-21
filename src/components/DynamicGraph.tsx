@@ -20,7 +20,11 @@ interface Student {
   unassistences: Unassistance[];
 }
 
-export const DynamicGraph = () => {
+interface Props {
+  dataTableName: string;
+}
+
+export const DynamicGraph = ({ dataTableName }: Props) => {
   const openDataTable = useStore((store) => store.openDialog);
 
   // Función para obtener los últimos 5 días laborales
@@ -104,7 +108,7 @@ export const DynamicGraph = () => {
   const studentsWithUnassistences = getStudentsWithUnassistences;
 
   return (
-    <Box className='col-span-3 row-span-5 col-start-3 row-start-3'>
+    <Box className='col-span-6 row-span-8 col-start-3 row-start-3'>
       <BarChart
         barLabel='value'
         className='h-full'
@@ -133,7 +137,7 @@ export const DynamicGraph = () => {
         onClick={() => {
           openDataTable(
             <DataTable tableData={studentsWithUnassistences} />,
-            'p'
+            dataTableName
           );
         }}
         margin={{ top: 5, bottom: 5, left: 0, right: 10 }}

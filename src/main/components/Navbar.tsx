@@ -6,7 +6,7 @@ export const Navbar = () => {
   return (
     <List
       sx={{ display: 'flex', flexDirection: 'row' }}
-      className='col-span-5 col-start-3'
+      className='col-span-8 col-start-3'
     >
       <ListItem>
         <Index />

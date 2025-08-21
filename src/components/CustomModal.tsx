@@ -16,16 +16,14 @@ export const CustomModal = () => {
       onClose={closeDialog}
       className='flex flex-col justify-center items-center p-4'
     >
-      <Box className='min-w-[50%] min-h-[50%] max-h-[75%] max-w-[90%] '>
+      <Box className='h-[75%] w-[90%] '>
         <Box className='bg-white p-2 flex justify-between items-center'>
           <Typography>{dialogTitle}</Typography>
           <IconButton onClick={() => closeDialog()}>
             <CloseIcon />
           </IconButton>
         </Box>
-        <Box className='bg-white h-full p-2 overflow-scroll'>
-          {dialogContent}
-        </Box>
+        <Box className='bg-white p-2 '>{dialogContent}</Box>
       </Box>
     </Modal>
   );

@@ -4,8 +4,8 @@ import { useStore, useLocalStore } from './store/Store';
 
 import { Login } from './login/Login';
 import { Main } from './main/Main';
-import { Statics } from './statics/Statics';
 import { PageMenu } from './components/PageMenu';
+import { PageError } from './components/PageError';
 
 import { Alert } from '@mui/material';
 import { CustomModal } from './components/CustomModal';
@@ -48,11 +48,11 @@ export const App = () => {
 
       {page === 'login' ? (
         <Login />
-      ) : page === 'main' ? (
+      ) : page === 'main' || page === 'perfil' || page === 'statics' ? (
         <Main />
-      ) : page === 'statics' ? (
-        <Statics />
-      ) : null}
+      ) : (
+        <PageError />
+      )}
     </>
   );
 };

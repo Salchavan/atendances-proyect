@@ -5,7 +5,6 @@ import { FilterToolbar } from './FilterToolbar';
 import { useFilterStore } from '../store/Store.ts';
 import { defaultDataTabletColumns } from '../data/Data';
 import type { RowDataType } from 'rsuite/esm/Table';
-import { Box, Typography } from '@mui/material';
 
 type Props = {
   tableData: RowDataType[];
@@ -29,9 +28,9 @@ export const DataTable = ({ tableData }: Props) => {
         rowHeight={25}
         columnHeaderHeight={36}
         initialState={{
-          pagination: { paginationModel: { pageSize: 15 } },
+          pagination: { paginationModel: { pageSize: 10 } },
         }}
-        pageSizeOptions={[15, 25, 50]}
+        pageSizeOptions={[]}
         slots={{
           toolbar: GridToolbar, // Toolbar de DataGrid para columnas, export, etc.
         }}
@@ -45,14 +44,6 @@ export const DataTable = ({ tableData }: Props) => {
           },
         }}
       />
-
-      {/* Contador de resultados */}
-      <Box sx={{ mt: 1, p: 1, backgroundColor: 'grey.50', borderRadius: 1 }}>
-        <Typography variant='body2' color='text.secondary'>
-          Mostrando {filteredData.length} de {tableData.length} registros
-          {(globalSearch || dayFilter !== 'all') && ' (filtrados)'}
-        </Typography>
-      </Box>
     </div>
   );
 };
