@@ -20,7 +20,7 @@ import {
   Search as SearchIcon,
   Event as EventIcon,
 } from '@mui/icons-material';
-import { useFilterStore, DayFilter } from '../store/Store.ts';
+import { useFilterStore, type DayFilter } from '../store/Store.ts';
 
 export const FilterToolbar: React.FC = () => {
   const {
@@ -55,12 +55,11 @@ export const FilterToolbar: React.FC = () => {
   };
 
   const hasActiveFilters =
-    globalSearch !== '' || dayFilter !== 'all' || showOnlyWithAbsences;
+    globalSearch !== '' || dayFilter !== 'weekdays' || showOnlyWithAbsences;
 
   // Texto descriptivo para el filtro de día
   const getDayFilterText = (filter: DayFilter): string => {
     const filterTexts: Record<DayFilter, string> = {
-      all: 'Todos los días',
       weekdays: 'Días laborables',
       monday: 'Solo Lunes',
       tuesday: 'Solo Martes',
@@ -74,7 +73,6 @@ export const FilterToolbar: React.FC = () => {
   // Función para obtener el nombre del día en español
   const getSpanishDayName = (filter: DayFilter): string => {
     const dayNames: Record<DayFilter, string> = {
-      all: 'Todos',
       weekdays: 'Laborables',
       monday: 'Lunes',
       tuesday: 'Martes',
@@ -125,12 +123,6 @@ export const FilterToolbar: React.FC = () => {
             sx: { maxHeight: 300 },
           }}
         >
-          <MenuItem
-            onClick={() => handleDayFilterSelect('all')}
-            selected={dayFilter === 'all'}
-          >
-            Todos los días
-          </MenuItem>
           <MenuItem
             onClick={() => handleDayFilterSelect('weekdays')}
             selected={dayFilter === 'weekdays'}
@@ -198,10 +190,10 @@ export const FilterToolbar: React.FC = () => {
                 size='small'
               />
             )}
-            {dayFilter !== 'all' && (
+            {dayFilter !== 'weekdays' && (
               <Chip
                 label={`Día: ${getSpanishDayName(dayFilter)}`}
-                onDelete={() => setDayFilter('all')}
+                onDelete={() => setDayFilter('weekdays')}
                 color='secondary'
                 variant='outlined'
                 size='small'

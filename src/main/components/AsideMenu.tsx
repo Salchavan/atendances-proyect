@@ -18,7 +18,7 @@ import SettingsIcon from '@mui/icons-material/Settings';
 import DataSaverOffIcon from '@mui/icons-material/DataSaverOff';
 import FormatListBulletedIcon from '@mui/icons-material/FormatListBulleted';
 
-import { useLocalStore } from '../../store/Store';
+import { useLocalStore } from '../../store/localStore';
 
 export const AsideMenu = () => {
   const [anchorElAcountMenu, setAnchorElAcountMenu] =

@@ -22,53 +22,61 @@ interface Student {
 
 interface Props {
   dataTableName: string;
+  initialAssignedDate?: Date[] | null; // ahora opcional, se usa como fallback
 }
 
-export const DynamicGraph = ({ dataTableName }: Props) => {
+export const DynamicGraph = ({ dataTableName, initialAssignedDate = null }: Props) => {
   const openDataTable = useStore((store) => store.openDialog);
+  const assignedWeekdays = useStore((s) => s.assignedWeekdays);
 
-  // Función para obtener los últimos 5 días laborales
-  const getLast5BusinessDays = useMemo(() => {
-    const days: string[] = [];
-    const dateFormats: string[] = [];
-    const today = new Date();
-    let count = 0;
+  // Función para formatear fechas
+  const formatDate = (date: Date): { display: string; comparison: string } => {
+    const dayNames = ['Lun', 'Mar', 'Mié', 'Jue', 'Vie'];
+    const dayOfWeek = date.getDay();
+    const dayName = dayOfWeek >= 1 && dayOfWeek <= 5 ? dayNames[dayOfWeek - 1] : '';
+    
+    const displayDate = `${dayName} ${date.getDate().toString().padStart(2, '0')}/${(date.getMonth() + 1)
+      .toString()
+      .padStart(2, '0')}`;
+    
+    const comparisonDate = `${date.getDate().toString().padStart(2, '0')}-${(date.getMonth() + 1)
+      .toString()
+      .padStart(2, '0')}-${date.getFullYear().toString().slice(2)}`;
+    
+    return { display: displayDate, comparison: comparisonDate };
+  };
 
-    while (days.length < 5) {
-      const currentDate = new Date(today);
-      currentDate.setDate(today.getDate() - count);
+  // Obtener los días a mostrar según initialAssignedDate
+  const getDaysToDisplay = useMemo(() => {
+    const sourceDates = assignedWeekdays && assignedWeekdays.length
+      ? assignedWeekdays
+      : (initialAssignedDate || []);
 
-      const dayOfWeek = currentDate.getDay();
-      if (dayOfWeek >= 1 && dayOfWeek <= 5) {
-        const dayNames = ['Lun', 'Mar', 'Mié', 'Jue', 'Vie'];
-        const date = `${currentDate.getDate().toString().padStart(2, '0')}/${(
-          currentDate.getMonth() + 1
-        )
-          .toString()
-          .padStart(2, '0')}`;
-
-        days.unshift(`${dayNames[dayOfWeek - 1]} ${date}`);
-
-        const formattedDate = `${currentDate
-          .getDate()
-          .toString()
-          .padStart(2, '0')}-${(currentDate.getMonth() + 1)
-          .toString()
-          .padStart(2, '0')}-${currentDate.getFullYear().toString().slice(2)}`;
-        dateFormats.unshift(formattedDate);
-      }
-      count++;
+    if (!sourceDates || !sourceDates.length) {
+      return { displayDates: [], comparisonDates: [] };
     }
 
-    return { displayDates: days, comparisonDates: dateFormats };
-  }, []);
+    const displayDates: string[] = [];
+    const comparisonDates: string[] = [];
+    const sortedDates = [...sourceDates].sort((a, b) => a.getTime() - b.getTime());
 
-  // Función para contar inasistencias (totales, justificadas e injustificadas)
+    sortedDates.forEach(date => {
+      const formatted = formatDate(date);
+      displayDates.push(formatted.display);
+      comparisonDates.push(formatted.comparison);
+    });
+
+    return { displayDates, comparisonDates };
+  }, [assignedWeekdays, initialAssignedDate]);
+
+  // Función para contar inasistencias
   const getUnassistencesData = useMemo(() => {
-    const { comparisonDates } = getLast5BusinessDays;
-    const totalUnassistences: number[] = new Array(5).fill(0);
-    const justifiedUnassistences: number[] = new Array(5).fill(0);
-    const unjustifiedUnassistences: number[] = new Array(5).fill(0);
+    const { comparisonDates } = getDaysToDisplay;
+    const daysCount = comparisonDates.length;
+    
+    const totalUnassistences: number[] = new Array(daysCount).fill(0);
+    const justifiedUnassistences: number[] = new Array(daysCount).fill(0);
+    const unjustifiedUnassistences: number[] = new Array(daysCount).fill(0);
 
     Students.forEach((student: Student) => {
       student.unassistences.forEach((unassistance: Unassistance) => {
@@ -89,23 +97,48 @@ export const DynamicGraph = ({ dataTableName }: Props) => {
       justified: justifiedUnassistences,
       unjustified: unjustifiedUnassistences,
     };
-  }, [getLast5BusinessDays]);
+  }, [getDaysToDisplay]);
 
   // Función para obtener los estudiantes con inasistencias
   const getStudentsWithUnassistences = useMemo(() => {
+    const { comparisonDates } = getDaysToDisplay;
     const studentsWithUnassistences: Student[] = [];
 
+    // Si no hay días seleccionados, no mostrar estudiantes
+    if (comparisonDates.length === 0) {
+      return studentsWithUnassistences;
+    }
+
     Students.forEach((student: Student) => {
-      if (student.unassistences && student.unassistences.length > 0) {
+      // Verificar si el estudiante tiene inasistencias en los días seleccionados
+      const hasUnassistencesInRange = student.unassistences.some(unassistance => 
+        comparisonDates.includes(unassistance.day)
+      );
+      
+      if (hasUnassistencesInRange) {
         studentsWithUnassistences.push(student);
       }
     });
 
     return studentsWithUnassistences;
-  }, []);
+  }, [getDaysToDisplay]);
 
   const { total, justified, unjustified } = getUnassistencesData;
   const studentsWithUnassistences = getStudentsWithUnassistences;
+  const { displayDates } = getDaysToDisplay;
+
+  // Si no hay días para mostrar, renderizar un contenedor vacío
+  if (displayDates.length === 0) {
+    return (
+      <Box className='col-span-6 row-span-8 col-start-3 row-start-3' 
+           display="flex" 
+           alignItems="center" 
+           justifyContent="center"
+           sx={{ border: '1px dashed #ccc', borderRadius: 2 }}>
+        <Box color="text.secondary">Seleccione un rango de fechas para visualizar los datos</Box>
+      </Box>
+    );
+  }
 
   return (
     <Box className='col-span-6 row-span-8 col-start-3 row-start-3'>
@@ -114,25 +147,25 @@ export const DynamicGraph = ({ dataTableName }: Props) => {
         className='h-full'
         xAxis={[
           {
-            data: getLast5BusinessDays.displayDates,
+            data: displayDates,
             categoryGapRatio: 0.2,
             barGapRatio: 0,
           },
         ]}
         series={[
           { data: total, color: '#ff5b5b', label: 'Total' },
-          {
-            data: justified,
-            color: '#ffaf45',
-            label: 'Justificadas',
-            stack: 'total',
-          },
-          {
-            data: unjustified,
-            color: '#ff6b6b',
-            label: 'Injustificadas',
-            stack: 'total',
-          },
+            {
+              data: justified,
+              color: '#ffaf45',
+              label: 'Justificadas',
+              stack: 'total',
+            },
+            {
+              data: unjustified,
+              color: '#ff6b6b',
+              label: 'Injustificadas',
+              stack: 'total',
+            },
         ]}
         onClick={() => {
           openDataTable(

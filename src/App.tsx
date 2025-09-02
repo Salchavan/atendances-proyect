@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 
-import { useStore, useLocalStore } from './store/Store';
+import { useStore } from './store/Store';
+import { useLocalStore } from './store/localStore';
 
 import { Login } from './login/Login';
 import { Main } from './main/Main';
@@ -9,6 +10,8 @@ import { PageError } from './components/PageError';
 
 import { Alert } from '@mui/material';
 import { CustomModal } from './components/CustomModal';
+
+import {generateRandomStudent} from './data/randStudents';
 
 export const App = () => {
   const page = useLocalStore((store) => store.page);
@@ -44,6 +47,8 @@ export const App = () => {
         </div>
       )}
 
+      {/* {generateRandomStudent(1)} */}
+      
       {isDialogOpen && <CustomModal />}
 
       {page === 'login' ? (

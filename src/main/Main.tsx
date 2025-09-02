@@ -5,13 +5,16 @@ import { Toolbar } from './components/Toolbar';
 import { DynamicGraph } from '../components/DynamicGraph';
 import { Box } from '@mui/material';
 import { AsideEvents } from './components/AsideEvents';
-import { useLocalStore } from '../store/Store.ts';
+import { getLastWeekdays } from '../store/Store.ts';
+import { useLocalStore } from '../store/localStore';
 import { Perfil } from './perfil/Perfil.tsx';
 
 import 'rsuite/dist/rsuite.min.css';
 
 export const Main = () => {
   const page = useLocalStore((store) => store.page);
+  // Obtener hoy + 5 días laborables hacia atrás (total 6 fechas)
+  const recentWeekdays = getLastWeekdays(6, true);
   useEffect(() => {
     document.title = 'Inicio';
   }, []);
@@ -22,7 +25,10 @@ export const Main = () => {
           <AsideMenu />
           <Navbar />
           <Toolbar />
-          <DynamicGraph dataTableName='Ultimos 5 dias escolares' />
+          <DynamicGraph
+            dataTableName='Ultimos 5 dias escolares'
+            initialAssignedDate={recentWeekdays}
+          />
           <AsideEvents />
         </Box>
       ) : page === 'perfil' ? (

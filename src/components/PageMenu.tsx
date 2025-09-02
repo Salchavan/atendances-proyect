@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useLocalStore } from '../store/Store';
+import { useLocalStore } from '../store/localStore';
 
 import Autocomplete from '@mui/material/Autocomplete';
 import { TextField } from '@mui/material';
@@ -12,7 +12,7 @@ export const PageMenu = () => {
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.ctrlKey && e.key.toLowerCase() === 'l') {
+      if (e.altKey && e.key.toLowerCase() === 'l') {
         e.preventDefault();
         setVisible((prev) => !prev);
       }

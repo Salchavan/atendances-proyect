@@ -1,1247 +1,34694 @@
 export const Students = [
   {
-    id: 1,
-    firstName: 'Juan',
-    lastName: 'Pérez',
-    age: 18,
-    email: 'juan.perez@ejemplo.com',
-    classroom: 'A1',
-    unassistences: [
+    "id": 1,
+    "firstName": "Carlos",
+    "lastName": "Rodríguez",
+    "age": 13,
+    "email": "carlos.rodríguez1@ejemplo.com",
+    "classroom": "C5",
+    "unassistences": [
       {
-        day: '14-08-25',
-        isJustified: false,
+        "day": "13-09-25",
+        "isJustified": true
       },
       {
-        day: '18-08-25',
-        isJustified: true,
+        "day": "16-09-25",
+        "isJustified": true
       },
-    ],
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "firstName": "Valentina",
+    "lastName": "Sánchez",
+    "age": 13,
+    "email": "valentina.sánchez2@ejemplo.com",
+    "classroom": "B5",
+    "unassistences": [
+      {
+        "day": "13-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "firstName": "Florencia",
+    "lastName": "Díaz",
+    "age": 12,
+    "email": "florencia.díaz3@ejemplo.com",
+    "classroom": "B6",
+    "unassistences": [
+      {
+        "day": "01-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "firstName": "Valentina",
+    "lastName": "Ruiz",
+    "age": 12,
+    "email": "valentina.ruiz4@ejemplo.com",
+    "classroom": "C1",
+    "unassistences": [
+      {
+        "day": "13-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "firstName": "María",
+    "lastName": "García",
+    "age": 20,
+    "email": "maría.garcía5@ejemplo.com",
+    "classroom": "F3",
+    "unassistences": [
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "firstName": "Camila",
+    "lastName": "Pérez",
+    "age": 16,
+    "email": "camila.pérez6@ejemplo.com",
+    "classroom": "D1",
+    "unassistences": [
+      {
+        "day": "13-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "firstName": "María",
+    "lastName": "Ruiz",
+    "age": 16,
+    "email": "maría.ruiz7@ejemplo.com",
+    "classroom": "E6",
+    "unassistences": [
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "firstName": "Tomás",
+    "lastName": "Díaz",
+    "age": 16,
+    "email": "tomás.díaz8@ejemplo.com",
+    "classroom": "F6",
+    "unassistences": [
+      {
+        "day": "27-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "firstName": "María",
+    "lastName": "Pérez",
+    "age": 12,
+    "email": "maría.pérez9@ejemplo.com",
+    "classroom": "F1",
+    "unassistences": [
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "firstName": "Valentina",
+    "lastName": "Molina",
+    "age": 17,
+    "email": "valentina.molina10@ejemplo.com",
+    "classroom": "B3",
+    "unassistences": [
+      {
+        "day": "11-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "firstName": "Martín",
+    "lastName": "Molina",
+    "age": 18,
+    "email": "martín.molina11@ejemplo.com",
+    "classroom": "B6",
+    "unassistences": [
+      {
+        "day": "17-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "firstName": "Florencia",
+    "lastName": "Vega",
+    "age": 15,
+    "email": "florencia.vega12@ejemplo.com",
+    "classroom": "B3",
+    "unassistences": [
+      {
+        "day": "28-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "firstName": "Camila",
+    "lastName": "Vega",
+    "age": 20,
+    "email": "camila.vega13@ejemplo.com",
+    "classroom": "F5",
+    "unassistences": [
+      {
+        "day": "17-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "firstName": "María",
+    "lastName": "Torres",
+    "age": 17,
+    "email": "maría.torres14@ejemplo.com",
+    "classroom": "B7",
+    "unassistences": [
+      {
+        "day": "12-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "firstName": "Agustina",
+    "lastName": "Vega",
+    "age": 20,
+    "email": "agustina.vega15@ejemplo.com",
+    "classroom": "A1",
+    "unassistences": [
+      {
+        "day": "01-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "firstName": "Sofía",
+    "lastName": "Morales",
+    "age": 13,
+    "email": "sofía.morales16@ejemplo.com",
+    "classroom": "C5",
+    "unassistences": [
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "firstName": "Sofía",
+    "lastName": "López",
+    "age": 20,
+    "email": "sofía.lópez17@ejemplo.com",
+    "classroom": "E4",
+    "unassistences": [
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "firstName": "María",
+    "lastName": "Ruiz",
+    "age": 15,
+    "email": "maría.ruiz18@ejemplo.com",
+    "classroom": "F5",
+    "unassistences": [
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "firstName": "Sofía",
+    "lastName": "Vega",
+    "age": 21,
+    "email": "sofía.vega19@ejemplo.com",
+    "classroom": "B3",
+    "unassistences": [
+      {
+        "day": "05-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "firstName": "Martín",
+    "lastName": "Vega",
+    "age": 17,
+    "email": "martín.vega20@ejemplo.com",
+    "classroom": "D5",
+    "unassistences": [
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 21,
+    "firstName": "Valentina",
+    "lastName": "Pérez",
+    "age": 18,
+    "email": "valentina.pérez21@ejemplo.com",
+    "classroom": "E1",
+    "unassistences": [
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 22,
+    "firstName": "Agustina",
+    "lastName": "Morales",
+    "age": 20,
+    "email": "agustina.morales22@ejemplo.com",
+    "classroom": "B6",
+    "unassistences": [
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 23,
+    "firstName": "Tomás",
+    "lastName": "Ruiz",
+    "age": 19,
+    "email": "tomás.ruiz23@ejemplo.com",
+    "classroom": "A5",
+    "unassistences": [
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 24,
+    "firstName": "Agustina",
+    "lastName": "García",
+    "age": 14,
+    "email": "agustina.garcía24@ejemplo.com",
+    "classroom": "E7",
+    "unassistences": [
+      {
+        "day": "21-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 25,
+    "firstName": "Pedro",
+    "lastName": "Molina",
+    "age": 21,
+    "email": "pedro.molina25@ejemplo.com",
+    "classroom": "D6",
+    "unassistences": [
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 26,
+    "firstName": "Ana",
+    "lastName": "Romero",
+    "age": 21,
+    "email": "ana.romero26@ejemplo.com",
+    "classroom": "B2",
+    "unassistences": []
+  },
+  {
+    "id": 27,
+    "firstName": "Juan",
+    "lastName": "Morales",
+    "age": 12,
+    "email": "juan.morales27@ejemplo.com",
+    "classroom": "E6",
+    "unassistences": [
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 28,
+    "firstName": "Jorge",
+    "lastName": "Torres",
+    "age": 13,
+    "email": "jorge.torres28@ejemplo.com",
+    "classroom": "C5",
+    "unassistences": [
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 29,
+    "firstName": "Mateo",
+    "lastName": "Morales",
+    "age": 13,
+    "email": "mateo.morales29@ejemplo.com",
+    "classroom": "D4",
+    "unassistences": [
+      {
+        "day": "11-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 30,
+    "firstName": "Martín",
+    "lastName": "Torres",
+    "age": 15,
+    "email": "martín.torres30@ejemplo.com",
+    "classroom": "E5",
+    "unassistences": [
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 31,
+    "firstName": "Jorge",
+    "lastName": "Pérez",
+    "age": 12,
+    "email": "jorge.pérez31@ejemplo.com",
+    "classroom": "B1",
+    "unassistences": []
+  },
+  {
+    "id": 32,
+    "firstName": "Florencia",
+    "lastName": "Ruiz",
+    "age": 21,
+    "email": "florencia.ruiz32@ejemplo.com",
+    "classroom": "A3",
+    "unassistences": [
+      {
+        "day": "12-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 33,
+    "firstName": "Juan",
+    "lastName": "Molina",
+    "age": 20,
+    "email": "juan.molina33@ejemplo.com",
+    "classroom": "D3",
+    "unassistences": []
+  },
+  {
+    "id": 34,
+    "firstName": "Jorge",
+    "lastName": "Molina",
+    "age": 20,
+    "email": "jorge.molina34@ejemplo.com",
+    "classroom": "F3",
+    "unassistences": [
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 35,
+    "firstName": "Valentina",
+    "lastName": "Díaz",
+    "age": 16,
+    "email": "valentina.díaz35@ejemplo.com",
+    "classroom": "F3",
+    "unassistences": [
+      {
+        "day": "12-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 36,
+    "firstName": "Mateo",
+    "lastName": "Sánchez",
+    "age": 12,
+    "email": "mateo.sánchez36@ejemplo.com",
+    "classroom": "B1",
+    "unassistences": [
+      {
+        "day": "08-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 37,
+    "firstName": "Valentina",
+    "lastName": "Fernández",
+    "age": 15,
+    "email": "valentina.fernández37@ejemplo.com",
+    "classroom": "B7",
+    "unassistences": [
+      {
+        "day": "13-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 38,
+    "firstName": "Jorge",
+    "lastName": "Díaz",
+    "age": 17,
+    "email": "jorge.díaz38@ejemplo.com",
+    "classroom": "F2",
+    "unassistences": [
+      {
+        "day": "03-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 39,
+    "firstName": "Ana",
+    "lastName": "Martínez",
+    "age": 19,
+    "email": "ana.martínez39@ejemplo.com",
+    "classroom": "E4",
+    "unassistences": [
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 40,
+    "firstName": "María",
+    "lastName": "Romero",
+    "age": 16,
+    "email": "maría.romero40@ejemplo.com",
+    "classroom": "C6",
+    "unassistences": [
+      {
+        "day": "15-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 41,
+    "firstName": "Mateo",
+    "lastName": "Torres",
+    "age": 14,
+    "email": "mateo.torres41@ejemplo.com",
+    "classroom": "F5",
+    "unassistences": [
+      {
+        "day": "10-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 42,
+    "firstName": "Agustina",
+    "lastName": "Martínez",
+    "age": 12,
+    "email": "agustina.martínez42@ejemplo.com",
+    "classroom": "D2",
+    "unassistences": [
+      {
+        "day": "14-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 43,
+    "firstName": "Carlos",
+    "lastName": "Torres",
+    "age": 16,
+    "email": "carlos.torres43@ejemplo.com",
+    "classroom": "F2",
+    "unassistences": [
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 44,
+    "firstName": "Agustina",
+    "lastName": "Molina",
+    "age": 16,
+    "email": "agustina.molina44@ejemplo.com",
+    "classroom": "F5",
+    "unassistences": [
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 45,
+    "firstName": "Agustina",
+    "lastName": "Ruiz",
+    "age": 15,
+    "email": "agustina.ruiz45@ejemplo.com",
+    "classroom": "C2",
+    "unassistences": [
+      {
+        "day": "23-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 46,
+    "firstName": "Martín",
+    "lastName": "Sánchez",
+    "age": 17,
+    "email": "martín.sánchez46@ejemplo.com",
+    "classroom": "E6",
+    "unassistences": [
+      {
+        "day": "17-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 47,
+    "firstName": "Tomás",
+    "lastName": "Torres",
+    "age": 21,
+    "email": "tomás.torres47@ejemplo.com",
+    "classroom": "D5",
+    "unassistences": [
+      {
+        "day": "11-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 48,
+    "firstName": "Carlos",
+    "lastName": "Romero",
+    "age": 13,
+    "email": "carlos.romero48@ejemplo.com",
+    "classroom": "A7",
+    "unassistences": [
+      {
+        "day": "14-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 49,
+    "firstName": "Lucía",
+    "lastName": "López",
+    "age": 12,
+    "email": "lucía.lópez49@ejemplo.com",
+    "classroom": "C4",
+    "unassistences": [
+      {
+        "day": "22-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 50,
+    "firstName": "Tomás",
+    "lastName": "Rodríguez",
+    "age": 14,
+    "email": "tomás.rodríguez50@ejemplo.com",
+    "classroom": "F7",
+    "unassistences": [
+      {
+        "day": "13-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 51,
+    "firstName": "Lucía",
+    "lastName": "Fernández",
+    "age": 16,
+    "email": "lucía.fernández51@ejemplo.com",
+    "classroom": "B4",
+    "unassistences": [
+      {
+        "day": "02-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 52,
+    "firstName": "Valentina",
+    "lastName": "Morales",
+    "age": 17,
+    "email": "valentina.morales52@ejemplo.com",
+    "classroom": "B7",
+    "unassistences": [
+      {
+        "day": "21-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 53,
+    "firstName": "Jorge",
+    "lastName": "Fernández",
+    "age": 13,
+    "email": "jorge.fernández53@ejemplo.com",
+    "classroom": "C1",
+    "unassistences": [
+      {
+        "day": "15-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 54,
+    "firstName": "Valentina",
+    "lastName": "Rodríguez",
+    "age": 15,
+    "email": "valentina.rodríguez54@ejemplo.com",
+    "classroom": "F2",
+    "unassistences": [
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 55,
+    "firstName": "Agustina",
+    "lastName": "Pérez",
+    "age": 17,
+    "email": "agustina.pérez55@ejemplo.com",
+    "classroom": "D7",
+    "unassistences": [
+      {
+        "day": "28-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 56,
+    "firstName": "Carlos",
+    "lastName": "Molina",
+    "age": 20,
+    "email": "carlos.molina56@ejemplo.com",
+    "classroom": "A3",
+    "unassistences": [
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 57,
+    "firstName": "Martín",
+    "lastName": "Morales",
+    "age": 19,
+    "email": "martín.morales57@ejemplo.com",
+    "classroom": "E3",
+    "unassistences": [
+      {
+        "day": "26-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 58,
+    "firstName": "Martín",
+    "lastName": "García",
+    "age": 17,
+    "email": "martín.garcía58@ejemplo.com",
+    "classroom": "B1",
+    "unassistences": [
+      {
+        "day": "12-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 59,
+    "firstName": "Tomás",
+    "lastName": "Sánchez",
+    "age": 13,
+    "email": "tomás.sánchez59@ejemplo.com",
+    "classroom": "E7",
+    "unassistences": [
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 60,
+    "firstName": "Camila",
+    "lastName": "Molina",
+    "age": 19,
+    "email": "camila.molina60@ejemplo.com",
+    "classroom": "D3",
+    "unassistences": [
+      {
+        "day": "30-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 61,
+    "firstName": "Jorge",
+    "lastName": "Ruiz",
+    "age": 15,
+    "email": "jorge.ruiz61@ejemplo.com",
+    "classroom": "C5",
+    "unassistences": [
+      {
+        "day": "25-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 62,
+    "firstName": "Ana",
+    "lastName": "Rodríguez",
+    "age": 17,
+    "email": "ana.rodríguez62@ejemplo.com",
+    "classroom": "F1",
+    "unassistences": [
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 63,
+    "firstName": "Tomás",
+    "lastName": "Molina",
+    "age": 18,
+    "email": "tomás.molina63@ejemplo.com",
+    "classroom": "A4",
+    "unassistences": [
+      {
+        "day": "17-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 64,
+    "firstName": "Camila",
+    "lastName": "García",
+    "age": 14,
+    "email": "camila.garcía64@ejemplo.com",
+    "classroom": "B3",
+    "unassistences": [
+      {
+        "day": "04-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 65,
+    "firstName": "Sofía",
+    "lastName": "Ruiz",
+    "age": 21,
+    "email": "sofía.ruiz65@ejemplo.com",
+    "classroom": "E1",
+    "unassistences": [
+      {
+        "day": "20-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 66,
+    "firstName": "Agustina",
+    "lastName": "Torres",
+    "age": 19,
+    "email": "agustina.torres66@ejemplo.com",
+    "classroom": "D1",
+    "unassistences": [
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 67,
+    "firstName": "Florencia",
+    "lastName": "Morales",
+    "age": 20,
+    "email": "florencia.morales67@ejemplo.com",
+    "classroom": "F1",
+    "unassistences": [
+      {
+        "day": "23-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 68,
+    "firstName": "Mateo",
+    "lastName": "Díaz",
+    "age": 20,
+    "email": "mateo.díaz68@ejemplo.com",
+    "classroom": "B3",
+    "unassistences": [
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 69,
+    "firstName": "Ana",
+    "lastName": "Molina",
+    "age": 17,
+    "email": "ana.molina69@ejemplo.com",
+    "classroom": "A2",
+    "unassistences": [
+      {
+        "day": "07-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 70,
+    "firstName": "Carlos",
+    "lastName": "Díaz",
+    "age": 21,
+    "email": "carlos.díaz70@ejemplo.com",
+    "classroom": "B2",
+    "unassistences": [
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 71,
+    "firstName": "Juan",
+    "lastName": "García",
+    "age": 12,
+    "email": "juan.garcía71@ejemplo.com",
+    "classroom": "C3",
+    "unassistences": [
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 72,
+    "firstName": "Jorge",
+    "lastName": "Molina",
+    "age": 16,
+    "email": "jorge.molina72@ejemplo.com",
+    "classroom": "F4",
+    "unassistences": [
+      {
+        "day": "04-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 73,
+    "firstName": "Tomás",
+    "lastName": "Molina",
+    "age": 20,
+    "email": "tomás.molina73@ejemplo.com",
+    "classroom": "F5",
+    "unassistences": [
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 74,
+    "firstName": "Florencia",
+    "lastName": "Rodríguez",
+    "age": 17,
+    "email": "florencia.rodríguez74@ejemplo.com",
+    "classroom": "E4",
+    "unassistences": [
+      {
+        "day": "12-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 75,
+    "firstName": "Jorge",
+    "lastName": "Rodríguez",
+    "age": 17,
+    "email": "jorge.rodríguez75@ejemplo.com",
+    "classroom": "D4",
+    "unassistences": [
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 76,
+    "firstName": "Sofía",
+    "lastName": "Rodríguez",
+    "age": 20,
+    "email": "sofía.rodríguez76@ejemplo.com",
+    "classroom": "E4",
+    "unassistences": [
+      {
+        "day": "28-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 77,
+    "firstName": "Valentina",
+    "lastName": "Molina",
+    "age": 21,
+    "email": "valentina.molina77@ejemplo.com",
+    "classroom": "B7",
+    "unassistences": [
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 78,
+    "firstName": "Carlos",
+    "lastName": "Vega",
+    "age": 15,
+    "email": "carlos.vega78@ejemplo.com",
+    "classroom": "A4",
+    "unassistences": [
+      {
+        "day": "02-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 79,
+    "firstName": "Pedro",
+    "lastName": "Torres",
+    "age": 14,
+    "email": "pedro.torres79@ejemplo.com",
+    "classroom": "B2",
+    "unassistences": [
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 80,
+    "firstName": "Agustina",
+    "lastName": "García",
+    "age": 13,
+    "email": "agustina.garcía80@ejemplo.com",
+    "classroom": "B7",
+    "unassistences": [
+      {
+        "day": "11-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 81,
+    "firstName": "Camila",
+    "lastName": "Castro",
+    "age": 13,
+    "email": "camila.castro81@ejemplo.com",
+    "classroom": "D3",
+    "unassistences": [
+      {
+        "day": "18-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 82,
+    "firstName": "Sofía",
+    "lastName": "Castro",
+    "age": 18,
+    "email": "sofía.castro82@ejemplo.com",
+    "classroom": "F6",
+    "unassistences": [
+      {
+        "day": "16-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 83,
+    "firstName": "Sofía",
+    "lastName": "Castro",
+    "age": 15,
+    "email": "sofía.castro83@ejemplo.com",
+    "classroom": "A4",
+    "unassistences": [
+      {
+        "day": "06-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 84,
+    "firstName": "Lucía",
+    "lastName": "Morales",
+    "age": 12,
+    "email": "lucía.morales84@ejemplo.com",
+    "classroom": "B7",
+    "unassistences": [
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 85,
+    "firstName": "Ana",
+    "lastName": "Ruiz",
+    "age": 15,
+    "email": "ana.ruiz85@ejemplo.com",
+    "classroom": "C6",
+    "unassistences": [
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 86,
+    "firstName": "María",
+    "lastName": "Castro",
+    "age": 19,
+    "email": "maría.castro86@ejemplo.com",
+    "classroom": "F2",
+    "unassistences": [
+      {
+        "day": "08-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 87,
+    "firstName": "Camila",
+    "lastName": "Fernández",
+    "age": 16,
+    "email": "camila.fernández87@ejemplo.com",
+    "classroom": "B1",
+    "unassistences": [
+      {
+        "day": "03-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 88,
+    "firstName": "Carlos",
+    "lastName": "Díaz",
+    "age": 15,
+    "email": "carlos.díaz88@ejemplo.com",
+    "classroom": "B7",
+    "unassistences": [
+      {
+        "day": "19-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 89,
+    "firstName": "Carlos",
+    "lastName": "López",
+    "age": 16,
+    "email": "carlos.lópez89@ejemplo.com",
+    "classroom": "E3",
+    "unassistences": [
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 90,
+    "firstName": "Tomás",
+    "lastName": "López",
+    "age": 19,
+    "email": "tomás.lópez90@ejemplo.com",
+    "classroom": "A4",
+    "unassistences": [
+      {
+        "day": "07-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 91,
+    "firstName": "Martín",
+    "lastName": "Fernández",
+    "age": 14,
+    "email": "martín.fernández91@ejemplo.com",
+    "classroom": "C6",
+    "unassistences": [
+      {
+        "day": "15-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 92,
+    "firstName": "Juan",
+    "lastName": "Morales",
+    "age": 17,
+    "email": "juan.morales92@ejemplo.com",
+    "classroom": "A4",
+    "unassistences": []
+  },
+  {
+    "id": 93,
+    "firstName": "Florencia",
+    "lastName": "Rodríguez",
+    "age": 18,
+    "email": "florencia.rodríguez93@ejemplo.com",
+    "classroom": "A2",
+    "unassistences": [
+      {
+        "day": "25-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 94,
+    "firstName": "Mateo",
+    "lastName": "Romero",
+    "age": 17,
+    "email": "mateo.romero94@ejemplo.com",
+    "classroom": "E6",
+    "unassistences": [
+      {
+        "day": "25-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 95,
+    "firstName": "Tomás",
+    "lastName": "Martínez",
+    "age": 19,
+    "email": "tomás.martínez95@ejemplo.com",
+    "classroom": "E3",
+    "unassistences": [
+      {
+        "day": "07-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 96,
+    "firstName": "Lucía",
+    "lastName": "Pérez",
+    "age": 16,
+    "email": "lucía.pérez96@ejemplo.com",
+    "classroom": "F7",
+    "unassistences": [
+      {
+        "day": "06-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 97,
+    "firstName": "Ana",
+    "lastName": "Molina",
+    "age": 18,
+    "email": "ana.molina97@ejemplo.com",
+    "classroom": "C1",
+    "unassistences": [
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 98,
+    "firstName": "Mateo",
+    "lastName": "Torres",
+    "age": 12,
+    "email": "mateo.torres98@ejemplo.com",
+    "classroom": "F1",
+    "unassistences": [
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 99,
+    "firstName": "Jorge",
+    "lastName": "Morales",
+    "age": 14,
+    "email": "jorge.morales99@ejemplo.com",
+    "classroom": "F3",
+    "unassistences": [
+      {
+        "day": "16-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 100,
+    "firstName": "Tomás",
+    "lastName": "Sánchez",
+    "age": 13,
+    "email": "tomás.sánchez100@ejemplo.com",
+    "classroom": "D6",
+    "unassistences": [
+      {
+        "day": "15-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 101,
+    "firstName": "Lucía",
+    "lastName": "Fernández",
+    "age": 15,
+    "email": "lucía.fernández101@ejemplo.com",
+    "classroom": "E5",
+    "unassistences": [
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 102,
+    "firstName": "Sofía",
+    "lastName": "Pérez",
+    "age": 15,
+    "email": "sofía.pérez102@ejemplo.com",
+    "classroom": "D2",
+    "unassistences": []
+  },
+  {
+    "id": 103,
+    "firstName": "Tomás",
+    "lastName": "García",
+    "age": 12,
+    "email": "tomás.garcía103@ejemplo.com",
+    "classroom": "D3",
+    "unassistences": [
+      {
+        "day": "19-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 104,
+    "firstName": "Sofía",
+    "lastName": "Sánchez",
+    "age": 19,
+    "email": "sofía.sánchez104@ejemplo.com",
+    "classroom": "A1",
+    "unassistences": [
+      {
+        "day": "12-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 105,
+    "firstName": "Lucía",
+    "lastName": "Pérez",
+    "age": 20,
+    "email": "lucía.pérez105@ejemplo.com",
+    "classroom": "C5",
+    "unassistences": [
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 106,
+    "firstName": "Carlos",
+    "lastName": "Vega",
+    "age": 15,
+    "email": "carlos.vega106@ejemplo.com",
+    "classroom": "D4",
+    "unassistences": [
+      {
+        "day": "30-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 107,
+    "firstName": "Jorge",
+    "lastName": "Molina",
+    "age": 20,
+    "email": "jorge.molina107@ejemplo.com",
+    "classroom": "C4",
+    "unassistences": [
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 108,
+    "firstName": "Pedro",
+    "lastName": "Pérez",
+    "age": 15,
+    "email": "pedro.pérez108@ejemplo.com",
+    "classroom": "E7",
+    "unassistences": [
+      {
+        "day": "26-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 109,
+    "firstName": "Carlos",
+    "lastName": "Ruiz",
+    "age": 17,
+    "email": "carlos.ruiz109@ejemplo.com",
+    "classroom": "F2",
+    "unassistences": [
+      {
+        "day": "13-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 110,
+    "firstName": "Valentina",
+    "lastName": "Torres",
+    "age": 15,
+    "email": "valentina.torres110@ejemplo.com",
+    "classroom": "F2",
+    "unassistences": [
+      {
+        "day": "23-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 111,
+    "firstName": "Lucía",
+    "lastName": "Castro",
+    "age": 19,
+    "email": "lucía.castro111@ejemplo.com",
+    "classroom": "B7",
+    "unassistences": [
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 112,
+    "firstName": "Valentina",
+    "lastName": "Pérez",
+    "age": 18,
+    "email": "valentina.pérez112@ejemplo.com",
+    "classroom": "F1",
+    "unassistences": [
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 113,
+    "firstName": "Martín",
+    "lastName": "García",
+    "age": 16,
+    "email": "martín.garcía113@ejemplo.com",
+    "classroom": "F5",
+    "unassistences": [
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 114,
+    "firstName": "Mateo",
+    "lastName": "Romero",
+    "age": 17,
+    "email": "mateo.romero114@ejemplo.com",
+    "classroom": "B6",
+    "unassistences": [
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 115,
+    "firstName": "Ana",
+    "lastName": "Pérez",
+    "age": 21,
+    "email": "ana.pérez115@ejemplo.com",
+    "classroom": "F3",
+    "unassistences": [
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 116,
+    "firstName": "Sofía",
+    "lastName": "Pérez",
+    "age": 15,
+    "email": "sofía.pérez116@ejemplo.com",
+    "classroom": "E2",
+    "unassistences": [
+      {
+        "day": "10-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 117,
+    "firstName": "Ana",
+    "lastName": "Torres",
+    "age": 20,
+    "email": "ana.torres117@ejemplo.com",
+    "classroom": "C7",
+    "unassistences": [
+      {
+        "day": "01-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 118,
+    "firstName": "Camila",
+    "lastName": "Vega",
+    "age": 13,
+    "email": "camila.vega118@ejemplo.com",
+    "classroom": "A6",
+    "unassistences": [
+      {
+        "day": "07-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 119,
+    "firstName": "Agustina",
+    "lastName": "Romero",
+    "age": 15,
+    "email": "agustina.romero119@ejemplo.com",
+    "classroom": "B4",
+    "unassistences": [
+      {
+        "day": "29-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 120,
+    "firstName": "Lucía",
+    "lastName": "Rodríguez",
+    "age": 18,
+    "email": "lucía.rodríguez120@ejemplo.com",
+    "classroom": "F1",
+    "unassistences": []
+  },
+  {
+    "id": 121,
+    "firstName": "Lucía",
+    "lastName": "Sánchez",
+    "age": 15,
+    "email": "lucía.sánchez121@ejemplo.com",
+    "classroom": "F1",
+    "unassistences": [
+      {
+        "day": "01-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 122,
+    "firstName": "Tomás",
+    "lastName": "Morales",
+    "age": 14,
+    "email": "tomás.morales122@ejemplo.com",
+    "classroom": "B4",
+    "unassistences": [
+      {
+        "day": "28-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 123,
+    "firstName": "Sofía",
+    "lastName": "Fernández",
+    "age": 18,
+    "email": "sofía.fernández123@ejemplo.com",
+    "classroom": "E4",
+    "unassistences": [
+      {
+        "day": "14-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 124,
+    "firstName": "Camila",
+    "lastName": "Pérez",
+    "age": 19,
+    "email": "camila.pérez124@ejemplo.com",
+    "classroom": "A2",
+    "unassistences": [
+      {
+        "day": "28-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 125,
+    "firstName": "Sofía",
+    "lastName": "Díaz",
+    "age": 16,
+    "email": "sofía.díaz125@ejemplo.com",
+    "classroom": "C3",
+    "unassistences": [
+      {
+        "day": "13-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 126,
+    "firstName": "Pedro",
+    "lastName": "Rodríguez",
+    "age": 15,
+    "email": "pedro.rodríguez126@ejemplo.com",
+    "classroom": "A4",
+    "unassistences": [
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 127,
+    "firstName": "Jorge",
+    "lastName": "Rodríguez",
+    "age": 20,
+    "email": "jorge.rodríguez127@ejemplo.com",
+    "classroom": "C5",
+    "unassistences": [
+      {
+        "day": "24-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 128,
+    "firstName": "Florencia",
+    "lastName": "López",
+    "age": 18,
+    "email": "florencia.lópez128@ejemplo.com",
+    "classroom": "D7",
+    "unassistences": [
+      {
+        "day": "03-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 129,
+    "firstName": "Mateo",
+    "lastName": "Morales",
+    "age": 21,
+    "email": "mateo.morales129@ejemplo.com",
+    "classroom": "E2",
+    "unassistences": [
+      {
+        "day": "03-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 130,
+    "firstName": "Camila",
+    "lastName": "Díaz",
+    "age": 15,
+    "email": "camila.díaz130@ejemplo.com",
+    "classroom": "A2",
+    "unassistences": [
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 131,
+    "firstName": "Ana",
+    "lastName": "Martínez",
+    "age": 12,
+    "email": "ana.martínez131@ejemplo.com",
+    "classroom": "C1",
+    "unassistences": [
+      {
+        "day": "06-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 132,
+    "firstName": "Martín",
+    "lastName": "Romero",
+    "age": 17,
+    "email": "martín.romero132@ejemplo.com",
+    "classroom": "C7",
+    "unassistences": [
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 133,
+    "firstName": "Ana",
+    "lastName": "Ruiz",
+    "age": 12,
+    "email": "ana.ruiz133@ejemplo.com",
+    "classroom": "D2",
+    "unassistences": [
+      {
+        "day": "11-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 134,
+    "firstName": "Tomás",
+    "lastName": "Vega",
+    "age": 21,
+    "email": "tomás.vega134@ejemplo.com",
+    "classroom": "F6",
+    "unassistences": [
+      {
+        "day": "16-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 135,
+    "firstName": "Valentina",
+    "lastName": "Romero",
+    "age": 20,
+    "email": "valentina.romero135@ejemplo.com",
+    "classroom": "B4",
+    "unassistences": [
+      {
+        "day": "07-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 136,
+    "firstName": "Sofía",
+    "lastName": "Pérez",
+    "age": 16,
+    "email": "sofía.pérez136@ejemplo.com",
+    "classroom": "E5",
+    "unassistences": [
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 137,
+    "firstName": "Valentina",
+    "lastName": "Morales",
+    "age": 17,
+    "email": "valentina.morales137@ejemplo.com",
+    "classroom": "F6",
+    "unassistences": [
+      {
+        "day": "14-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 138,
+    "firstName": "Lucía",
+    "lastName": "Sánchez",
+    "age": 12,
+    "email": "lucía.sánchez138@ejemplo.com",
+    "classroom": "D5",
+    "unassistences": [
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 139,
+    "firstName": "Agustina",
+    "lastName": "Vega",
+    "age": 18,
+    "email": "agustina.vega139@ejemplo.com",
+    "classroom": "A2",
+    "unassistences": [
+      {
+        "day": "02-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 140,
+    "firstName": "Pedro",
+    "lastName": "Sánchez",
+    "age": 20,
+    "email": "pedro.sánchez140@ejemplo.com",
+    "classroom": "A7",
+    "unassistences": [
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 141,
+    "firstName": "Carlos",
+    "lastName": "Molina",
+    "age": 13,
+    "email": "carlos.molina141@ejemplo.com",
+    "classroom": "B5",
+    "unassistences": [
+      {
+        "day": "27-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 142,
+    "firstName": "Agustina",
+    "lastName": "Torres",
+    "age": 14,
+    "email": "agustina.torres142@ejemplo.com",
+    "classroom": "C6",
+    "unassistences": [
+      {
+        "day": "12-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 143,
+    "firstName": "Agustina",
+    "lastName": "Morales",
+    "age": 19,
+    "email": "agustina.morales143@ejemplo.com",
+    "classroom": "F5",
+    "unassistences": [
+      {
+        "day": "01-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 144,
+    "firstName": "Lucía",
+    "lastName": "García",
+    "age": 15,
+    "email": "lucía.garcía144@ejemplo.com",
+    "classroom": "A1",
+    "unassistences": [
+      {
+        "day": "22-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 145,
+    "firstName": "Carlos",
+    "lastName": "Vega",
+    "age": 16,
+    "email": "carlos.vega145@ejemplo.com",
+    "classroom": "F5",
+    "unassistences": [
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 146,
+    "firstName": "Pedro",
+    "lastName": "Ruiz",
+    "age": 15,
+    "email": "pedro.ruiz146@ejemplo.com",
+    "classroom": "A5",
+    "unassistences": [
+      {
+        "day": "19-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 147,
+    "firstName": "Tomás",
+    "lastName": "Molina",
+    "age": 20,
+    "email": "tomás.molina147@ejemplo.com",
+    "classroom": "E6",
+    "unassistences": [
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 148,
+    "firstName": "Sofía",
+    "lastName": "López",
+    "age": 13,
+    "email": "sofía.lópez148@ejemplo.com",
+    "classroom": "E3",
+    "unassistences": [
+      {
+        "day": "02-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 149,
+    "firstName": "Jorge",
+    "lastName": "García",
+    "age": 12,
+    "email": "jorge.garcía149@ejemplo.com",
+    "classroom": "B1",
+    "unassistences": [
+      {
+        "day": "06-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 150,
+    "firstName": "María",
+    "lastName": "López",
+    "age": 19,
+    "email": "maría.lópez150@ejemplo.com",
+    "classroom": "D1",
+    "unassistences": []
+  },
+  {
+    "id": 151,
+    "firstName": "Juan",
+    "lastName": "Sánchez",
+    "age": 19,
+    "email": "juan.sánchez151@ejemplo.com",
+    "classroom": "B5",
+    "unassistences": [
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 152,
+    "firstName": "Sofía",
+    "lastName": "Molina",
+    "age": 17,
+    "email": "sofía.molina152@ejemplo.com",
+    "classroom": "F7",
+    "unassistences": [
+      {
+        "day": "17-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 153,
+    "firstName": "Mateo",
+    "lastName": "Pérez",
+    "age": 12,
+    "email": "mateo.pérez153@ejemplo.com",
+    "classroom": "A2",
+    "unassistences": [
+      {
+        "day": "13-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 154,
+    "firstName": "Carlos",
+    "lastName": "Torres",
+    "age": 21,
+    "email": "carlos.torres154@ejemplo.com",
+    "classroom": "A4",
+    "unassistences": [
+      {
+        "day": "02-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 155,
+    "firstName": "Ana",
+    "lastName": "Díaz",
+    "age": 19,
+    "email": "ana.díaz155@ejemplo.com",
+    "classroom": "D6",
+    "unassistences": [
+      {
+        "day": "03-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 156,
+    "firstName": "Florencia",
+    "lastName": "García",
+    "age": 20,
+    "email": "florencia.garcía156@ejemplo.com",
+    "classroom": "C1",
+    "unassistences": [
+      {
+        "day": "16-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 157,
+    "firstName": "Camila",
+    "lastName": "Rodríguez",
+    "age": 12,
+    "email": "camila.rodríguez157@ejemplo.com",
+    "classroom": "D6",
+    "unassistences": [
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 158,
+    "firstName": "María",
+    "lastName": "Díaz",
+    "age": 20,
+    "email": "maría.díaz158@ejemplo.com",
+    "classroom": "B3",
+    "unassistences": [
+      {
+        "day": "16-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 159,
+    "firstName": "Pedro",
+    "lastName": "Pérez",
+    "age": 13,
+    "email": "pedro.pérez159@ejemplo.com",
+    "classroom": "E4",
+    "unassistences": [
+      {
+        "day": "11-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 160,
+    "firstName": "Mateo",
+    "lastName": "Rodríguez",
+    "age": 12,
+    "email": "mateo.rodríguez160@ejemplo.com",
+    "classroom": "C4",
+    "unassistences": [
+      {
+        "day": "01-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 161,
+    "firstName": "Carlos",
+    "lastName": "Rodríguez",
+    "age": 16,
+    "email": "carlos.rodríguez161@ejemplo.com",
+    "classroom": "D7",
+    "unassistences": [
+      {
+        "day": "08-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 162,
+    "firstName": "Florencia",
+    "lastName": "Molina",
+    "age": 21,
+    "email": "florencia.molina162@ejemplo.com",
+    "classroom": "A3",
+    "unassistences": [
+      {
+        "day": "18-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 163,
+    "firstName": "Carlos",
+    "lastName": "Romero",
+    "age": 16,
+    "email": "carlos.romero163@ejemplo.com",
+    "classroom": "B1",
+    "unassistences": [
+      {
+        "day": "25-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 164,
+    "firstName": "Tomás",
+    "lastName": "Romero",
+    "age": 13,
+    "email": "tomás.romero164@ejemplo.com",
+    "classroom": "F3",
+    "unassistences": [
+      {
+        "day": "04-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 165,
+    "firstName": "María",
+    "lastName": "Rodríguez",
+    "age": 14,
+    "email": "maría.rodríguez165@ejemplo.com",
+    "classroom": "E4",
+    "unassistences": [
+      {
+        "day": "04-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 166,
+    "firstName": "Mateo",
+    "lastName": "Castro",
+    "age": 17,
+    "email": "mateo.castro166@ejemplo.com",
+    "classroom": "A2",
+    "unassistences": [
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 167,
+    "firstName": "Jorge",
+    "lastName": "García",
+    "age": 18,
+    "email": "jorge.garcía167@ejemplo.com",
+    "classroom": "B7",
+    "unassistences": [
+      {
+        "day": "03-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 168,
+    "firstName": "Pedro",
+    "lastName": "Sánchez",
+    "age": 21,
+    "email": "pedro.sánchez168@ejemplo.com",
+    "classroom": "D6",
+    "unassistences": [
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 169,
+    "firstName": "Camila",
+    "lastName": "Fernández",
+    "age": 16,
+    "email": "camila.fernández169@ejemplo.com",
+    "classroom": "D6",
+    "unassistences": [
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 170,
+    "firstName": "Florencia",
+    "lastName": "Molina",
+    "age": 17,
+    "email": "florencia.molina170@ejemplo.com",
+    "classroom": "B4",
+    "unassistences": [
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 171,
+    "firstName": "Florencia",
+    "lastName": "Pérez",
+    "age": 13,
+    "email": "florencia.pérez171@ejemplo.com",
+    "classroom": "A1",
+    "unassistences": [
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 172,
+    "firstName": "Tomás",
+    "lastName": "Martínez",
+    "age": 12,
+    "email": "tomás.martínez172@ejemplo.com",
+    "classroom": "C1",
+    "unassistences": [
+      {
+        "day": "18-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 173,
+    "firstName": "Martín",
+    "lastName": "López",
+    "age": 17,
+    "email": "martín.lópez173@ejemplo.com",
+    "classroom": "B5",
+    "unassistences": [
+      {
+        "day": "11-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 174,
+    "firstName": "Carlos",
+    "lastName": "Sánchez",
+    "age": 12,
+    "email": "carlos.sánchez174@ejemplo.com",
+    "classroom": "E6",
+    "unassistences": [
+      {
+        "day": "12-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 175,
+    "firstName": "Ana",
+    "lastName": "Vega",
+    "age": 16,
+    "email": "ana.vega175@ejemplo.com",
+    "classroom": "A5",
+    "unassistences": [
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 176,
+    "firstName": "María",
+    "lastName": "Pérez",
+    "age": 21,
+    "email": "maría.pérez176@ejemplo.com",
+    "classroom": "B5",
+    "unassistences": [
+      {
+        "day": "07-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 177,
+    "firstName": "María",
+    "lastName": "López",
+    "age": 13,
+    "email": "maría.lópez177@ejemplo.com",
+    "classroom": "F1",
+    "unassistences": [
+      {
+        "day": "16-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 178,
+    "firstName": "Juan",
+    "lastName": "Díaz",
+    "age": 15,
+    "email": "juan.díaz178@ejemplo.com",
+    "classroom": "D6",
+    "unassistences": [
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 179,
+    "firstName": "Jorge",
+    "lastName": "Molina",
+    "age": 18,
+    "email": "jorge.molina179@ejemplo.com",
+    "classroom": "F4",
+    "unassistences": [
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 180,
+    "firstName": "Mateo",
+    "lastName": "Díaz",
+    "age": 20,
+    "email": "mateo.díaz180@ejemplo.com",
+    "classroom": "B7",
+    "unassistences": [
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 181,
+    "firstName": "Agustina",
+    "lastName": "Martínez",
+    "age": 12,
+    "email": "agustina.martínez181@ejemplo.com",
+    "classroom": "D2",
+    "unassistences": [
+      {
+        "day": "12-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 182,
+    "firstName": "Martín",
+    "lastName": "Ruiz",
+    "age": 13,
+    "email": "martín.ruiz182@ejemplo.com",
+    "classroom": "A3",
+    "unassistences": [
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 183,
+    "firstName": "Tomás",
+    "lastName": "Martínez",
+    "age": 13,
+    "email": "tomás.martínez183@ejemplo.com",
+    "classroom": "A7",
+    "unassistences": [
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 184,
+    "firstName": "Agustina",
+    "lastName": "Romero",
+    "age": 19,
+    "email": "agustina.romero184@ejemplo.com",
+    "classroom": "F4",
+    "unassistences": [
+      {
+        "day": "15-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 185,
+    "firstName": "Pedro",
+    "lastName": "Martínez",
+    "age": 13,
+    "email": "pedro.martínez185@ejemplo.com",
+    "classroom": "C3",
+    "unassistences": [
+      {
+        "day": "07-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 186,
+    "firstName": "Martín",
+    "lastName": "Vega",
+    "age": 13,
+    "email": "martín.vega186@ejemplo.com",
+    "classroom": "D7",
+    "unassistences": [
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 187,
+    "firstName": "Sofía",
+    "lastName": "Ruiz",
+    "age": 15,
+    "email": "sofía.ruiz187@ejemplo.com",
+    "classroom": "E7",
+    "unassistences": [
+      {
+        "day": "16-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 188,
+    "firstName": "Lucía",
+    "lastName": "López",
+    "age": 18,
+    "email": "lucía.lópez188@ejemplo.com",
+    "classroom": "E7",
+    "unassistences": [
+      {
+        "day": "21-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 189,
+    "firstName": "Tomás",
+    "lastName": "Morales",
+    "age": 16,
+    "email": "tomás.morales189@ejemplo.com",
+    "classroom": "D7",
+    "unassistences": [
+      {
+        "day": "13-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 190,
+    "firstName": "Pedro",
+    "lastName": "Vega",
+    "age": 17,
+    "email": "pedro.vega190@ejemplo.com",
+    "classroom": "F4",
+    "unassistences": [
+      {
+        "day": "03-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 191,
+    "firstName": "María",
+    "lastName": "Castro",
+    "age": 12,
+    "email": "maría.castro191@ejemplo.com",
+    "classroom": "B4",
+    "unassistences": [
+      {
+        "day": "25-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 192,
+    "firstName": "Martín",
+    "lastName": "Pérez",
+    "age": 15,
+    "email": "martín.pérez192@ejemplo.com",
+    "classroom": "D2",
+    "unassistences": [
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 193,
+    "firstName": "Camila",
+    "lastName": "Morales",
+    "age": 21,
+    "email": "camila.morales193@ejemplo.com",
+    "classroom": "C7",
+    "unassistences": [
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 194,
+    "firstName": "Juan",
+    "lastName": "Díaz",
+    "age": 13,
+    "email": "juan.díaz194@ejemplo.com",
+    "classroom": "A1",
+    "unassistences": [
+      {
+        "day": "27-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 195,
+    "firstName": "Valentina",
+    "lastName": "López",
+    "age": 16,
+    "email": "valentina.lópez195@ejemplo.com",
+    "classroom": "E7",
+    "unassistences": [
+      {
+        "day": "16-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 196,
+    "firstName": "Camila",
+    "lastName": "Sánchez",
+    "age": 21,
+    "email": "camila.sánchez196@ejemplo.com",
+    "classroom": "A5",
+    "unassistences": [
+      {
+        "day": "01-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 197,
+    "firstName": "Pedro",
+    "lastName": "Martínez",
+    "age": 15,
+    "email": "pedro.martínez197@ejemplo.com",
+    "classroom": "D5",
+    "unassistences": [
+      {
+        "day": "26-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 198,
+    "firstName": "Valentina",
+    "lastName": "López",
+    "age": 15,
+    "email": "valentina.lópez198@ejemplo.com",
+    "classroom": "B4",
+    "unassistences": [
+      {
+        "day": "11-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 199,
+    "firstName": "Valentina",
+    "lastName": "Romero",
+    "age": 17,
+    "email": "valentina.romero199@ejemplo.com",
+    "classroom": "B2",
+    "unassistences": [
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 200,
+    "firstName": "Lucía",
+    "lastName": "Sánchez",
+    "age": 21,
+    "email": "lucía.sánchez200@ejemplo.com",
+    "classroom": "F5",
+    "unassistences": [
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 201,
+    "firstName": "Agustina",
+    "lastName": "Molina",
+    "age": 16,
+    "email": "agustina.molina201@ejemplo.com",
+    "classroom": "A5",
+    "unassistences": []
+  },
+  {
+    "id": 202,
+    "firstName": "Tomás",
+    "lastName": "Romero",
+    "age": 20,
+    "email": "tomás.romero202@ejemplo.com",
+    "classroom": "F5",
+    "unassistences": [
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 203,
+    "firstName": "Tomás",
+    "lastName": "Fernández",
+    "age": 19,
+    "email": "tomás.fernández203@ejemplo.com",
+    "classroom": "B5",
+    "unassistences": [
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 204,
+    "firstName": "Jorge",
+    "lastName": "López",
+    "age": 18,
+    "email": "jorge.lópez204@ejemplo.com",
+    "classroom": "D1",
+    "unassistences": [
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 205,
+    "firstName": "Florencia",
+    "lastName": "López",
+    "age": 15,
+    "email": "florencia.lópez205@ejemplo.com",
+    "classroom": "B4",
+    "unassistences": [
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 206,
+    "firstName": "Camila",
+    "lastName": "Romero",
+    "age": 21,
+    "email": "camila.romero206@ejemplo.com",
+    "classroom": "E7",
+    "unassistences": [
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 207,
+    "firstName": "Ana",
+    "lastName": "Díaz",
+    "age": 20,
+    "email": "ana.díaz207@ejemplo.com",
+    "classroom": "E1",
+    "unassistences": [
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 208,
+    "firstName": "Tomás",
+    "lastName": "Sánchez",
+    "age": 17,
+    "email": "tomás.sánchez208@ejemplo.com",
+    "classroom": "A2",
+    "unassistences": [
+      {
+        "day": "07-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 209,
+    "firstName": "María",
+    "lastName": "Martínez",
+    "age": 13,
+    "email": "maría.martínez209@ejemplo.com",
+    "classroom": "E2",
+    "unassistences": [
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 210,
+    "firstName": "Tomás",
+    "lastName": "López",
+    "age": 20,
+    "email": "tomás.lópez210@ejemplo.com",
+    "classroom": "E2",
+    "unassistences": [
+      {
+        "day": "23-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 211,
+    "firstName": "Pedro",
+    "lastName": "García",
+    "age": 13,
+    "email": "pedro.garcía211@ejemplo.com",
+    "classroom": "D5",
+    "unassistences": [
+      {
+        "day": "06-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 212,
+    "firstName": "Agustina",
+    "lastName": "Romero",
+    "age": 21,
+    "email": "agustina.romero212@ejemplo.com",
+    "classroom": "F6",
+    "unassistences": [
+      {
+        "day": "16-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 213,
+    "firstName": "Martín",
+    "lastName": "Romero",
+    "age": 15,
+    "email": "martín.romero213@ejemplo.com",
+    "classroom": "E2",
+    "unassistences": [
+      {
+        "day": "23-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 214,
+    "firstName": "Agustina",
+    "lastName": "Romero",
+    "age": 18,
+    "email": "agustina.romero214@ejemplo.com",
+    "classroom": "E2",
+    "unassistences": [
+      {
+        "day": "22-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 215,
+    "firstName": "Lucía",
+    "lastName": "Romero",
+    "age": 14,
+    "email": "lucía.romero215@ejemplo.com",
+    "classroom": "B1",
+    "unassistences": [
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 216,
+    "firstName": "Florencia",
+    "lastName": "Fernández",
+    "age": 18,
+    "email": "florencia.fernández216@ejemplo.com",
+    "classroom": "C1",
+    "unassistences": [
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 217,
+    "firstName": "María",
+    "lastName": "López",
+    "age": 13,
+    "email": "maría.lópez217@ejemplo.com",
+    "classroom": "A3",
+    "unassistences": [
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 218,
+    "firstName": "Lucía",
+    "lastName": "García",
+    "age": 15,
+    "email": "lucía.garcía218@ejemplo.com",
+    "classroom": "F1",
+    "unassistences": [
+      {
+        "day": "23-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 219,
+    "firstName": "Ana",
+    "lastName": "Molina",
+    "age": 18,
+    "email": "ana.molina219@ejemplo.com",
+    "classroom": "E5",
+    "unassistences": [
+      {
+        "day": "11-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 220,
+    "firstName": "Martín",
+    "lastName": "Sánchez",
+    "age": 12,
+    "email": "martín.sánchez220@ejemplo.com",
+    "classroom": "A7",
+    "unassistences": [
+      {
+        "day": "11-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 221,
+    "firstName": "Valentina",
+    "lastName": "Sánchez",
+    "age": 15,
+    "email": "valentina.sánchez221@ejemplo.com",
+    "classroom": "B2",
+    "unassistences": [
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 222,
+    "firstName": "Camila",
+    "lastName": "Martínez",
+    "age": 20,
+    "email": "camila.martínez222@ejemplo.com",
+    "classroom": "B2",
+    "unassistences": [
+      {
+        "day": "04-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 223,
+    "firstName": "Tomás",
+    "lastName": "Morales",
+    "age": 13,
+    "email": "tomás.morales223@ejemplo.com",
+    "classroom": "E5",
+    "unassistences": []
+  },
+  {
+    "id": 224,
+    "firstName": "Florencia",
+    "lastName": "Morales",
+    "age": 17,
+    "email": "florencia.morales224@ejemplo.com",
+    "classroom": "E3",
+    "unassistences": [
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 225,
+    "firstName": "Juan",
+    "lastName": "Díaz",
+    "age": 20,
+    "email": "juan.díaz225@ejemplo.com",
+    "classroom": "D1",
+    "unassistences": [
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 226,
+    "firstName": "Valentina",
+    "lastName": "Rodríguez",
+    "age": 17,
+    "email": "valentina.rodríguez226@ejemplo.com",
+    "classroom": "E3",
+    "unassistences": [
+      {
+        "day": "22-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 227,
+    "firstName": "Florencia",
+    "lastName": "Rodríguez",
+    "age": 21,
+    "email": "florencia.rodríguez227@ejemplo.com",
+    "classroom": "E3",
+    "unassistences": [
+      {
+        "day": "15-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 228,
+    "firstName": "Ana",
+    "lastName": "Ruiz",
+    "age": 15,
+    "email": "ana.ruiz228@ejemplo.com",
+    "classroom": "C4",
+    "unassistences": [
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 229,
+    "firstName": "Florencia",
+    "lastName": "Romero",
+    "age": 16,
+    "email": "florencia.romero229@ejemplo.com",
+    "classroom": "C5",
+    "unassistences": [
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 230,
+    "firstName": "Camila",
+    "lastName": "Díaz",
+    "age": 14,
+    "email": "camila.díaz230@ejemplo.com",
+    "classroom": "F6",
+    "unassistences": [
+      {
+        "day": "28-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 231,
+    "firstName": "Pedro",
+    "lastName": "Martínez",
+    "age": 12,
+    "email": "pedro.martínez231@ejemplo.com",
+    "classroom": "D7",
+    "unassistences": [
+      {
+        "day": "11-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 232,
+    "firstName": "Mateo",
+    "lastName": "Rodríguez",
+    "age": 17,
+    "email": "mateo.rodríguez232@ejemplo.com",
+    "classroom": "B2",
+    "unassistences": [
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 233,
+    "firstName": "Carlos",
+    "lastName": "Castro",
+    "age": 16,
+    "email": "carlos.castro233@ejemplo.com",
+    "classroom": "A1",
+    "unassistences": [
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 234,
+    "firstName": "Juan",
+    "lastName": "García",
+    "age": 12,
+    "email": "juan.garcía234@ejemplo.com",
+    "classroom": "A1",
+    "unassistences": [
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 235,
+    "firstName": "Martín",
+    "lastName": "Sánchez",
+    "age": 13,
+    "email": "martín.sánchez235@ejemplo.com",
+    "classroom": "D6",
+    "unassistences": [
+      {
+        "day": "28-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 236,
+    "firstName": "Mateo",
+    "lastName": "Fernández",
+    "age": 13,
+    "email": "mateo.fernández236@ejemplo.com",
+    "classroom": "D4",
+    "unassistences": [
+      {
+        "day": "10-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 237,
+    "firstName": "Camila",
+    "lastName": "Torres",
+    "age": 14,
+    "email": "camila.torres237@ejemplo.com",
+    "classroom": "C3",
+    "unassistences": [
+      {
+        "day": "23-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 238,
+    "firstName": "Sofía",
+    "lastName": "Ruiz",
+    "age": 12,
+    "email": "sofía.ruiz238@ejemplo.com",
+    "classroom": "D5",
+    "unassistences": [
+      {
+        "day": "08-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 239,
+    "firstName": "Tomás",
+    "lastName": "Torres",
+    "age": 15,
+    "email": "tomás.torres239@ejemplo.com",
+    "classroom": "C7",
+    "unassistences": [
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 240,
+    "firstName": "Carlos",
+    "lastName": "López",
+    "age": 12,
+    "email": "carlos.lópez240@ejemplo.com",
+    "classroom": "E1",
+    "unassistences": [
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 241,
+    "firstName": "Tomás",
+    "lastName": "Vega",
+    "age": 16,
+    "email": "tomás.vega241@ejemplo.com",
+    "classroom": "D4",
+    "unassistences": [
+      {
+        "day": "20-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 242,
+    "firstName": "Florencia",
+    "lastName": "Morales",
+    "age": 14,
+    "email": "florencia.morales242@ejemplo.com",
+    "classroom": "B6",
+    "unassistences": [
+      {
+        "day": "19-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 243,
+    "firstName": "Agustina",
+    "lastName": "Fernández",
+    "age": 21,
+    "email": "agustina.fernández243@ejemplo.com",
+    "classroom": "C4",
+    "unassistences": [
+      {
+        "day": "23-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 244,
+    "firstName": "Agustina",
+    "lastName": "Ruiz",
+    "age": 14,
+    "email": "agustina.ruiz244@ejemplo.com",
+    "classroom": "C3",
+    "unassistences": [
+      {
+        "day": "24-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 245,
+    "firstName": "Mateo",
+    "lastName": "Pérez",
+    "age": 16,
+    "email": "mateo.pérez245@ejemplo.com",
+    "classroom": "F5",
+    "unassistences": [
+      {
+        "day": "11-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 246,
+    "firstName": "Florencia",
+    "lastName": "Martínez",
+    "age": 20,
+    "email": "florencia.martínez246@ejemplo.com",
+    "classroom": "E5",
+    "unassistences": [
+      {
+        "day": "21-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 247,
+    "firstName": "Tomás",
+    "lastName": "Fernández",
+    "age": 19,
+    "email": "tomás.fernández247@ejemplo.com",
+    "classroom": "E7",
+    "unassistences": [
+      {
+        "day": "28-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 248,
+    "firstName": "Valentina",
+    "lastName": "Vega",
+    "age": 19,
+    "email": "valentina.vega248@ejemplo.com",
+    "classroom": "B4",
+    "unassistences": [
+      {
+        "day": "29-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 249,
+    "firstName": "Camila",
+    "lastName": "Ruiz",
+    "age": 13,
+    "email": "camila.ruiz249@ejemplo.com",
+    "classroom": "E5",
+    "unassistences": [
+      {
+        "day": "11-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 250,
+    "firstName": "Tomás",
+    "lastName": "Fernández",
+    "age": 17,
+    "email": "tomás.fernández250@ejemplo.com",
+    "classroom": "F1",
+    "unassistences": [
+      {
+        "day": "03-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 251,
+    "firstName": "Martín",
+    "lastName": "Morales",
+    "age": 12,
+    "email": "martín.morales251@ejemplo.com",
+    "classroom": "B4",
+    "unassistences": [
+      {
+        "day": "29-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 252,
+    "firstName": "Juan",
+    "lastName": "Fernández",
+    "age": 12,
+    "email": "juan.fernández252@ejemplo.com",
+    "classroom": "D3",
+    "unassistences": [
+      {
+        "day": "11-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 253,
+    "firstName": "Ana",
+    "lastName": "Morales",
+    "age": 15,
+    "email": "ana.morales253@ejemplo.com",
+    "classroom": "A5",
+    "unassistences": [
+      {
+        "day": "27-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 254,
+    "firstName": "Lucía",
+    "lastName": "Morales",
+    "age": 15,
+    "email": "lucía.morales254@ejemplo.com",
+    "classroom": "C7",
+    "unassistences": [
+      {
+        "day": "19-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 255,
+    "firstName": "Juan",
+    "lastName": "Torres",
+    "age": 17,
+    "email": "juan.torres255@ejemplo.com",
+    "classroom": "D1",
+    "unassistences": [
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 256,
+    "firstName": "Juan",
+    "lastName": "Torres",
+    "age": 17,
+    "email": "juan.torres256@ejemplo.com",
+    "classroom": "D1",
+    "unassistences": [
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 257,
+    "firstName": "María",
+    "lastName": "Martínez",
+    "age": 17,
+    "email": "maría.martínez257@ejemplo.com",
+    "classroom": "B6",
+    "unassistences": [
+      {
+        "day": "19-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 258,
+    "firstName": "Sofía",
+    "lastName": "Díaz",
+    "age": 12,
+    "email": "sofía.díaz258@ejemplo.com",
+    "classroom": "A5",
+    "unassistences": [
+      {
+        "day": "24-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 259,
+    "firstName": "Ana",
+    "lastName": "Castro",
+    "age": 20,
+    "email": "ana.castro259@ejemplo.com",
+    "classroom": "B2",
+    "unassistences": [
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 260,
+    "firstName": "Mateo",
+    "lastName": "Ruiz",
+    "age": 12,
+    "email": "mateo.ruiz260@ejemplo.com",
+    "classroom": "F1",
+    "unassistences": [
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 261,
+    "firstName": "Tomás",
+    "lastName": "Rodríguez",
+    "age": 14,
+    "email": "tomás.rodríguez261@ejemplo.com",
+    "classroom": "B7",
+    "unassistences": [
+      {
+        "day": "12-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 262,
+    "firstName": "Valentina",
+    "lastName": "Morales",
+    "age": 18,
+    "email": "valentina.morales262@ejemplo.com",
+    "classroom": "B3",
+    "unassistences": [
+      {
+        "day": "07-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 263,
+    "firstName": "Valentina",
+    "lastName": "Torres",
+    "age": 21,
+    "email": "valentina.torres263@ejemplo.com",
+    "classroom": "C1",
+    "unassistences": [
+      {
+        "day": "13-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 264,
+    "firstName": "Florencia",
+    "lastName": "García",
+    "age": 18,
+    "email": "florencia.garcía264@ejemplo.com",
+    "classroom": "C1",
+    "unassistences": [
+      {
+        "day": "12-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 265,
+    "firstName": "Pedro",
+    "lastName": "Morales",
+    "age": 20,
+    "email": "pedro.morales265@ejemplo.com",
+    "classroom": "A4",
+    "unassistences": [
+      {
+        "day": "06-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 266,
+    "firstName": "Agustina",
+    "lastName": "López",
+    "age": 15,
+    "email": "agustina.lópez266@ejemplo.com",
+    "classroom": "A2",
+    "unassistences": [
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 267,
+    "firstName": "Valentina",
+    "lastName": "Torres",
+    "age": 19,
+    "email": "valentina.torres267@ejemplo.com",
+    "classroom": "F3",
+    "unassistences": [
+      {
+        "day": "07-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 268,
+    "firstName": "Agustina",
+    "lastName": "Morales",
+    "age": 14,
+    "email": "agustina.morales268@ejemplo.com",
+    "classroom": "D3",
+    "unassistences": [
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 269,
+    "firstName": "Mateo",
+    "lastName": "Torres",
+    "age": 14,
+    "email": "mateo.torres269@ejemplo.com",
+    "classroom": "C2",
+    "unassistences": [
+      {
+        "day": "21-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 270,
+    "firstName": "Lucía",
+    "lastName": "Sánchez",
+    "age": 21,
+    "email": "lucía.sánchez270@ejemplo.com",
+    "classroom": "E6",
+    "unassistences": []
+  },
+  {
+    "id": 271,
+    "firstName": "Martín",
+    "lastName": "Rodríguez",
+    "age": 16,
+    "email": "martín.rodríguez271@ejemplo.com",
+    "classroom": "A1",
+    "unassistences": [
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 272,
+    "firstName": "Florencia",
+    "lastName": "Romero",
+    "age": 19,
+    "email": "florencia.romero272@ejemplo.com",
+    "classroom": "E1",
+    "unassistences": [
+      {
+        "day": "18-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 273,
+    "firstName": "Mateo",
+    "lastName": "Castro",
+    "age": 18,
+    "email": "mateo.castro273@ejemplo.com",
+    "classroom": "F3",
+    "unassistences": [
+      {
+        "day": "03-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 274,
+    "firstName": "Ana",
+    "lastName": "García",
+    "age": 21,
+    "email": "ana.garcía274@ejemplo.com",
+    "classroom": "E7",
+    "unassistences": [
+      {
+        "day": "22-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 275,
+    "firstName": "Florencia",
+    "lastName": "Vega",
+    "age": 21,
+    "email": "florencia.vega275@ejemplo.com",
+    "classroom": "C4",
+    "unassistences": [
+      {
+        "day": "02-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 276,
+    "firstName": "Jorge",
+    "lastName": "Romero",
+    "age": 17,
+    "email": "jorge.romero276@ejemplo.com",
+    "classroom": "C2",
+    "unassistences": [
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 277,
+    "firstName": "Tomás",
+    "lastName": "Díaz",
+    "age": 20,
+    "email": "tomás.díaz277@ejemplo.com",
+    "classroom": "A5",
+    "unassistences": []
+  },
+  {
+    "id": 278,
+    "firstName": "Ana",
+    "lastName": "Fernández",
+    "age": 15,
+    "email": "ana.fernández278@ejemplo.com",
+    "classroom": "A1",
+    "unassistences": [
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 279,
+    "firstName": "Sofía",
+    "lastName": "Morales",
+    "age": 18,
+    "email": "sofía.morales279@ejemplo.com",
+    "classroom": "C5",
+    "unassistences": [
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 280,
+    "firstName": "Sofía",
+    "lastName": "Romero",
+    "age": 16,
+    "email": "sofía.romero280@ejemplo.com",
+    "classroom": "D7",
+    "unassistences": [
+      {
+        "day": "20-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 281,
+    "firstName": "Mateo",
+    "lastName": "Morales",
+    "age": 20,
+    "email": "mateo.morales281@ejemplo.com",
+    "classroom": "F7",
+    "unassistences": [
+      {
+        "day": "18-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 282,
+    "firstName": "Mateo",
+    "lastName": "Morales",
+    "age": 18,
+    "email": "mateo.morales282@ejemplo.com",
+    "classroom": "B7",
+    "unassistences": [
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 283,
+    "firstName": "Camila",
+    "lastName": "Sánchez",
+    "age": 21,
+    "email": "camila.sánchez283@ejemplo.com",
+    "classroom": "F6",
+    "unassistences": [
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 284,
+    "firstName": "Sofía",
+    "lastName": "Sánchez",
+    "age": 17,
+    "email": "sofía.sánchez284@ejemplo.com",
+    "classroom": "A5",
+    "unassistences": []
+  },
+  {
+    "id": 285,
+    "firstName": "María",
+    "lastName": "Martínez",
+    "age": 21,
+    "email": "maría.martínez285@ejemplo.com",
+    "classroom": "B4",
+    "unassistences": [
+      {
+        "day": "13-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 286,
+    "firstName": "Juan",
+    "lastName": "Torres",
+    "age": 21,
+    "email": "juan.torres286@ejemplo.com",
+    "classroom": "F6",
+    "unassistences": [
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 287,
+    "firstName": "Florencia",
+    "lastName": "Vega",
+    "age": 19,
+    "email": "florencia.vega287@ejemplo.com",
+    "classroom": "A3",
+    "unassistences": [
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 288,
+    "firstName": "Jorge",
+    "lastName": "Castro",
+    "age": 21,
+    "email": "jorge.castro288@ejemplo.com",
+    "classroom": "C7",
+    "unassistences": [
+      {
+        "day": "21-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 289,
+    "firstName": "Mateo",
+    "lastName": "Romero",
+    "age": 21,
+    "email": "mateo.romero289@ejemplo.com",
+    "classroom": "E4",
+    "unassistences": [
+      {
+        "day": "13-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 290,
+    "firstName": "Lucía",
+    "lastName": "Fernández",
+    "age": 15,
+    "email": "lucía.fernández290@ejemplo.com",
+    "classroom": "D3",
+    "unassistences": [
+      {
+        "day": "11-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 291,
+    "firstName": "Agustina",
+    "lastName": "Díaz",
+    "age": 20,
+    "email": "agustina.díaz291@ejemplo.com",
+    "classroom": "B1",
+    "unassistences": [
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 292,
+    "firstName": "Florencia",
+    "lastName": "Castro",
+    "age": 15,
+    "email": "florencia.castro292@ejemplo.com",
+    "classroom": "A2",
+    "unassistences": [
+      {
+        "day": "13-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 293,
+    "firstName": "María",
+    "lastName": "Fernández",
+    "age": 14,
+    "email": "maría.fernández293@ejemplo.com",
+    "classroom": "E5",
+    "unassistences": [
+      {
+        "day": "19-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 294,
+    "firstName": "Juan",
+    "lastName": "Torres",
+    "age": 20,
+    "email": "juan.torres294@ejemplo.com",
+    "classroom": "C2",
+    "unassistences": [
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 295,
+    "firstName": "Juan",
+    "lastName": "Pérez",
+    "age": 19,
+    "email": "juan.pérez295@ejemplo.com",
+    "classroom": "F6",
+    "unassistences": [
+      {
+        "day": "01-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 296,
+    "firstName": "Florencia",
+    "lastName": "García",
+    "age": 17,
+    "email": "florencia.garcía296@ejemplo.com",
+    "classroom": "C1",
+    "unassistences": [
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 297,
+    "firstName": "Lucía",
+    "lastName": "Pérez",
+    "age": 21,
+    "email": "lucía.pérez297@ejemplo.com",
+    "classroom": "A1",
+    "unassistences": [
+      {
+        "day": "25-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 298,
+    "firstName": "Ana",
+    "lastName": "Castro",
+    "age": 16,
+    "email": "ana.castro298@ejemplo.com",
+    "classroom": "F1",
+    "unassistences": [
+      {
+        "day": "27-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 299,
+    "firstName": "Sofía",
+    "lastName": "Rodríguez",
+    "age": 17,
+    "email": "sofía.rodríguez299@ejemplo.com",
+    "classroom": "D7",
+    "unassistences": [
+      {
+        "day": "25-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 300,
+    "firstName": "Martín",
+    "lastName": "Pérez",
+    "age": 13,
+    "email": "martín.pérez300@ejemplo.com",
+    "classroom": "E3",
+    "unassistences": [
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 301,
+    "firstName": "Agustina",
+    "lastName": "Morales",
+    "age": 20,
+    "email": "agustina.morales301@ejemplo.com",
+    "classroom": "E1",
+    "unassistences": [
+      {
+        "day": "09-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 302,
+    "firstName": "Ana",
+    "lastName": "Castro",
+    "age": 20,
+    "email": "ana.castro302@ejemplo.com",
+    "classroom": "D3",
+    "unassistences": [
+      {
+        "day": "17-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 303,
+    "firstName": "Pedro",
+    "lastName": "Vega",
+    "age": 14,
+    "email": "pedro.vega303@ejemplo.com",
+    "classroom": "B7",
+    "unassistences": [
+      {
+        "day": "03-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 304,
+    "firstName": "María",
+    "lastName": "Castro",
+    "age": 21,
+    "email": "maría.castro304@ejemplo.com",
+    "classroom": "B5",
+    "unassistences": [
+      {
+        "day": "29-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 305,
+    "firstName": "Camila",
+    "lastName": "Castro",
+    "age": 17,
+    "email": "camila.castro305@ejemplo.com",
+    "classroom": "A4",
+    "unassistences": [
+      {
+        "day": "23-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 306,
+    "firstName": "Juan",
+    "lastName": "Torres",
+    "age": 14,
+    "email": "juan.torres306@ejemplo.com",
+    "classroom": "E6",
+    "unassistences": [
+      {
+        "day": "07-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 307,
+    "firstName": "Sofía",
+    "lastName": "Torres",
+    "age": 17,
+    "email": "sofía.torres307@ejemplo.com",
+    "classroom": "C3",
+    "unassistences": [
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 308,
+    "firstName": "Jorge",
+    "lastName": "Ruiz",
+    "age": 17,
+    "email": "jorge.ruiz308@ejemplo.com",
+    "classroom": "A4",
+    "unassistences": [
+      {
+        "day": "11-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 309,
+    "firstName": "Pedro",
+    "lastName": "Morales",
+    "age": 13,
+    "email": "pedro.morales309@ejemplo.com",
+    "classroom": "F7",
+    "unassistences": [
+      {
+        "day": "02-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 310,
+    "firstName": "Carlos",
+    "lastName": "Molina",
+    "age": 13,
+    "email": "carlos.molina310@ejemplo.com",
+    "classroom": "E1",
+    "unassistences": [
+      {
+        "day": "08-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 311,
+    "firstName": "María",
+    "lastName": "Rodríguez",
+    "age": 16,
+    "email": "maría.rodríguez311@ejemplo.com",
+    "classroom": "C2",
+    "unassistences": [
+      {
+        "day": "02-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 312,
+    "firstName": "Mateo",
+    "lastName": "Pérez",
+    "age": 15,
+    "email": "mateo.pérez312@ejemplo.com",
+    "classroom": "C6",
+    "unassistences": [
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 313,
+    "firstName": "Sofía",
+    "lastName": "Torres",
+    "age": 14,
+    "email": "sofía.torres313@ejemplo.com",
+    "classroom": "F1",
+    "unassistences": [
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 314,
+    "firstName": "Valentina",
+    "lastName": "García",
+    "age": 18,
+    "email": "valentina.garcía314@ejemplo.com",
+    "classroom": "D4",
+    "unassistences": [
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 315,
+    "firstName": "Pedro",
+    "lastName": "Ruiz",
+    "age": 14,
+    "email": "pedro.ruiz315@ejemplo.com",
+    "classroom": "D6",
+    "unassistences": [
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 316,
+    "firstName": "Carlos",
+    "lastName": "García",
+    "age": 19,
+    "email": "carlos.garcía316@ejemplo.com",
+    "classroom": "A1",
+    "unassistences": [
+      {
+        "day": "21-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 317,
+    "firstName": "Jorge",
+    "lastName": "López",
+    "age": 14,
+    "email": "jorge.lópez317@ejemplo.com",
+    "classroom": "C6",
+    "unassistences": [
+      {
+        "day": "20-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 318,
+    "firstName": "Juan",
+    "lastName": "Sánchez",
+    "age": 19,
+    "email": "juan.sánchez318@ejemplo.com",
+    "classroom": "D3",
+    "unassistences": [
+      {
+        "day": "03-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 319,
+    "firstName": "Tomás",
+    "lastName": "López",
+    "age": 20,
+    "email": "tomás.lópez319@ejemplo.com",
+    "classroom": "C1",
+    "unassistences": [
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 320,
+    "firstName": "Tomás",
+    "lastName": "Molina",
+    "age": 18,
+    "email": "tomás.molina320@ejemplo.com",
+    "classroom": "F4",
+    "unassistences": [
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 321,
+    "firstName": "Juan",
+    "lastName": "Torres",
+    "age": 19,
+    "email": "juan.torres321@ejemplo.com",
+    "classroom": "A6",
+    "unassistences": [
+      {
+        "day": "03-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 322,
+    "firstName": "Agustina",
+    "lastName": "Castro",
+    "age": 15,
+    "email": "agustina.castro322@ejemplo.com",
+    "classroom": "C5",
+    "unassistences": [
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 323,
+    "firstName": "Lucía",
+    "lastName": "Morales",
+    "age": 19,
+    "email": "lucía.morales323@ejemplo.com",
+    "classroom": "C7",
+    "unassistences": [
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 324,
+    "firstName": "Agustina",
+    "lastName": "Vega",
+    "age": 15,
+    "email": "agustina.vega324@ejemplo.com",
+    "classroom": "B2",
+    "unassistences": [
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 325,
+    "firstName": "Mateo",
+    "lastName": "Fernández",
+    "age": 17,
+    "email": "mateo.fernández325@ejemplo.com",
+    "classroom": "B4",
+    "unassistences": [
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 326,
+    "firstName": "Jorge",
+    "lastName": "García",
+    "age": 19,
+    "email": "jorge.garcía326@ejemplo.com",
+    "classroom": "F3",
+    "unassistences": [
+      {
+        "day": "18-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 327,
+    "firstName": "Valentina",
+    "lastName": "Torres",
+    "age": 12,
+    "email": "valentina.torres327@ejemplo.com",
+    "classroom": "E3",
+    "unassistences": [
+      {
+        "day": "23-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 328,
+    "firstName": "María",
+    "lastName": "Castro",
+    "age": 19,
+    "email": "maría.castro328@ejemplo.com",
+    "classroom": "C7",
+    "unassistences": [
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 329,
+    "firstName": "María",
+    "lastName": "Romero",
+    "age": 12,
+    "email": "maría.romero329@ejemplo.com",
+    "classroom": "C7",
+    "unassistences": [
+      {
+        "day": "01-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 330,
+    "firstName": "Carlos",
+    "lastName": "Rodríguez",
+    "age": 13,
+    "email": "carlos.rodríguez330@ejemplo.com",
+    "classroom": "C2",
+    "unassistences": [
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 331,
+    "firstName": "Martín",
+    "lastName": "Ruiz",
+    "age": 20,
+    "email": "martín.ruiz331@ejemplo.com",
+    "classroom": "B7",
+    "unassistences": [
+      {
+        "day": "15-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 332,
+    "firstName": "Sofía",
+    "lastName": "López",
+    "age": 20,
+    "email": "sofía.lópez332@ejemplo.com",
+    "classroom": "C3",
+    "unassistences": [
+      {
+        "day": "07-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 333,
+    "firstName": "María",
+    "lastName": "Martínez",
+    "age": 13,
+    "email": "maría.martínez333@ejemplo.com",
+    "classroom": "E3",
+    "unassistences": [
+      {
+        "day": "18-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 334,
+    "firstName": "Martín",
+    "lastName": "García",
+    "age": 18,
+    "email": "martín.garcía334@ejemplo.com",
+    "classroom": "E2",
+    "unassistences": [
+      {
+        "day": "30-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 335,
+    "firstName": "Carlos",
+    "lastName": "García",
+    "age": 16,
+    "email": "carlos.garcía335@ejemplo.com",
+    "classroom": "D1",
+    "unassistences": [
+      {
+        "day": "02-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 336,
+    "firstName": "Jorge",
+    "lastName": "Molina",
+    "age": 19,
+    "email": "jorge.molina336@ejemplo.com",
+    "classroom": "F7",
+    "unassistences": [
+      {
+        "day": "19-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 337,
+    "firstName": "Mateo",
+    "lastName": "Pérez",
+    "age": 16,
+    "email": "mateo.pérez337@ejemplo.com",
+    "classroom": "F4",
+    "unassistences": [
+      {
+        "day": "23-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 338,
+    "firstName": "Juan",
+    "lastName": "Martínez",
+    "age": 16,
+    "email": "juan.martínez338@ejemplo.com",
+    "classroom": "C5",
+    "unassistences": [
+      {
+        "day": "12-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 339,
+    "firstName": "Ana",
+    "lastName": "García",
+    "age": 12,
+    "email": "ana.garcía339@ejemplo.com",
+    "classroom": "F6",
+    "unassistences": [
+      {
+        "day": "10-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 340,
+    "firstName": "Jorge",
+    "lastName": "López",
+    "age": 19,
+    "email": "jorge.lópez340@ejemplo.com",
+    "classroom": "D1",
+    "unassistences": [
+      {
+        "day": "11-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 341,
+    "firstName": "Florencia",
+    "lastName": "Sánchez",
+    "age": 13,
+    "email": "florencia.sánchez341@ejemplo.com",
+    "classroom": "A6",
+    "unassistences": [
+      {
+        "day": "21-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 342,
+    "firstName": "Tomás",
+    "lastName": "Torres",
+    "age": 16,
+    "email": "tomás.torres342@ejemplo.com",
+    "classroom": "B5",
+    "unassistences": [
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 343,
+    "firstName": "Jorge",
+    "lastName": "García",
+    "age": 15,
+    "email": "jorge.garcía343@ejemplo.com",
+    "classroom": "A4",
+    "unassistences": [
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 344,
+    "firstName": "Lucía",
+    "lastName": "López",
+    "age": 17,
+    "email": "lucía.lópez344@ejemplo.com",
+    "classroom": "A7",
+    "unassistences": [
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 345,
+    "firstName": "Agustina",
+    "lastName": "Ruiz",
+    "age": 21,
+    "email": "agustina.ruiz345@ejemplo.com",
+    "classroom": "E4",
+    "unassistences": [
+      {
+        "day": "14-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 346,
+    "firstName": "Jorge",
+    "lastName": "Fernández",
+    "age": 12,
+    "email": "jorge.fernández346@ejemplo.com",
+    "classroom": "D3",
+    "unassistences": [
+      {
+        "day": "20-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 347,
+    "firstName": "Carlos",
+    "lastName": "Martínez",
+    "age": 12,
+    "email": "carlos.martínez347@ejemplo.com",
+    "classroom": "D4",
+    "unassistences": [
+      {
+        "day": "13-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 348,
+    "firstName": "Agustina",
+    "lastName": "Castro",
+    "age": 13,
+    "email": "agustina.castro348@ejemplo.com",
+    "classroom": "B6",
+    "unassistences": [
+      {
+        "day": "24-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 349,
+    "firstName": "Pedro",
+    "lastName": "Molina",
+    "age": 15,
+    "email": "pedro.molina349@ejemplo.com",
+    "classroom": "E1",
+    "unassistences": [
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 350,
+    "firstName": "Ana",
+    "lastName": "Romero",
+    "age": 19,
+    "email": "ana.romero350@ejemplo.com",
+    "classroom": "D3",
+    "unassistences": [
+      {
+        "day": "16-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 351,
+    "firstName": "Martín",
+    "lastName": "Morales",
+    "age": 16,
+    "email": "martín.morales351@ejemplo.com",
+    "classroom": "F5",
+    "unassistences": [
+      {
+        "day": "20-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 352,
+    "firstName": "Florencia",
+    "lastName": "Ruiz",
+    "age": 21,
+    "email": "florencia.ruiz352@ejemplo.com",
+    "classroom": "F4",
+    "unassistences": [
+      {
+        "day": "30-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 353,
+    "firstName": "Tomás",
+    "lastName": "Pérez",
+    "age": 13,
+    "email": "tomás.pérez353@ejemplo.com",
+    "classroom": "A3",
+    "unassistences": [
+      {
+        "day": "24-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 354,
+    "firstName": "Juan",
+    "lastName": "López",
+    "age": 14,
+    "email": "juan.lópez354@ejemplo.com",
+    "classroom": "B6",
+    "unassistences": [
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 355,
+    "firstName": "Agustina",
+    "lastName": "Torres",
+    "age": 14,
+    "email": "agustina.torres355@ejemplo.com",
+    "classroom": "F4",
+    "unassistences": [
+      {
+        "day": "26-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 356,
+    "firstName": "Camila",
+    "lastName": "Molina",
+    "age": 13,
+    "email": "camila.molina356@ejemplo.com",
+    "classroom": "E2",
+    "unassistences": [
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 357,
+    "firstName": "Ana",
+    "lastName": "Fernández",
+    "age": 20,
+    "email": "ana.fernández357@ejemplo.com",
+    "classroom": "B2",
+    "unassistences": [
+      {
+        "day": "14-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 358,
+    "firstName": "Juan",
+    "lastName": "Castro",
+    "age": 15,
+    "email": "juan.castro358@ejemplo.com",
+    "classroom": "F5",
+    "unassistences": [
+      {
+        "day": "13-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 359,
+    "firstName": "María",
+    "lastName": "Molina",
+    "age": 17,
+    "email": "maría.molina359@ejemplo.com",
+    "classroom": "B7",
+    "unassistences": [
+      {
+        "day": "16-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 360,
+    "firstName": "Camila",
+    "lastName": "Sánchez",
+    "age": 15,
+    "email": "camila.sánchez360@ejemplo.com",
+    "classroom": "C2",
+    "unassistences": [
+      {
+        "day": "03-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 361,
+    "firstName": "Ana",
+    "lastName": "Torres",
+    "age": 12,
+    "email": "ana.torres361@ejemplo.com",
+    "classroom": "B5",
+    "unassistences": [
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 362,
+    "firstName": "Mateo",
+    "lastName": "Ruiz",
+    "age": 18,
+    "email": "mateo.ruiz362@ejemplo.com",
+    "classroom": "C1",
+    "unassistences": [
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 363,
+    "firstName": "Carlos",
+    "lastName": "Romero",
+    "age": 13,
+    "email": "carlos.romero363@ejemplo.com",
+    "classroom": "D6",
+    "unassistences": [
+      {
+        "day": "16-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 364,
+    "firstName": "Carlos",
+    "lastName": "Martínez",
+    "age": 13,
+    "email": "carlos.martínez364@ejemplo.com",
+    "classroom": "B3",
+    "unassistences": [
+      {
+        "day": "11-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 365,
+    "firstName": "Camila",
+    "lastName": "Castro",
+    "age": 17,
+    "email": "camila.castro365@ejemplo.com",
+    "classroom": "D2",
+    "unassistences": [
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 366,
+    "firstName": "Valentina",
+    "lastName": "García",
+    "age": 12,
+    "email": "valentina.garcía366@ejemplo.com",
+    "classroom": "E3",
+    "unassistences": [
+      {
+        "day": "08-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 367,
+    "firstName": "Carlos",
+    "lastName": "Torres",
+    "age": 16,
+    "email": "carlos.torres367@ejemplo.com",
+    "classroom": "D1",
+    "unassistences": [
+      {
+        "day": "05-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 368,
+    "firstName": "Valentina",
+    "lastName": "Morales",
+    "age": 16,
+    "email": "valentina.morales368@ejemplo.com",
+    "classroom": "C3",
+    "unassistences": [
+      {
+        "day": "14-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 369,
+    "firstName": "Sofía",
+    "lastName": "Rodríguez",
+    "age": 18,
+    "email": "sofía.rodríguez369@ejemplo.com",
+    "classroom": "E3",
+    "unassistences": [
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 370,
+    "firstName": "María",
+    "lastName": "García",
+    "age": 21,
+    "email": "maría.garcía370@ejemplo.com",
+    "classroom": "D4",
+    "unassistences": [
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 371,
+    "firstName": "Mateo",
+    "lastName": "Torres",
+    "age": 18,
+    "email": "mateo.torres371@ejemplo.com",
+    "classroom": "A3",
+    "unassistences": [
+      {
+        "day": "29-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 372,
+    "firstName": "Ana",
+    "lastName": "Torres",
+    "age": 16,
+    "email": "ana.torres372@ejemplo.com",
+    "classroom": "A3",
+    "unassistences": [
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 373,
+    "firstName": "Valentina",
+    "lastName": "Martínez",
+    "age": 18,
+    "email": "valentina.martínez373@ejemplo.com",
+    "classroom": "E5",
+    "unassistences": [
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 374,
+    "firstName": "Ana",
+    "lastName": "Pérez",
+    "age": 16,
+    "email": "ana.pérez374@ejemplo.com",
+    "classroom": "A3",
+    "unassistences": [
+      {
+        "day": "28-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 375,
+    "firstName": "Ana",
+    "lastName": "Díaz",
+    "age": 18,
+    "email": "ana.díaz375@ejemplo.com",
+    "classroom": "D2",
+    "unassistences": [
+      {
+        "day": "08-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 376,
+    "firstName": "Florencia",
+    "lastName": "Fernández",
+    "age": 17,
+    "email": "florencia.fernández376@ejemplo.com",
+    "classroom": "C2",
+    "unassistences": [
+      {
+        "day": "09-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 377,
+    "firstName": "Pedro",
+    "lastName": "Pérez",
+    "age": 19,
+    "email": "pedro.pérez377@ejemplo.com",
+    "classroom": "C5",
+    "unassistences": [
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 378,
+    "firstName": "Florencia",
+    "lastName": "Sánchez",
+    "age": 19,
+    "email": "florencia.sánchez378@ejemplo.com",
+    "classroom": "F4",
+    "unassistences": [
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 379,
+    "firstName": "Juan",
+    "lastName": "Morales",
+    "age": 18,
+    "email": "juan.morales379@ejemplo.com",
+    "classroom": "D6",
+    "unassistences": [
+      {
+        "day": "06-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 380,
+    "firstName": "Mateo",
+    "lastName": "García",
+    "age": 17,
+    "email": "mateo.garcía380@ejemplo.com",
+    "classroom": "C3",
+    "unassistences": [
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 381,
+    "firstName": "Jorge",
+    "lastName": "Morales",
+    "age": 16,
+    "email": "jorge.morales381@ejemplo.com",
+    "classroom": "B1",
+    "unassistences": [
+      {
+        "day": "21-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 382,
+    "firstName": "Carlos",
+    "lastName": "Vega",
+    "age": 14,
+    "email": "carlos.vega382@ejemplo.com",
+    "classroom": "F2",
+    "unassistences": [
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 383,
+    "firstName": "María",
+    "lastName": "Vega",
+    "age": 19,
+    "email": "maría.vega383@ejemplo.com",
+    "classroom": "F2",
+    "unassistences": [
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 384,
+    "firstName": "Valentina",
+    "lastName": "Torres",
+    "age": 20,
+    "email": "valentina.torres384@ejemplo.com",
+    "classroom": "A7",
+    "unassistences": [
+      {
+        "day": "03-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 385,
+    "firstName": "Jorge",
+    "lastName": "Sánchez",
+    "age": 13,
+    "email": "jorge.sánchez385@ejemplo.com",
+    "classroom": "A4",
+    "unassistences": [
+      {
+        "day": "23-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 386,
+    "firstName": "Valentina",
+    "lastName": "Pérez",
+    "age": 12,
+    "email": "valentina.pérez386@ejemplo.com",
+    "classroom": "E7",
+    "unassistences": [
+      {
+        "day": "13-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 387,
+    "firstName": "Juan",
+    "lastName": "López",
+    "age": 20,
+    "email": "juan.lópez387@ejemplo.com",
+    "classroom": "D5",
+    "unassistences": [
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 388,
+    "firstName": "Sofía",
+    "lastName": "Molina",
+    "age": 20,
+    "email": "sofía.molina388@ejemplo.com",
+    "classroom": "F4",
+    "unassistences": [
+      {
+        "day": "06-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 389,
+    "firstName": "Agustina",
+    "lastName": "Molina",
+    "age": 20,
+    "email": "agustina.molina389@ejemplo.com",
+    "classroom": "F4",
+    "unassistences": [
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 390,
+    "firstName": "Tomás",
+    "lastName": "Pérez",
+    "age": 17,
+    "email": "tomás.pérez390@ejemplo.com",
+    "classroom": "E6",
+    "unassistences": [
+      {
+        "day": "21-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 391,
+    "firstName": "Sofía",
+    "lastName": "Romero",
+    "age": 16,
+    "email": "sofía.romero391@ejemplo.com",
+    "classroom": "B4",
+    "unassistences": [
+      {
+        "day": "06-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 392,
+    "firstName": "Carlos",
+    "lastName": "Pérez",
+    "age": 21,
+    "email": "carlos.pérez392@ejemplo.com",
+    "classroom": "F3",
+    "unassistences": [
+      {
+        "day": "23-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 393,
+    "firstName": "Camila",
+    "lastName": "Ruiz",
+    "age": 17,
+    "email": "camila.ruiz393@ejemplo.com",
+    "classroom": "F4",
+    "unassistences": [
+      {
+        "day": "03-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 394,
+    "firstName": "Tomás",
+    "lastName": "Sánchez",
+    "age": 20,
+    "email": "tomás.sánchez394@ejemplo.com",
+    "classroom": "A2",
+    "unassistences": []
+  },
+  {
+    "id": 395,
+    "firstName": "Pedro",
+    "lastName": "López",
+    "age": 15,
+    "email": "pedro.lópez395@ejemplo.com",
+    "classroom": "C2",
+    "unassistences": [
+      {
+        "day": "28-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 396,
+    "firstName": "Carlos",
+    "lastName": "Romero",
+    "age": 13,
+    "email": "carlos.romero396@ejemplo.com",
+    "classroom": "C4",
+    "unassistences": [
+      {
+        "day": "01-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 397,
+    "firstName": "Camila",
+    "lastName": "Rodríguez",
+    "age": 20,
+    "email": "camila.rodríguez397@ejemplo.com",
+    "classroom": "E7",
+    "unassistences": [
+      {
+        "day": "25-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 398,
+    "firstName": "Ana",
+    "lastName": "Díaz",
+    "age": 14,
+    "email": "ana.díaz398@ejemplo.com",
+    "classroom": "C7",
+    "unassistences": [
+      {
+        "day": "02-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 399,
+    "firstName": "Agustina",
+    "lastName": "Ruiz",
+    "age": 18,
+    "email": "agustina.ruiz399@ejemplo.com",
+    "classroom": "A4",
+    "unassistences": [
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 400,
+    "firstName": "Mateo",
+    "lastName": "Morales",
+    "age": 18,
+    "email": "mateo.morales400@ejemplo.com",
+    "classroom": "C5",
+    "unassistences": [
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 401,
+    "firstName": "Mateo",
+    "lastName": "López",
+    "age": 12,
+    "email": "mateo.lópez401@ejemplo.com",
+    "classroom": "E3",
+    "unassistences": [
+      {
+        "day": "20-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 402,
+    "firstName": "Jorge",
+    "lastName": "Torres",
+    "age": 12,
+    "email": "jorge.torres402@ejemplo.com",
+    "classroom": "C2",
+    "unassistences": [
+      {
+        "day": "16-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 403,
+    "firstName": "Valentina",
+    "lastName": "Fernández",
+    "age": 16,
+    "email": "valentina.fernández403@ejemplo.com",
+    "classroom": "D2",
+    "unassistences": [
+      {
+        "day": "17-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 404,
+    "firstName": "Pedro",
+    "lastName": "Torres",
+    "age": 20,
+    "email": "pedro.torres404@ejemplo.com",
+    "classroom": "F6",
+    "unassistences": [
+      {
+        "day": "12-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 405,
+    "firstName": "Agustina",
+    "lastName": "Martínez",
+    "age": 13,
+    "email": "agustina.martínez405@ejemplo.com",
+    "classroom": "D3",
+    "unassistences": [
+      {
+        "day": "16-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 406,
+    "firstName": "Florencia",
+    "lastName": "Vega",
+    "age": 12,
+    "email": "florencia.vega406@ejemplo.com",
+    "classroom": "E6",
+    "unassistences": [
+      {
+        "day": "25-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 407,
+    "firstName": "Lucía",
+    "lastName": "Vega",
+    "age": 17,
+    "email": "lucía.vega407@ejemplo.com",
+    "classroom": "E1",
+    "unassistences": [
+      {
+        "day": "16-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 408,
+    "firstName": "Valentina",
+    "lastName": "Pérez",
+    "age": 20,
+    "email": "valentina.pérez408@ejemplo.com",
+    "classroom": "C1",
+    "unassistences": [
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 409,
+    "firstName": "Jorge",
+    "lastName": "Ruiz",
+    "age": 19,
+    "email": "jorge.ruiz409@ejemplo.com",
+    "classroom": "F2",
+    "unassistences": [
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 410,
+    "firstName": "Camila",
+    "lastName": "Morales",
+    "age": 16,
+    "email": "camila.morales410@ejemplo.com",
+    "classroom": "F6",
+    "unassistences": [
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 411,
+    "firstName": "Juan",
+    "lastName": "Sánchez",
+    "age": 20,
+    "email": "juan.sánchez411@ejemplo.com",
+    "classroom": "D3",
+    "unassistences": []
+  },
+  {
+    "id": 412,
+    "firstName": "Ana",
+    "lastName": "Ruiz",
+    "age": 12,
+    "email": "ana.ruiz412@ejemplo.com",
+    "classroom": "A4",
+    "unassistences": [
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 413,
+    "firstName": "Ana",
+    "lastName": "Molina",
+    "age": 19,
+    "email": "ana.molina413@ejemplo.com",
+    "classroom": "B3",
+    "unassistences": [
+      {
+        "day": "22-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 414,
+    "firstName": "Camila",
+    "lastName": "Martínez",
+    "age": 15,
+    "email": "camila.martínez414@ejemplo.com",
+    "classroom": "C7",
+    "unassistences": [
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 415,
+    "firstName": "Mateo",
+    "lastName": "Sánchez",
+    "age": 17,
+    "email": "mateo.sánchez415@ejemplo.com",
+    "classroom": "D1",
+    "unassistences": [
+      {
+        "day": "25-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 416,
+    "firstName": "Camila",
+    "lastName": "Ruiz",
+    "age": 18,
+    "email": "camila.ruiz416@ejemplo.com",
+    "classroom": "A7",
+    "unassistences": [
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 417,
+    "firstName": "Jorge",
+    "lastName": "Pérez",
+    "age": 15,
+    "email": "jorge.pérez417@ejemplo.com",
+    "classroom": "B1",
+    "unassistences": [
+      {
+        "day": "02-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 418,
+    "firstName": "Lucía",
+    "lastName": "Díaz",
+    "age": 20,
+    "email": "lucía.díaz418@ejemplo.com",
+    "classroom": "D4",
+    "unassistences": [
+      {
+        "day": "06-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 419,
+    "firstName": "Juan",
+    "lastName": "Rodríguez",
+    "age": 15,
+    "email": "juan.rodríguez419@ejemplo.com",
+    "classroom": "E5",
+    "unassistences": []
+  },
+  {
+    "id": 420,
+    "firstName": "Agustina",
+    "lastName": "Morales",
+    "age": 16,
+    "email": "agustina.morales420@ejemplo.com",
+    "classroom": "E1",
+    "unassistences": [
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 421,
+    "firstName": "Camila",
+    "lastName": "Martínez",
+    "age": 16,
+    "email": "camila.martínez421@ejemplo.com",
+    "classroom": "C7",
+    "unassistences": [
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 422,
+    "firstName": "María",
+    "lastName": "Morales",
+    "age": 14,
+    "email": "maría.morales422@ejemplo.com",
+    "classroom": "D3",
+    "unassistences": [
+      {
+        "day": "13-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 423,
+    "firstName": "Lucía",
+    "lastName": "López",
+    "age": 18,
+    "email": "lucía.lópez423@ejemplo.com",
+    "classroom": "F6",
+    "unassistences": [
+      {
+        "day": "21-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 424,
+    "firstName": "Camila",
+    "lastName": "López",
+    "age": 20,
+    "email": "camila.lópez424@ejemplo.com",
+    "classroom": "F6",
+    "unassistences": [
+      {
+        "day": "29-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 425,
+    "firstName": "Mateo",
+    "lastName": "Ruiz",
+    "age": 15,
+    "email": "mateo.ruiz425@ejemplo.com",
+    "classroom": "F2",
+    "unassistences": [
+      {
+        "day": "16-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 426,
+    "firstName": "Agustina",
+    "lastName": "Martínez",
+    "age": 13,
+    "email": "agustina.martínez426@ejemplo.com",
+    "classroom": "A7",
+    "unassistences": [
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 427,
+    "firstName": "Pedro",
+    "lastName": "Sánchez",
+    "age": 21,
+    "email": "pedro.sánchez427@ejemplo.com",
+    "classroom": "A5",
+    "unassistences": [
+      {
+        "day": "27-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 428,
+    "firstName": "Sofía",
+    "lastName": "Fernández",
+    "age": 17,
+    "email": "sofía.fernández428@ejemplo.com",
+    "classroom": "B3",
+    "unassistences": [
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 429,
+    "firstName": "Valentina",
+    "lastName": "Romero",
+    "age": 14,
+    "email": "valentina.romero429@ejemplo.com",
+    "classroom": "B6",
+    "unassistences": [
+      {
+        "day": "08-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 430,
+    "firstName": "Ana",
+    "lastName": "López",
+    "age": 17,
+    "email": "ana.lópez430@ejemplo.com",
+    "classroom": "D2",
+    "unassistences": [
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 431,
+    "firstName": "Agustina",
+    "lastName": "Morales",
+    "age": 20,
+    "email": "agustina.morales431@ejemplo.com",
+    "classroom": "D2",
+    "unassistences": []
+  },
+  {
+    "id": 432,
+    "firstName": "Ana",
+    "lastName": "Sánchez",
+    "age": 19,
+    "email": "ana.sánchez432@ejemplo.com",
+    "classroom": "E6",
+    "unassistences": [
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 433,
+    "firstName": "Ana",
+    "lastName": "Vega",
+    "age": 13,
+    "email": "ana.vega433@ejemplo.com",
+    "classroom": "C3",
+    "unassistences": [
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 434,
+    "firstName": "Lucía",
+    "lastName": "García",
+    "age": 20,
+    "email": "lucía.garcía434@ejemplo.com",
+    "classroom": "C3",
+    "unassistences": [
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 435,
+    "firstName": "Camila",
+    "lastName": "Díaz",
+    "age": 21,
+    "email": "camila.díaz435@ejemplo.com",
+    "classroom": "F6",
+    "unassistences": [
+      {
+        "day": "12-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 436,
+    "firstName": "Valentina",
+    "lastName": "Sánchez",
+    "age": 19,
+    "email": "valentina.sánchez436@ejemplo.com",
+    "classroom": "D1",
+    "unassistences": [
+      {
+        "day": "11-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 437,
+    "firstName": "Florencia",
+    "lastName": "Molina",
+    "age": 18,
+    "email": "florencia.molina437@ejemplo.com",
+    "classroom": "B6",
+    "unassistences": [
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 438,
+    "firstName": "María",
+    "lastName": "Fernández",
+    "age": 14,
+    "email": "maría.fernández438@ejemplo.com",
+    "classroom": "B7",
+    "unassistences": [
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 439,
+    "firstName": "Lucía",
+    "lastName": "Romero",
+    "age": 15,
+    "email": "lucía.romero439@ejemplo.com",
+    "classroom": "C3",
+    "unassistences": [
+      {
+        "day": "20-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 440,
+    "firstName": "Martín",
+    "lastName": "Martínez",
+    "age": 15,
+    "email": "martín.martínez440@ejemplo.com",
+    "classroom": "D4",
+    "unassistences": [
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 441,
+    "firstName": "Jorge",
+    "lastName": "Torres",
+    "age": 17,
+    "email": "jorge.torres441@ejemplo.com",
+    "classroom": "F4",
+    "unassistences": [
+      {
+        "day": "12-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 442,
+    "firstName": "Mateo",
+    "lastName": "López",
+    "age": 16,
+    "email": "mateo.lópez442@ejemplo.com",
+    "classroom": "C1",
+    "unassistences": [
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 443,
+    "firstName": "Agustina",
+    "lastName": "Sánchez",
+    "age": 15,
+    "email": "agustina.sánchez443@ejemplo.com",
+    "classroom": "E7",
+    "unassistences": [
+      {
+        "day": "14-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 444,
+    "firstName": "Juan",
+    "lastName": "Díaz",
+    "age": 13,
+    "email": "juan.díaz444@ejemplo.com",
+    "classroom": "D1",
+    "unassistences": [
+      {
+        "day": "11-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 445,
+    "firstName": "Camila",
+    "lastName": "Sánchez",
+    "age": 12,
+    "email": "camila.sánchez445@ejemplo.com",
+    "classroom": "B6",
+    "unassistences": [
+      {
+        "day": "17-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 446,
+    "firstName": "Martín",
+    "lastName": "Sánchez",
+    "age": 13,
+    "email": "martín.sánchez446@ejemplo.com",
+    "classroom": "E7",
+    "unassistences": [
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 447,
+    "firstName": "Agustina",
+    "lastName": "Molina",
+    "age": 16,
+    "email": "agustina.molina447@ejemplo.com",
+    "classroom": "A2",
+    "unassistences": [
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 448,
+    "firstName": "Jorge",
+    "lastName": "Pérez",
+    "age": 18,
+    "email": "jorge.pérez448@ejemplo.com",
+    "classroom": "C3",
+    "unassistences": [
+      {
+        "day": "21-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 449,
+    "firstName": "Mateo",
+    "lastName": "Pérez",
+    "age": 15,
+    "email": "mateo.pérez449@ejemplo.com",
+    "classroom": "E7",
+    "unassistences": [
+      {
+        "day": "20-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 450,
+    "firstName": "Florencia",
+    "lastName": "Pérez",
+    "age": 14,
+    "email": "florencia.pérez450@ejemplo.com",
+    "classroom": "D5",
+    "unassistences": [
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 451,
+    "firstName": "Agustina",
+    "lastName": "Martínez",
+    "age": 12,
+    "email": "agustina.martínez451@ejemplo.com",
+    "classroom": "C4",
+    "unassistences": [
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 452,
+    "firstName": "Florencia",
+    "lastName": "Molina",
+    "age": 19,
+    "email": "florencia.molina452@ejemplo.com",
+    "classroom": "A2",
+    "unassistences": []
+  },
+  {
+    "id": 453,
+    "firstName": "Martín",
+    "lastName": "Fernández",
+    "age": 20,
+    "email": "martín.fernández453@ejemplo.com",
+    "classroom": "C4",
+    "unassistences": [
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 454,
+    "firstName": "Camila",
+    "lastName": "Morales",
+    "age": 16,
+    "email": "camila.morales454@ejemplo.com",
+    "classroom": "A4",
+    "unassistences": [
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 455,
+    "firstName": "Valentina",
+    "lastName": "Romero",
+    "age": 20,
+    "email": "valentina.romero455@ejemplo.com",
+    "classroom": "E6",
+    "unassistences": [
+      {
+        "day": "30-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 456,
+    "firstName": "Juan",
+    "lastName": "Romero",
+    "age": 18,
+    "email": "juan.romero456@ejemplo.com",
+    "classroom": "B6",
+    "unassistences": [
+      {
+        "day": "06-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 457,
+    "firstName": "Carlos",
+    "lastName": "Morales",
+    "age": 17,
+    "email": "carlos.morales457@ejemplo.com",
+    "classroom": "E1",
+    "unassistences": [
+      {
+        "day": "07-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 458,
+    "firstName": "Tomás",
+    "lastName": "Torres",
+    "age": 13,
+    "email": "tomás.torres458@ejemplo.com",
+    "classroom": "B4",
+    "unassistences": [
+      {
+        "day": "24-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 459,
+    "firstName": "Carlos",
+    "lastName": "Fernández",
+    "age": 20,
+    "email": "carlos.fernández459@ejemplo.com",
+    "classroom": "C2",
+    "unassistences": [
+      {
+        "day": "18-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 460,
+    "firstName": "Mateo",
+    "lastName": "López",
+    "age": 15,
+    "email": "mateo.lópez460@ejemplo.com",
+    "classroom": "A3",
+    "unassistences": [
+      {
+        "day": "27-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 461,
+    "firstName": "Valentina",
+    "lastName": "Sánchez",
+    "age": 20,
+    "email": "valentina.sánchez461@ejemplo.com",
+    "classroom": "C5",
+    "unassistences": [
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 462,
+    "firstName": "Juan",
+    "lastName": "López",
+    "age": 20,
+    "email": "juan.lópez462@ejemplo.com",
+    "classroom": "F1",
+    "unassistences": [
+      {
+        "day": "28-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 463,
+    "firstName": "Juan",
+    "lastName": "Sánchez",
+    "age": 15,
+    "email": "juan.sánchez463@ejemplo.com",
+    "classroom": "B4",
+    "unassistences": [
+      {
+        "day": "11-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 464,
+    "firstName": "Jorge",
+    "lastName": "Torres",
+    "age": 19,
+    "email": "jorge.torres464@ejemplo.com",
+    "classroom": "D3",
+    "unassistences": [
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 465,
+    "firstName": "Martín",
+    "lastName": "Torres",
+    "age": 12,
+    "email": "martín.torres465@ejemplo.com",
+    "classroom": "C7",
+    "unassistences": [
+      {
+        "day": "09-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 466,
+    "firstName": "Jorge",
+    "lastName": "Molina",
+    "age": 21,
+    "email": "jorge.molina466@ejemplo.com",
+    "classroom": "F1",
+    "unassistences": [
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 467,
+    "firstName": "Agustina",
+    "lastName": "García",
+    "age": 14,
+    "email": "agustina.garcía467@ejemplo.com",
+    "classroom": "A4",
+    "unassistences": [
+      {
+        "day": "25-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 468,
+    "firstName": "Martín",
+    "lastName": "García",
+    "age": 18,
+    "email": "martín.garcía468@ejemplo.com",
+    "classroom": "A1",
+    "unassistences": [
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 469,
+    "firstName": "María",
+    "lastName": "Martínez",
+    "age": 20,
+    "email": "maría.martínez469@ejemplo.com",
+    "classroom": "F1",
+    "unassistences": [
+      {
+        "day": "26-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 470,
+    "firstName": "Mateo",
+    "lastName": "Vega",
+    "age": 16,
+    "email": "mateo.vega470@ejemplo.com",
+    "classroom": "D5",
+    "unassistences": [
+      {
+        "day": "08-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 471,
+    "firstName": "Tomás",
+    "lastName": "Ruiz",
+    "age": 13,
+    "email": "tomás.ruiz471@ejemplo.com",
+    "classroom": "E1",
+    "unassistences": [
+      {
+        "day": "17-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 472,
+    "firstName": "Ana",
+    "lastName": "Fernández",
+    "age": 12,
+    "email": "ana.fernández472@ejemplo.com",
+    "classroom": "F1",
+    "unassistences": [
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 473,
+    "firstName": "María",
+    "lastName": "García",
+    "age": 16,
+    "email": "maría.garcía473@ejemplo.com",
+    "classroom": "F5",
+    "unassistences": []
+  },
+  {
+    "id": 474,
+    "firstName": "Mateo",
+    "lastName": "Díaz",
+    "age": 16,
+    "email": "mateo.díaz474@ejemplo.com",
+    "classroom": "C2",
+    "unassistences": [
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 475,
+    "firstName": "Pedro",
+    "lastName": "Martínez",
+    "age": 12,
+    "email": "pedro.martínez475@ejemplo.com",
+    "classroom": "D6",
+    "unassistences": [
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 476,
+    "firstName": "Lucía",
+    "lastName": "Ruiz",
+    "age": 15,
+    "email": "lucía.ruiz476@ejemplo.com",
+    "classroom": "F6",
+    "unassistences": [
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 477,
+    "firstName": "Valentina",
+    "lastName": "Sánchez",
+    "age": 17,
+    "email": "valentina.sánchez477@ejemplo.com",
+    "classroom": "D3",
+    "unassistences": [
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 478,
+    "firstName": "Ana",
+    "lastName": "Torres",
+    "age": 16,
+    "email": "ana.torres478@ejemplo.com",
+    "classroom": "D7",
+    "unassistences": [
+      {
+        "day": "02-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 479,
+    "firstName": "Pedro",
+    "lastName": "Vega",
+    "age": 12,
+    "email": "pedro.vega479@ejemplo.com",
+    "classroom": "B2",
+    "unassistences": [
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 480,
+    "firstName": "Florencia",
+    "lastName": "Castro",
+    "age": 12,
+    "email": "florencia.castro480@ejemplo.com",
+    "classroom": "F6",
+    "unassistences": [
+      {
+        "day": "28-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 481,
+    "firstName": "María",
+    "lastName": "Vega",
+    "age": 14,
+    "email": "maría.vega481@ejemplo.com",
+    "classroom": "B4",
+    "unassistences": [
+      {
+        "day": "24-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 482,
+    "firstName": "María",
+    "lastName": "Fernández",
+    "age": 17,
+    "email": "maría.fernández482@ejemplo.com",
+    "classroom": "E4",
+    "unassistences": [
+      {
+        "day": "11-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 483,
+    "firstName": "Valentina",
+    "lastName": "Morales",
+    "age": 17,
+    "email": "valentina.morales483@ejemplo.com",
+    "classroom": "E3",
+    "unassistences": [
+      {
+        "day": "18-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 484,
+    "firstName": "Ana",
+    "lastName": "Rodríguez",
+    "age": 16,
+    "email": "ana.rodríguez484@ejemplo.com",
+    "classroom": "D7",
+    "unassistences": [
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 485,
+    "firstName": "Jorge",
+    "lastName": "Ruiz",
+    "age": 14,
+    "email": "jorge.ruiz485@ejemplo.com",
+    "classroom": "F7",
+    "unassistences": [
+      {
+        "day": "28-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 486,
+    "firstName": "Mateo",
+    "lastName": "Ruiz",
+    "age": 14,
+    "email": "mateo.ruiz486@ejemplo.com",
+    "classroom": "A3",
+    "unassistences": [
+      {
+        "day": "09-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 487,
+    "firstName": "Martín",
+    "lastName": "García",
+    "age": 16,
+    "email": "martín.garcía487@ejemplo.com",
+    "classroom": "F1",
+    "unassistences": [
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": false
+      }
+    ]
+  },
+  {
+    "id": 488,
+    "firstName": "Lucía",
+    "lastName": "López",
+    "age": 21,
+    "email": "lucía.lópez488@ejemplo.com",
+    "classroom": "A2",
+    "unassistences": [
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "01-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "10-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": true
+      }
+    ]
+  },
+  {
+    "id": 489,
+    "firstName": "Tomás",
+    "lastName": "Martínez",
+    "age": 13,
+    "email": "tomás.martínez489@ejemplo.com",
+    "classroom": "D5",
+    "unassistences": [
+      {
+        "day": "09-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": true
+      }
+    ]
   },
   {
-    id: 2,
-    firstName: 'María',
-    lastName: 'González',
-    age: 17,
-    email: 'maria.gonzalez@ejemplo.com',
-    classroom: 'B2',
-    unassistences: [
+    "id": 490,
+    "firstName": "Lucía",
+    "lastName": "Martínez",
+    "age": 13,
+    "email": "lucía.martínez490@ejemplo.com",
+    "classroom": "E1",
+    "unassistences": [
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": false
+      },
       {
-        day: '15-08-25',
-        isJustified: true,
+        "day": "14-09-25",
+        "isJustified": true
       },
-    ],
+      {
+        "day": "05-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "03-09-25",
+        "isJustified": true
+      }
+    ]
   },
   {
-    id: 3,
-    firstName: 'Carlos',
-    lastName: 'Rodríguez',
-    age: 19,
-    email: 'carlos.rodriguez@ejemplo.com',
-    classroom: 'A1',
-    unassistences: [
+    "id": 491,
+    "firstName": "Lucía",
+    "lastName": "Vega",
+    "age": 13,
+    "email": "lucía.vega491@ejemplo.com",
+    "classroom": "F5",
+    "unassistences": [
       {
-        day: '14-08-25',
-        isJustified: false,
+        "day": "24-09-25",
+        "isJustified": true
       },
       {
-        day: '18-08-25',
-        isJustified: false,
+        "day": "03-09-25",
+        "isJustified": true
       },
       {
-        day: '19-08-25',
-        isJustified: true,
+        "day": "27-09-25",
+        "isJustified": true
       },
-    ],
-  },
-  {
-    id: 4,
-    firstName: 'Ana',
-    lastName: 'Martínez',
-    age: 18,
-    email: 'ana.martinez@ejemplo.com',
-    classroom: 'C3',
-    unassistences: [],
+      {
+        "day": "17-09-25",
+        "isJustified": true
+      }
+    ]
   },
   {
-    id: 5,
-    firstName: 'Luis',
-    lastName: 'López',
-    age: 17,
-    email: 'luis.lopez@ejemplo.com',
-    classroom: 'B2',
-    unassistences: [
+    "id": 492,
+    "firstName": "Mateo",
+    "lastName": "Fernández",
+    "age": 12,
+    "email": "mateo.fernández492@ejemplo.com",
+    "classroom": "D7",
+    "unassistences": [
       {
-        day: '15-08-25',
-        isJustified: true,
+        "day": "15-09-25",
+        "isJustified": false
       },
       {
-        day: '14-08-25',
-        isJustified: true,
+        "day": "21-09-25",
+        "isJustified": true
       },
-    ],
+      {
+        "day": "03-09-25",
+        "isJustified": true
+      }
+    ]
   },
   {
-    id: 6,
-    firstName: 'Laura',
-    lastName: 'Hernández',
-    age: 18,
-    email: 'laura.hernandez@ejemplo.com',
-    classroom: 'A1',
-    unassistences: [
+    "id": 493,
+    "firstName": "Martín",
+    "lastName": "Rodríguez",
+    "age": 13,
+    "email": "martín.rodríguez493@ejemplo.com",
+    "classroom": "D3",
+    "unassistences": [
       {
-        day: '18-08-25',
-        isJustified: false,
+        "day": "28-09-25",
+        "isJustified": false
       },
-    ],
-  },
-  {
-    id: 7,
-    firstName: 'Diego',
-    lastName: 'García',
-    age: 19,
-    email: 'diego.garcia@ejemplo.com',
-    classroom: 'D4',
-    unassistences: [],
-  },
-  {
-    id: 8,
-    firstName: 'Sofía',
-    lastName: 'Fernández',
-    age: 17,
-    email: 'sofia.fernandez@ejemplo.com',
-    classroom: 'C3',
-    unassistences: [
       {
-        day: '19-08-25',
-        isJustified: true,
+        "day": "29-09-25",
+        "isJustified": false
       },
-    ],
-  },
-  {
-    id: 9,
-    firstName: 'Javier',
-    lastName: 'Díaz',
-    age: 18,
-    email: 'javier.diaz@ejemplo.com',
-    classroom: 'B2',
-    unassistences: [
       {
-        day: '15-08-25',
-        isJustified: false,
+        "day": "20-09-25",
+        "isJustified": false
       },
       {
-        day: '14-08-25',
-        isJustified: false,
+        "day": "08-09-25",
+        "isJustified": false
       },
       {
-        day: '18-08-25',
-        isJustified: false,
+        "day": "11-09-25",
+        "isJustified": true
       },
-    ],
-  },
-  {
-    id: 10,
-    firstName: 'Elena',
-    lastName: 'Moreno',
-    age: 17,
-    email: 'elena.moreno@ejemplo.com',
-    classroom: 'A1',
-    unassistences: [
       {
-        day: '20-08-25',
-        isJustified: true,
+        "day": "21-09-25",
+        "isJustified": true
       },
-    ],
-  },
-  {
-    id: 11,
-    firstName: 'Pablo',
-    lastName: 'Álvarez',
-    age: 18,
-    email: 'pablo.alvarez@ejemplo.com',
-    classroom: 'D4',
-    unassistences: [],
-  },
-  {
-    id: 12,
-    firstName: 'Carmen',
-    lastName: 'Romero',
-    age: 19,
-    email: 'carmen.romero@ejemplo.com',
-    classroom: 'C3',
-    unassistences: [
       {
-        day: '14-08-25',
-        isJustified: true,
+        "day": "06-09-25",
+        "isJustified": true
       },
-    ],
-  },
-  {
-    id: 13,
-    firstName: 'Daniel',
-    lastName: 'Navarro',
-    age: 17,
-    email: 'daniel.navarro@ejemplo.com',
-    classroom: 'B2',
-    unassistences: [],
+      {
+        "day": "18-09-25",
+        "isJustified": false
+      }
+    ]
   },
   {
-    id: 14,
-    firstName: 'Isabel',
-    lastName: 'Torres',
-    age: 18,
-    email: 'isabel.torres@ejemplo.com',
-    classroom: 'A1',
-    unassistences: [
+    "id": 494,
+    "firstName": "Valentina",
+    "lastName": "García",
+    "age": 13,
+    "email": "valentina.garcía494@ejemplo.com",
+    "classroom": "D3",
+    "unassistences": [
       {
-        day: '18-08-25',
-        isJustified: false,
+        "day": "15-09-25",
+        "isJustified": false
       },
       {
-        day: '19-08-25',
-        isJustified: true,
+        "day": "01-09-25",
+        "isJustified": true
       },
-    ],
-  },
-  {
-    id: 15,
-    firstName: 'Álvaro',
-    lastName: 'Jiménez',
-    age: 17,
-    email: 'alvaro.jimenez@ejemplo.com',
-    classroom: 'D4',
-    unassistences: [
       {
-        day: '15-08-25',
-        isJustified: true,
+        "day": "27-09-25",
+        "isJustified": true
       },
-    ],
-  },
-  {
-    id: 16,
-    firstName: 'Raquel',
-    lastName: 'Molina',
-    age: 18,
-    email: 'raquel.molina@ejemplo.com',
-    classroom: 'C3',
-    unassistences: [],
-  },
-  {
-    id: 17,
-    firstName: 'Adrián',
-    lastName: 'Ortega',
-    age: 19,
-    email: 'adrian.ortega@ejemplo.com',
-    classroom: 'B2',
-    unassistences: [
       {
-        day: '14-08-25',
-        isJustified: false,
+        "day": "16-09-25",
+        "isJustified": true
       },
-    ],
-  },
-  {
-    id: 18,
-    firstName: 'Patricia',
-    lastName: 'Rubio',
-    age: 17,
-    email: 'patricia.rubio@ejemplo.com',
-    classroom: 'A1',
-    unassistences: [
       {
-        day: '20-08-25',
-        isJustified: true,
+        "day": "23-09-25",
+        "isJustified": false
       },
-    ],
-  },
-  {
-    id: 19,
-    firstName: 'Sergio',
-    lastName: 'Delgado',
-    age: 18,
-    email: 'sergio.delgado@ejemplo.com',
-    classroom: 'D4',
-    unassistences: [],
-  },
-  {
-    id: 20,
-    firstName: 'Teresa',
-    lastName: 'Castro',
-    age: 17,
-    email: 'teresa.castro@ejemplo.com',
-    classroom: 'C3',
-    unassistences: [
       {
-        day: '15-08-25',
-        isJustified: false,
+        "day": "14-09-25",
+        "isJustified": false
       },
       {
-        day: '14-08-25',
-        isJustified: true,
+        "day": "08-09-25",
+        "isJustified": false
       },
-    ],
-  },
-  {
-    id: 21,
-    firstName: 'Miguel',
-    lastName: 'Vargas',
-    age: 18,
-    email: 'miguel.vargas@ejemplo.com',
-    classroom: 'B2',
-    unassistences: [],
-  },
-  {
-    id: 22,
-    firstName: 'Natalia',
-    lastName: 'Reyes',
-    age: 19,
-    email: 'natalia.reyes@ejemplo.com',
-    classroom: 'A1',
-    unassistences: [
       {
-        day: '18-08-25',
-        isJustified: true,
+        "day": "29-09-25",
+        "isJustified": true
       },
-    ],
-  },
-  {
-    id: 23,
-    firstName: 'Héctor',
-    lastName: 'Iglesias',
-    age: 17,
-    email: 'hector.iglesias@ejemplo.com',
-    classroom: 'D4',
-    unassistences: [],
-  },
-  {
-    id: 24,
-    firstName: 'Olga',
-    lastName: 'Santos',
-    age: 18,
-    email: 'olga.santos@ejemplo.com',
-    classroom: 'C3',
-    unassistences: [
       {
-        day: '19-08-25',
-        isJustified: false,
+        "day": "02-09-25",
+        "isJustified": true
       },
-    ],
-  },
-  {
-    id: 25,
-    firstName: 'Francisco',
-    lastName: 'Luna',
-    age: 17,
-    email: 'francisco.luna@ejemplo.com',
-    classroom: 'B2',
-    unassistences: [
       {
-        day: '15-08-25',
-        isJustified: true,
+        "day": "10-09-25",
+        "isJustified": true
       },
-    ],
-  },
-  {
-    id: 26,
-    firstName: 'Verónica',
-    lastName: 'Méndez',
-    age: 18,
-    email: 'veronica.mendez@ejemplo.com',
-    classroom: 'A1',
-    unassistences: [],
-  },
-  {
-    id: 27,
-    firstName: 'Rubén',
-    lastName: 'Cabrera',
-    age: 19,
-    email: 'ruben.cabrera@ejemplo.com',
-    classroom: 'D4',
-    unassistences: [
       {
-        day: '14-08-25',
-        isJustified: false,
+        "day": "30-09-25",
+        "isJustified": true
       },
-    ],
-  },
-  {
-    id: 28,
-    firstName: 'Eva',
-    lastName: 'Flores',
-    age: 17,
-    email: 'eva.flores@ejemplo.com',
-    classroom: 'C3',
-    unassistences: [
       {
-        day: '18-08-25',
-        isJustified: true,
+        "day": "06-09-25",
+        "isJustified": false
       },
-    ],
-  },
-  {
-    id: 29,
-    firstName: 'Andrés',
-    lastName: 'Campos',
-    age: 18,
-    email: 'andres.campos@ejemplo.com',
-    classroom: 'B2',
-    unassistences: [],
-  },
-  {
-    id: 30,
-    firstName: 'Claudia',
-    lastName: 'Vega',
-    age: 17,
-    email: 'claudia.vega@ejemplo.com',
-    classroom: 'A1',
-    unassistences: [
       {
-        day: '20-08-25',
-        isJustified: true,
+        "day": "13-09-25",
+        "isJustified": false
       },
-    ],
-  },
-  {
-    id: 31,
-    firstName: 'Jorge',
-    lastName: 'Fuentes',
-    age: 18,
-    email: 'jorge.fuentes@ejemplo.com',
-    classroom: 'D4',
-    unassistences: [],
-  },
-  {
-    id: 32,
-    firstName: 'Alicia',
-    lastName: 'Carrasco',
-    age: 19,
-    email: 'alicia.carrasco@ejemplo.com',
-    classroom: 'C3',
-    unassistences: [
       {
-        day: '15-08-25',
-        isJustified: false,
+        "day": "28-09-25",
+        "isJustified": true
       },
-    ],
-  },
-  {
-    id: 33,
-    firstName: 'Ricardo',
-    lastName: 'Ramos',
-    age: 17,
-    email: 'ricardo.ramos@ejemplo.com',
-    classroom: 'B2',
-    unassistences: [],
+      {
+        "day": "19-09-25",
+        "isJustified": false
+      }
+    ]
   },
   {
-    id: 34,
-    firstName: 'Silvia',
-    lastName: 'Gil',
-    age: 18,
-    email: 'silvia.gil@ejemplo.com',
-    classroom: 'A1',
-    unassistences: [
+    "id": 495,
+    "firstName": "Juan",
+    "lastName": "Romero",
+    "age": 17,
+    "email": "juan.romero495@ejemplo.com",
+    "classroom": "D6",
+    "unassistences": [
       {
-        day: '14-08-25',
-        isJustified: true,
+        "day": "28-09-25",
+        "isJustified": true
       },
-    ],
-  },
-  {
-    id: 35,
-    firstName: 'Víctor',
-    lastName: 'Serrano',
-    age: 17,
-    email: 'victor.serrano@ejemplo.com',
-    classroom: 'D4',
-    unassistences: [
       {
-        day: '18-08-25',
-        isJustified: false,
+        "day": "15-09-25",
+        "isJustified": true
       },
-    ],
-  },
-  {
-    id: 36,
-    firstName: 'Beatriz',
-    lastName: 'Morales',
-    age: 18,
-    email: 'beatriz.morales@ejemplo.com',
-    classroom: 'C3',
-    unassistences: [],
-  },
-  {
-    id: 37,
-    firstName: 'Óscar',
-    lastName: 'Herrera',
-    age: 19,
-    email: 'oscar.herrera@ejemplo.com',
-    classroom: 'B2',
-    unassistences: [
       {
-        day: '19-08-25',
-        isJustified: true,
+        "day": "26-09-25",
+        "isJustified": false
       },
-    ],
-  },
-  {
-    id: 38,
-    firstName: 'Marina',
-    lastName: 'Rojas',
-    age: 17,
-    email: 'marina.rojas@ejemplo.com',
-    classroom: 'A1',
-    unassistences: [],
-  },
-  {
-    id: 39,
-    firstName: 'Guillermo',
-    lastName: 'Peña',
-    age: 18,
-    email: 'guillermo.pena@ejemplo.com',
-    classroom: 'D4',
-    unassistences: [
       {
-        day: '15-08-25',
-        isJustified: false,
+        "day": "20-09-25",
+        "isJustified": true
       },
-    ],
-  },
-  {
-    id: 40,
-    firstName: 'Lorena',
-    lastName: 'León',
-    age: 17,
-    email: 'lorena.leon@ejemplo.com',
-    classroom: 'C3',
-    unassistences: [
       {
-        day: '14-08-25',
-        isJustified: true,
+        "day": "04-09-25",
+        "isJustified": true
       },
-    ],
-  },
-  {
-    id: 41,
-    firstName: 'Fernando',
-    lastName: 'Marín',
-    age: 18,
-    email: 'fernando.marin@ejemplo.com',
-    classroom: 'B2',
-    unassistences: [],
-  },
-  {
-    id: 42,
-    firstName: 'Rocío',
-    lastName: 'Cruz',
-    age: 19,
-    email: 'rocio.cruz@ejemplo.com',
-    classroom: 'A1',
-    unassistences: [
       {
-        day: '18-08-25',
-        isJustified: false,
+        "day": "10-09-25",
+        "isJustified": false
       },
-    ],
-  },
-  {
-    id: 43,
-    firstName: 'Iván',
-    lastName: 'Pardo',
-    age: 17,
-    email: 'ivan.pardo@ejemplo.com',
-    classroom: 'D4',
-    unassistences: [],
-  },
-  {
-    id: 44,
-    firstName: 'Cristina',
-    lastName: 'Calvo',
-    age: 18,
-    email: 'cristina.calvo@ejemplo.com',
-    classroom: 'C3',
-    unassistences: [
       {
-        day: '20-08-25',
-        isJustified: true,
+        "day": "18-09-25",
+        "isJustified": true
       },
-    ],
-  },
-  {
-    id: 45,
-    firstName: 'Gabriel',
-    lastName: 'Gallego',
-    age: 17,
-    email: 'gabriel.gallego@ejemplo.com',
-    classroom: 'B2',
-    unassistences: [
       {
-        day: '15-08-25',
-        isJustified: true,
+        "day": "24-09-25",
+        "isJustified": true
       },
-    ],
-  },
-  {
-    id: 46,
-    firstName: 'Miriam',
-    lastName: 'Vidal',
-    age: 18,
-    email: 'miriam.vidal@ejemplo.com',
-    classroom: 'A1',
-    unassistences: [],
-  },
-  {
-    id: 47,
-    firstName: 'Alex',
-    lastName: 'Sanz',
-    age: 19,
-    email: 'alex.sanz@ejemplo.com',
-    classroom: 'D4',
-    unassistences: [
       {
-        day: '14-08-25',
-        isJustified: false,
+        "day": "03-09-25",
+        "isJustified": false
       },
-    ],
-  },
-  {
-    id: 48,
-    firstName: 'Nerea',
-    lastName: 'Pascual',
-    age: 17,
-    email: 'nerea.pascual@ejemplo.com',
-    classroom: 'C3',
-    unassistences: [
       {
-        day: '18-08-25',
-        isJustified: true,
+        "day": "08-09-25",
+        "isJustified": false
       },
-    ],
-  },
-  {
-    id: 49,
-    firstName: 'Marcos',
-    lastName: 'Blanco',
-    age: 18,
-    email: 'marcos.blanco@ejemplo.com',
-    classroom: 'B2',
-    unassistences: [],
-  },
-  {
-    id: 50,
-    firstName: 'Esther',
-    lastName: 'Márquez',
-    age: 17,
-    email: 'esther.marquez@ejemplo.com',
-    classroom: 'A1',
-    unassistences: [
       {
-        day: '19-08-25',
-        isJustified: false,
+        "day": "12-09-25",
+        "isJustified": false
       },
-    ],
-  },
-  {
-    id: 51,
-    firstName: 'Hugo',
-    lastName: 'Soler',
-    age: 18,
-    email: 'hugo.soler@ejemplo.com',
-    classroom: 'D4',
-    unassistences: [],
-  },
-  {
-    id: 52,
-    firstName: 'Lidia',
-    lastName: 'Bravo',
-    age: 19,
-    email: 'lidia.bravo@ejemplo.com',
-    classroom: 'C3',
-    unassistences: [
       {
-        day: '15-08-25',
-        isJustified: true,
+        "day": "02-09-25",
+        "isJustified": true
       },
-    ],
-  },
-  {
-    id: 53,
-    firstName: 'Jaime',
-    lastName: 'Rivas',
-    age: 17,
-    email: 'jaime.rivas@ejemplo.com',
-    classroom: 'B2',
-    unassistences: [],
-  },
-  {
-    id: 54,
-    firstName: 'Noelia',
-    lastName: 'Benítez',
-    age: 18,
-    email: 'noelia.benitez@ejemplo.com',
-    classroom: 'A1',
-    unassistences: [
       {
-        day: '14-08-25',
-        isJustified: false,
+        "day": "14-09-25",
+        "isJustified": false
       },
-    ],
-  },
-  {
-    id: 55,
-    firstName: 'Gonzalo',
-    lastName: 'Aguilar',
-    age: 17,
-    email: 'gonzalo.aguilar@ejemplo.com',
-    classroom: 'D4',
-    unassistences: [
       {
-        day: '18-08-25',
-        isJustified: true,
+        "day": "23-09-25",
+        "isJustified": false
       },
-    ],
-  },
-  {
-    id: 56,
-    firstName: 'Carolina',
-    lastName: 'Ortiz',
-    age: 18,
-    email: 'carolina.ortiz@ejemplo.com',
-    classroom: 'C3',
-    unassistences: [],
-  },
-  {
-    id: 57,
-    firstName: 'Roberto',
-    lastName: 'Carmona',
-    age: 19,
-    email: 'roberto.carmona@ejemplo.com',
-    classroom: 'B2',
-    unassistences: [
       {
-        day: '20-08-25',
-        isJustified: true,
+        "day": "29-09-25",
+        "isJustified": true
       },
-    ],
-  },
-  {
-    id: 58,
-    firstName: 'Aurora',
-    lastName: 'Vázquez',
-    age: 17,
-    email: 'aurora.vazquez@ejemplo.com',
-    classroom: 'A1',
-    unassistences: [],
-  },
-  {
-    id: 59,
-    firstName: 'Martín',
-    lastName: 'Pastor',
-    age: 18,
-    email: 'martin.pastor@ejemplo.com',
-    classroom: 'D4',
-    unassistences: [
       {
-        day: '15-08-25',
-        isJustified: false,
+        "day": "01-09-25",
+        "isJustified": true
       },
-    ],
-  },
-  {
-    id: 60,
-    firstName: 'Inés',
-    lastName: 'Montero',
-    age: 17,
-    email: 'ines.montero@ejemplo.com',
-    classroom: 'C3',
-    unassistences: [
       {
-        day: '14-08-25',
-        isJustified: true,
+        "day": "21-09-25",
+        "isJustified": false
       },
-    ],
-  },
-  {
-    id: 61,
-    firstName: 'Simón',
-    lastName: 'Lara',
-    age: 18,
-    email: 'simon.lara@ejemplo.com',
-    classroom: 'B2',
-    unassistences: [],
-  },
-  {
-    id: 62,
-    firstName: 'Ester',
-    lastName: 'Garrido',
-    age: 19,
-    email: 'ester.garrido@ejemplo.com',
-    classroom: 'A1',
-    unassistences: [
       {
-        day: '18-08-25',
-        isJustified: false,
+        "day": "06-09-25",
+        "isJustified": false
       },
-    ],
-  },
-  {
-    id: 63,
-    firstName: 'Nicolás',
-    lastName: 'Rivera',
-    age: 17,
-    email: 'nicolas.rivera@ejemplo.com',
-    classroom: 'D4',
-    unassistences: [],
-  },
-  {
-    id: 64,
-    firstName: 'Paula',
-    lastName: 'Castillo',
-    age: 18,
-    email: 'paula.castillo@ejemplo.com',
-    classroom: 'C3',
-    unassistences: [
       {
-        day: '19-08-25',
-        isJustified: true,
+        "day": "16-09-25",
+        "isJustified": true
       },
-    ],
-  },
-  {
-    id: 65,
-    firstName: 'Raúl',
-    lastName: 'Sáez',
-    age: 17,
-    email: 'raul.saez@ejemplo.com',
-    classroom: 'B2',
-    unassistences: [
       {
-        day: '15-08-25',
-        isJustified: true,
+        "day": "13-09-25",
+        "isJustified": false
       },
-    ],
-  },
-  {
-    id: 66,
-    firstName: 'Manuela',
-    lastName: 'Moya',
-    age: 18,
-    email: 'manuela.moya@ejemplo.com',
-    classroom: 'A1',
-    unassistences: [],
-  },
-  {
-    id: 67,
-    firstName: 'Emilio',
-    lastName: 'Esteban',
-    age: 19,
-    email: 'emilio.esteban@ejemplo.com',
-    classroom: 'D4',
-    unassistences: [
       {
-        day: '14-08-25',
-        isJustified: false,
+        "day": "22-09-25",
+        "isJustified": false
       },
-    ],
-  },
-  {
-    id: 68,
-    firstName: 'Rosa',
-    lastName: 'Redondo',
-    age: 17,
-    email: 'rosa.redondo@ejemplo.com',
-    classroom: 'C3',
-    unassistences: [
       {
-        day: '18-08-25',
-        isJustified: true,
+        "day": "30-09-25",
+        "isJustified": false
       },
-    ],
-  },
-  {
-    id: 69,
-    firstName: 'Vicente',
-    lastName: 'Prieto',
-    age: 18,
-    email: 'vicente.prieto@ejemplo.com',
-    classroom: 'B2',
-    unassistences: [],
-  },
-  {
-    id: 70,
-    firstName: 'Concepción',
-    lastName: 'Rueda',
-    age: 17,
-    email: 'concepcion.rueda@ejemplo.com',
-    classroom: 'A1',
-    unassistences: [
       {
-        day: '20-08-25',
-        isJustified: false,
+        "day": "17-09-25",
+        "isJustified": false
       },
-    ],
-  },
-  {
-    id: 71,
-    firstName: 'Félix',
-    lastName: 'Vicente',
-    age: 18,
-    email: 'felix.vicente@ejemplo.com',
-    classroom: 'D4',
-    unassistences: [],
-  },
-  {
-    id: 72,
-    firstName: 'Tania',
-    lastName: 'Parra',
-    age: 19,
-    email: 'tania.parra@ejemplo.com',
-    classroom: 'C3',
-    unassistences: [
       {
-        day: '15-08-25',
-        isJustified: true,
+        "day": "05-09-25",
+        "isJustified": true
       },
-    ],
-  },
-  {
-    id: 73,
-    firstName: 'Samuel',
-    lastName: 'Arias',
-    age: 17,
-    email: 'samuel.arias@ejemplo.com',
-    classroom: 'B2',
-    unassistences: [],
-  },
-  {
-    id: 74,
-    firstName: 'Yolanda',
-    lastName: 'Herrero',
-    age: 18,
-    email: 'yolanda.herrero@ejemplo.com',
-    classroom: 'A1',
-    unassistences: [
       {
-        day: '14-08-25',
-        isJustified: false,
+        "day": "19-09-25",
+        "isJustified": true
       },
-    ],
-  },
-  {
-    id: 75,
-    firstName: 'Alberto',
-    lastName: 'Roca',
-    age: 17,
-    email: 'alberto.roca@ejemplo.com',
-    classroom: 'D4',
-    unassistences: [
       {
-        day: '18-08-25',
-        isJustified: true,
+        "day": "25-09-25",
+        "isJustified": false
       },
-    ],
-  },
-  {
-    id: 76,
-    firstName: 'Margarita',
-    lastName: 'Gallardo',
-    age: 18,
-    email: 'margarita.gallardo@ejemplo.com',
-    classroom: 'C3',
-    unassistences: [],
-  },
-  {
-    id: 77,
-    firstName: 'César',
-    lastName: 'Cortés',
-    age: 19,
-    email: 'cesar.cortes@ejemplo.com',
-    classroom: 'B2',
-    unassistences: [
       {
-        day: '19-08-25',
-        isJustified: true,
+        "day": "09-09-25",
+        "isJustified": false
       },
-    ],
-  },
-  {
-    id: 78,
-    firstName: 'Esperanza',
-    lastName: 'Lorenzo',
-    age: 17,
-    email: 'esperanza.lorenzo@ejemplo.com',
-    classroom: 'A1',
-    unassistences: [],
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      }
+    ]
   },
   {
-    id: 79,
-    firstName: 'Fermín',
-    lastName: 'Mendoza',
-    age: 18,
-    email: 'fermin.mendoza@ejemplo.com',
-    classroom: 'D4',
-    unassistences: [
+    "id": 496,
+    "firstName": "Valentina",
+    "lastName": "Martínez",
+    "age": 14,
+    "email": "valentina.martínez496@ejemplo.com",
+    "classroom": "B7",
+    "unassistences": [
       {
-        day: '15-08-25',
-        isJustified: false,
+        "day": "17-09-25",
+        "isJustified": true
       },
-    ],
-  },
-  {
-    id: 80,
-    firstName: 'Juana',
-    lastName: 'Ibrahim',
-    age: 17,
-    email: 'juana.ibrahim@ejemplo.com',
-    classroom: 'C3',
-    unassistences: [
       {
-        day: '14-08-25',
-        isJustified: true,
+        "day": "01-09-25",
+        "isJustified": false
       },
-    ],
-  },
-  {
-    id: 81,
-    firstName: 'Salvador',
-    lastName: 'Santiago',
-    age: 18,
-    email: 'salvador.santiago@ejemplo.com',
-    classroom: 'B2',
-    unassistences: [],
-  },
-  {
-    id: 82,
-    firstName: 'Dolores',
-    lastName: 'Duran',
-    age: 19,
-    email: 'dolores.duran@ejemplo.com',
-    classroom: 'A1',
-    unassistences: [
       {
-        day: '18-08-25',
-        isJustified: false,
+        "day": "20-09-25",
+        "isJustified": false
       },
-    ],
-  },
-  {
-    id: 83,
-    firstName: 'Tomás',
-    lastName: 'Soto',
-    age: 17,
-    email: 'tomas.soto@ejemplo.com',
-    classroom: 'D4',
-    unassistences: [],
-  },
-  {
-    id: 84,
-    firstName: 'Amparo',
-    lastName: 'Marco',
-    age: 18,
-    email: 'amparo.marco@ejemplo.com',
-    classroom: 'C3',
-    unassistences: [
       {
-        day: '20-08-25',
-        isJustified: true,
+        "day": "04-09-25",
+        "isJustified": true
       },
-    ],
-  },
-  {
-    id: 85,
-    firstName: 'Agustín',
-    lastName: 'Vera',
-    age: 17,
-    email: 'agustin.vera@ejemplo.com',
-    classroom: 'B2',
-    unassistences: [
       {
-        day: '15-08-25',
-        isJustified: true,
+        "day": "15-09-25",
+        "isJustified": false
       },
-    ],
-  },
-  {
-    id: 86,
-    firstName: 'Elisa',
-    lastName: 'Perera',
-    age: 18,
-    email: 'elisa.perera@ejemplo.com',
-    classroom: 'A1',
-    unassistences: [],
-  },
-  {
-    id: 87,
-    firstName: 'Bernardo',
-    lastName: 'Bermúdez',
-    age: 19,
-    email: 'bernardo.bermudez@ejemplo.com',
-    classroom: 'D4',
-    unassistences: [
       {
-        day: '14-08-25',
-        isJustified: false,
+        "day": "02-09-25",
+        "isJustified": false
       },
-    ],
-  },
-  {
-    id: 88,
-    firstName: 'Araceli',
-    lastName: 'Velasco',
-    age: 17,
-    email: 'araceli.velasco@ejemplo.com',
-    classroom: 'C3',
-    unassistences: [
       {
-        day: '18-08-25',
-        isJustified: true,
+        "day": "05-09-25",
+        "isJustified": true
       },
-    ],
-  },
-  {
-    id: 89,
-    firstName: 'Leandro',
-    lastName: 'Mesa',
-    age: 18,
-    email: 'leandro.mesa@ejemplo.com',
-    classroom: 'B2',
-    unassistences: [],
-  },
-  {
-    id: 90,
-    firstName: 'Matilde',
-    lastName: 'Villar',
-    age: 17,
-    email: 'matilde.villar@ejemplo.com',
-    classroom: 'A1',
-    unassistences: [
       {
-        day: '19-08-25',
-        isJustified: false,
+        "day": "09-09-25",
+        "isJustified": false
       },
-    ],
-  },
-  {
-    id: 91,
-    firstName: 'Rodrigo',
-    lastName: 'Escudero',
-    age: 18,
-    email: 'rodrigo.escudero@ejemplo.com',
-    classroom: 'D4',
-    unassistences: [],
-  },
-  {
-    id: 92,
-    firstName: 'Begoña',
-    lastName: 'Varela',
-    age: 19,
-    email: 'begona.varela@ejemplo.com',
-    classroom: 'C3',
-    unassistences: [
       {
-        day: '15-08-25',
-        isJustified: true,
+        "day": "12-09-25",
+        "isJustified": false
       },
-    ],
-  },
-  {
-    id: 93,
-    firstName: 'Arturo',
-    lastName: 'Vaquero',
-    age: 17,
-    email: 'arturo.vaquero@ejemplo.com',
-    classroom: 'B2',
-    unassistences: [],
+      {
+        "day": "08-09-25",
+        "isJustified": false
+      }
+    ]
   },
   {
-    id: 94,
-    firstName: 'Celia',
-    lastName: 'Cordero',
-    age: 18,
-    email: 'celia.cordero@ejemplo.com',
-    classroom: 'A1',
-    unassistences: [
+    "id": 497,
+    "firstName": "Valentina",
+    "lastName": "Sánchez",
+    "age": 19,
+    "email": "valentina.sánchez497@ejemplo.com",
+    "classroom": "D1",
+    "unassistences": [
       {
-        day: '14-08-25',
-        isJustified: false,
+        "day": "08-09-25",
+        "isJustified": false
       },
-    ],
-  },
-  {
-    id: 95,
-    firstName: 'Ernesto',
-    lastName: 'Guerrero',
-    age: 17,
-    email: 'ernesto.guerrero@ejemplo.com',
-    classroom: 'D4',
-    unassistences: [
       {
-        day: '18-08-25',
-        isJustified: true,
+        "day": "01-09-25",
+        "isJustified": true
       },
-    ],
-  },
-  {
-    id: 96,
-    firstName: 'Rufino',
-    lastName: 'Pons',
-    age: 18,
-    email: 'rufino.pons@ejemplo.com',
-    classroom: 'C3',
-    unassistences: [],
+      {
+        "day": "15-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "02-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "30-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "07-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "16-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "05-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "24-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "25-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "14-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "28-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "13-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "18-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "20-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "17-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "06-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "19-09-25",
+        "isJustified": true
+      }
+    ]
   },
   {
-    id: 97,
-    firstName: 'Consuelo',
-    lastName: 'Salas',
-    age: 19,
-    email: 'consuelo.salas@ejemplo.com',
-    classroom: 'B2',
-    unassistences: [
+    "id": 498,
+    "firstName": "Camila",
+    "lastName": "Fernández",
+    "age": 21,
+    "email": "camila.fernández498@ejemplo.com",
+    "classroom": "C1",
+    "unassistences": [
+      {
+        "day": "21-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "04-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "22-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "27-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "12-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "11-09-25",
+        "isJustified": false
+      },
       {
-        day: '20-08-25',
-        isJustified: true,
+        "day": "05-09-25",
+        "isJustified": true
       },
-    ],
+      {
+        "day": "28-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "29-09-25",
+        "isJustified": true
+      }
+    ]
   },
   {
-    id: 98,
-    firstName: 'Teodoro',
-    lastName: 'Paz',
-    age: 17,
-    email: 'teodoro.paz@ejemplo.com',
-    classroom: 'A1',
-    unassistences: [],
+    "id": 499,
+    "firstName": "María",
+    "lastName": "Rodríguez",
+    "age": 13,
+    "email": "maría.rodríguez499@ejemplo.com",
+    "classroom": "A1",
+    "unassistences": []
   },
   {
-    id: 99,
-    firstName: 'Pilar',
-    lastName: 'Cuesta',
-    age: 18,
-    email: 'pilar.cuesta@ejemplo.com',
-    classroom: 'D4',
-    unassistences: [
+    "id": 500,
+    "firstName": "Ana",
+    "lastName": "Sánchez",
+    "age": 20,
+    "email": "ana.sánchez500@ejemplo.com",
+    "classroom": "D7",
+    "unassistences": [
       {
-        day: '15-08-25',
-        isJustified: false,
+        "day": "04-09-25",
+        "isJustified": true
       },
-    ],
-  },
-  {
-    id: 100,
-    firstName: 'Sebastián',
-    lastName: 'Segura',
-    age: 17,
-    email: 'sebastian.segura@ejemplo.com',
-    classroom: 'C3',
-    unassistences: [
       {
-        day: '14-08-25',
-        isJustified: true,
+        "day": "15-09-25",
+        "isJustified": true
       },
-    ],
-  },
-];
+      {
+        "day": "30-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "09-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "08-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "21-09-25",
+        "isJustified": false
+      },
+      {
+        "day": "23-09-25",
+        "isJustified": true
+      },
+      {
+        "day": "26-09-25",
+        "isJustified": true
+      }
+    ]
+  }
+]
 
 export const defaultDataTabletColumns = [
   {

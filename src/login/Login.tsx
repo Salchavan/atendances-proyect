@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useLocalStore } from '../store/Store';
+import { useLocalStore } from '../store/localStore';
 
 import Button from '@mui/material/Button';
 import Autocomplete from '@mui/material/Autocomplete';
@@ -49,7 +49,7 @@ export const Login = () => {
   return (
     <div className='flex flex-row justify-center items-center w-[100vw] h-[100vh]'>
       <img
-        src='../../public/img/school_logo.jpg'
+        src='https://www.ipetym69.edu.ar/images/colegiologo.png'
         alt='Logo IPETYM 69'
         className='mr-20'
       />

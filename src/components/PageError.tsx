@@ -1,5 +1,5 @@
 import { Box, Button, Typography, IconButton } from '@mui/material';
-import { useLocalStore } from '../store/Store';
+import { useLocalStore } from '../store/localStore';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
 export const PageError = () => {
