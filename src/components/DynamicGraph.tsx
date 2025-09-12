@@ -1,9 +1,11 @@
 import { Box } from '@mui/material';
 import { BarChart } from '@mui/x-charts';
-import { useStore } from '../store/Store';
+import { useGraphStore } from '../Store/specificStore/GraphStore.ts';
+import { useStore } from '../Store/Store.ts';
 import { DataTable } from '../components/DataTable';
 import { Students } from '../data/Data.ts';
 import { useMemo } from 'react';
+import { Toolbar } from './Toolbar.tsx';
 
 interface Unassistance {
   day: string;
@@ -22,35 +24,46 @@ interface Student {
 
 interface Props {
   dataTableName: string;
-  initialAssignedDate?: Date[] | null; // ahora opcional, se usa como fallback
+  initialAssignedDate?: Date[] | null;
+  grid: string;
 }
 
-export const DynamicGraph = ({ dataTableName, initialAssignedDate = null }: Props) => {
+export const DynamicGraph = ({
+  dataTableName,
+  initialAssignedDate = null,
+  grid,
+}: Props) => {
+  // openDataTable sigue en Store global, pero assignedWeekdays ahora viene de GraphStore
   const openDataTable = useStore((store) => store.openDialog);
-  const assignedWeekdays = useStore((s) => s.assignedWeekdays);
+  const assignedWeekdays = useGraphStore((s) => s.assignedWeekdays);
 
   // Función para formatear fechas
   const formatDate = (date: Date): { display: string; comparison: string } => {
     const dayNames = ['Lun', 'Mar', 'Mié', 'Jue', 'Vie'];
     const dayOfWeek = date.getDay();
-    const dayName = dayOfWeek >= 1 && dayOfWeek <= 5 ? dayNames[dayOfWeek - 1] : '';
-    
-    const displayDate = `${dayName} ${date.getDate().toString().padStart(2, '0')}/${(date.getMonth() + 1)
+    const dayName =
+      dayOfWeek >= 1 && dayOfWeek <= 5 ? dayNames[dayOfWeek - 1] : '';
+
+    const displayDate = `${dayName} ${date
+      .getDate()
       .toString()
-      .padStart(2, '0')}`;
-    
-    const comparisonDate = `${date.getDate().toString().padStart(2, '0')}-${(date.getMonth() + 1)
+      .padStart(2, '0')}/${(date.getMonth() + 1).toString().padStart(2, '0')}`;
+
+    const comparisonDate = `${date.getDate().toString().padStart(2, '0')}-${(
+      date.getMonth() + 1
+    )
       .toString()
       .padStart(2, '0')}-${date.getFullYear().toString().slice(2)}`;
-    
+
     return { display: displayDate, comparison: comparisonDate };
   };
 
   // Obtener los días a mostrar según initialAssignedDate
   const getDaysToDisplay = useMemo(() => {
-    const sourceDates = assignedWeekdays && assignedWeekdays.length
-      ? assignedWeekdays
-      : (initialAssignedDate || []);
+    const sourceDates =
+      assignedWeekdays && assignedWeekdays.length
+        ? assignedWeekdays
+        : initialAssignedDate || [];
 
     if (!sourceDates || !sourceDates.length) {
       return { displayDates: [], comparisonDates: [] };
@@ -58,9 +71,11 @@ export const DynamicGraph = ({ dataTableName, initialAssignedDate = null }: Prop
 
     const displayDates: string[] = [];
     const comparisonDates: string[] = [];
-    const sortedDates = [...sourceDates].sort((a, b) => a.getTime() - b.getTime());
+    const sortedDates = [...sourceDates].sort(
+      (a, b) => a.getTime() - b.getTime()
+    );
 
-    sortedDates.forEach(date => {
+    sortedDates.forEach((date) => {
       const formatted = formatDate(date);
       displayDates.push(formatted.display);
       comparisonDates.push(formatted.comparison);
@@ -73,7 +88,7 @@ export const DynamicGraph = ({ dataTableName, initialAssignedDate = null }: Prop
   const getUnassistencesData = useMemo(() => {
     const { comparisonDates } = getDaysToDisplay;
     const daysCount = comparisonDates.length;
-    
+
     const totalUnassistences: number[] = new Array(daysCount).fill(0);
     const justifiedUnassistences: number[] = new Array(daysCount).fill(0);
     const unjustifiedUnassistences: number[] = new Array(daysCount).fill(0);
@@ -111,10 +126,10 @@ export const DynamicGraph = ({ dataTableName, initialAssignedDate = null }: Prop
 
     Students.forEach((student: Student) => {
       // Verificar si el estudiante tiene inasistencias en los días seleccionados
-      const hasUnassistencesInRange = student.unassistences.some(unassistance => 
-        comparisonDates.includes(unassistance.day)
+      const hasUnassistencesInRange = student.unassistences.some(
+        (unassistance) => comparisonDates.includes(unassistance.day)
       );
-      
+
       if (hasUnassistencesInRange) {
         studentsWithUnassistences.push(student);
       }
@@ -130,18 +145,23 @@ export const DynamicGraph = ({ dataTableName, initialAssignedDate = null }: Prop
   // Si no hay días para mostrar, renderizar un contenedor vacío
   if (displayDates.length === 0) {
     return (
-      <Box className='col-span-6 row-span-8 col-start-3 row-start-3' 
-           display="flex" 
-           alignItems="center" 
-           justifyContent="center"
-           sx={{ border: '1px dashed #ccc', borderRadius: 2 }}>
-        <Box color="text.secondary">Seleccione un rango de fechas para visualizar los datos</Box>
+      <Box
+        className={grid}
+        display='flex'
+        alignItems='center'
+        justifyContent='center'
+        sx={{ border: '1px dashed #ccc', borderRadius: 2 }}
+      >
+        <Box color='text.secondary'>
+          Seleccione un rango de fechas para visualizar los datos
+        </Box>
       </Box>
     );
   }
 
   return (
-    <Box className='col-span-6 row-span-8 col-start-3 row-start-3'>
+    <Box className={grid}>
+      <Toolbar />
       <BarChart
         barLabel='value'
         className='h-full'
@@ -154,18 +174,18 @@ export const DynamicGraph = ({ dataTableName, initialAssignedDate = null }: Prop
         ]}
         series={[
           { data: total, color: '#ff5b5b', label: 'Total' },
-            {
-              data: justified,
-              color: '#ffaf45',
-              label: 'Justificadas',
-              stack: 'total',
-            },
-            {
-              data: unjustified,
-              color: '#ff6b6b',
-              label: 'Injustificadas',
-              stack: 'total',
-            },
+          {
+            data: justified,
+            color: '#ffaf45',
+            label: 'Justificadas',
+            stack: 'total',
+          },
+          {
+            data: unjustified,
+            color: '#ff6b6b',
+            label: 'Injustificadas',
+            stack: 'total',
+          },
         ]}
         onClick={() => {
           openDataTable(

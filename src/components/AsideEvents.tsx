@@ -1,12 +1,21 @@
 import { List, ListItem, ListSubheader, Typography } from '@mui/material';
 import { useState, useEffect } from 'react';
 
-export const AsideEvents = () => {
-  const [specialDays, setSpecialDays] = useState([]);
+interface AsideEventsProps {
+  grid: string;
+}
+
+interface SpecialDay {
+  date: string;
+  title: string;
+}
+
+export const AsideEvents = ({ grid }: AsideEventsProps) => {
+  const [specialDays, setSpecialDays] = useState<SpecialDay[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const fetchHolidays = async () => {
+    async function fetchHolidays() {
       try {
         const currentYear = new Date().getFullYear();
         const response = await fetch(
@@ -14,24 +23,31 @@ export const AsideEvents = () => {
         );
         const holidays = await response.json();
 
-        const formattedHolidays = holidays.map((holiday) => ({
-          title: holiday.localName,
-          date: new Date(holiday.date).toLocaleDateString('es-AR'),
-          dateObj: new Date(holiday.date),
-        }));
+        type HolidayApiResponse = {
+          date: string;
+          localName: string;
+          [key: string]: any;
+        };
+
+        const formattedHolidays = (holidays as HolidayApiResponse[]).map(
+          (holiday) => ({
+            title: holiday.localName,
+            date: new Date(holiday.date).toLocaleDateString('es-AR'),
+            dateObj: new Date(holiday.date),
+          })
+        );
 
         const futureHolidays = formattedHolidays.filter(
-          (day) => day.dateObj >= new Date().setHours(0, 0, 0, 0)
+          (day) => day.dateObj.getTime() >= new Date().setHours(0, 0, 0, 0)
         );
 
         setSpecialDays(futureHolidays);
       } catch (error) {
-        console.error('Error fetching holidays:', error);
+        console.error('Error fetching holidays', error);
       } finally {
         setLoading(false);
       }
-    };
-
+    }
     fetchHolidays();
   }, []);
 
@@ -50,7 +66,7 @@ export const AsideEvents = () => {
           Próximos Días Especiales
         </ListSubheader>
       }
-      className='col-span-2 row-span-8 col-start-9 row-start-3 bg-secondary rounded-xl overflow-scroll'
+      className={grid + ' bg-secondary rounded-xl '}
     >
       {specialDays.map((day, index) => (
         <ListItem

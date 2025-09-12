@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
-import { useLocalStore } from '../store/localStore';
+import { useCachedStore } from '../Store/CachedStore';
+import type { CachedStore } from '../Store/CachedStore';
+import { useUserStore } from '../Store/UserStore.ts';
 
 import Button from '@mui/material/Button';
 import Autocomplete from '@mui/material/Autocomplete';
@@ -9,37 +11,43 @@ import Typography from '@mui/material/Typography';
 import { users } from '../data/Data.ts';
 import { area } from '../data/Data.ts';
 
+import { useNavigate } from 'react-router';
+
+import Logo from '../img/school_logo.png';
+
 export const Login = () => {
   useEffect(() => {
     document.title = 'Inicio de sesion';
   }, []);
 
-  const setPage = useLocalStore((store) => store.setPage);
-
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [selectedArea, setSelectedArea] = useState<string | null>(null);
 
-  const setError = useLocalStore((store) => store.setAlert);
+  const setAlert = useCachedStore((store: CachedStore) => store.setAlert);
+  const logIn = useUserStore((store) => store.logIn);
+  const navigate = useNavigate();
 
   const handleLogin = () => {
     console.log(`[${username}] [${password}] [${selectedArea}]`);
-    // Buscar usuario que coincida
+    // Buscar usuario que coincida (case-insensitive)
     const user = users.find(
       (u) =>
-        u.Username == username &&
-        u.Password === password &&
-        u.Area === selectedArea
+        u.Username.toLowerCase() === username.toLowerCase() &&
+        u.Password.toLowerCase() === password.toLowerCase() &&
+        u.Area.toLowerCase() === (selectedArea?.toLowerCase() || '')
     );
 
     if (user) {
-      setError({
+      setAlert({
         type: 'success',
         text: 'Inicio de sesion exitoso',
       });
-      setPage('main');
+
+      logIn?.(user.Username, user.Area);
+      navigate?.('/home');
     } else {
-      setError({
+      setAlert({
         type: 'error',
         text: 'Usuario, contraseña o preceptoría incorrectos.',
       });
@@ -48,11 +56,7 @@ export const Login = () => {
 
   return (
     <div className='flex flex-row justify-center items-center w-[100vw] h-[100vh]'>
-      <img
-        src='https://www.ipetym69.edu.ar/images/colegiologo.png'
-        alt='Logo IPETYM 69'
-        className='mr-20'
-      />
+      <img src={Logo} alt='Logo IPETYM 69' className='mr-20' />
       <div className='flex flex-col justify-center items-center'>
         <Typography variant='h2' component='h1' className='text-center'>
           Inicio de sesión
@@ -70,7 +74,7 @@ export const Login = () => {
             variant='outlined'
             type='password'
             value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            onChange={(e) => setPassword(e.target.value.toLowerCase())}
           />
           <Autocomplete
             options={area}

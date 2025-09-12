@@ -18,14 +18,23 @@ import SettingsIcon from '@mui/icons-material/Settings';
 import DataSaverOffIcon from '@mui/icons-material/DataSaverOff';
 import FormatListBulletedIcon from '@mui/icons-material/FormatListBulleted';
 
-import { useLocalStore } from '../../store/localStore';
+import { useNavigate } from 'react-router';
 
-export const AsideMenu = () => {
+import { useUserStore } from '../Store/UserStore';
+
+interface AsideMenuProps {
+  grid: string;
+}
+
+export const AsideMenu = ({ grid }: AsideMenuProps) => {
+  const logOut = useUserStore((store) => store.logOut);
+  const navigate = useNavigate();
+
+  const username = useUserStore((store) => store.username);
+
   const [anchorElAcountMenu, setAnchorElAcountMenu] =
     useState<null | HTMLElement>(null);
   const open = Boolean(anchorElAcountMenu);
-
-  const setPage = useLocalStore((store) => store.setPage);
 
   const handleClickAcountMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElAcountMenu(event.currentTarget);
@@ -46,7 +55,7 @@ export const AsideMenu = () => {
         flexDirection: 'column',
         position: 'realtive',
       }}
-      className='col-span-2 row-span-10'
+      className={grid}
     >
       <List>
         <ListItem>
@@ -58,9 +67,14 @@ export const AsideMenu = () => {
             aria-expanded={open ? 'true' : undefined}
           >
             <ListItemIcon>
-              <Avatar className='bg-[#B5CAD9]'>SC</Avatar>
+              <Avatar className='bg-[#B5CAD9]'>
+                {username
+                  ?.split(' ')
+                  .map((word) => word[0]?.toUpperCase())
+                  .join('')}
+              </Avatar>
             </ListItemIcon>
-            Salvador Castellanos
+            {username}
           </ListItemButton>
 
           <Menu
@@ -74,13 +88,18 @@ export const AsideMenu = () => {
               },
             }}
           >
-            <MenuItem onClick={() => setPage('perfil')}>
+            <MenuItem onClick={() => navigate('perfil')}>
               <ListItemIcon>
                 <AccountCircleIcon />
               </ListItemIcon>{' '}
               Mi cuenta
             </MenuItem>
-            <MenuItem onClick={() => setPage('login')}>
+            <MenuItem
+              onClick={() => {
+                logOut?.();
+                navigate('/login');
+              }}
+            >
               <ListItemIcon>
                 <LogoutIcon />
               </ListItemIcon>
@@ -92,7 +111,7 @@ export const AsideMenu = () => {
 
       <List>
         <ListItem>
-          <ListItemButton onClick={() => setPage('main')}>
+          <ListItemButton onClick={() => navigate('main')}>
             <ListItemIcon>
               <HomeIcon sx={{ color: '#B5CAD9' }} />
             </ListItemIcon>
@@ -108,7 +127,7 @@ export const AsideMenu = () => {
           </ListItemButton>
         </ListItem>
         <ListItem>
-          <ListItemButton onClick={() => setPage('statics')}>
+          <ListItemButton onClick={() => navigate('statics')}>
             <ListItemIcon>
               <DataSaverOffIcon sx={{ color: '#B5CAD9' }} />
             </ListItemIcon>
@@ -117,7 +136,7 @@ export const AsideMenu = () => {
         </ListItem>
       </List>
       <ListItem sx={{ marginTop: 'auto', marginBottom: '10px' }}>
-        <ListItemButton onClick={() => setPage('config')}>
+        <ListItemButton onClick={() => navigate('config')}>
           <ListItemIcon>
             <SettingsIcon sx={{ color: '#B5CAD9' }} />
           </ListItemIcon>

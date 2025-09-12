@@ -1,7 +1,7 @@
 // components/CustomDialog.tsx
 
 import CloseIcon from '@mui/icons-material/Close';
-import { useStore } from '../store/Store';
+import { useStore } from '../Store/Store.ts';
 import { Modal, Box, Typography, IconButton } from '@mui/material';
 
 export const CustomModal = () => {

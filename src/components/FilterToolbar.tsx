@@ -10,8 +10,6 @@ import {
   MenuItem,
   Button,
   Typography,
-  FormControlLabel,
-  Switch,
 } from '@mui/material';
 import {
   Clear as ClearIcon,
@@ -20,7 +18,10 @@ import {
   Search as SearchIcon,
   Event as EventIcon,
 } from '@mui/icons-material';
-import { useFilterStore, type DayFilter } from '../store/Store.ts';
+import {
+  useFilterStore,
+  type DayFilter,
+} from '../Store/specificStore/DataTableStore.ts';
 
 export const FilterToolbar: React.FC = () => {
   const {
@@ -31,7 +32,7 @@ export const FilterToolbar: React.FC = () => {
     clearAllFilters,
   } = useFilterStore();
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
-  const [showOnlyWithAbsences, setShowOnlyWithAbsences] = React.useState(false);
+  const [showOnlyWithAbsences] = React.useState(false);
 
   const handleMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
@@ -48,10 +49,6 @@ export const FilterToolbar: React.FC = () => {
 
   const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setGlobalSearch(event.target.value);
-  };
-
-  const handleAbsencesToggle = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setShowOnlyWithAbsences(event.target.checked);
   };
 
   const hasActiveFilters =

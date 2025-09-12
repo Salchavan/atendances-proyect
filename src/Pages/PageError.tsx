@@ -1,13 +1,15 @@
 import { Box, Button, Typography, IconButton } from '@mui/material';
-import { useLocalStore } from '../store/localStore';
+import { useNavigate } from 'react-router';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
 export const PageError = () => {
-  const setPage = useLocalStore((store) => store.setPage);
+  const navigate = useNavigate();
+  // Si necesitas setPage, agrégalo a CachedStore y su implementación en CachedStore.ts
+  // const setPage = useCachedStore((store: CachedStore) => store.setPage);
   return (
     <Box className='realtive'>
       <Button
-        onClick={() => setPage('main')}
+        onClick={() => navigate('/home')}
         className='absolute top-2.5 left-2.5'
         variant='contained'
         color='primary'

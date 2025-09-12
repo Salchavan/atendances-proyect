@@ -2,12 +2,13 @@ import { List, ListItem } from '@mui/material';
 
 import { Index } from './Index.tsx';
 
-export const Navbar = () => {
+interface NavbarProps {
+  grid: string;
+}
+
+export const Navbar = ({ grid }: NavbarProps) => {
   return (
-    <List
-      sx={{ display: 'flex', flexDirection: 'row' }}
-      className='col-span-8 col-start-3'
-    >
+    <List sx={{ display: 'flex', flexDirection: 'row' }} className={grid}>
       <ListItem>
         <Index />
       </ListItem>

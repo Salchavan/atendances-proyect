@@ -2,7 +2,7 @@
 import React, { useMemo } from 'react';
 import { DataGrid, GridToolbar } from '@mui/x-data-grid';
 import { FilterToolbar } from './FilterToolbar';
-import { useFilterStore } from '../store/Store.ts';
+import { useFilterStore } from '../Store/specificStore/DataTableStore.ts';
 import { defaultDataTabletColumns } from '../data/Data';
 import type { RowDataType } from 'rsuite/esm/Table';
 

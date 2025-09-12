@@ -11,7 +11,5 @@
 }
 
 :root {
-  --fc-border-color: #8891c1;
-  --fc-daygrid-event-dot-width: 5px;
-  --fc-today-bg-color: #a1d3c8;
+  font-family: 'Courier New', Courier, monospace;
 }
