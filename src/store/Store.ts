@@ -1,9 +1,13 @@
 import { create } from 'zustand';
 import { type ReactElement } from 'react';
 import { type HTMLElementType } from 'react';
-import { users } from '../data/Data.ts';
 
-export type Store = {
+type User = {
+  Username: string;
+  Password: string;
+  Area: string;
+};
+type Store = {
   // Control de diálogo modal global
   isDialogOpen: boolean;
   dialogContent: ReactElement | HTMLElementType | null;
@@ -12,8 +16,8 @@ export type Store = {
   closeDialog: () => void;
   themeMode: 'light' | 'dark';
   toggleThemeMode: () => void;
-  perfilUserSelected: (typeof users)[number] | undefined;
-  setPerfilUserSelected: (user: (typeof users)[number] | undefined) => void;
+  perfilUserSelected: User | undefined;
+  setPerfilUserSelected: (user: User | undefined) => void;
 };
 
 export const useStore = create<Store>((set) => ({

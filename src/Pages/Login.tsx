@@ -1,4 +1,15 @@
 import { useState, useEffect } from 'react';
+
+type User = {
+  Username: string;
+  Password: string;
+  Area: string;
+};
+type Area = {
+  AreaID: number;
+  AreaType: string;
+  AreaName: string;
+};
 import { useCachedStore } from '../Store/CachedStore';
 import type { CachedStore } from '../Store/CachedStore';
 import { useUserStore } from '../Store/UserStore.ts';
@@ -8,16 +19,23 @@ import Autocomplete from '@mui/material/Autocomplete';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
 
-import { users } from '../data/Data.ts';
-import { area } from '../data/Data.ts';
-
 import { useNavigate } from 'react-router';
 
 import Logo from '../img/school_logo.png';
 
 export const Login = () => {
+  const [users, setUsers] = useState<User[]>([]);
+  const [area, setArea] = useState<Area[]>([]);
+
   useEffect(() => {
     document.title = 'Inicio de sesion';
+    // Dynamic import for users and area
+    (async () => {
+      const usersData = (await import('../data/users.json')).default;
+      setUsers(usersData);
+      const areaData = (await import('../data/area.json')).default;
+      setArea(areaData);
+    })();
   }, []);
 
   const [username, setUsername] = useState('');
@@ -78,8 +96,8 @@ export const Login = () => {
           />
           <Autocomplete
             options={area}
-            getOptionLabel={(option) => option.AreaName}
-            onChange={(_, newValue) =>
+            getOptionLabel={(option: Area) => option.AreaName}
+            onChange={(_, newValue: Area | null) =>
               setSelectedArea(newValue ? newValue.AreaName : null)
             }
             renderInput={(params) => (

@@ -33,7 +33,7 @@ export const Perfil = () => {
     document.title = `Perfil - ${selectedUser?.Username || 'Usuario'}`;
   }, [selectedUser]);
 
-  const copyToClipboard = (label: string, value?: string | number) => {
+  const copyToClipboard = (value?: string | number) => {
     if (!value) return;
     navigator.clipboard?.writeText(String(value)).catch(() => {});
   };
@@ -51,10 +51,7 @@ export const Perfil = () => {
         </Box>
         {copy && value && (
           <Tooltip title={`Copiar ${label}`}>
-            <IconButton
-              size='small'
-              onClick={() => copyToClipboard(label, value)}
-            >
+            <IconButton size='small' onClick={() => copyToClipboard(value)}>
               <ContentCopyIcon fontSize='inherit' />
             </IconButton>
           </Tooltip>

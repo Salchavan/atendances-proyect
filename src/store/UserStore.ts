@@ -1,13 +1,16 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
-import { users } from '../data/Data.ts';
 
-type User = (typeof users)[number];
+type User = {
+  Username: string;
+  Password: string;
+  Area: string;
+};
 
 type UserStore = {
   userData?: User | undefined;
   userVerified: boolean;
-  logIn: (username: string, area: string) => void;
+  logIn: (username: string, area: string) => Promise<void>;
   logOut: () => void;
 };
 
@@ -16,9 +19,10 @@ export const useUserStore = create<UserStore>()(
     (set) => ({
       userData: undefined,
       userVerified: false,
-      logIn: (username: string, area: string) => {
+      logIn: async (username: string, area: string) => {
+        const users: User[] = (await import('../data/users.json')).default;
         const foundUser = users.find(
-          (u) => u.Username === username && u.Area === area
+          (u: User) => u.Username === username && u.Area === area
         );
         if (foundUser) {
           set({ userData: foundUser, userVerified: true });

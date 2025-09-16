@@ -1,54 +1,91 @@
-# React + TypeScript + Vite
+# Sistema de Gestión de Asistencias
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Proyecto web para la gestión y visualización de asistencias e inasistencias de estudiantes, desarrollado con React, TypeScript, Zustand, Material UI y Vite.
 
-Currently, two official plugins are available:
+## Características principales
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Visualización de inasistencias por rangos de fechas, con filtros por día, semana, mes y año.
+- Gráficos interactivos de barras con promedios y desglose de faltas justificadas/injustificadas.
+- Tabla de datos filtrable y buscable (con soporte para acentos y búsqueda multi-palabra).
+- Perfil de usuario con detalles y opción de copiar datos.
+- Estado global y persistente con Zustand.
+- UI responsiva y moderna con Material UI y TailwindCSS.
 
-## Expanding the ESLint configuration
+## Estructura del proyecto
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```
+├── public/
+├── src/
+│   ├── App.tsx
+│   ├── main.tsx
+│   ├── tailwindStyles.css
+│   ├── components/
+│   │   ├── DynamicGraph.tsx
+│   │   ├── DataTable.tsx
+│   │   ├── CustomModal.tsx
+│   │   └── ...
+│   ├── data/
+│   │   └── Data.ts
+│   ├── login/
+│   ├── main/
+│   ├── store/
+│   │   ├── Store.ts
+│   │   ├── GraphStore.ts
+│   │   ├── CachedStore.ts
+│   │   └── DataTableStore.ts
+│   └── ...
+├── package.json
+├── tsconfig.json
+├── vite.config.ts
+└── README.md
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Instalación y ejecución
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+1. Clona el repositorio:
+   ```sh
+   git clone https://github.com/Salchavan/atendances-proyect.git
+   cd atendances-proyect
+   ```
+2. Instala las dependencias:
+   ```sh
+   npm install
+   ```
+3. Inicia el servidor de desarrollo:
+   ```sh
+   npm run dev
+   ```
+4. Abre la app en [http://localhost:5173](http://localhost:5173) (o el puerto que indique Vite).
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+## Principales dependencias
+
+- React + TypeScript
+- Zustand (manejo de estado global y persistente)
+- Material UI (componentes de interfaz)
+- TailwindCSS (estilos utilitarios)
+- rsuite (DateRangePicker)
+- date-fns (utilidades de fechas)
+
+## Funcionalidades destacadas
+
+- **Gráfico dinámico:**
+  - Permite seleccionar el rango de fechas y la partición (por día, semana, mes, año).
+  - Muestra promedios de faltas justificadas e injustificadas apiladas.
+  - Interacción para ver detalles en tabla.
+- **Tabla de datos:**
+  - Filtros avanzados, búsqueda insensible a acentos y mayúsculas.
+  - Debounce en búsqueda global.
+- **Perfil de usuario:**
+  - Visualización de datos y copia rápida al portapapeles.
+- **Gestión de estado:**
+  - Separación de stores para lógica de gráfico, tabla, alertas y perfil.
+
+## Personalización y desarrollo
+
+- Puedes modificar los datos de ejemplo en `src/data/Data.ts`.
+- Los estilos globales están en `src/tailwindStyles.css`.
+- La lógica de filtros y stores está en `src/store/`.
+
+## ¿Preguntas o mejoras?
+
+Si necesitas información sobre variables de entorno, despliegue, integración con backend o tienes sugerencias, ¡consúltame!
