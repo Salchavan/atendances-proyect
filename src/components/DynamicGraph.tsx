@@ -16,7 +16,7 @@ import { useMemo } from 'react';
 // Toolbar fusionada dentro del componente
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import { DateRangePicker } from 'rsuite';
-import { addDays, startOfYear } from 'date-fns';
+import { addDays, startOfYear, startOfMonth, endOfMonth } from 'date-fns';
 import { useState } from 'react';
 
 interface Unassistance {
@@ -53,6 +53,16 @@ export const DynamicGraph = ({
 
   // --- Estado local para modo de gráfico y rango de fechas (fusionado de Toolbar) ---
   const [graphMode, setGraphMode] = useState<'each' | 'prom'>('each');
+  // Nuevo: particionamiento
+  const partitionOptions = [
+    { value: 'Day', label: 'Por Día' },
+    { value: 'Week', label: 'Por Semana' },
+    { value: 'Month', label: 'Por Mes' },
+    { value: 'Year', label: 'Por Año' },
+  ];
+  const [partitionMode, setPartitionMode] = useState<
+    'Day' | 'Week' | 'Month' | 'Year'
+  >('Day');
   const { assignedDateRange, setAssignedDateRange } = useGraphStore();
   const [range, setRange] = useState<[Date, Date] | null>(null);
   const now = new Date();
@@ -207,8 +217,79 @@ export const DynamicGraph = ({
   const studentsWithUnassistences = getStudentsWithUnassistences;
   const { displayDates } = getDaysToDisplay;
 
+  // --- PROM (promedio mensual) MODE LOGIC ---
+  // Determinar el mes objetivo: usar el primer día del rango seleccionado (assignedWeekdays) o la fecha actual
+  const referenceDate = useMemo(() => {
+    if (assignedWeekdays && assignedWeekdays.length > 0)
+      return assignedWeekdays[0];
+    if (initialAssignedDate && initialAssignedDate.length > 0)
+      return initialAssignedDate[0];
+    return new Date();
+  }, [assignedWeekdays, initialAssignedDate]);
+
+  const monthlyAverages = useMemo(() => {
+    const monthStart = startOfMonth(referenceDate);
+    const monthEnd = endOfMonth(referenceDate);
+
+    // Construir lista de días hábiles del mes
+    const businessDays: string[] = [];
+    const cursor = new Date(monthStart);
+    while (cursor.getTime() <= monthEnd.getTime()) {
+      const day = cursor.getDay();
+      if (day >= 1 && day <= 5) {
+        const dayKey = `${cursor.getDate().toString().padStart(2, '0')}-${(
+          cursor.getMonth() + 1
+        )
+          .toString()
+          .padStart(2, '0')}-${cursor.getFullYear().toString().slice(2)}`;
+        businessDays.push(dayKey);
+      }
+      cursor.setDate(cursor.getDate() + 1);
+    }
+
+    if (businessDays.length === 0) {
+      return { avgTotal: 0, avgJustified: 0, avgUnjustified: 0, businessDays }; // evitamos división por cero
+    }
+
+    let sumTotal = 0;
+    let sumJustified = 0;
+    let sumUnjustified = 0;
+
+    Students.forEach((student: Student) => {
+      student.unassistences.forEach((u) => {
+        if (businessDays.includes(u.day)) {
+          sumTotal += 1;
+          if (u.isJustified) sumJustified += 1;
+          else sumUnjustified += 1;
+        }
+      });
+    });
+
+    // A promedio por día hábil (podríamos decidir redondeo; usamos con dos decimales)
+    const divisor = businessDays.length || 1;
+    const avgTotal = parseFloat((sumTotal / divisor).toFixed(2));
+    const avgJustified = parseFloat((sumJustified / divisor).toFixed(2));
+    const avgUnjustified = parseFloat((sumUnjustified / divisor).toFixed(2));
+
+    return { avgTotal, avgJustified, avgUnjustified, businessDays };
+  }, [referenceDate]);
+
+  // Lista de estudiantes con inasistencias en el mes (para prom mode al hacer click)
+  const monthlyStudentsWithUnassistences = useMemo(() => {
+    const { businessDays } = monthlyAverages;
+    if (!businessDays.length) return [] as Student[];
+    const list: Student[] = [];
+    Students.forEach((student: Student) => {
+      const has = student.unassistences.some((u) =>
+        businessDays.includes(u.day)
+      );
+      if (has) list.push(student);
+    });
+    return list;
+  }, [monthlyAverages]);
+
   // Si no hay días para mostrar, renderizar un contenedor vacío
-  if (displayDates.length === 0) {
+  if (graphMode === 'each' && displayDates.length === 0) {
     return (
       <Box
         className={grid}
@@ -268,42 +349,111 @@ export const DynamicGraph = ({
               </Select>
             </FormControl>
           </ListItem>
+          <ListItem>
+            <FormControl>
+              <InputLabel id='partition-mode-label'>Partición</InputLabel>
+              <Select
+                size='small'
+                value={partitionMode}
+                onChange={(e) =>
+                  setPartitionMode(
+                    e.target.value as 'Day' | 'Week' | 'Month' | 'Year'
+                  )
+                }
+                label='Partición'
+                className='bg-white/50 rounded-xl'
+                inputProps={{ 'aria-label': 'partition-mode' }}
+              >
+                {partitionOptions.map((opt) => (
+                  <MenuItem key={opt.value} value={opt.value}>
+                    {opt.label}
+                  </MenuItem>
+                ))}
+              </Select>
+            </FormControl>
+          </ListItem>
         </List>
       )}
-      <BarChart
-        barLabel='value'
-        className='h-full'
-        xAxis={[
-          {
-            data: displayDates,
-            categoryGapRatio: 0.2,
-            barGapRatio: 0,
-          },
-        ]}
-        series={[
-          { data: total, color: '#ff5b5b', label: 'Total' },
-          {
-            data: justified,
-            color: '#ffaf45',
-            label: 'Justificadas',
-            stack: 'total',
-          },
-          {
-            data: unjustified,
-            color: '#ff6b6b',
-            label: 'Injustificadas',
-            stack: 'total',
-          },
-        ]}
-        onClick={() => {
-          openDataTable(
-            <DataTable tableData={studentsWithUnassistences} />,
-            dataTableName
-          );
-        }}
-        margin={{ top: 5, bottom: 5, left: 0, right: 10 }}
-        borderRadius={10}
-      />
+      {/* Aquí irá la lógica de agrupamiento y renderizado según partitionMode */}
+      {graphMode === 'each' ? (
+        <BarChart
+          barLabel='value'
+          className='h-full'
+          xAxis={[
+            {
+              data: displayDates,
+              categoryGapRatio: 0.2,
+              barGapRatio: 0,
+            },
+          ]}
+          series={[
+            { data: total, color: '#ff5b5b', label: 'Total' },
+            {
+              data: justified,
+              color: '#ffaf45',
+              label: 'Justificadas',
+              stack: 'total',
+            },
+            {
+              data: unjustified,
+              color: '#ff6b6b',
+              label: 'Injustificadas',
+              stack: 'total',
+            },
+          ]}
+          onClick={() => {
+            openDataTable(
+              <DataTable tableData={studentsWithUnassistences} />,
+              dataTableName
+            );
+          }}
+          margin={{ top: 5, bottom: 5, left: 0, right: 10 }}
+          borderRadius={10}
+        />
+      ) : (
+        <BarChart
+          barLabel='value'
+          className='h-full'
+          xAxis={[
+            {
+              data: [
+                `Prom ${referenceDate
+                  .toLocaleDateString('es-ES', { month: 'short' })
+                  .replace('.', '')}`,
+              ],
+              categoryGapRatio: 0.4,
+              barGapRatio: 0,
+            },
+          ]}
+          series={[
+            {
+              data: [monthlyAverages.avgTotal],
+              color: '#ff5b5b',
+              label: 'Promedio Total',
+            },
+            {
+              data: [monthlyAverages.avgJustified],
+              color: '#ffaf45',
+              label: 'Promedio Justificadas',
+              stack: 'prom',
+            },
+            {
+              data: [monthlyAverages.avgUnjustified],
+              color: '#ff6b6b',
+              label: 'Promedio Injustificadas',
+              stack: 'prom',
+            },
+          ]}
+          onClick={() => {
+            openDataTable(
+              <DataTable tableData={monthlyStudentsWithUnassistences} />,
+              `${dataTableName} (Mes)`
+            );
+          }}
+          margin={{ top: 5, bottom: 5, left: 0, right: 10 }}
+          borderRadius={10}
+        />
+      )}
     </Box>
   );
 };
