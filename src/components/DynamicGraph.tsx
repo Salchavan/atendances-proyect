@@ -1,11 +1,23 @@
-import { Box } from '@mui/material';
+import {
+  Box,
+  List,
+  ListItem,
+  Select,
+  MenuItem,
+  InputLabel,
+  FormControl,
+} from '@mui/material';
 import { BarChart } from '@mui/x-charts';
 import { useGraphStore } from '../Store/specificStore/GraphStore.ts';
 import { useStore } from '../Store/Store.ts';
 import { DataTable } from '../components/DataTable';
 import { Students } from '../data/Data.ts';
 import { useMemo } from 'react';
-import { Toolbar } from './Toolbar.tsx';
+// Toolbar fusionada dentro del componente
+import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
+import { DateRangePicker } from 'rsuite';
+import { addDays, startOfYear } from 'date-fns';
+import { useState } from 'react';
 
 interface Unassistance {
   day: string;
@@ -26,16 +38,69 @@ interface Props {
   dataTableName: string;
   initialAssignedDate?: Date[] | null;
   grid: string;
+  toolbarEnabled?: boolean; // nueva prop para ocultar / desactivar toolbar
 }
 
 export const DynamicGraph = ({
   dataTableName,
   initialAssignedDate = null,
   grid,
+  toolbarEnabled = true,
 }: Props) => {
   // openDataTable sigue en Store global, pero assignedWeekdays ahora viene de GraphStore
-  const openDataTable = useStore((store) => store.openDialog);
+  const openDataTable = useStore((s) => s.openDialog);
   const assignedWeekdays = useGraphStore((s) => s.assignedWeekdays);
+
+  // --- Estado local para modo de gráfico y rango de fechas (fusionado de Toolbar) ---
+  const [graphMode, setGraphMode] = useState<'each' | 'prom'>('each');
+  const { assignedDateRange, setAssignedDateRange } = useGraphStore();
+  const [range, setRange] = useState<[Date, Date] | null>(null);
+  const now = new Date();
+  const predefinedRanges = [
+    { label: 'Hoy', value: [new Date(), new Date()], placement: 'bottom' },
+    {
+      label: 'Ayer',
+      value: [addDays(new Date(), -1), addDays(new Date(), -1)],
+      placement: 'bottom',
+    },
+    {
+      label: 'Ultimos 7 dias',
+      value: [addDays(new Date(), -7), new Date()],
+      placement: 'bottom',
+    },
+    {
+      label: 'Ultimos 30 dias',
+      value: [addDays(new Date(), -30), new Date()],
+      placement: 'bottom',
+    },
+    { label: 'Este año', value: [startOfYear(now), now], placement: 'bottom' },
+  ];
+
+  const updateRange = (newRange: [Date, Date] | null) => {
+    if (newRange && Array.isArray(newRange) && newRange[0] && newRange[1]) {
+      const [start, end] = newRange as [Date, Date];
+      const weekdays: Date[] = [];
+      const cursor = new Date(start);
+      while (cursor.getTime() <= end.getTime()) {
+        const day = cursor.getDay();
+        if (day >= 1 && day <= 5) {
+          weekdays.push(new Date(cursor));
+        }
+        cursor.setDate(cursor.getDate() + 1);
+      }
+      if (weekdays.length === 0) {
+        setAssignedDateRange(null);
+      } else {
+        const assigned: [Date, Date] = [
+          weekdays[0],
+          weekdays[weekdays.length - 1],
+        ];
+        setAssignedDateRange(assigned);
+      }
+    } else {
+      setAssignedDateRange(null);
+    }
+  };
 
   // Función para formatear fechas
   const formatDate = (date: Date): { display: string; comparison: string } => {
@@ -161,7 +226,50 @@ export const DynamicGraph = ({
 
   return (
     <Box className={grid}>
-      <Toolbar />
+      {toolbarEnabled && (
+        <List className='bg-acento/50 rounded-xl flex flex-row items-center p-1 mb-2'>
+          <ListItem>
+            <DateRangePicker
+              format='dd / MM / yyyy'
+              placeholder='Seleccionar rango'
+              showHeader={false}
+              ranges={predefinedRanges as any}
+              caretAs={CalendarMonthIcon}
+              value={range as any}
+              onChange={(value) => {
+                if (value && Array.isArray(value) && value[0] && value[1]) {
+                  setRange([value[0], value[1]] as [Date, Date]);
+                } else {
+                  setRange(null);
+                }
+              }}
+              onOk={(value) => updateRange(value)}
+              onClean={() => {
+                setRange(null);
+                setAssignedDateRange(null);
+              }}
+            />
+          </ListItem>
+          <ListItem>
+            <FormControl>
+              <InputLabel id='graph-mode-label'>Modo</InputLabel>
+              <Select
+                size='small'
+                value={graphMode}
+                onChange={(e) =>
+                  setGraphMode(e.target.value as 'each' | 'prom')
+                }
+                label='Modo'
+                className='bg-white/50 rounded-xl'
+                inputProps={{ 'aria-label': 'graph-mode' }}
+              >
+                <MenuItem value='each'>Cada uno</MenuItem>
+                <MenuItem value='prom'>Promedio</MenuItem>
+              </Select>
+            </FormControl>
+          </ListItem>
+        </List>
+      )}
       <BarChart
         barLabel='value'
         className='h-full'

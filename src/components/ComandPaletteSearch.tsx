@@ -1,7 +1,7 @@
 import { TextField, InputAdornment } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 
-export const Index = () => {
+export const ComandPaletteSearch = () => {
   return (
     <TextField
       sx={{ width: '100%' }}

@@ -21,16 +21,19 @@ import FormatListBulletedIcon from '@mui/icons-material/FormatListBulleted';
 import { useNavigate } from 'react-router';
 
 import { useUserStore } from '../Store/UserStore';
+import { useStore } from '../Store/Store.ts';
 
 interface AsideMenuProps {
   grid: string;
 }
 
 export const AsideMenu = ({ grid }: AsideMenuProps) => {
-  const logOut = useUserStore((store) => store.logOut);
+  const logOut = useUserStore((s) => s.logOut);
   const navigate = useNavigate();
+  const userData = useUserStore((s) => s.userData);
+  const setPerfilUserSelected = useStore((s) => s.setPerfilUserSelected);
 
-  const username = useUserStore((store) => store.username);
+  const username = useUserStore((store) => store.userData?.Username);
 
   const [anchorElAcountMenu, setAnchorElAcountMenu] =
     useState<null | HTMLElement>(null);
@@ -88,7 +91,12 @@ export const AsideMenu = ({ grid }: AsideMenuProps) => {
               },
             }}
           >
-            <MenuItem onClick={() => navigate('perfil')}>
+            <MenuItem
+              onClick={() => {
+                navigate('perfil');
+                setPerfilUserSelected(userData);
+              }}
+            >
               <ListItemIcon>
                 <AccountCircleIcon />
               </ListItemIcon>{' '}
@@ -111,7 +119,7 @@ export const AsideMenu = ({ grid }: AsideMenuProps) => {
 
       <List>
         <ListItem>
-          <ListItemButton onClick={() => navigate('main')}>
+          <ListItemButton onClick={() => navigate('/home')}>
             <ListItemIcon>
               <HomeIcon sx={{ color: '#B5CAD9' }} />
             </ListItemIcon>
