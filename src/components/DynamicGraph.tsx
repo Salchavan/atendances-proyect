@@ -11,8 +11,7 @@ import { BarChart } from '@mui/x-charts';
 import { useGraphStore } from '../Store/specificStore/GraphStore.ts';
 import { useStore } from '../Store/Store.ts';
 import { DataTable } from '../components/DataTable';
-import { Students } from '../data/Data.ts';
-import { useMemo } from 'react';
+import { useEffect, useMemo } from 'react';
 // Toolbar fusionada dentro del componente
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import { DateRangePicker } from 'rsuite';
@@ -47,6 +46,14 @@ export const DynamicGraph = ({
   grid,
   toolbarEnabled = true,
 }: Props) => {
+  const [Students, setStudents] = useState<Student[]>([]);
+  useEffect(() => {
+    const fetchData = async () => {
+      const studentsData = await import('../data/Students.json');
+      setStudents(studentsData);
+    };
+    fetchData();
+  }, []);
   // openDataTable sigue en Store global, pero assignedWeekdays ahora viene de GraphStore
   const openDataTable = useStore((s) => s.openDialog);
   const assignedWeekdays = useGraphStore((s) => s.assignedWeekdays);
@@ -63,7 +70,7 @@ export const DynamicGraph = ({
   const [partitionMode, setPartitionMode] = useState<
     'Day' | 'Week' | 'Month' | 'Year'
   >('Day');
-  const { assignedDateRange, setAssignedDateRange } = useGraphStore();
+  const { setAssignedDateRange } = useGraphStore();
   const [range, setRange] = useState<[Date, Date] | null>(null);
   const now = new Date();
   const predefinedRanges = [

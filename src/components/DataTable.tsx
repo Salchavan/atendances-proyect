@@ -23,8 +23,8 @@ import {
   useFilterStore,
   type DayFilter,
 } from '../Store/specificStore/DataTableStore.ts';
-import { defaultDataTabletColumns } from '../data/Data';
 import type { RowDataType } from 'rsuite/esm/Table';
+import typeColumns from '../data/defaultDataTabletColumns.json';
 
 type Props = {
   tableData: RowDataType[];
@@ -33,6 +33,16 @@ type Props = {
 };
 
 export const DataTable = ({ tableData, filtersEnabled }: Props) => {
+  const [defaultDataTabletColumns, setDefaultDataTabletColumns] = useState<
+    typeof typeColumns
+  >([]);
+  useEffect(() => {
+    (async () => {
+      const data = (await import('../data/defaultDataTabletColumns.json'))
+        .default;
+      setDefaultDataTabletColumns(data);
+    })();
+  }, []);
   const {
     getFilteredData,
     globalSearch,

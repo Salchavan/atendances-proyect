@@ -2,6 +2,7 @@ import { useEffect, useState, useLayoutEffect } from 'react';
 
 import { useStore } from './Store/Store.ts';
 import { useCachedStore } from './Store/CachedStore.ts';
+import { useUserStore } from './Store/UserStore.ts';
 
 import { Index } from './Pages/Index.tsx';
 import { Home } from './Pages/Home';
@@ -11,7 +12,7 @@ import { ControlPanel } from './Pages/ControlPanel.tsx';
 import { AdminPanel } from './Pages/AdminPanel.tsx';
 import { Config } from './Pages/Config.tsx';
 
-import { BrowserRouter, Routes, Route } from 'react-router';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router';
 
 import { Alert, CircularProgress, Box } from '@mui/material';
 import { CustomModal } from './components/CustomModal';
@@ -21,6 +22,7 @@ export const App = () => {
   const alert = useCachedStore((store) => store.alert);
   const setAlert = useCachedStore((store) => store.setAlert);
   const isDialogOpen = useStore((store) => store.isDialogOpen);
+  const userVerified = useUserStore((store) => store.userVerified);
 
   useEffect(() => {
     if (alert) {
@@ -68,8 +70,15 @@ export const App = () => {
         </div>
       )}
       {isDialogOpen && <CustomModal />}
+
       <BrowserRouter>
         <Routes>
+          <Route
+            path='/'
+            element={
+              <Navigate to={userVerified ? '/home' : '/login'} replace />
+            }
+          />
           <Route path='/login' element={<Login />} />
           <Route path='/control-panel' element={<ControlPanel />} />
           <Route path='/admin-panel' element={<AdminPanel />} />
