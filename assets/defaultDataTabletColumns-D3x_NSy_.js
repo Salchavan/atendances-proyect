@@ -1,1 +1,0 @@
-const e=[{field:"id",headerName:"Id",width:50,minWidth:50},{field:"firstName",headerName:"Nombre",width:150,minWidth:150},{field:"lastName",headerName:"Apellido",width:150,minWidth:150},{field:"age",headerName:"Edad",width:50,minWidth:150},{field:"email",headerName:"Email",width:250,minWidth:250},{field:"classroom",headerName:"Curso",width:60,minWidth:60}];export{e as default};
