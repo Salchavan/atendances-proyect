@@ -21,7 +21,7 @@ import Typography from '@mui/material/Typography';
 
 import { useNavigate } from 'react-router';
 
-import Logo from '../img/school_logo.png';
+import Logo from '../assets/school_logo.png';
 
 export const Login = () => {
   const [users, setUsers] = useState<User[]>([]);

@@ -1,4 +1,4 @@
-import { useEffect, useState, useLayoutEffect } from 'react';
+import { useEffect, useState, useLayoutEffect, type JSX } from 'react';
 
 import { useStore } from './Store/Store.ts';
 import { useCachedStore } from './Store/CachedStore.ts';
@@ -23,6 +23,14 @@ export const App = () => {
   const setAlert = useCachedStore((store) => store.setAlert);
   const isDialogOpen = useStore((store) => store.isDialogOpen);
   const userVerified = useUserStore((store) => store.userVerified);
+
+  // Wrapper para rutas privadas: si no está verificado, redirige a login
+  const RequireAuth = ({ children }: { children: JSX.Element }) => {
+    if (!userVerified) {
+      return <Navigate to='/login' replace />;
+    }
+    return children;
+  };
 
   useEffect(() => {
     if (alert) {
@@ -71,22 +79,51 @@ export const App = () => {
       )}
       {isDialogOpen && <CustomModal />}
 
-      <BrowserRouter>
+      <BrowserRouter basename='/atendances-proyect'>
         <Routes>
           <Route
             path='/'
             element={
-              <Navigate to={userVerified ? '/home' : '/login'} replace />
+              userVerified ? (
+                <Navigate to='/home' replace />
+              ) : (
+                <Navigate to='/login' replace />
+              )
             }
           />
-          <Route path='/login' element={<Login />} />
-          <Route path='/control-panel' element={<ControlPanel />} />
-          <Route path='/admin-panel' element={<AdminPanel />} />
-          <Route path='/config' element={<Config />} />
-          <Route path='/home' element={<Index />}>
+          <Route
+            path='/login'
+            element={userVerified ? <Navigate to='/home' replace /> : <Login />}
+          />
+
+          <Route
+            path='/control-panel'
+            element={
+              <RequireAuth>
+                <ControlPanel />
+              </RequireAuth>
+            }
+          />
+          <Route
+            path='/admin-panel'
+            element={
+              <RequireAuth>
+                <AdminPanel />
+              </RequireAuth>
+            }
+          />
+          <Route
+            path='/home'
+            element={
+              <RequireAuth>
+                <Index />
+              </RequireAuth>
+            }
+          >
             <Route index element={<Home />} />
             <Route path='perfil' element={<Perfil />} />
             <Route path='statics' element={<Statics />} />
+            <Route path='config' element={<Config />} />
           </Route>
         </Routes>
       </BrowserRouter>

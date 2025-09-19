@@ -10,6 +10,8 @@ import {
   IconButton,
 } from '@mui/material';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
+import { DynamicGraph } from '../components/DynamicGraph.tsx';
+import { BoxNull } from '../components/BoxNull.tsx';
 
 const fallback = 'NO Definido';
 
@@ -61,41 +63,49 @@ export const Perfil = () => {
   );
 
   return (
-    <Box className='col-span-4 row-span-9 p-4'>
-      <Box className='flex flex-row items-center '>
-        <Typography variant='h4' fontWeight='bold'>
-          Perfil de {selectedUser?.Username || fallback}
-        </Typography>
-        <Box display='flex' gap={1} flexWrap='wrap' className='ml-2'>
-          <Chip
-            label={selectedUser?.Area || 'SIN ROL'}
-            color='primary'
-            variant='outlined'
-          />
-          {selectedUser?.Active === false && (
-            <Chip label='INACTIVO' color='error' variant='filled' />
-          )}
+    <Box className='col-span-8 row-span-9 p-4 grid grid-cols-2 grid-rows-2 gap-2'>
+      <Box className='col-start-1'>
+        <Box className='flex flex-row items-center '>
+          <Typography variant='h4' fontWeight='bold'>
+            Perfil de {selectedUser?.Username || fallback}
+          </Typography>
+          <Box display='flex' gap={1} flexWrap='wrap' className='ml-2'>
+            <Chip
+              label={selectedUser?.Area || 'SIN ROL'}
+              color='primary'
+              variant='outlined'
+            />
+            {selectedUser?.Active === false && (
+              <Chip label='INACTIVO' color='error' variant='filled' />
+            )}
+          </Box>
         </Box>
+        {selectedUser && (
+          <Box className='flex flex-col'>
+            <Grid container spacing={2}>
+              {field('Username', selectedUser?.Username, true)}
+              {field('Área', selectedUser?.Area, false)}
+              {field('ID', selectedUser?.ID, true)}
+              {field('DNI', selectedUser?.DNI, true)}
+              {field('Email', selectedUser?.Email, true)}
+            </Grid>
+            <Divider sx={{ my: 2 }} />
+          </Box>
+        )}
+        {!selectedUser && (
+          <Typography variant='body2' color='text.secondary'>
+            No hay un usuario seleccionado actualmente.
+          </Typography>
+        )}
       </Box>
-
-      {selectedUser && (
-        <Box className='flex flex-col'>
-          <Grid container spacing={2}>
-            {field('Username', selectedUser?.Username, true)}
-            {field('Área', selectedUser?.Area, false)}
-            {field('ID', selectedUser?.ID, true)}
-            {field('DNI', selectedUser?.DNI, true)}
-            {field('Email', selectedUser?.Email, true)}
-          </Grid>
-          <Divider sx={{ my: 2 }} />
-        </Box>
-      )}
-
-      {!selectedUser && (
-        <Typography variant='body2' color='text.secondary'>
-          No hay un usuario seleccionado actualmente.
-        </Typography>
-      )}
+      <DynamicGraph
+        dataTableName={`Datos de ${selectedUser?.Username || 'Usuario'}`}
+        initialAssignedDate={null}
+        grid='row-start-2'
+        toolbarEnabled={true}
+      />
+      <BoxNull grid='col-start-2 row-start-1' />
+      <BoxNull grid='col-start-2 row-start-2' />
     </Box>
   );
 };

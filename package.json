@@ -6,9 +6,11 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
+    "rebuild": "tsc -b --clean && tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview",
-    "deploy": "vite build && gh-pages -d dist"
+    "preview": "tsc -b && vite build && vite preview",
+    "deploy": "gh-pages -d dist",
+    "br-deploy": "tsc -b --clean && tsc -b && vite build && gh-pages -d dist"
   },
   "dependencies": {
     "@mui/icons-material": "^7.2.0",

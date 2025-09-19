@@ -142,6 +142,14 @@ export const AsideMenu = ({ grid }: AsideMenuProps) => {
             Estadisticas
           </ListItemButton>
         </ListItem>
+        <ListItem>
+          <ListItemButton onClick={() => navigate('/control-panel')}>
+            <ListItemIcon>
+              <DataSaverOffIcon sx={{ color: '#B5CAD9' }} />
+            </ListItemIcon>
+            Panel de control
+          </ListItemButton>
+        </ListItem>
       </List>
       <ListItem sx={{ marginTop: 'auto', marginBottom: '10px' }}>
         <ListItemButton onClick={() => navigate('config')}>
