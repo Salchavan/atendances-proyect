@@ -8,15 +8,18 @@ import { Index } from './Pages/Index.tsx';
 import { Home } from './Pages/Home';
 import { Login } from './Pages/Login.tsx';
 import { Statics } from './Pages/Statics.tsx';
-import { ControlPanel } from './Pages/ControlPanel.tsx';
+import { IndexClassroomsPage } from './Pages/Classrooms/IndexClassroomsPage.tsx';
+import { ClassroomPage } from './Pages/Classrooms/ClassroomPage.tsx';
 import { AdminPanel } from './Pages/AdminPanel.tsx';
-import { Config } from './Pages/Config.tsx';
+import { Config } from './Pages/config/Config.tsx';
 
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router';
 
 import { Alert, CircularProgress, Box } from '@mui/material';
 import { CustomModal } from './components/CustomModal';
-import { Perfil } from './Pages/Perfil.tsx';
+import { Profile } from './Pages/Profile.tsx';
+import { ConfigGeneral } from './Pages/config/ConfigGeneral.tsx';
+import { ConfigAccessibility } from './Pages/config/ConfigAccessibility.tsx';
 
 export const App = () => {
   const alert = useCachedStore((store) => store.alert);
@@ -77,9 +80,9 @@ export const App = () => {
           </Alert>
         </div>
       )}
-      {isDialogOpen && <CustomModal />}
 
       <BrowserRouter basename='/atendances-proyect'>
+        {isDialogOpen && <CustomModal />}
         <Routes>
           <Route
             path='/'
@@ -95,23 +98,6 @@ export const App = () => {
             path='/login'
             element={userVerified ? <Navigate to='/home' replace /> : <Login />}
           />
-
-          <Route
-            path='/control-panel'
-            element={
-              <RequireAuth>
-                <ControlPanel />
-              </RequireAuth>
-            }
-          />
-          <Route
-            path='/admin-panel'
-            element={
-              <RequireAuth>
-                <AdminPanel />
-              </RequireAuth>
-            }
-          />
           <Route
             path='/home'
             element={
@@ -121,9 +107,24 @@ export const App = () => {
             }
           >
             <Route index element={<Home />} />
-            <Route path='perfil' element={<Perfil />} />
+            <Route path='profile' element={<Profile />} />
             <Route path='statics' element={<Statics />} />
-            <Route path='config' element={<Config />} />
+            <Route path='config' element={<Config />}>
+              <Route index element={<ConfigGeneral />} />
+              <Route path='general' element={<ConfigGeneral />} />
+              <Route path='accessibility' element={<ConfigAccessibility />} />
+            </Route>
+            <Route path='classrooms' element={<IndexClassroomsPage />} />
+            <Route path='classrooms/:id' element={<ClassroomPage />} />
+
+            <Route
+              path='admin-panel'
+              element={
+                <RequireAuth>
+                  <AdminPanel />
+                </RequireAuth>
+              }
+            />
           </Route>
         </Routes>
       </BrowserRouter>

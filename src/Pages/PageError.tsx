@@ -1,11 +1,13 @@
 import { Box, Button, Typography, IconButton } from '@mui/material';
 import { useNavigate } from 'react-router';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import { changePageTitle } from '../Logic';
 
 export const PageError = () => {
   const navigate = useNavigate();
   // Si necesitas setPage, agrégalo a CachedStore y su implementación en CachedStore.ts
   // const setPage = useCachedStore((store: CachedStore) => store.setPage);
+  changePageTitle('Error');
   return (
     <Box className='realtive'>
       <Button

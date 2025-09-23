@@ -1,5 +1,6 @@
 import { List, ListItem, ListSubheader, Typography } from '@mui/material';
 import { useState, useEffect } from 'react';
+import { ErrorBoundary } from 'react-error-boundary';
 
 interface AsideEventsProps {
   grid: string;
@@ -56,29 +57,31 @@ export const AsideEvents = ({ grid }: AsideEventsProps) => {
   }
 
   return (
-    <List
-      sx={{ padding: '8px' }}
-      subheader={
-        <ListSubheader
-          sx={{ bgcolor: '#8891c1', fontSize: '17px' }}
-          className='rounded-xl'
-        >
-          Próximos Días Especiales
-        </ListSubheader>
-      }
-      className={grid + ' bg-secondary rounded-xl '}
-    >
-      {specialDays.map((day, index) => (
-        <ListItem
-          key={index}
-          className='flex flex-col items-start rounded-xl bg-white/50 my-1 p-2'
-        >
-          <Typography variant='body2' fontWeight='bold'>
-            {day.date}
-          </Typography>
-          <Typography variant='body2'>{day.title}</Typography>
-        </ListItem>
-      ))}
-    </List>
+    <ErrorBoundary fallback={<div>Error loading special days.</div>}>
+      <List
+        sx={{ padding: '8px' }}
+        subheader={
+          <ListSubheader
+            sx={{ bgcolor: '#8891c1', fontSize: '17px' }}
+            className='rounded-xl'
+          >
+            Próximos Días Especiales
+          </ListSubheader>
+        }
+        className={grid + ' bg-secondary rounded-xl '}
+      >
+        {specialDays.map((day, index) => (
+          <ListItem
+            key={index}
+            className='flex flex-col items-start rounded-xl bg-white/50 my-1 p-2'
+          >
+            <Typography variant='body2' fontWeight='bold'>
+              {day.date}
+            </Typography>
+            <Typography variant='body2'>{day.title}</Typography>
+          </ListItem>
+        ))}
+      </List>
+    </ErrorBoundary>
   );
 };

@@ -2,10 +2,22 @@ import { create } from 'zustand';
 import { type ReactElement } from 'react';
 import { type HTMLElementType } from 'react';
 
+// Generic user shape used across the app; supports both legacy and new schema
 type User = {
-  Username: string;
-  Password: string;
-  Area: string;
+  // new fields
+  id?: number | string;
+  firstName?: string;
+  lastName?: string;
+  email?: string;
+  password?: string;
+  rol?: number;
+  // legacy fields kept for backward compat in components using Perfil
+  Username?: string;
+  Area?: string;
+  Role?: string;
+  Active?: boolean;
+  ID?: string | number;
+  DNI?: string | number;
 };
 type Store = {
   // Control de diálogo modal global

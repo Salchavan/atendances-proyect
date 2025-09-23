@@ -42,19 +42,27 @@ export type GraphStoreState = {
   assignedWeekdays: Date[] | null;
 };
 
-export const useGraphStore = create<GraphStoreState>()((set) => ({
-  assignedDateRange: null,
-  assignedWeekdays: null,
-  setAssignedDateRange: (range) => {
-    if (!range) {
-      set({ assignedDateRange: null, assignedWeekdays: null });
-      return;
-    }
-    const [start, end] = range;
-    const weekdays = getWeekdaysInRange(start, end);
-    set({
-      assignedDateRange: range,
-      assignedWeekdays: weekdays.length ? weekdays : null,
-    });
-  },
-}));
+export const useGraphStore = create<GraphStoreState>()((set) => {
+  // Initialize with last 5 business days by default
+  const initialDays = getLastWeekdays(5, true);
+  const initialRange: [Date, Date] | null = initialDays.length
+    ? [initialDays[0], initialDays[initialDays.length - 1]]
+    : null;
+
+  return {
+    assignedDateRange: initialRange,
+    assignedWeekdays: initialDays.length ? initialDays : null,
+    setAssignedDateRange: (range) => {
+      if (!range) {
+        set({ assignedDateRange: null, assignedWeekdays: null });
+        return;
+      }
+      const [start, end] = range;
+      const weekdays = getWeekdaysInRange(start, end);
+      set({
+        assignedDateRange: range,
+        assignedWeekdays: weekdays.length ? weekdays : null,
+      });
+    },
+  };
+});

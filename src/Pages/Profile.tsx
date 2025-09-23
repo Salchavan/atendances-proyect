@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import { useStore } from '../Store/Store.ts';
 import {
   Box,
@@ -10,30 +9,39 @@ import {
   IconButton,
 } from '@mui/material';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
-import { DynamicGraph } from '../components/DynamicGraph.tsx';
+import { DynamicGraph } from '../components/DynamicGraph/DynamicGraph.tsx';
 import { BoxNull } from '../components/BoxNull.tsx';
+import { changePageTitle } from '../Logic.ts';
 
 const fallback = 'NO Definido';
 
 interface PerfilUser {
-  Username: string;
-  Password?: string;
+  // new schema
+  id?: number | string;
+  firstName?: string;
+  lastName?: string;
+  email?: string;
+  password?: string;
+  rol?: string;
+  // legacy fields
+  Username?: string;
   Area?: string;
   ID?: string | number;
   DNI?: string | number;
-  Email?: string;
   Role?: string;
   Active?: boolean;
 }
 
-export const Perfil = () => {
+export const Profile = () => {
   const selectedUser = useStore((s) => s.perfilUserSelected) as
     | PerfilUser
     | undefined;
 
-  useEffect(() => {
-    document.title = `Perfil - ${selectedUser?.Username || 'Usuario'}`;
-  }, [selectedUser]);
+  const fullName = [selectedUser?.firstName, selectedUser?.lastName]
+    .filter(Boolean)
+    .join(' ');
+  const displayName = fullName || selectedUser?.Username || 'Usuario';
+  changePageTitle(`Perfil - ${displayName}`);
 
   const copyToClipboard = (value?: string | number) => {
     if (!value) return;
@@ -67,11 +75,15 @@ export const Perfil = () => {
       <Box className='col-start-1'>
         <Box className='flex flex-row items-center '>
           <Typography variant='h4' fontWeight='bold'>
-            Perfil de {selectedUser?.Username || fallback}
+            Perfil de {displayName || fallback}
           </Typography>
           <Box display='flex' gap={1} flexWrap='wrap' className='ml-2'>
             <Chip
-              label={selectedUser?.Area || 'SIN ROL'}
+              label={
+                typeof selectedUser?.rol === 'number'
+                  ? `Rol ${selectedUser.rol}`
+                  : selectedUser?.Area || 'SIN ROL'
+              }
               color='primary'
               variant='outlined'
             />
@@ -83,11 +95,12 @@ export const Perfil = () => {
         {selectedUser && (
           <Box className='flex flex-col'>
             <Grid container spacing={2}>
-              {field('Username', selectedUser?.Username, true)}
-              {field('Área', selectedUser?.Area, false)}
-              {field('ID', selectedUser?.ID, true)}
+              {field('Nombre', displayName, false)}
+              {field('Email', selectedUser?.email, true)}
+              {field('Rol', selectedUser?.rol, false)}
+              {field('ID', selectedUser?.id, true)}
               {field('DNI', selectedUser?.DNI, true)}
-              {field('Email', selectedUser?.Email, true)}
+              {field('Email', selectedUser?.email, true)}
             </Grid>
             <Divider sx={{ my: 2 }} />
           </Box>
@@ -99,13 +112,13 @@ export const Perfil = () => {
         )}
       </Box>
       <DynamicGraph
-        dataTableName={`Datos de ${selectedUser?.Username || 'Usuario'}`}
+        dataTableName={`Datos de ${displayName || 'Usuario'}`}
         initialAssignedDate={null}
         grid='row-start-2'
         toolbarEnabled={true}
       />
-      <BoxNull grid='col-start-2 row-start-1' />
-      <BoxNull grid='col-start-2 row-start-2' />
+      <BoxNull className='col-start-2 row-start-1' />
+      <BoxNull className='col-start-2 row-start-2' />
     </Box>
   );
 };

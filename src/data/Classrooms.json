@@ -1,0 +1,296 @@
+[
+  {
+    "id": 1,
+    "char": "A",
+    "year": 1,
+    "numberStudents": 31,
+    "turn": "Mañana"
+  },
+  {
+    "id": 2,
+    "char": "B",
+    "year": 1,
+    "numberStudents": 34,
+    "turn": "Mañana"
+  },
+  {
+    "id": 3,
+    "char": "C",
+    "year": 1,
+    "numberStudents": 28,
+    "turn": "Mañana"
+  },
+  {
+    "id": 4,
+    "char": "D",
+    "year": 1,
+    "numberStudents": 25,
+    "turn": "Tarde"
+  },
+  {
+    "id": 5,
+    "char": "E",
+    "year": 1,
+    "numberStudents": 31,
+    "turn": "Tarde"
+  },
+  {
+    "id": 6,
+    "char": "F",
+    "year": 1,
+    "numberStudents": 23,
+    "turn": "Tarde"
+  },
+  {
+    "id": 7,
+    "char": "A",
+    "year": 2,
+    "numberStudents": 20,
+    "turn": "Mañana"
+  },
+  {
+    "id": 8,
+    "char": "B",
+    "year": 2,
+    "numberStudents": 16,
+    "turn": "Mañana"
+  },
+  {
+    "id": 9,
+    "char": "C",
+    "year": 2,
+    "numberStudents": 30,
+    "turn": "Mañana"
+  },
+  {
+    "id": 10,
+    "char": "D",
+    "year": 2,
+    "numberStudents": 27,
+    "turn": "Tarde"
+  },
+  {
+    "id": 11,
+    "char": "E",
+    "year": 2,
+    "numberStudents": 29,
+    "turn": "Tarde"
+  },
+  {
+    "id": 12,
+    "char": "F",
+    "year": 2,
+    "numberStudents": 33,
+    "turn": "Tarde"
+  },
+  {
+    "id": 13,
+    "char": "A",
+    "year": 3,
+    "numberStudents": 16,
+    "turn": "Mañana"
+  },
+  {
+    "id": 14,
+    "char": "B",
+    "year": 3,
+    "numberStudents": 19,
+    "turn": "Mañana"
+  },
+  {
+    "id": 15,
+    "char": "C",
+    "year": 3,
+    "numberStudents": 28,
+    "turn": "Mañana"
+  },
+  {
+    "id": 16,
+    "char": "D",
+    "year": 3,
+    "numberStudents": 17,
+    "turn": "Tarde"
+  },
+  {
+    "id": 17,
+    "char": "E",
+    "year": 3,
+    "numberStudents": 18,
+    "turn": "Tarde"
+  },
+  {
+    "id": 18,
+    "char": "F",
+    "year": 3,
+    "numberStudents": 19,
+    "turn": "Tarde"
+  },
+  {
+    "id": 19,
+    "char": "A",
+    "year": 4,
+    "numberStudents": 23,
+    "turn": "Mañana"
+  },
+  {
+    "id": 20,
+    "char": "B",
+    "year": 4,
+    "numberStudents": 24,
+    "turn": "Mañana"
+  },
+  {
+    "id": 21,
+    "char": "C",
+    "year": 4,
+    "numberStudents": 23,
+    "turn": "Mañana"
+  },
+  {
+    "id": 22,
+    "char": "D",
+    "year": 4,
+    "numberStudents": 25,
+    "turn": "Tarde"
+  },
+  {
+    "id": 23,
+    "char": "E",
+    "year": 4,
+    "numberStudents": 18,
+    "turn": "Tarde"
+  },
+  {
+    "id": 24,
+    "char": "F",
+    "year": 4,
+    "numberStudents": 26,
+    "turn": "Tarde"
+  },
+  {
+    "id": 25,
+    "char": "A",
+    "year": 5,
+    "numberStudents": 35,
+    "turn": "Mañana"
+  },
+  {
+    "id": 26,
+    "char": "B",
+    "year": 5,
+    "numberStudents": 28,
+    "turn": "Mañana"
+  },
+  {
+    "id": 27,
+    "char": "C",
+    "year": 5,
+    "numberStudents": 27,
+    "turn": "Mañana"
+  },
+  {
+    "id": 28,
+    "char": "D",
+    "year": 5,
+    "numberStudents": 27,
+    "turn": "Tarde"
+  },
+  {
+    "id": 29,
+    "char": "E",
+    "year": 5,
+    "numberStudents": 15,
+    "turn": "Tarde"
+  },
+  {
+    "id": 30,
+    "char": "F",
+    "year": 5,
+    "numberStudents": 31,
+    "turn": "Tarde"
+  },
+  {
+    "id": 31,
+    "char": "A",
+    "year": 6,
+    "numberStudents": 26,
+    "turn": "Mañana"
+  },
+  {
+    "id": 32,
+    "char": "B",
+    "year": 6,
+    "numberStudents": 34,
+    "turn": "Mañana"
+  },
+  {
+    "id": 33,
+    "char": "C",
+    "year": 6,
+    "numberStudents": 32,
+    "turn": "Mañana"
+  },
+  {
+    "id": 34,
+    "char": "D",
+    "year": 6,
+    "numberStudents": 24,
+    "turn": "Tarde"
+  },
+  {
+    "id": 35,
+    "char": "E",
+    "year": 6,
+    "numberStudents": 32,
+    "turn": "Tarde"
+  },
+  {
+    "id": 36,
+    "char": "F",
+    "year": 6,
+    "numberStudents": 28,
+    "turn": "Tarde"
+  },
+  {
+    "id": 37,
+    "char": "A",
+    "year": 7,
+    "numberStudents": 20,
+    "turn": "Mañana"
+  },
+  {
+    "id": 38,
+    "char": "B",
+    "year": 7,
+    "numberStudents": 29,
+    "turn": "Mañana"
+  },
+  {
+    "id": 39,
+    "char": "C",
+    "year": 7,
+    "numberStudents": 23,
+    "turn": "Mañana"
+  },
+  {
+    "id": 40,
+    "char": "D",
+    "year": 7,
+    "numberStudents": 30,
+    "turn": "Tarde"
+  },
+  {
+    "id": 41,
+    "char": "E",
+    "year": 7,
+    "numberStudents": 35,
+    "turn": "Tarde"
+  },
+  {
+    "id": 42,
+    "char": "F",
+    "year": 7,
+    "numberStudents": 22,
+    "turn": "Tarde"
+  }
+]

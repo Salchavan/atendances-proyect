@@ -1,13 +1,17 @@
+import { ErrorBoundary } from 'react-error-boundary';
+
 type Props = {
-  grid: string;
+  className?: string;
 };
 
-export const BoxNull = ({ grid }: Props) => {
+export const BoxNull = ({ className }: Props) => {
   return (
-    <div
-      className={`w-full h-full border-2 border-dashed border-red-500 rounded-lg bg-red-100 flex justify-center items-center ${grid} text-red-500 font-bold text-4xl`}
-    >
-      Empty
-    </div>
+    <ErrorBoundary fallback={<div>Error loading box.</div>}>
+      <div
+        className={`w-full h-full border-2 border-dashed border-red-500 rounded-lg bg-red-100 flex justify-center items-center ${className} text-red-500 font-bold text-4xl`}
+      >
+        Empty
+      </div>
+    </ErrorBoundary>
   );
 };

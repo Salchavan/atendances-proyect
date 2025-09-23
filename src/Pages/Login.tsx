@@ -1,21 +1,11 @@
 import { useState, useEffect } from 'react';
-
-type User = {
-  Username: string;
-  Password: string;
-  Area: string;
-};
-type Area = {
-  AreaID: number;
-  AreaType: string;
-  AreaName: string;
-};
+import type { User } from '../Store/UserStore';
 import { useCachedStore } from '../Store/CachedStore';
 import type { CachedStore } from '../Store/CachedStore';
 import { useUserStore } from '../Store/UserStore.ts';
+import { changePageTitle } from '../Logic';
 
 import Button from '@mui/material/Button';
-import Autocomplete from '@mui/material/Autocomplete';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
 
@@ -25,35 +15,31 @@ import Logo from '../assets/school_logo.png';
 
 export const Login = () => {
   const [users, setUsers] = useState<User[]>([]);
-  const [area, setArea] = useState<Area[]>([]);
+  changePageTitle('Inicio de sesión');
 
   useEffect(() => {
     document.title = 'Inicio de sesion';
-    // Dynamic import for users and area
+    // Dynamic import for users
     (async () => {
       const usersData = (await import('../data/users.json')).default;
       setUsers(usersData);
-      const areaData = (await import('../data/area.json')).default;
-      setArea(areaData);
     })();
   }, []);
 
-  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [selectedArea, setSelectedArea] = useState<string | null>(null);
 
   const setAlert = useCachedStore((store: CachedStore) => store.setAlert);
   const logIn = useUserStore((store) => store.logIn);
   const navigate = useNavigate();
 
   const handleLogin = () => {
-    console.log(`[${username}] [${password}] [${selectedArea}]`);
+    console.log(`[${email}] [${password}]`);
     // Buscar usuario que coincida (case-insensitive)
     const user = users.find(
       (u) =>
-        u.Username.toLowerCase() === username.toLowerCase() &&
-        u.Password.toLowerCase() === password.toLowerCase() &&
-        u.Area.toLowerCase() === (selectedArea?.toLowerCase() || '')
+        u.email.toLowerCase() === email.toLowerCase() &&
+        u.password.toLowerCase() === password.toLowerCase()
     );
 
     if (user) {
@@ -62,12 +48,12 @@ export const Login = () => {
         text: 'Inicio de sesion exitoso',
       });
 
-      logIn?.(user.Username, user.Area);
+      logIn?.(user.email, user.password);
       navigate?.('/home');
     } else {
       setAlert({
         type: 'error',
-        text: 'Usuario, contraseña o preceptoría incorrectos.',
+        text: 'Email o contraseña incorrectos.',
       });
     }
   };
@@ -82,10 +68,11 @@ export const Login = () => {
 
         <div className='flex flex-col gap-2 w-100 mt-6'>
           <TextField
-            label='Usuario'
+            label='Email'
+            type='email'
             variant='outlined'
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
           />
           <TextField
             label='Contraseña'
@@ -93,16 +80,6 @@ export const Login = () => {
             type='password'
             value={password}
             onChange={(e) => setPassword(e.target.value.toLowerCase())}
-          />
-          <Autocomplete
-            options={area}
-            getOptionLabel={(option: Area) => option.AreaName}
-            onChange={(_, newValue: Area | null) =>
-              setSelectedArea(newValue ? newValue.AreaName : null)
-            }
-            renderInput={(params) => (
-              <TextField {...params} label='Seleccione una preceptoría' />
-            )}
           />
           <Button variant='contained' onClick={handleLogin}>
             Ingresar

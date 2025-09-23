@@ -23,6 +23,7 @@
     "gh-pages": "^6.3.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
+    "react-error-boundary": "^6.0.0",
     "react-router": "^7.9.0",
     "rsuite": "^5.83.2",
     "tailwindcss": "^4.1.11",
