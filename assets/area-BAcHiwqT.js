@@ -1,1 +1,0 @@
-const e=[{AreaID:1,AreaType:"preceptorship",AreaName:"Preceptoria 1"},{AreaID:2,AreaType:"preceptorship",AreaName:"Preceptoria 2"},{AreaID:3,AreaType:"preceptorship",AreaName:"Preceptoria 3"},{AreaID:4,AreaType:"admin",AreaName:"Administracion"}];export{e as default};
