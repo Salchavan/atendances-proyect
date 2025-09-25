@@ -62,16 +62,7 @@ export const AsideMenu = ({ grid }: AsideMenuProps) => {
   return (
     <ErrorBoundary fallback={<div>Error loading menu.</div>}>
       <Box
-        sx={{
-          bgcolor: '#555D86',
-          height: '100%',
-          borderRadius: '16px',
-          color: '#ffffff',
-          display: 'flex',
-          flexDirection: 'column',
-          position: 'realtive',
-        }}
-        className={grid}
+        className={`bg-primary h-full rounded-2xl text-neutralLight flex flex-col relative ${grid}`}
       >
         <List>
           <ListItem>
@@ -171,7 +162,7 @@ export const AsideMenu = ({ grid }: AsideMenuProps) => {
             </ListItem>
           ) : null}
         </List>
-        <ListItem sx={{ marginTop: 'auto', marginBottom: '10px' }}>
+        <ListItem className='mt-auto mb-[10px]'>
           <ListItemButton onClick={() => navigate('config')}>
             <ListItemIcon>
               <SettingsIcon sx={{ color: '#B5CAD9' }} />

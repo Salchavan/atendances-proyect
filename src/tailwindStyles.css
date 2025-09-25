@@ -2,15 +2,12 @@
 @import 'tailwindcss';
 
 @theme {
-  --color-primary: #555d86;
-  --color-secondary: #8891c1;
-  --color-acento: #8cd4c4;
-  --color-neutralLigth: #f5f6fa;
-  --color-neutralMid: #d6d9e0;
-  --color-text: #2c2c2c;
-  --color-error: #f95f62;
-}
-
-:root {
-  font-family: 'Poppins';
+  --color-primary: #1f4e8c;
+  --color-secondary: #4f7dcb;
+  --color-neutralLight: #f2f2f2;
+  --color-neutralMid: #aaaaaa;
+  --color-text: #333333;
+  --color-error: #d93025;
+  --color-danger: #ffba49;
+  --color-check: #3ba55c;
 }

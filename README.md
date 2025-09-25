@@ -1,17 +1,66 @@
 # Sistema de Gestión de Asistencias
 
-Proyecto web para la gestión y visualización de asistencias e inasistencias de estudiantes, desarrollado con React, TypeScript, Zustand, Material UI y Vite.
+Proyecto web para la gestión y visualización de asistencias e inasistencias de estudiantes, desarrollado con React, TypeScript, Zustand, Material UI y Vite, con estilos utilitarios en TailwindCSS.
+
+Enlaces útiles:
+
+- Investigación y planeamiento (Google Drive): https://drive.google.com/drive/folders/10pSfk91P3cLEVyq0M5MEtGYLI6GSyrvv?usp=sharing
+- Demo (GH Pages): https://salchavan.github.io/atendances-proyect/
 
 ## Características principales
 
-- Visualización de inasistencias por rangos de fechas, con filtros por día, semana, mes y año.
-- Gráficos interactivos de barras con promedios y desglose de faltas justificadas/injustificadas.
-- Tabla de datos filtrable y buscable (con soporte para acentos y búsqueda multi-palabra).
-- Perfil de usuario con detalles y opción de copiar datos.
-- Estado global y persistente con Zustand.
-- UI responsiva y moderna con Material UI y TailwindCSS.
+- Calendario mensual (solo vista de mes):
 
-## Estructura del proyecto
+  - 5 semanas fijas que ocupan el alto y ancho disponible del contenedor.
+  - Navegación de meses (anterior / siguiente).
+  - “Hoy” resaltado con ring azul más grueso.
+  - Fines de semana con fondo más oscuro.
+  - Totales de inasistencias por día en el centro (ocultos en sábados y domingos).
+  - Tooltip apilado en hover con total, justificadas y no justificadas (con indicadores de color).
+  - Click en un día abre un modal con un DataTable de quienes faltaron ese día.
+  - Totalmente estilizado con Tailwind. Props para personalizar colores de texto/números/fondo.
+
+- Gráfico dinámico (DynamicGraph):
+
+  - Inicializa automáticamente mostrando los últimos 5 días laborales si no hay selección (evita pantalla en blanco).
+  - Modos de vista: cada día, promedios; con partición (día/semana/mes/año) donde aplica.
+  - Usa altura disponible del contenedor (mide toolbar y ajusta el gráfico para evitar recortes).
+  - Barras con colores originales (paleta por defecto de X-Charts).
+
+- Tabla de datos (DataTable):
+
+  - Búsqueda y filtros (debounce, insensitive a acentos).
+  - Se adapta al alto del contenedor (flex + ResizeObserver).
+  - Al hacer click en un registro: guarda estudiante seleccionado en store y navega a Perfil.
+  - Separado en UI, lógica y subcomponentes (toolbar + tabla rsuite).
+
+- Rutas y navegación:
+
+  - Rutas protegidas (RequireAuth) y estructura anidada bajo /home.
+  - Clase seleccionada con ruta dinámica: /home/classrooms/:id.
+  - Hook de navegación custom (useNavigateTo), seguro con Router context.
+
+- Páginas de Clases (Classrooms):
+
+  - Listado de aulas como cartas con formato “7º "F"”, turno, cantidad de estudiantes y especialidad (si aplica).
+  - Generador de aulas (genClassrooms.ts): todas las combinaciones year × char; A/B/C = Mañana, D/E/F = Tarde.
+  - Detalle de clase con layout en 4 cuadrantes:
+    1. Imagen + título + detalles + notas
+    2. DataTable
+    3. DynamicGraph
+    4. DataTable
+
+- Estado global y persistente con Zustand:
+
+  - Stores para gráfico, tabla, alertas, usuario, etc.
+  - Modal global para abrir DataTable desde el calendario y el gráfico.
+
+- Autenticación y datos:
+  - users.json actualizado al nuevo formato:
+    - { id, firstName, lastName, email, password, rol }
+  - Adaptación de UI y lógica al nuevo shape (fallbacks para legacy donde aplica).
+
+## Estructura del proyecto (resumen)
 
 ```
 ├── public/
@@ -20,20 +69,39 @@ Proyecto web para la gestión y visualización de asistencias e inasistencias de
 │   ├── main.tsx
 │   ├── tailwindStyles.css
 │   ├── components/
-│   │   ├── DynamicGraph.tsx
-│   │   ├── DataTable.tsx
+│   │   ├── Calendar/
+│   │   │   ├── Calendar.tsx            (UI)
+│   │   │   ├── Calendar.logic.ts       (lógica)
+│   │   │   ├── DayCell.tsx             (subcomponentes)
+│   │   │   └── … (tooltip, helpers)
+│   │   ├── DynamicGraph/
+│   │   │   ├── DynamicGraph.tsx        (UI)
+│   │   │   ├── DynamicGraph.logic.ts   (lógica)
+│   │   │   ├── DynamicGraphToolbar.tsx (subcomponentes)
+│   │   │   └── DynamicGraphChart.tsx   (subcomponentes)
+│   │   ├── DataTable/
+│   │   │   ├── DataTable.tsx           (UI)
+│   │   │   ├── DataTable.logic.ts      (lógica)
+│   │   │   └── RsuiteDataTable.tsx     (subcomponentes)
 │   │   ├── CustomModal.tsx
-│   │   └── ...
+│   │   └── AsideEvents.tsx
+│   ├── Pages/
+│   │   ├── Home.tsx
+│   │   ├── Classrooms/
+│   │   │   ├── IndexClassroomsPage.tsx
+│   │   │   └── ClassroomPage.tsx
+│   │   └── Perfil.tsx
 │   ├── data/
-│   │   └── Data.ts
-│   ├── login/
-│   ├── main/
+│   │   ├── Students.json
+│   │   ├── users.json
+│   │   └── genClassrooms.ts
 │   ├── store/
 │   │   ├── Store.ts
 │   │   ├── GraphStore.ts
 │   │   ├── CachedStore.ts
-│   │   └── DataTableStore.ts
-│   └── ...
+│   │   ├── DataTableStore.ts
+│   │   └── UserStore.ts
+│   └── Logic.ts (useNavigateTo hook)
 ├── package.json
 ├── tsconfig.json
 ├── vite.config.ts
@@ -42,50 +110,66 @@ Proyecto web para la gestión y visualización de asistencias e inasistencias de
 
 ## Instalación y ejecución
 
-1. Clona el repositorio:
-   ```sh
-   git clone https://github.com/Salchavan/atendances-proyect.git
-   cd atendances-proyect
-   ```
-2. Instala las dependencias:
-   ```sh
-   npm install
-   ```
-3. Inicia el servidor de desarrollo:
-   ```sh
-   npm run dev
-   ```
-4. Abre la app en [http://localhost:5173](http://localhost:5173) (o el puerto que indique Vite).
+1. Clonar e instalar:
 
-## Principales dependencias
+```sh
+git clone https://github.com/Salchavan/atendances-proyect.git
+cd atendances-proyect
+npm install
+```
 
-- React + TypeScript
-- Zustand (manejo de estado global y persistente)
-- Material UI (componentes de interfaz)
-- TailwindCSS (estilos utilitarios)
-- rsuite (DateRangePicker)
-- date-fns (utilidades de fechas)
+2. Dev server:
 
-## Funcionalidades destacadas
+```sh
+npm run dev
+```
 
-- **Gráfico dinámico:**
-  - Permite seleccionar el rango de fechas y la partición (por día, semana, mes, año).
-  - Muestra promedios de faltas justificadas e injustificadas apiladas.
-  - Interacción para ver detalles en tabla.
-- **Tabla de datos:**
-  - Filtros avanzados, búsqueda insensible a acentos y mayúsculas.
-  - Debounce en búsqueda global.
-- **Perfil de usuario:**
-  - Visualización de datos y copia rápida al portapapeles.
-- **Gestión de estado:**
-  - Separación de stores para lógica de gráfico, tabla, alertas y perfil.
+Abrir http://localhost:5173 (Vite mostrará el puerto si es distinto).
 
-## Personalización y desarrollo
+3. Build:
 
-- Puedes modificar los datos de ejemplo en `src/data/Data.ts`.
-- Los estilos globales están en `src/tailwindStyles.css`.
-- La lógica de filtros y stores está en `src/store/`.
+```sh
+npm run build
+```
 
-## ¿Preguntas o mejoras?
+## Notas de enrutado y despliegue
 
-Si necesitas información sobre variables de entorno, despliegue, integración con backend o tienes sugerencias, ¡consúltame!
+- La app usa BrowserRouter con basename para GH Pages: /atendances-proyect
+- Rutas destacadas:
+  - /login (pública)
+  - /home (layout + privadas)
+    - /home/classrooms (listado)
+    - /home/classrooms/:id (detalle dinámico)
+    - /home/perfil (perfil)
+    - /home/config (configuración)
+- Si abres modales globales con contenido que usa useNavigate, asegúrate de que el modal esté bajo el Router (App.tsx ya lo hace).
+
+## Datos y formatos
+
+- users.json:
+  - { id: number, firstName: string, lastName: string, email: string, password: string, rol: number }
+- Students.json:
+  - Estudiantes con unassistences: { day: 'dd-mm-yy', isJustified: boolean }
+  - El calendario agrega totales por fecha y abre un DataTable detallado al click.
+- genClassrooms.ts:
+  - Genera combinaciones (year × char) con turn derivado (A/B/C = Mañana, D/E/F = Tarde).
+
+## Personalización
+
+- Estilos utilitarios: src/tailwindStyles.css y clases en componentes (Calendar, Classrooms, etc.).
+- DynamicGraph: puedes ocultar la toolbar con prop toolbarEnabled={false} y controla su layout con grid y contenedores h-full/min-h-0.
+- DataTable: ajusta columnas y filtros en DataTable.logic.
+
+## Troubleshooting
+
+- “Invalid hook call” o “useNavigate fuera de Router”:
+  - Asegúrate de usar el hook useNavigateTo dentro de componentes.
+  - Verifica que cualquier modal que use navegación esté dentro del Router.
+- Gráficos recortados:
+  - Revisa contenedores con h-full y min-h-0; evita padding extra en el CardContent del gráfico.
+
+## Licencia
+
+Sin licencia explícita definida. Consulta al autor si vas a reutilizar o distribuir.
+
+¿Dudas o sugerencias? Revisa el documento de planeamiento o abre un issue/PR.

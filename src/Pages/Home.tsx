@@ -3,7 +3,7 @@ import { AsideEvents } from '../components/AsideEvents.tsx';
 
 import 'rsuite/dist/rsuite.min.css';
 import { Box, Typography } from '@mui/material';
-import { Calendar } from '../components/Calendar.tsx';
+import { Calendar } from '../components/Calendar/Calendar.tsx';
 
 export const Home = () => {
   // Obtener hoy + 5 días laborables hacia atrás (total 6 fechas)

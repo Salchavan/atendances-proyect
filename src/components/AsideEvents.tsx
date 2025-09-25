@@ -1,4 +1,3 @@
-import { List, ListItem, ListSubheader, Typography } from '@mui/material';
 import { useState, useEffect } from 'react';
 import { ErrorBoundary } from 'react-error-boundary';
 
@@ -58,30 +57,25 @@ export const AsideEvents = ({ grid }: AsideEventsProps) => {
 
   return (
     <ErrorBoundary fallback={<div>Error loading special days.</div>}>
-      <List
-        sx={{ padding: '8px' }}
-        subheader={
-          <ListSubheader
-            sx={{ bgcolor: '#8891c1', fontSize: '17px' }}
-            className='rounded-xl'
-          >
-            Próximos Días Especiales
-          </ListSubheader>
-        }
-        className={grid + ' bg-secondary rounded-xl '}
-      >
-        {specialDays.map((day, index) => (
-          <ListItem
-            key={index}
-            className='flex flex-col items-start rounded-xl bg-white/50 my-1 p-2'
-          >
-            <Typography variant='body2' fontWeight='bold'>
-              {day.date}
-            </Typography>
-            <Typography variant='body2'>{day.title}</Typography>
-          </ListItem>
-        ))}
-      </List>
+      <div className={`${grid} bg-secondary rounded-xl p-2`}>
+        <div
+          className='rounded-xl bg-secondary text-neutralLight text-3xl px-2 py-1'
+          style={{ color: '#f2f2f2' }}
+        >
+          Próximos Días Especiales
+        </div>
+        <ul>
+          {specialDays.map((day, index) => (
+            <li
+              key={index}
+              className='flex flex-col items-start rounded-xl bg-neutralLight/70 text-text my-1 p-2'
+            >
+              <span className='text-xl font-bold'>{day.date}</span>
+              <span className='text-sm'>{day.title}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
     </ErrorBoundary>
   );
 };
