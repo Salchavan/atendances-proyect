@@ -16,24 +16,29 @@ export const DataTable = ({ tableData, filtersEnabled }: Props) => {
 
   return (
     <ErrorBoundary fallback={<div>Error loading table.</div>}>
-      <div>
+      <div className='h-full min-h-0 flex flex-col'>
         {logic.effectiveFiltersEnabled && (
-          <DataTableToolbar
-            globalSearch={logic.globalSearch}
-            searchInput={logic.searchInput}
-            onSearchChange={logic.handleSearchChange}
-            dayFilter={logic.dayFilter}
-            setDayFilter={logic.setDayFilter}
-            setGlobalSearch={logic.setGlobalSearch}
-            clearAllFilters={logic.clearAllFilters}
-          />
+          <div className='shrink-0'>
+            <DataTableToolbar
+              globalSearch={logic.globalSearch}
+              searchInput={logic.searchInput}
+              onSearchChange={logic.handleSearchChange}
+              dayFilter={logic.dayFilter}
+              setDayFilter={logic.setDayFilter}
+              setGlobalSearch={logic.setGlobalSearch}
+              clearAllFilters={logic.clearAllFilters}
+            />
+          </div>
         )}
 
-        <RsuiteDataTable
-          columns={logic.columns}
-          data={logic.filteredData}
-          onRowClick={logic.onRowClick}
-        />
+        <div className='flex-1 min-h-0'>
+          <RsuiteDataTable
+            className='h-full'
+            columns={logic.columns}
+            data={logic.filteredData}
+            onRowClick={logic.onRowClick}
+          />
+        </div>
       </div>
     </ErrorBoundary>
   );

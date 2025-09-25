@@ -3,5 +3,5 @@ import { BoxNull } from '../../components/BoxNull';
 
 export const ConfigGeneral = () => {
   changePageTitle('Configuración - General');
-  return <BoxNull grid='' />;
+  return <BoxNull className='' />;
 };

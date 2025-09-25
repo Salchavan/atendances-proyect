@@ -1,26 +1,26 @@
 import { changePageTitle } from '../Logic';
-import { DynamicGraph } from '../components/DynamicGraph/DynamicGraph.tsx';
 import { AsideEvents } from '../components/AsideEvents.tsx';
-import { getLastWeekdays } from '../Store/specificStore/GraphStore.ts';
 
 import 'rsuite/dist/rsuite.min.css';
 import { Box, Typography } from '@mui/material';
+import { Calendar } from '../components/Calendar.tsx';
 
 export const Home = () => {
   // Obtener hoy + 5 días laborables hacia atrás (total 6 fechas)
-  const recentWeekdays = getLastWeekdays(6, true);
   changePageTitle('Inicio');
   return (
     <>
-      <Box className='col-span-6 row-span-8'>
-        <Typography variant='h3' fontWeight={500} mb={1}>
-          Grafico de inasistencias
+      <Box className='col-span-6 row-span-9 grid grid-cols-6 grid-rows-9 min-h-0'>
+        <Typography
+          variant='h3'
+          fontWeight={500}
+          mb={1}
+          className='col-span-6 row-span-1'
+        >
+          Calendario de inasistencias
         </Typography>
-        <DynamicGraph
-          dataTableName='Ultimos 5 dias escolares'
-          initialAssignedDate={recentWeekdays}
-          grid=''
-        />
+        {/* DynamicGraph temporalmente oculto mientras se usa el calendario */}
+        <Calendar absences={{}} className='col-span-6 row-span-8 min-h-0' />
       </Box>
       <AsideEvents grid='col-span-2 row-span-9 col-start-7' />
     </>
