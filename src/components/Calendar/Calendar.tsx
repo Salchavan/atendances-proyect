@@ -33,6 +33,8 @@ export const Calendar: React.FC<CalendarProps> = (props) => {
     handleDayClick,
   } = useCalendarLogic(props);
 
+  const specialDates = useStore((s) => s.specialDates);
+
   const openDialog = useStore((s) => s.openDialog);
   const [studentsCache, setStudentsCache] = useState<StudentRec[] | null>(null);
 
@@ -40,7 +42,7 @@ export const Calendar: React.FC<CalendarProps> = (props) => {
     let active = true;
     const load = async () => {
       try {
-        const mod = await import('../../data/Students.json');
+        const mod = await import('../../../public/data/Students.json');
         const students: StudentRec[] = (mod as any).default || mod;
         if (active) setStudentsCache(students);
       } catch {
@@ -113,6 +115,7 @@ export const Calendar: React.FC<CalendarProps> = (props) => {
         onNext={nextMonth}
         onDayClick={handleDayClick}
         openDayDetails={openDayDetails}
+        specialDates={specialDates}
       />
     </ErrorBoundary>
   );

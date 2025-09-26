@@ -34,7 +34,7 @@ export function useCalendarLogic(props: CalendarProps) {
     let mounted = true;
     const load = async () => {
       try {
-        const mod = await import('../../data/Students.json');
+        const mod = await import('../../../public/data/Students.json');
         const students: StudentRec[] = (mod as any).default || mod;
         const mapTotals: AbsencesMap = {};
         const mapDetails: AbsencesDetailMap = {};

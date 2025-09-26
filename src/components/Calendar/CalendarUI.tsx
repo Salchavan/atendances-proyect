@@ -20,6 +20,7 @@ type CalendarUIProps = Pick<
   onNext: () => void;
   onDayClick: (d: Date) => void;
   openDayDetails?: (d: Date) => void;
+  specialDates?: string[]; // YYYY-MM-DD
 };
 
 export const CalendarUI: React.FC<CalendarUIProps> = ({
@@ -37,6 +38,7 @@ export const CalendarUI: React.FC<CalendarUIProps> = ({
   onNext,
   onDayClick,
   openDayDetails,
+  specialDates = [],
 }) => {
   const title = `${MONTHS_ES[viewDate.getMonth()]} ${viewDate.getFullYear()}`;
 
@@ -102,6 +104,7 @@ export const CalendarUI: React.FC<CalendarUIProps> = ({
             absencesNumberClass={absencesNumberClass}
             cellBgClass={cellBgClass}
             openDayDetails={openDayDetails}
+            specialDates={specialDates}
           />
         ))}
       </div>

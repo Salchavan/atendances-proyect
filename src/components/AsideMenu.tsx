@@ -97,7 +97,7 @@ export const AsideMenu = ({ grid }: AsideMenuProps) => {
             >
               <MenuItem
                 onClick={() => {
-                  navigate('perfil');
+                  navigate('profile');
                   setPerfilUserSelected(
                     userData
                       ? { ...userData, rol: Number((userData as any).rol) }

@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
 import { ErrorBoundary } from 'react-error-boundary';
+import { useStore } from '../Store/Store';
+import { fmtYmd } from './Calendar/utils';
 
 interface AsideEventsProps {
   grid: string;
@@ -13,6 +15,7 @@ interface SpecialDay {
 export const AsideEvents = ({ grid }: AsideEventsProps) => {
   const [specialDays, setSpecialDays] = useState<SpecialDay[]>([]);
   const [loading, setLoading] = useState(true);
+  const setSpecialDates = useStore((s) => s.setSpecialDates);
 
   useEffect(() => {
     async function fetchHolidays() {
@@ -42,6 +45,10 @@ export const AsideEvents = ({ grid }: AsideEventsProps) => {
         );
 
         setSpecialDays(futureHolidays);
+
+        // Publicar al store en formato YYYY-MM-DD
+        const ymdList = futureHolidays.map((d) => fmtYmd(d.dateObj));
+        setSpecialDates(ymdList);
       } catch (error) {
         console.error('Error fetching holidays', error);
       } finally {
@@ -49,7 +56,7 @@ export const AsideEvents = ({ grid }: AsideEventsProps) => {
       }
     }
     fetchHolidays();
-  }, []);
+  }, [setSpecialDates]);
 
   if (loading) {
     return <div>Cargando días especiales...</div>;

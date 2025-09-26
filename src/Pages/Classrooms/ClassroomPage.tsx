@@ -9,7 +9,7 @@ import {
   Stack,
   Typography,
 } from '@mui/material';
-import Classroom from '../../data/Classrooms.json';
+import Classroom from '../../../public/data/Classrooms.json';
 import { DynamicGraph } from '../../components/DynamicGraph/DynamicGraph';
 import { DataTable } from '../../components/DataTable/DataTable';
 

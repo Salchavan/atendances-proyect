@@ -21,7 +21,7 @@ export const Login = () => {
     document.title = 'Inicio de sesion';
     // Dynamic import for users
     (async () => {
-      const usersData = (await import('../data/users.json')).default;
+      const usersData = (await import('../../public/data/users.json')).default;
       setUsers(usersData);
     })();
   }, []);

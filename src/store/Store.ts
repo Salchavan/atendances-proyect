@@ -30,6 +30,9 @@ type Store = {
   toggleThemeMode: () => void;
   perfilUserSelected: User | undefined;
   setPerfilUserSelected: (user: User | undefined) => void;
+  specialDates: string[];
+  setSpecialDates: (dates: string[]) => void;
+  clearSpecialDates: () => void;
 };
 
 export const useStore = create<Store>((set) => ({
@@ -57,4 +60,7 @@ export const useStore = create<Store>((set) => ({
     })),
   perfilUserSelected: undefined,
   setPerfilUserSelected: (user) => set({ perfilUserSelected: user }),
+  specialDates: [],
+  setSpecialDates: (dates) => set({ specialDates: Array.from(new Set(dates)) }),
+  clearSpecialDates: () => set({ specialDates: [] }),
 }));

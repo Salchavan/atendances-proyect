@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState, useTransition } from 'react';
 import type { RowDataType } from 'rsuite/esm/Table';
-import typeColumns from '../../data/defaultDataTabletColumns.json';
+import typeColumns from '../../../public/data/defaultDataTabletColumns.json';
 import { useFilterStore } from '../../Store/specificStore/DataTableStore.ts';
 import { useStore } from '../../Store/Store.ts';
 import { useNavigateTo } from '../../Logic.ts';
@@ -15,8 +15,9 @@ export const useDataTableLogic = ({
   const [columns, setColumns] = useState<typeof typeColumns>([]);
   useEffect(() => {
     (async () => {
-      const data = (await import('../../data/defaultDataTabletColumns.json'))
-        .default;
+      const data = (
+        await import('../../../public/data/defaultDataTabletColumns.json')
+      ).default;
       setColumns(data);
     })();
   }, []);
