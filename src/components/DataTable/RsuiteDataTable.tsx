@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { Table } from 'rsuite';
 import { Box } from '@mui/material';
-import typeColumns from '../../../public/data/defaultDataTabletColumns.json';
+import typeColumns from '../../data/defaultDataTabletColumns.json';
 import type { RowDataType } from 'rsuite/esm/Table';
 import { ErrorBoundary } from 'react-error-boundary';
 

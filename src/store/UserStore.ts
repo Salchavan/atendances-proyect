@@ -24,8 +24,7 @@ export const useUserStore = create<UserStore>()(
       userData: undefined,
       userVerified: false,
       logIn: async (email: string, password: string) => {
-        const users: User[] = (await import('../../public/data/users.json'))
-          .default;
+        const users: User[] = (await import('../data/users.json')).default;
         const foundUser = users.find(
           (u: User) =>
             u.email.toLowerCase() === email.toLowerCase() &&

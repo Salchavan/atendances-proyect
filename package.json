@@ -13,8 +13,8 @@
     "br-deploy": "tsc -b --clean && tsc -b && vite build && gh-pages -d dist"
   },
   "dependencies": {
-    "@mui/icons-material": "^7.2.0",
-    "@mui/material": "^7.2.0",
+    "@mui/icons-material": "^7.3.2",
+    "@mui/material": "^7.3.2",
     "@mui/x-charts": "^8.9.0",
     "@mui/x-data-grid": "^8.10.0",
     "@tailwindcss/vite": "^4.1.11",
@@ -43,5 +43,9 @@
     "typescript": "~5.8.3",
     "typescript-eslint": "^8.30.1",
     "vite": "^6.3.5"
+  },
+  "overrides": {
+    "react": "19.1.0",
+    "react-dom": "19.1.0"
   }
 }

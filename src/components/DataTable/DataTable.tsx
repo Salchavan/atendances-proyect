@@ -1,6 +1,7 @@
 // components/DataTable.tsx (UI only)
 import type { RowDataType } from 'rsuite/esm/Table';
 import { ErrorBoundary } from 'react-error-boundary';
+import { ErrorFallback } from '../ErrorFallback';
 import { DataTableToolbar } from './DataTableToolbar';
 import { RsuiteDataTable } from './RsuiteDataTable';
 import { useDataTableLogic } from './DataTable.logic';
@@ -15,7 +16,7 @@ export const DataTable = ({ tableData, filtersEnabled }: Props) => {
   const logic = useDataTableLogic({ tableData, filtersEnabled });
 
   return (
-    <ErrorBoundary fallback={<div>Error loading table.</div>}>
+    <ErrorBoundary fallback={<ErrorFallback />}>
       <div className='h-full min-h-0 flex flex-col'>
         {logic.effectiveFiltersEnabled && (
           <div className='shrink-0'>

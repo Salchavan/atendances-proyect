@@ -1,6 +1,7 @@
 import { Box } from '@mui/material';
 import { useEffect, useRef, useState } from 'react';
 import { ErrorBoundary } from 'react-error-boundary';
+import { ErrorFallback } from '../ErrorFallback';
 import { useDynamicGraphLogic } from './DynamicGraph.logic.ts';
 import { DynamicGraphToolbar } from './DynamicGraphToolbar.tsx';
 import { DynamicGraphChart } from './DynamicGraphChart.tsx';
@@ -57,7 +58,7 @@ export const DynamicGraph = ({
   }, [logic.displayDates.length]);
 
   return (
-    <ErrorBoundary fallback={<div>Error loading graph.</div>}>
+    <ErrorBoundary fallback={<ErrorFallback />}>
       <Box
         className={grid}
         ref={containerRef as any}

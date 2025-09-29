@@ -1,4 +1,6 @@
 import { useState, useEffect } from 'react';
+import { ErrorBoundary } from 'react-error-boundary';
+import { ErrorFallback } from '../components/ErrorFallback';
 import type { User } from '../Store/UserStore';
 import { useCachedStore } from '../Store/CachedStore';
 import type { CachedStore } from '../Store/CachedStore';
@@ -21,7 +23,7 @@ export const Login = () => {
     document.title = 'Inicio de sesion';
     // Dynamic import for users
     (async () => {
-      const usersData = (await import('../../public/data/users.json')).default;
+      const usersData = (await import('../data/users.json')).default;
       setUsers(usersData);
     })();
   }, []);
@@ -59,33 +61,35 @@ export const Login = () => {
   };
 
   return (
-    <div className='flex flex-row justify-center items-center w-[100vw] h-[100vh]'>
-      <img src={Logo} alt='Logo IPETYM 69' className='mr-20' />
-      <div className='flex flex-col justify-center items-center'>
-        <Typography variant='h2' component='h1' className='text-center'>
-          Inicio de sesión
-        </Typography>
+    <ErrorBoundary fallback={<ErrorFallback />}>
+      <div className='flex flex-row justify-center items-center w-[100vw] h-[100vh]'>
+        <img src={Logo} alt='Logo IPETYM 69' className='mr-20' />
+        <div className='flex flex-col justify-center items-center'>
+          <Typography variant='h2' component='h1' className='text-center'>
+            Inicio de sesión
+          </Typography>
 
-        <div className='flex flex-col gap-2 w-100 mt-6'>
-          <TextField
-            label='Email'
-            type='email'
-            variant='outlined'
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <TextField
-            label='Contraseña'
-            variant='outlined'
-            type='password'
-            value={password}
-            onChange={(e) => setPassword(e.target.value.toLowerCase())}
-          />
-          <Button variant='contained' onClick={handleLogin}>
-            Ingresar
-          </Button>
+          <div className='flex flex-col gap-2 w-100 mt-6'>
+            <TextField
+              label='Email'
+              type='email'
+              variant='outlined'
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            <TextField
+              label='Contraseña'
+              variant='outlined'
+              type='password'
+              value={password}
+              onChange={(e) => setPassword(e.target.value.toLowerCase())}
+            />
+            <Button variant='contained' onClick={handleLogin}>
+              Ingresar
+            </Button>
+          </div>
         </div>
       </div>
-    </div>
+    </ErrorBoundary>
   );
 };

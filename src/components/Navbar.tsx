@@ -3,6 +3,7 @@ import { List, ListItem } from '@mui/material';
 import { ComandPaletteSearch } from './ComandPaletteSearch.tsx';
 
 import { ErrorBoundary } from 'react-error-boundary';
+import { ErrorFallback } from './ErrorFallback';
 
 interface NavbarProps {
   grid: string;
@@ -10,7 +11,7 @@ interface NavbarProps {
 
 export const Navbar = ({ grid }: NavbarProps) => {
   return (
-    <ErrorBoundary fallback={<div>Error loading navbar.</div>}>
+    <ErrorBoundary fallback={<ErrorFallback />}>
       <List sx={{ display: 'flex', flexDirection: 'row' }} className={grid}>
         <ListItem>
           <ComandPaletteSearch />

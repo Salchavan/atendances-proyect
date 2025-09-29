@@ -12,6 +12,8 @@ import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 import { DynamicGraph } from '../components/DynamicGraph/DynamicGraph.tsx';
 import { BoxNull } from '../components/BoxNull.tsx';
 import { changePageTitle } from '../Logic.ts';
+import { ErrorBoundary } from 'react-error-boundary';
+import { ErrorFallback } from '../components/ErrorFallback';
 
 const fallback = 'NO Definido';
 
@@ -71,54 +73,56 @@ export const Profile = () => {
   );
 
   return (
-    <Box className='col-span-8 row-span-9 p-4 grid grid-cols-2 grid-rows-2 gap-2'>
-      <Box className='col-start-1'>
-        <Box className='flex flex-row items-center '>
-          <Typography variant='h4' fontWeight='bold'>
-            Perfil de {displayName || fallback}
-          </Typography>
-          <Box display='flex' gap={1} flexWrap='wrap' className='ml-2'>
-            <Chip
-              label={
-                typeof selectedUser?.rol === 'number'
-                  ? `Rol ${selectedUser.rol}`
-                  : selectedUser?.Area || 'SIN ROL'
-              }
-              color='primary'
-              variant='outlined'
-            />
-            {selectedUser?.Active === false && (
-              <Chip label='INACTIVO' color='error' variant='filled' />
-            )}
+    <ErrorBoundary fallback={<ErrorFallback />}>
+      <Box className='col-span-8 row-span-9 p-4 grid grid-cols-2 grid-rows-2 gap-2'>
+        <Box className='col-start-1'>
+          <Box className='flex flex-row items-center '>
+            <Typography variant='h4' fontWeight='bold'>
+              Perfil de {displayName || fallback}
+            </Typography>
+            <Box display='flex' gap={1} flexWrap='wrap' className='ml-2'>
+              <Chip
+                label={
+                  typeof selectedUser?.rol === 'number'
+                    ? `Rol ${selectedUser.rol}`
+                    : selectedUser?.Area || 'SIN ROL'
+                }
+                color='primary'
+                variant='outlined'
+              />
+              {selectedUser?.Active === false && (
+                <Chip label='INACTIVO' color='error' variant='filled' />
+              )}
+            </Box>
           </Box>
+          {selectedUser && (
+            <Box className='flex flex-col'>
+              <Grid container spacing={2}>
+                {field('Nombre', displayName, false)}
+                {field('Email', selectedUser?.email, true)}
+                {field('Rol', selectedUser?.rol, false)}
+                {field('ID', selectedUser?.id, true)}
+                {field('DNI', selectedUser?.DNI, true)}
+                {field('Email', selectedUser?.email, true)}
+              </Grid>
+              <Divider sx={{ my: 2 }} />
+            </Box>
+          )}
+          {!selectedUser && (
+            <Typography variant='body2' color='text.secondary'>
+              No hay un usuario seleccionado actualmente.
+            </Typography>
+          )}
         </Box>
-        {selectedUser && (
-          <Box className='flex flex-col'>
-            <Grid container spacing={2}>
-              {field('Nombre', displayName, false)}
-              {field('Email', selectedUser?.email, true)}
-              {field('Rol', selectedUser?.rol, false)}
-              {field('ID', selectedUser?.id, true)}
-              {field('DNI', selectedUser?.DNI, true)}
-              {field('Email', selectedUser?.email, true)}
-            </Grid>
-            <Divider sx={{ my: 2 }} />
-          </Box>
-        )}
-        {!selectedUser && (
-          <Typography variant='body2' color='text.secondary'>
-            No hay un usuario seleccionado actualmente.
-          </Typography>
-        )}
+        <DynamicGraph
+          dataTableName={`Datos de ${displayName || 'Usuario'}`}
+          initialAssignedDate={null}
+          grid='row-start-2'
+          toolbarEnabled={true}
+        />
+        <BoxNull className='col-start-2 row-start-1' />
+        <BoxNull className='col-start-2 row-start-2' />
       </Box>
-      <DynamicGraph
-        dataTableName={`Datos de ${displayName || 'Usuario'}`}
-        initialAssignedDate={null}
-        grid='row-start-2'
-        toolbarEnabled={true}
-      />
-      <BoxNull className='col-start-2 row-start-1' />
-      <BoxNull className='col-start-2 row-start-2' />
-    </Box>
+    </ErrorBoundary>
   );
 };

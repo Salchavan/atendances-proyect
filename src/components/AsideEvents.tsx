@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { ErrorBoundary } from 'react-error-boundary';
+import { ErrorFallback } from './ErrorFallback';
 import { useStore } from '../Store/Store';
 import { fmtYmd } from './Calendar/utils';
 
@@ -63,7 +64,7 @@ export const AsideEvents = ({ grid }: AsideEventsProps) => {
   }
 
   return (
-    <ErrorBoundary fallback={<div>Error loading special days.</div>}>
+    <ErrorBoundary fallback={<ErrorFallback />}>
       <div className={`${grid} bg-secondary rounded-xl p-2`}>
         <div
           className='rounded-xl bg-secondary text-neutralLight text-3xl px-2 py-1'

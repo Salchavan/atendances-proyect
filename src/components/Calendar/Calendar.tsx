@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { ErrorBoundary } from 'react-error-boundary';
+import { ErrorFallback } from '../ErrorFallback';
 import { useStore } from '../../Store/Store';
 import { DataTable } from '../DataTable/DataTable';
 import { CalendarUI } from './CalendarUI';
@@ -42,7 +43,7 @@ export const Calendar: React.FC<CalendarProps> = (props) => {
     let active = true;
     const load = async () => {
       try {
-        const mod = await import('../../../public/data/Students.json');
+        const mod = await import('../../data/Students.json');
         const students: StudentRec[] = (mod as any).default || mod;
         if (active) setStudentsCache(students);
       } catch {
@@ -99,7 +100,7 @@ export const Calendar: React.FC<CalendarProps> = (props) => {
   };
 
   return (
-    <ErrorBoundary fallback={<div>Error loading calendar.</div>}>
+    <ErrorBoundary fallback={<ErrorFallback />}>
       <CalendarUI
         className={props.className}
         headerTextClass={props.headerTextClass}
