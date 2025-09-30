@@ -1,0 +1,20 @@
+{
+  "light-theme": {
+    "primary": "#1F4E8C",
+    "secondary": "#4F7DCB",
+    "background": "#EAEAEA",
+    "surface": "#F2F2F2",
+    "text-primary": "#333333",
+    "success": "#3BA55C",
+    "error": "#D93025"
+  },
+  "dark-theme": {
+    "primary": "#90CAF9",
+    "secondary": "#42A5F5",
+    "background": "#121212",
+    "surface": "#1E1E1E",
+    "text-primary": "#FFFFFF",
+    "success": "#81C784",
+    "error": "#EF5350"
+  }
+}
