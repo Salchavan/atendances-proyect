@@ -37,8 +37,8 @@
   {
     "field": "classroom",
     "headerName": "Curso",
-    "width": 60,
-    "minWidth": 60,
+    "width": 120,
+    "minWidth": 120,
     "sortable": true
   }
 ]

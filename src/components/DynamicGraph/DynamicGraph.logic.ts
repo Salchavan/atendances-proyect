@@ -3,7 +3,7 @@ import { addDays, startOfYear, getISOWeek, getISOWeekYear } from 'date-fns';
 import {
   useGraphStore,
   getLastWeekdays,
-} from '../../Store/specificStore/GraphStore.ts';
+} from '../../store/specificStore/GraphStore.ts';
 import { useStore } from '../../Store/Store.ts';
 import { DataTable } from '../DataTable/DataTable';
 
@@ -23,10 +23,10 @@ interface Student {
 }
 
 export const useDynamicGraphLogic = ({
-  dataTableName,
+  graphName,
   initialAssignedDate,
 }: {
-  dataTableName: string;
+  graphName: string;
   initialAssignedDate?: Date[] | null;
 }) => {
   const [Students, setStudents] = useState<Student[]>([]);
@@ -472,7 +472,7 @@ export const useDynamicGraphLogic = ({
       React.createElement(DataTable as any, {
         tableData: studentsWithUnassistences,
       }),
-      dataTableName
+      graphName
     );
   };
   const onChartClickPartitioned = () => {
@@ -480,7 +480,7 @@ export const useDynamicGraphLogic = ({
       React.createElement(DataTable as any, {
         tableData: studentsWithUnassistences,
       }),
-      `${dataTableName} (Rango)`
+      `${graphName} (Rango)`
     );
   };
 

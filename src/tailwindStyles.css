@@ -1,5 +1,6 @@
 @import url(https://fonts.googleapis.com/css2?family=Poppins&display=swap);
 @import 'tailwindcss';
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
 @theme {
   --color-primary: #1f4e8c;

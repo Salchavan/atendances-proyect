@@ -2,8 +2,10 @@
 import type { RowDataType } from 'rsuite/esm/Table';
 import { ErrorBoundary } from 'react-error-boundary';
 import { DataTableToolbar } from './DataTableToolbar';
-import { RsuiteDataTable } from './RsuiteDataTable';
+// Reemplazo basado en MUI (mantiene el RsuiteDataTable por si hay que volver)
+import { MuiDataTable } from './MuiDataTable';
 import { useDataTableLogic } from './DataTable.logic';
+import { Box, Paper, Typography } from '@mui/material';
 
 type Props = {
   tableData: RowDataType[];
@@ -15,10 +17,23 @@ export const DataTable = ({ tableData, filtersEnabled }: Props) => {
   const logic = useDataTableLogic({ tableData, filtersEnabled });
 
   return (
-    <ErrorBoundary fallback={<div>Error loading table.</div>}>
-      <div className='h-full min-h-0 flex flex-col'>
+    <ErrorBoundary
+      fallback={
+        <Paper sx={{ p: 2 }}>
+          <Typography color='error'>Error loading table.</Typography>
+        </Paper>
+      }
+    >
+      <Box
+        sx={{
+          display: 'flex',
+          flexDirection: 'column',
+          height: '100%',
+          minHeight: 0,
+        }}
+      >
         {logic.effectiveFiltersEnabled && (
-          <div className='shrink-0'>
+          <Box sx={{ flexShrink: 0 }}>
             <DataTableToolbar
               globalSearch={logic.globalSearch}
               searchInput={logic.searchInput}
@@ -28,18 +43,17 @@ export const DataTable = ({ tableData, filtersEnabled }: Props) => {
               setGlobalSearch={logic.setGlobalSearch}
               clearAllFilters={logic.clearAllFilters}
             />
-          </div>
+          </Box>
         )}
 
-        <div className='flex-1 min-h-0'>
-          <RsuiteDataTable
-            className='h-full'
+        <Box sx={{ flex: 1, minHeight: 0 }}>
+          <MuiDataTable
             columns={logic.columns}
             data={logic.filteredData}
             onRowClick={logic.onRowClick}
           />
-        </div>
-      </div>
+        </Box>
+      </Box>
     </ErrorBoundary>
   );
 };

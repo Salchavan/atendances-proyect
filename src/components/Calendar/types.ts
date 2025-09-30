@@ -1,13 +1,7 @@
-export type AbsencesMap = Record<string, number>;
-export type AbsencesDetail = {
-  total: number;
-  justified: number;
-  unjustified: number;
-};
-export type AbsencesDetailMap = Record<string, AbsencesDetail>;
+// Absences types moved to src/types/generalTypes.ts
 
 export type CalendarProps = {
-  absences?: AbsencesMap;
+  absences?: import('../../types/generalTypes').AbsencesMap;
   initialDate?: Date;
   onDayClick?: (date: Date) => void;
   className?: string;

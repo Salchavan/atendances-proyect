@@ -1,4 +1,4 @@
-import { Box } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import { useEffect, useRef, useState } from 'react';
 import { ErrorBoundary } from 'react-error-boundary';
 import { useDynamicGraphLogic } from './DynamicGraph.logic.ts';
@@ -6,45 +6,47 @@ import { DynamicGraphToolbar } from './DynamicGraphToolbar.tsx';
 import { DynamicGraphChart } from './DynamicGraphChart.tsx';
 
 interface Props {
-  dataTableName: string;
+  graphName: string;
   initialAssignedDate?: Date[] | null;
   grid: string;
   toolbarEnabled?: boolean; // nueva prop para ocultar / desactivar toolbar
 }
 
 export const DynamicGraph = ({
-  dataTableName,
+  graphName,
   initialAssignedDate = null,
   grid,
   toolbarEnabled = true,
 }: Props) => {
-  // Layout: medir alto disponible para el gráfico (contenedor - toolbar)
+  // Layout con flex: la zona del gráfico ocupa todo el espacio restante.
   const containerRef = useRef<HTMLDivElement | null>(null);
   const toolbarRef = useRef<HTMLUListElement | null>(null);
-  const [chartHeight, setChartHeight] = useState<number>(260);
+  const chartAreaRef = useRef<HTMLDivElement | null>(null);
+  const [chartHeight, setChartHeight] = useState<number>(300);
   useEffect(() => {
-    const recompute = () => {
-      const cont = containerRef.current;
-      if (!cont) return;
-      const total = cont.clientHeight;
-      const tb = toolbarEnabled ? toolbarRef.current?.clientHeight ?? 0 : 0;
-      const padding = 8; // margen inferior pequeño
-      const available = Math.max(140, total - tb - padding);
-      setChartHeight(available);
+    const compute = () => {
+      const area = chartAreaRef.current;
+      if (!area) return;
+      const h = area.clientHeight;
+      setChartHeight(Math.max(140, h));
     };
-    recompute();
-    const ro = new ResizeObserver(recompute);
-    if (containerRef.current) ro.observe(containerRef.current);
-    if (toolbarRef.current) ro.observe(toolbarRef.current);
-    window.addEventListener('resize', recompute);
+    // Primer cálculo tras el layout
+    const raf = requestAnimationFrame(compute);
+    // Observar cambios de tamaño del área del gráfico
+    const ro = new ResizeObserver(() => compute());
+    if (chartAreaRef.current) ro.observe(chartAreaRef.current);
+    // Fallback por si cambia el viewport
+    const onResize = () => compute();
+    window.addEventListener('resize', onResize);
     return () => {
+      cancelAnimationFrame(raf);
       ro.disconnect();
-      window.removeEventListener('resize', recompute);
+      window.removeEventListener('resize', onResize);
     };
   }, [toolbarEnabled]);
 
   const logic = useDynamicGraphLogic({
-    dataTableName,
+    graphName,
     initialAssignedDate,
   });
 
@@ -66,8 +68,12 @@ export const DynamicGraph = ({
           flexDirection: 'column',
           height: '100%',
           minHeight: 0,
+          width: '100%',
         }}
       >
+        <Typography variant='h6' gutterBottom>
+          Gráfico de {graphName}
+        </Typography>
         {toolbarEnabled && (
           <DynamicGraphToolbar
             listRef={toolbarRef}
@@ -83,18 +89,22 @@ export const DynamicGraph = ({
             partitionEnabled={logic.partitionEnabled}
           />
         )}
-
-        <DynamicGraphChart
-          mode={logic.graphMode}
-          height={chartHeight}
-          displayDates={logic.displayDates}
-          totals={logic.total}
-          justified={logic.justified}
-          unjustified={logic.unjustified}
-          partitioned={logic.partitioned}
-          onClickEach={logic.onChartClickEach}
-          onClickPartitioned={logic.onChartClickPartitioned}
-        />
+        <Box
+          ref={chartAreaRef}
+          sx={{ flex: 1, minHeight: 0, width: '100%', display: 'flex' }}
+        >
+          <DynamicGraphChart
+            mode={logic.graphMode}
+            height={chartHeight}
+            displayDates={logic.displayDates}
+            totals={logic.total}
+            justified={logic.justified}
+            unjustified={logic.unjustified}
+            partitioned={logic.partitioned}
+            onClickEach={logic.onChartClickEach}
+            onClickPartitioned={logic.onChartClickPartitioned}
+          />
+        </Box>
       </Box>
     </ErrorBoundary>
   );

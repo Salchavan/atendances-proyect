@@ -1,7 +1,11 @@
 import React from 'react';
 import { WEEKDAYS_ES, MONTHS_ES } from './utils';
 import { DayCell } from './DayCell';
-import type { AbsencesDetailMap, AbsencesMap, CalendarProps } from './types';
+import type { CalendarProps } from './types';
+import type { AbsencesDetailMap, AbsencesMap } from '../../types/generalTypes';
+import { Box, IconButton, Typography, Paper } from '@mui/material';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
 type CalendarUIProps = Pick<
   CalendarProps,
@@ -43,71 +47,103 @@ export const CalendarUI: React.FC<CalendarUIProps> = ({
   const title = `${MONTHS_ES[viewDate.getMonth()]} ${viewDate.getFullYear()}`;
 
   return (
-    <div
-      className={[
-        'w-full h-full flex flex-col border border-gray-200 rounded-lg overflow-hidden bg-white',
-        className || '',
-      ].join(' ')}
+    <Paper
+      className={className}
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        height: '100%',
+        borderRadius: 2,
+        overflow: 'hidden',
+      }}
+      variant='outlined'
     >
-      <div className='flex items-center justify-between px-3 py-2 border-b border-gray-200'>
-        <button
-          type='button'
-          onClick={onPrev}
-          className='px-2 py-1 rounded hover:bg-gray-100 active:bg-gray-200'
-          aria-label='Mes anterior'
-        >
-          ◀
-        </button>
-        <div
-          className={[
-            'text-lg md:text-xl font-bold select-none',
-            headerTextClass || '',
-          ].join(' ')}
+      <Box
+        sx={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          px: 2,
+          py: 1,
+          borderBottom: 1,
+          borderColor: 'divider',
+        }}
+      >
+        <IconButton aria-label='Mes anterior' onClick={onPrev} size='small'>
+          <ArrowBackIcon />
+        </IconButton>
+        <Typography
+          variant='h6'
+          sx={{ fontWeight: 'bold', userSelect: 'none' }}
+          className={
+            headerTextClass
+              ? `${headerTextClass} calendar-header`
+              : 'calendar-header'
+          }
         >
           {title}
-        </div>
-        <button
-          type='button'
-          onClick={onNext}
-          className='px-2 py-1 rounded hover:bg-gray-100 active:bg-gray-200'
-          aria-label='Mes siguiente'
-        >
-          ▶
-        </button>
-      </div>
+        </Typography>
+        <IconButton aria-label='Mes siguiente' onClick={onNext} size='small'>
+          <ArrowForwardIcon />
+        </IconButton>
+      </Box>
 
-      <div className='grid grid-cols-7 px-2 py-1'>
+      <Box
+        sx={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(7, 1fr)',
+          px: 2,
+          py: 1,
+          gap: 0,
+        }}
+      >
         {WEEKDAYS_ES.map((d) => (
-          <div
-            key={d}
-            className={[
-              'text-center font-semibold text-sm md:text-base',
-              headerTextClass || 'text-gray-700',
-            ].join(' ')}
-          >
-            {d}
-          </div>
+          <Box key={d} sx={{ textAlign: 'center' }}>
+            <Typography
+              variant='subtitle2'
+              fontWeight={600}
+              className={
+                headerTextClass
+                  ? `${headerTextClass} calendar-header`
+                  : 'calendar-header'
+              }
+              color={!headerTextClass ? 'text.secondary' : undefined}
+            >
+              {d}
+            </Typography>
+          </Box>
         ))}
-      </div>
+      </Box>
 
-      <div className='grid grid-cols-7 grid-rows-5 gap-px px-2 pb-2 grow min-h-0'>
+      <Box
+        sx={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(7, 1fr)',
+          gap: 0.5,
+          px: 2,
+          pb: 2,
+          flexGrow: 1,
+          minHeight: 0,
+        }}
+      >
         {gridDays.map((date) => (
-          <DayCell
-            key={date.toISOString()}
-            date={date}
-            viewMonth={viewDate.getMonth()}
-            today={today}
-            onClick={onDayClick}
-            absencesSource={absencesSource}
-            detailsSource={detailsSource}
-            dayNumberClass={dayNumberClass}
-            absencesNumberClass={absencesNumberClass}
-            cellBgClass={cellBgClass}
-            openDayDetails={openDayDetails}
-            specialDates={specialDates}
-          />
+          <Box key={date.toISOString()}>
+            <DayCell
+              date={date}
+              viewMonth={viewDate.getMonth()}
+              today={today}
+              onClick={onDayClick}
+              absencesSource={absencesSource}
+              detailsSource={detailsSource}
+              dayNumberClass={dayNumberClass}
+              absencesNumberClass={absencesNumberClass}
+              cellBgClass={cellBgClass}
+              openDayDetails={openDayDetails}
+              specialDates={specialDates}
+            />
+          </Box>
         ))}
-      </div>
-    </div>
+      </Box>
+    </Paper>
   );
 };

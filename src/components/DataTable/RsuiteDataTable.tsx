@@ -1,6 +1,7 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { Table } from 'rsuite';
-import { Box } from '@mui/material';
+import { Box, useTheme, Paper, Typography } from '@mui/material';
+import { alpha } from '@mui/material/styles';
 import typeColumns from '../../../public/data/defaultDataTabletColumns.json';
 import type { RowDataType } from 'rsuite/esm/Table';
 import { ErrorBoundary } from 'react-error-boundary';
@@ -18,6 +19,7 @@ export const RsuiteDataTable: React.FC<Props> = ({
   onRowClick,
   className,
 }) => {
+  const theme = useTheme();
   const { Column, HeaderCell, Cell } = Table;
   // Medir altura disponible del contenedor para ajustar la tabla
   const containerRef = useRef<HTMLDivElement | null>(null);
@@ -68,10 +70,59 @@ export const RsuiteDataTable: React.FC<Props> = ({
   }, [data, sortColumn, sortType]);
 
   return (
-    <ErrorBoundary fallback={<div>Error loading table.</div>}>
+    <ErrorBoundary
+      fallback={
+        <Paper sx={{ p: 2 }}>
+          <Typography color='error'>Error loading table.</Typography>
+        </Paper>
+      }
+    >
       <Box
         ref={containerRef}
-        className={(className ? className + ' ' : '') + 'h-full min-h-0'}
+        sx={{
+          height: '100%',
+          minHeight: 0,
+          // Base colors
+          '& .rs-table': {
+            backgroundColor: theme.palette.background.paper,
+            color: theme.palette.text.primary,
+          },
+          // Header row and cells
+          '& .rs-table-row-header, & .rs-table-cell-header': {
+            backgroundColor: theme.palette.background.paper,
+            color: theme.palette.text.secondary,
+            borderColor: theme.palette.divider,
+            fontWeight: 600,
+          },
+          // Cell borders and text
+          '& .rs-table-cell': {
+            borderColor: theme.palette.divider,
+            color: theme.palette.text.primary,
+          },
+          // Body rows base background
+          '& .rs-table-row': {
+            backgroundColor: theme.palette.background.paper,
+          },
+          // Zebra (suave)
+          '& .rs-table-row:nth-of-type(even) .rs-table-cell': {
+            backgroundColor: alpha(theme.palette.action.hover, 0.25),
+          },
+          // Hover row
+          '& .rs-table-row:hover .rs-table-cell, & .rs-table-row.rs-table-row-hover .rs-table-cell':
+            {
+              backgroundColor: theme.palette.action.hover,
+            },
+          // Scrollbars (WebKit)
+          '& ::-webkit-scrollbar': { width: 8, height: 8 },
+          '& ::-webkit-scrollbar-thumb': {
+            backgroundColor: alpha(theme.palette.text.primary, 0.25),
+            borderRadius: 8,
+          },
+          '& ::-webkit-scrollbar-thumb:hover': {
+            backgroundColor: alpha(theme.palette.text.primary, 0.4),
+          },
+        }}
+        className={className}
       >
         <Table
           data={sortedData}
@@ -90,7 +141,11 @@ export const RsuiteDataTable: React.FC<Props> = ({
           }}
           onRowClick={onRowClick}
           locale={{ emptyMessage: 'Sin datos' }}
-          style={{ fontSize: '0.95rem' }}
+          style={{
+            fontSize: '0.95rem',
+            backgroundColor: theme.palette.background.paper,
+            color: theme.palette.text.primary,
+          }}
         >
           {columns.map((col) => (
             <Column
@@ -100,7 +155,14 @@ export const RsuiteDataTable: React.FC<Props> = ({
               align='left'
               sortable
             >
-              <HeaderCell style={{ fontWeight: 'bold' }}>
+              <HeaderCell
+                style={{
+                  fontWeight: 700,
+                  backgroundColor: theme.palette.background.paper,
+                  color: theme.palette.text.secondary,
+                  borderColor: theme.palette.divider,
+                }}
+              >
                 {col.headerName}
               </HeaderCell>
               <Cell dataKey={col.field as string} fullText />

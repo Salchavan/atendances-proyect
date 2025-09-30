@@ -1,20 +1,11 @@
 import { useEffect, useMemo, useState } from 'react';
-import type { AbsencesDetailMap, AbsencesMap, CalendarProps } from './types';
+import type { CalendarProps } from './types';
+import type {
+  AbsencesDetailMap,
+  AbsencesMap,
+  StudentRec,
+} from '../../types/generalTypes';
 import { addDays, fmtYmd, getMonday, startOfMonth } from './utils';
-
-interface Unassistance {
-  day: string; // 'dd-mm-yy'
-  isJustified: boolean;
-}
-interface StudentRec {
-  id: number;
-  firstName: string;
-  lastName: string;
-  age: number;
-  email: string;
-  classroom: string;
-  unassistences: Unassistance[];
-}
 
 export function useCalendarLogic(props: CalendarProps) {
   const { absences = {}, initialDate, onDayClick } = props;

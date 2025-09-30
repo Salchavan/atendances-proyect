@@ -1,17 +1,15 @@
 import React from 'react';
+import { Box, Typography, ButtonBase, Tooltip } from '@mui/material';
 import { fmtYmd } from './utils';
+import type { AbsencesMap, AbsencesDetailMap } from '../../types/generalTypes';
 
 type DayCellProps = {
   date: Date;
   viewMonth: number;
   today: Date;
   onClick: (d: Date) => void;
-  absencesSource: Record<string, number>;
-  detailsSource: Record<
-    string,
-    { total: number; justified: number; unjustified: number }
-  >;
-
+  absencesSource: AbsencesMap;
+  detailsSource: AbsencesDetailMap;
   dayNumberClass?: string;
   absencesNumberClass?: string;
   cellBgClass?: string;
@@ -28,7 +26,6 @@ export const DayCell: React.FC<DayCellProps> = ({
   detailsSource,
   dayNumberClass,
   absencesNumberClass,
-  cellBgClass,
   openDayDetails,
   specialDates = [],
 }) => {
@@ -41,16 +38,7 @@ export const DayCell: React.FC<DayCellProps> = ({
     date.getMonth() === today.getMonth() &&
     date.getDate() === today.getDate();
 
-  // Aplica estilo de "domingo" si es especial
   const weekendLike = isWeekend || isSpecial;
-
-  const baseBg = inMonth ? 'bg-white' : 'bg-gray-50';
-  const weekendBg = inMonth ? 'bg-gray-100' : 'bg-gray-200';
-  const bgClass = weekendLike ? weekendBg : cellBgClass || baseBg;
-
-  const borderClass = inMonth ? 'border-gray-300' : 'border-gray-200';
-  const ringClass = isToday ? 'ring-2 md:ring-4 ring-blue-500 ring-inset' : '';
-
   const absences = absencesSource[ymd] || 0;
   const details = detailsSource[ymd];
 
@@ -59,65 +47,133 @@ export const DayCell: React.FC<DayCellProps> = ({
     openDayDetails?.(date);
   };
 
-  return (
-    <button
-      type='button'
+  const CellContent = (
+    <Box
+      component={ButtonBase}
       onClick={handleClick}
-      className={[
-        'relative w-full h-full rounded-md border flex flex-col items-center justify-center hover:bg-blue-50/40 group',
-        bgClass,
-        borderClass,
-        ringClass,
-      ].join(' ')}
+      sx={{
+        position: 'relative',
+        width: '100%',
+        height: '100%',
+        borderRadius: 1,
+        border: '1px solid',
+        borderColor: weekendLike ? 'transparent' : 'divider',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        // Weekdays (laborales) -> gris; fines de semana -> color del fondo (paper)
+        bgcolor: inMonth
+          ? weekendLike
+            ? 'background.default' // weekend/special inside month: blend with container
+            : 'background.paper' // weekdays inside month: grey-ish
+          : 'background.default', // out-of-month: de-emphasize
+        '&:hover': {
+          bgcolor: weekendLike ? 'background.default' : 'action.hover',
+        },
+        outline: isToday ? '2px solid' : 'none',
+        outlineColor: isToday ? 'primary.main' : 'transparent',
+        outlineOffset: isToday ? -1 : 0,
+      }}
     >
       {/* Número del día */}
-      <div
-        className={[
-          'absolute top-1 right-1 text-xs md:text-sm select-none',
-          inMonth ? 'text-gray-900' : 'text-gray-400',
-          dayNumberClass || '',
-        ].join(' ')}
+      <Typography
+        variant='caption'
+        sx={{
+          position: 'absolute',
+          top: 6,
+          right: 6,
+          userSelect: 'none',
+          color: inMonth
+            ? weekendLike
+              ? 'text.disabled'
+              : 'text.primary'
+            : 'text.disabled',
+        }}
+        className={
+          dayNumberClass
+            ? `${dayNumberClass} calendar-day-number`
+            : 'calendar-day-number'
+        }
       >
         {date.getDate()}
-      </div>
+      </Typography>
 
       {/* Número de inasistencias (oculto en fines de semana y días especiales) */}
       {!weekendLike && (
-        <div
-          className={[
-            'font-extrabold text-red-600 text-xl md:text-2xl select-none',
-            absencesNumberClass || '',
-          ].join(' ')}
+        <Typography
+          variant='h5'
+          fontWeight={800}
+          color='error.main'
+          className={
+            absencesNumberClass
+              ? `${absencesNumberClass} calendar-absences-number`
+              : 'calendar-absences-number'
+          }
+          sx={{ userSelect: 'none' }}
         >
           {absences}
-        </div>
+        </Typography>
       )}
+    </Box>
+  );
 
-      {/* Tooltip (si existe) */}
-      {details && (
-        <div className='hidden group-hover:flex absolute top-2 left-2 z-20 bg-white border border-gray-300 rounded-md shadow p-3 text-[11px] md:text-sm flex-col gap-1.5'>
-          <div className='font-semibold text-gray-800'>Inasistencias</div>
-          <div className='flex items-center gap-2'>
-            <span className='w-4 h-4 md:w-5 md:h-5 rounded-sm bg-slate-700' />
-            <span className='text-gray-700'>Total:</span>
-            <span className='font-semibold text-gray-900'>{details.total}</span>
-          </div>
-          <div className='flex items-center gap-2'>
-            <span className='w-4 h-4 md:w-5 md:h-5 rounded-sm bg-green-600' />
-            <span className='text-gray-700'>Justificadas:</span>
-            <span className='font-semibold text-gray-900'>
-              {details.justified}
-            </span>
-          </div>
-          <div className='flex items-center gap-2'>
-            <span className='w-4 h-4 md:w-5 md:h-5 rounded-sm bg-red-600' />
-            <span className='text-gray-700'>No justificadas:</span>
-            <span className='font-semibold text-gray-900'>
-              {details.unjustified}
-            </span>
-          </div>
-        </div>
-      )}
-    </button>
+  if (!details) return CellContent;
+
+  const tooltip = (
+    <Box sx={{ p: 1 }}>
+      <Typography variant='subtitle2' fontWeight={600} sx={{ mb: 0.5 }}>
+        Inasistencias
+      </Typography>
+      <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 0.5 }}>
+        <Box
+          sx={{ width: 16, height: 16, borderRadius: 0.5, bgcolor: 'grey.800' }}
+        />
+        <Typography variant='body2' color='text.secondary'>
+          Total:
+        </Typography>
+        <Typography variant='body2' fontWeight={600}>
+          {details.total}
+        </Typography>
+      </Box>
+      <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 0.5 }}>
+        <Box
+          sx={{
+            width: 16,
+            height: 16,
+            borderRadius: 0.5,
+            bgcolor: 'success.main',
+          }}
+        />
+        <Typography variant='body2' color='text.secondary'>
+          Justificadas:
+        </Typography>
+        <Typography variant='body2' fontWeight={600}>
+          {details.justified}
+        </Typography>
+      </Box>
+      <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+        <Box
+          sx={{
+            width: 16,
+            height: 16,
+            borderRadius: 0.5,
+            bgcolor: 'error.main',
+          }}
+        />
+        <Typography variant='body2' color='text.secondary'>
+          No justificadas:
+        </Typography>
+        <Typography variant='body2' fontWeight={600}>
+          {details.unjustified}
+        </Typography>
+      </Box>
+    </Box>
+  );
+
+  return (
+    <Tooltip title={tooltip} placement='top-start' enterDelay={300} arrow>
+      {CellContent}
+    </Tooltip>
   );
 };

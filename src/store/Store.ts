@@ -1,4 +1,5 @@
 import { create } from 'zustand';
+import { persist } from 'zustand/middleware';
 import { type ReactElement } from 'react';
 import { type HTMLElementType } from 'react';
 
@@ -19,15 +20,24 @@ type User = {
   ID?: string | number;
   DNI?: string | number;
 };
+type DialogSize = 'big' | 'small' | { width: number; height: number };
+
 type Store = {
   // Control de diálogo modal global
   isDialogOpen: boolean;
   dialogContent: ReactElement | HTMLElementType | null;
   dialogTitle: string;
-  openDialog: (content: ReactElement, title?: string) => void;
+  dialogSize: DialogSize;
+  openDialog: (
+    content: ReactElement,
+    title?: string,
+    size?: DialogSize
+  ) => void;
   closeDialog: () => void;
   themeMode: 'light' | 'dark';
   toggleThemeMode: () => void;
+  fontFamily: string;
+  setFontFamily: (font: string) => void;
   perfilUserSelected: User | undefined;
   setPerfilUserSelected: (user: User | undefined) => void;
   specialDates: string[];
@@ -35,32 +45,48 @@ type Store = {
   clearSpecialDates: () => void;
 };
 
-export const useStore = create<Store>((set) => ({
-  // Modal global
-  isDialogOpen: false,
-  dialogContent: null,
-  dialogTitle: '',
-  openDialog: (content, title = '') => {
-    set({
-      isDialogOpen: true,
-      dialogContent: content,
-      dialogTitle: title,
-    });
-  },
-  closeDialog: () =>
-    set({
+export const useStore = create<Store>()(
+  persist(
+    (set) => ({
+      // Modal global
       isDialogOpen: false,
       dialogContent: null,
       dialogTitle: '',
+      dialogSize: 'big',
+      openDialog: (content, title = '', size = 'big') => {
+        set({
+          isDialogOpen: true,
+          dialogContent: content,
+          dialogTitle: title,
+          dialogSize: size,
+        });
+      },
+      closeDialog: () =>
+        set({
+          isDialogOpen: false,
+          dialogContent: null,
+          dialogTitle: '',
+          dialogSize: 'big',
+        }),
+      themeMode: 'light',
+      toggleThemeMode: () =>
+        set((state) => ({
+          themeMode: state.themeMode === 'light' ? 'dark' : 'light',
+        })),
+      fontFamily:
+        'Poppins, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif',
+      setFontFamily: (font) => set({ fontFamily: font }),
+      perfilUserSelected: undefined,
+      setPerfilUserSelected: (user) => set({ perfilUserSelected: user }),
+      specialDates: [],
+      setSpecialDates: (dates) =>
+        set({ specialDates: Array.from(new Set(dates)) }),
+      clearSpecialDates: () => set({ specialDates: [] }),
     }),
-  themeMode: 'light',
-  toggleThemeMode: () =>
-    set((state) => ({
-      themeMode: state.themeMode === 'light' ? 'dark' : 'light',
-    })),
-  perfilUserSelected: undefined,
-  setPerfilUserSelected: (user) => set({ perfilUserSelected: user }),
-  specialDates: [],
-  setSpecialDates: (dates) => set({ specialDates: Array.from(new Set(dates)) }),
-  clearSpecialDates: () => set({ specialDates: [] }),
-}));
+    {
+      name: 'app-preferences',
+      // Only persist the theme mode for now
+      partialize: (state) => ({ themeMode: state.themeMode }),
+    }
+  )
+);

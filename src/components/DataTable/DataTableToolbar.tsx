@@ -17,7 +17,7 @@ import {
   Search as SearchIcon,
   Event as EventIcon,
 } from '@mui/icons-material';
-import { type DayFilter } from '../../Store/specificStore/DataTableStore.ts';
+import { type DayFilter } from '../../store/specificStore/DataTableStore.ts';
 import { ErrorBoundary } from 'react-error-boundary';
 
 interface ToolbarProps {
@@ -76,19 +76,28 @@ export const DataTableToolbar: React.FC<ToolbarProps> = ({
 
   return (
     <ErrorBoundary fallback={<div>Error loading toolbar.</div>}>
-      <Paper elevation={2} sx={{ p: 2, mb: 2 }}>
-        <Box display='flex' alignItems='center' gap={2} flexWrap='wrap'>
-          <FilterListIcon color='primary' />
+      <Paper elevation={1} sx={{ p: 1, mb: 1 }}>
+        <Box
+          display='flex'
+          alignItems='center'
+          gap={1}
+          flexWrap='wrap'
+          minHeight={40}
+        >
+          <FilterListIcon color='primary' fontSize='small' />
           <TextField
             label='Buscar estudiantes...'
             variant='outlined'
             size='small'
             value={searchInput}
             onChange={onSearchChange}
-            sx={{ minWidth: 250 }}
+            sx={{ minWidth: 220 }}
             InputProps={{
               startAdornment: (
-                <SearchIcon sx={{ color: 'text.secondary', mr: 1 }} />
+                <SearchIcon
+                  fontSize='small'
+                  sx={{ color: 'text.secondary', mr: 1 }}
+                />
               ),
             }}
             placeholder='Nombre, email, aula...'
@@ -96,9 +105,10 @@ export const DataTableToolbar: React.FC<ToolbarProps> = ({
           <Button
             variant='outlined'
             onClick={handleMenuOpen}
-            startIcon={<EventIcon />}
-            endIcon={<ArrowDropDownIcon />}
-            sx={{ minWidth: 200 }}
+            startIcon={<EventIcon fontSize='small' />}
+            endIcon={<ArrowDropDownIcon fontSize='small' />}
+            size='small'
+            sx={{ minWidth: 180, py: 0.5 }}
           >
             {getDayFilterText(dayFilter)}
           </Button>
@@ -150,18 +160,19 @@ export const DataTableToolbar: React.FC<ToolbarProps> = ({
               onClick={clearAllFilters}
               color='error'
               title='Limpiar todos los filtros'
+              size='small'
               sx={{ ml: 'auto' }}
             >
-              <ClearIcon />
+              <ClearIcon fontSize='small' />
             </IconButton>
           )}
         </Box>
         {hasActiveFilters && (
-          <Box sx={{ mt: 2 }}>
+          <Box sx={{ mt: 1 }}>
             <Typography variant='body2' color='text.secondary' gutterBottom>
               Filtros activos:
             </Typography>
-            <Box display='flex' gap={1} flexWrap='wrap'>
+            <Box display='flex' gap={0.5} flexWrap='wrap'>
               {globalSearch && (
                 <Chip
                   label={`Búsqueda: "${globalSearch}"`}

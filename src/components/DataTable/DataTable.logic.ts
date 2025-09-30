@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState, useTransition } from 'react';
 import type { RowDataType } from 'rsuite/esm/Table';
 import typeColumns from '../../../public/data/defaultDataTabletColumns.json';
-import { useFilterStore } from '../../Store/specificStore/DataTableStore.ts';
+import { useFilterStore } from '../../store/specificStore/DataTableStore.ts';
 import { useStore } from '../../Store/Store.ts';
 import { useNavigateTo } from '../../Logic.ts';
 

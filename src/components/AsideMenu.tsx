@@ -62,9 +62,9 @@ export const AsideMenu = ({ grid }: AsideMenuProps) => {
   return (
     <ErrorBoundary fallback={<div>Error loading menu.</div>}>
       <Box
-        className={`bg-primary h-full rounded-2xl text-neutralLight flex flex-col relative ${grid}`}
+        className={` h-full rounded-2xl  flex flex-col relative ${grid} text-base`}
       >
-        <List>
+        <List className='text-xl'>
           <ListItem>
             <ListItemButton
               onClick={handleClickAcountMenu}
@@ -74,7 +74,7 @@ export const AsideMenu = ({ grid }: AsideMenuProps) => {
               aria-expanded={open ? 'true' : undefined}
             >
               <ListItemIcon>
-                <Avatar className='bg-[#B5CAD9]'>
+                <Avatar>
                   {displayName
                     ?.split(' ')
                     .map((word: string) => word[0]?.toUpperCase())
@@ -125,11 +125,11 @@ export const AsideMenu = ({ grid }: AsideMenuProps) => {
           </ListItem>
         </List>
 
-        <List>
+        <List className=''>
           <ListItem>
             <ListItemButton onClick={() => navigate('/home')}>
               <ListItemIcon>
-                <HomeIcon sx={{ color: '#B5CAD9' }} />
+                <HomeIcon sx={{ color: 'primary.main' }} />
               </ListItemIcon>
               Inicio
             </ListItemButton>
@@ -137,7 +137,7 @@ export const AsideMenu = ({ grid }: AsideMenuProps) => {
           <ListItem>
             <ListItemButton onClick={() => navigate('classrooms')}>
               <ListItemIcon>
-                <FormatListBulletedIcon sx={{ color: '#B5CAD9' }} />
+                <FormatListBulletedIcon sx={{ color: 'primary.main' }} />
               </ListItemIcon>
               Cursos
             </ListItemButton>
@@ -145,7 +145,7 @@ export const AsideMenu = ({ grid }: AsideMenuProps) => {
           <ListItem>
             <ListItemButton onClick={() => navigate('statics')}>
               <ListItemIcon>
-                <DataSaverOffIcon sx={{ color: '#B5CAD9' }} />
+                <DataSaverOffIcon sx={{ color: 'primary.main' }} />
               </ListItemIcon>
               Estadisticas
             </ListItemButton>
@@ -155,7 +155,7 @@ export const AsideMenu = ({ grid }: AsideMenuProps) => {
             <ListItem>
               <ListItemButton onClick={() => navigate('admin-panel')}>
                 <ListItemIcon>
-                  <AdminPanelSettingsIcon sx={{ color: '#B5CAD9' }} />
+                  <AdminPanelSettingsIcon sx={{ color: 'primary.main' }} />
                 </ListItemIcon>
                 Panel de administrador
               </ListItemButton>
@@ -165,7 +165,7 @@ export const AsideMenu = ({ grid }: AsideMenuProps) => {
         <ListItem className='mt-auto mb-[10px]'>
           <ListItemButton onClick={() => navigate('config')}>
             <ListItemIcon>
-              <SettingsIcon sx={{ color: '#B5CAD9' }} />
+              <SettingsIcon sx={{ color: 'primary.main' }} />
             </ListItemIcon>
             Configuración
           </ListItemButton>

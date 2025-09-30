@@ -2,6 +2,14 @@ import { useState, useEffect } from 'react';
 import { ErrorBoundary } from 'react-error-boundary';
 import { useStore } from '../Store/Store';
 import { fmtYmd } from './Calendar/utils';
+import {
+  Box,
+  Typography,
+  List,
+  ListItem,
+  Stack,
+  CircularProgress,
+} from '@mui/material';
 
 interface AsideEventsProps {
   grid: string;
@@ -59,30 +67,60 @@ export const AsideEvents = ({ grid }: AsideEventsProps) => {
   }, [setSpecialDates]);
 
   if (loading) {
-    return <div>Cargando días especiales...</div>;
+    return (
+      <Box
+        className={grid}
+        sx={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          p: 2,
+        }}
+      >
+        <Stack direction='row' spacing={1} alignItems='center'>
+          <CircularProgress size={20} />
+          <Typography variant='body2' color='text.secondary'>
+            Cargando días especiales…
+          </Typography>
+        </Stack>
+      </Box>
+    );
   }
 
   return (
     <ErrorBoundary fallback={<div>Error loading special days.</div>}>
-      <div className={`${grid} bg-secondary rounded-xl p-2`}>
-        <div
-          className='rounded-xl bg-secondary text-neutralLight text-3xl px-2 py-1'
-          style={{ color: '#f2f2f2' }}
+      <Box className={grid}>
+        <Box
+          sx={{
+            borderRadius: 2,
+            px: 1,
+            py: 0.5,
+            mb: 1,
+          }}
         >
-          Próximos Días Especiales
-        </div>
-        <ul>
+          <Typography variant='h5'>Próximos Días Especiales</Typography>
+        </Box>
+        <List disablePadding>
           {specialDays.map((day, index) => (
-            <li
+            <ListItem
               key={index}
-              className='flex flex-col items-start rounded-xl bg-neutralLight/70 text-text my-1 p-2'
+              sx={{
+                flexDirection: 'column',
+                alignItems: 'flex-start',
+                borderRadius: 2,
+                my: 1,
+                p: 2,
+                backgroundColor: 'background.paper',
+              }}
             >
-              <span className='text-xl font-bold'>{day.date}</span>
-              <span className='text-sm'>{day.title}</span>
-            </li>
+              <Typography variant='subtitle1' fontWeight={700}>
+                {day.date}
+              </Typography>
+              <Typography variant='body2'>{day.title}</Typography>
+            </ListItem>
           ))}
-        </ul>
-      </div>
+        </List>
+      </Box>
     </ErrorBoundary>
   );
 };

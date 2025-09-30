@@ -22,7 +22,7 @@ export const Home = () => {
         {/* DynamicGraph temporalmente oculto mientras se usa el calendario */}
         <Calendar absences={{}} className='col-span-6 row-span-8 min-h-0' />
       </Box>
-      <AsideEvents grid='col-span-2 row-span-9 col-start-7' />
+      <AsideEvents grid='col-span-2 row-span-9 col-start-7 row-start-2' />
     </>
   );
 };

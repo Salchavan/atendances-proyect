@@ -23,21 +23,6 @@ type ClassroomItem = {
   imageUrl?: string; // opcional para el header
 };
 
-const LabelValue = ({
-  label,
-  value,
-}: {
-  label: string;
-  value: React.ReactNode;
-}) => (
-  <Box className='mb-1'>
-    <Typography variant='caption' color='text.secondary'>
-      {label}
-    </Typography>
-    <Typography variant='body1'>{value}</Typography>
-  </Box>
-);
-
 export const ClassroomPage: React.FC = () => {
   const location = useLocation();
   const { id } = useParams();
@@ -65,25 +50,57 @@ export const ClassroomPage: React.FC = () => {
   } as ClassroomItem;
 
   const title = `${item.year}º "${item.char}"`;
-  const bgImage = item.imageUrl ?? '/images/classroom-placeholder.jpg'; // cambia esta ruta si tienes otra imagen
 
   return (
-    <Box className='w-full h-full row-span-9 col-span-8'>
+    <Box
+      sx={{
+        width: '100%',
+        height: '100%',
+        gridColumn: '1 / -1',
+        gridRow: '1 / -1',
+      }}
+    >
       {/* Grid 2x2 de cuadrantes */}
-      <Box className='grid grid-cols-2 grid-rows-2 gap-2 h-full'>
-        {/* Cuadrante 1: Imagen + Titulo + Detalles + Notas */}
-        <Box className='col-span-1 row-span-1 flex flex-col gap-2'>
-          {/* Header con imagen de fondo */}
-          <Box
-            className='relative h-[160px] md:h-[200px] bg-cover bg-center rounded-lg overflow-hidden shadow-md'
-            style={{ backgroundImage: `url(${bgImage})` }}
-          >
-            <Box className='absolute inset-0 bg-black/35' />
-            <Box className='absolute left-4 right-4 bottom-4 text-white'>
-              <Typography variant='h4' className='font-semibold'>
+      <Box
+        sx={{
+          display: 'grid',
+          gridTemplateColumns: '1fr 1fr',
+          gridTemplateRows: 'auto 1fr',
+          gap: 2,
+          height: '100%',
+          minHeight: 0,
+        }}
+      >
+        {/* Cuadrante 1: Título + Detalles + Notas (sin imagen) */}
+        <Box
+          sx={{
+            display: 'flex',
+            flexDirection: 'column',
+            gap: 2,
+            minHeight: 0,
+          }}
+        >
+          {/* Header sin imagen: sólo título y chips */}
+          <Card sx={{ borderRadius: 2, boxShadow: 2, p: 2 }}>
+            <Box
+              sx={{
+                display: 'flex',
+                alignItems: 'center',
+                flexWrap: 'wrap',
+                gap: 2,
+              }}
+            >
+              <Typography variant='h4' sx={{ fontWeight: 600, mr: 1 }}>
                 {title}
               </Typography>
-              <Stack direction='row' className='mt-1 flex-wrap gap-2'>
+              <Stack
+                direction='row'
+                sx={{
+                  flexWrap: 'wrap',
+                  gap: 2,
+                  alignItems: 'center',
+                }}
+              >
                 <Chip
                   size='small'
                   color='primary'
@@ -98,35 +115,72 @@ export const ClassroomPage: React.FC = () => {
                   size='small'
                   variant='outlined'
                   label={`ID: ${item.id}`}
-                  className='text-white border-white/60'
                 />
               </Stack>
             </Box>
-          </Box>
+          </Card>
 
           {/* Detalles y Notas en dos columnas */}
-          <Box className='grid grid-cols-2 gap-2'>
-            <Card className='rounded-lg shadow-md'>
+          <Box sx={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 2 }}>
+            <Card sx={{ borderRadius: 2, boxShadow: 2 }}>
               <CardContent>
                 <Typography variant='h6'>Detalles de la clase</Typography>
-                <Divider className='my-2' />
-                <Box className='grid grid-cols-2 gap-2'>
-                  <LabelValue label='Año' value={item.year} />
-                  <LabelValue label='División' value={item.char} />
-                  <LabelValue label='Turno' value={item.turn} />
-                  <LabelValue label='Estudiantes' value={item.numberStudents} />
-                  <LabelValue
-                    label='Especialidad'
-                    value={item.specility ?? '—'}
-                  />
-                  <LabelValue label='Identificador' value={item.id} />
+                <Divider sx={{ my: 2 }} />
+                <Box
+                  sx={{
+                    display: 'grid',
+                    gridTemplateColumns: '1fr 1fr',
+                    gap: 2,
+                  }}
+                >
+                  {/* LabelValue with MUI spacing */}
+                  <Box>
+                    <Typography variant='caption' color='text.secondary'>
+                      Año
+                    </Typography>
+                    <Typography variant='body1'>{item.year}</Typography>
+                  </Box>
+                  <Box>
+                    <Typography variant='caption' color='text.secondary'>
+                      División
+                    </Typography>
+                    <Typography variant='body1'>{item.char}</Typography>
+                  </Box>
+                  <Box>
+                    <Typography variant='caption' color='text.secondary'>
+                      Turno
+                    </Typography>
+                    <Typography variant='body1'>{item.turn}</Typography>
+                  </Box>
+                  <Box>
+                    <Typography variant='caption' color='text.secondary'>
+                      Estudiantes
+                    </Typography>
+                    <Typography variant='body1'>
+                      {item.numberStudents}
+                    </Typography>
+                  </Box>
+                  <Box>
+                    <Typography variant='caption' color='text.secondary'>
+                      Especialidad
+                    </Typography>
+                    <Typography variant='body1'>
+                      {item.specility ?? '—'}
+                    </Typography>
+                  </Box>
+                  <Box>
+                    <Typography variant='caption' color='text.secondary'>
+                      Identificador
+                    </Typography>
+                    <Typography variant='body1'>{item.id}</Typography>
+                  </Box>
                 </Box>
               </CardContent>
             </Card>
-            <Card className='rounded-lg shadow-md'>
+            <Card sx={{ borderRadius: 2, boxShadow: 2 }}>
               <CardContent>
                 <Typography variant='h6'>Notas</Typography>
-                <Divider className='my-2' />
+                <Divider sx={{ my: 2 }} />
                 <Typography variant='body2' color='text.secondary'>
                   Espacio para observaciones, metas del curso o recordatorios.
                 </Typography>
@@ -135,25 +189,53 @@ export const ClassroomPage: React.FC = () => {
           </Box>
         </Box>
 
-        {/* Cuadrante 2: DataTable */}
-        <Card className='col-span-1 row-span-2 rounded-lg shadow-md h-full'>
-          <CardContent className='h-full flex flex-col'>
-            <Typography variant='h6' className='mb-2'>
+        {/* DataTable en abajo-izquierda */}
+        <Card
+          sx={{
+            gridColumn: '1',
+            gridRow: '2',
+            borderRadius: 2,
+            boxShadow: 2,
+            height: '100%',
+          }}
+        >
+          <CardContent
+            sx={{
+              height: '100%',
+              display: 'flex',
+              flexDirection: 'column',
+            }}
+          >
+            <Typography variant='h6' sx={{ mb: 2 }}>
               Lista de estudiantes
             </Typography>
-            <Box className='flex-1 min-h-0'>
+            <Box sx={{ flex: 1, minHeight: 0 }}>
               <DataTable tableData={[]} filtersEnabled={false} />
             </Box>
           </CardContent>
         </Card>
 
-        {/* Cuadrante 3: Gráfico */}
-        <Card className='col-span-1 row-span-1 rounded-lg shadow-md h-full'>
-          <CardContent className='h-full'>
-            <Typography variant='h6' className='mb-2'>
-              Asistencias recientes
-            </Typography>
-            <DynamicGraph dataTableName='students' grid='w-full h-full' />
+        {/* Gráfico en la columna derecha (dos filas) */}
+        <Card
+          sx={{
+            gridColumn: '2',
+            gridRow: '1 / span 2',
+            borderRadius: 2,
+            boxShadow: 2,
+            height: '100%',
+          }}
+        >
+          <CardContent
+            sx={{
+              height: '100%',
+              display: 'flex',
+              flexDirection: 'column',
+              minHeight: 0,
+            }}
+          >
+            <Box sx={{ flex: 1, minHeight: 0 }}>
+              <DynamicGraph graphName={title} grid='' />
+            </Box>
           </CardContent>
         </Card>
       </Box>

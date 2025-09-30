@@ -1,5 +1,6 @@
 import React from 'react';
 import { BarChart } from '@mui/x-charts';
+import { Box } from '@mui/material';
 import { ErrorBoundary } from 'react-error-boundary';
 
 type PartitionedData = {
@@ -79,14 +80,18 @@ export const DynamicGraphChart: React.FC<ChartProps> = ({
 
   return (
     <ErrorBoundary fallback={<div>Error loading chart.</div>}>
-      <div className='w-full h-full' onClick={handleContainerClick}>
+      <Box
+        sx={{ width: '100%', height: '100%', minHeight: 0 }}
+        onClick={handleContainerClick}
+      >
         <BarChart
           xAxis={[{ scaleType: 'band', data: xData }]}
           series={series}
           height={height}
           barLabel='value'
+          margin={{ top: 12, right: 12, bottom: 48, left: 28 }}
         />
-      </div>
+      </Box>
     </ErrorBoundary>
   );
 };

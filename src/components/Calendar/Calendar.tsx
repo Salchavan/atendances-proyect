@@ -6,20 +6,7 @@ import { CalendarUI } from './CalendarUI';
 import { useCalendarLogic } from './useCalendarLogic';
 import type { CalendarProps } from './types';
 import { fmtYmd } from './utils';
-
-interface Unassistance {
-  day: string; // formato 'dd-mm-yy'
-  isJustified: boolean;
-}
-interface StudentRec {
-  id: number;
-  firstName: string;
-  lastName: string;
-  age: number;
-  email: string;
-  classroom: string;
-  unassistences: Unassistance[];
-}
+import type { StudentRec } from '../../types/generalTypes';
 
 export const Calendar: React.FC<CalendarProps> = (props) => {
   const {
