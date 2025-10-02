@@ -9,36 +9,36 @@
   {
     "field": "firstName",
     "headerName": "Nombre",
-    "width": 150,
-    "minWidth": 150,
+    "width": 100,
+    "minWidth": 100,
     "sortable": true
   },
   {
     "field": "lastName",
     "headerName": "Apellido",
-    "width": 150,
-    "minWidth": 150,
+    "width": 100,
+    "minWidth": 100,
     "sortable": true
   },
   {
     "field": "age",
     "headerName": "Edad",
     "width": 50,
-    "minWidth": 150,
+    "minWidth": 50,
     "sortable": true
   },
   {
     "field": "email",
     "headerName": "Email",
-    "width": 250,
-    "minWidth": 250,
+    "width": 200,
+    "minWidth": 200,
     "sortable": true
   },
   {
     "field": "classroom",
     "headerName": "Curso",
-    "width": 120,
-    "minWidth": 120,
+    "width": 50,
+    "minWidth": 50,
     "sortable": true
   }
 ]
