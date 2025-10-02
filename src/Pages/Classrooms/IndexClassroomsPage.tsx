@@ -89,10 +89,9 @@ export const IndexClassroomsPage = () => {
                     }}
                   >
                     <Stack
-                      direction='row'
-                      alignItems='center'
-                      justifyContent='space-between'
-                      spacing={1}
+                      direction='column'
+                      spacing={0.5}
+                      alignItems='flex-start'
                     >
                       <Typography
                         variant='h6'
@@ -107,6 +106,7 @@ export const IndexClassroomsPage = () => {
                         label={item.turn}
                         color='primary'
                         variant='outlined'
+                        sx={{ mt: 0.25 }}
                       />
                     </Stack>
                     <Stack

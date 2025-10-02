@@ -13,6 +13,8 @@ interface Props {
   data: RowDataType[];
   onRowClick: (row: RowDataType) => void;
   className?: string;
+  loading?: boolean;
+  fitColumns?: boolean;
 }
 
 export const MuiDataTable: React.FC<Props> = ({
@@ -20,26 +22,50 @@ export const MuiDataTable: React.FC<Props> = ({
   data,
   onRowClick,
   className,
+  loading,
+  fitColumns,
 }) => {
   const theme = useTheme();
 
-  const gridColumns: GridColDef[] = useMemo(
-    () =>
-      columns.map((c) => ({
-        field: String(c.field),
+  const gridColumns: GridColDef[] = useMemo(() => {
+    const fit = !!fitColumns;
+    return columns.map((c) => {
+      const field = String(c.field);
+      const isFixed = !fit && (field === 'id' || field === 'age');
+      const col: GridColDef = {
+        field,
         headerName: c.headerName,
-        width: c.width,
-        minWidth: c.minWidth,
         sortable: c.sortable !== false,
-        flex: c.width ? undefined : 1,
-      })),
-    [columns]
-  );
+      } as GridColDef;
+      if (isFixed) {
+        col.width = c.width ?? 60;
+        col.minWidth = c.minWidth ?? c.width ?? 60;
+      } else {
+        // Make most columns flexible to adapt to container width
+        col.flex = 1;
+        // Allow shrink while keeping readability
+        const defaultMin = fit ? 80 : 100;
+        const maxClamp = fit ? 160 : 180;
+        col.minWidth = Math.min(maxClamp, c.minWidth ?? defaultMin);
+      }
+      return col;
+    });
+  }, [columns, fitColumns]);
 
   const rows = useMemo(() => data as any[], [data]);
 
   return (
-    <Box className={className} sx={{ height: '100%', minHeight: 0 }}>
+    <Box
+      className={className}
+      sx={{
+        height: '100%',
+        minHeight: 0,
+        width: '100%',
+        minWidth: 0,
+        fontFamily:
+          'system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif',
+      }}
+    >
       <DataGrid
         rows={rows}
         columns={gridColumns}
@@ -49,9 +75,14 @@ export const MuiDataTable: React.FC<Props> = ({
         }
         sortingOrder={['asc', 'desc']}
         disableColumnMenu
+        loading={!!loading}
         // Virtualization is built-in; adjust buffer in pixels for smoother scroll
         rowBufferPx={300}
         sx={{
+          width: '100%',
+          maxWidth: '100%',
+          minWidth: 0,
+          overflowX: 'auto',
           border: 0,
           fontFamily:
             'system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif',
@@ -64,9 +95,20 @@ export const MuiDataTable: React.FC<Props> = ({
             color: theme.palette.text.secondary,
             borderColor: theme.palette.divider,
             fontWeight: 600,
+            whiteSpace: 'nowrap',
+            '& .MuiDataGrid-columnHeaderTitle': {
+              overflow: 'hidden',
+              textOverflow: 'ellipsis',
+            },
           },
           '& .MuiDataGrid-cell': {
             borderColor: theme.palette.divider,
+            minWidth: 0,
+            overflow: 'hidden',
+            textOverflow: 'ellipsis',
+          },
+          '& .MuiDataGrid-virtualScroller': {
+            minWidth: 0,
           },
         }}
       />

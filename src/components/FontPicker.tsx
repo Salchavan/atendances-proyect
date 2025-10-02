@@ -1,6 +1,6 @@
 import { Box, List, ListItemButton, Typography } from '@mui/material';
 import { PRESET_FONTS, ensureGoogleFontLoaded } from '../utils/fonts';
-import { useStore } from '../Store/Store';
+import { useStore } from '../store/Store';
 
 export const FontPicker = () => {
   const setFontFamily = useStore((s) => s.setFontFamily);
@@ -12,6 +12,10 @@ export const FontPicker = () => {
     const composed = `${family}, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif`;
     setFontFamily(composed);
     closeDialog();
+    // Reload app to ensure theme is rebuilt with the new persisted font
+    setTimeout(() => {
+      window.location.reload();
+    }, 150);
   };
 
   return (

@@ -9,4 +9,6 @@ export type CalendarProps = {
   dayNumberClass?: string;
   absencesNumberClass?: string;
   cellBgClass?: string;
+  /** Muestra/oculta la barra superior (título y navegación). Default: true */
+  toolbarEnabled?: boolean;
 };

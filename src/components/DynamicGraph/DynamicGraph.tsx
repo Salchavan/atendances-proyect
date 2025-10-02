@@ -10,6 +10,8 @@ interface Props {
   initialAssignedDate?: Date[] | null;
   grid: string;
   toolbarEnabled?: boolean; // nueva prop para ocultar / desactivar toolbar
+  // Si es true, deshabilita abrir DataTable al hacer click en el gráfico
+  disableClickToOpenTable?: boolean;
 }
 
 export const DynamicGraph = ({
@@ -17,6 +19,7 @@ export const DynamicGraph = ({
   initialAssignedDate = null,
   grid,
   toolbarEnabled = true,
+  disableClickToOpenTable = false,
 }: Props) => {
   // Layout con flex: la zona del gráfico ocupa todo el espacio restante.
   const containerRef = useRef<HTMLDivElement | null>(null);
@@ -69,6 +72,10 @@ export const DynamicGraph = ({
           height: '100%',
           minHeight: 0,
           width: '100%',
+          minWidth: 0,
+          // Keep graphs in system font, independent from global typography
+          fontFamily:
+            'system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif',
         }}
       >
         <Typography variant='h6' gutterBottom>
@@ -91,7 +98,13 @@ export const DynamicGraph = ({
         )}
         <Box
           ref={chartAreaRef}
-          sx={{ flex: 1, minHeight: 0, width: '100%', display: 'flex' }}
+          sx={{
+            flex: 1,
+            minHeight: 0,
+            width: '100%',
+            minWidth: 0,
+            display: 'flex',
+          }}
         >
           <DynamicGraphChart
             mode={logic.graphMode}
@@ -101,6 +114,7 @@ export const DynamicGraph = ({
             justified={logic.justified}
             unjustified={logic.unjustified}
             partitioned={logic.partitioned}
+            clickEnabled={!disableClickToOpenTable}
             onClickEach={logic.onChartClickEach}
             onClickPartitioned={logic.onChartClickPartitioned}
           />

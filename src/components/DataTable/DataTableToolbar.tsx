@@ -28,6 +28,7 @@ interface ToolbarProps {
   setDayFilter: (f: DayFilter) => void;
   setGlobalSearch: (s: string) => void;
   clearAllFilters: () => void;
+  onClearInput?: () => void;
 }
 
 export const DataTableToolbar: React.FC<ToolbarProps> = ({
@@ -38,6 +39,7 @@ export const DataTableToolbar: React.FC<ToolbarProps> = ({
   setDayFilter,
   setGlobalSearch,
   clearAllFilters,
+  onClearInput,
 }) => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const handleMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
@@ -49,7 +51,8 @@ export const DataTableToolbar: React.FC<ToolbarProps> = ({
     handleMenuClose();
   };
 
-  const hasActiveFilters = globalSearch !== '' || dayFilter !== 'weekdays';
+  const hasActiveFilters =
+    (globalSearch ?? '') !== '' || dayFilter !== 'weekdays';
 
   const getDayFilterText = (filter: DayFilter): string => {
     const filterTexts: Record<DayFilter, string> = {
@@ -157,7 +160,11 @@ export const DataTableToolbar: React.FC<ToolbarProps> = ({
           </Menu>
           {hasActiveFilters && (
             <IconButton
-              onClick={clearAllFilters}
+              onClick={() => {
+                // Clear store filters and also clear the input box to avoid re-triggering
+                clearAllFilters();
+                onClearInput?.();
+              }}
               color='error'
               title='Limpiar todos los filtros'
               size='small'
@@ -173,10 +180,13 @@ export const DataTableToolbar: React.FC<ToolbarProps> = ({
               Filtros activos:
             </Typography>
             <Box display='flex' gap={0.5} flexWrap='wrap'>
-              {globalSearch && (
+              {(globalSearch ?? '') && (
                 <Chip
                   label={`Búsqueda: "${globalSearch}"`}
-                  onDelete={() => setGlobalSearch('')}
+                  onDelete={() => {
+                    setGlobalSearch('');
+                    onClearInput?.();
+                  }}
                   color='primary'
                   variant='outlined'
                   size='small'

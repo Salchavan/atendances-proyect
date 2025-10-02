@@ -15,6 +15,7 @@ type CalendarUIProps = Pick<
   | 'absencesNumberClass'
   | 'cellBgClass'
 > & {
+  toolbarEnabled?: boolean;
   viewDate: Date;
   today: Date;
   gridDays: Date[];
@@ -33,6 +34,7 @@ export const CalendarUI: React.FC<CalendarUIProps> = ({
   dayNumberClass,
   absencesNumberClass,
   cellBgClass,
+  toolbarEnabled = true,
   viewDate,
   today,
   gridDays,
@@ -55,38 +57,43 @@ export const CalendarUI: React.FC<CalendarUIProps> = ({
         height: '100%',
         borderRadius: 2,
         overflow: 'hidden',
+        // Keep calendar in system font regardless of global typography
+        fontFamily:
+          'system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif',
       }}
       variant='outlined'
     >
-      <Box
-        sx={{
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'space-between',
-          px: 2,
-          py: 1,
-          borderBottom: 1,
-          borderColor: 'divider',
-        }}
-      >
-        <IconButton aria-label='Mes anterior' onClick={onPrev} size='small'>
-          <ArrowBackIcon />
-        </IconButton>
-        <Typography
-          variant='h6'
-          sx={{ fontWeight: 'bold', userSelect: 'none' }}
-          className={
-            headerTextClass
-              ? `${headerTextClass} calendar-header`
-              : 'calendar-header'
-          }
+      {toolbarEnabled && (
+        <Box
+          sx={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            px: 2,
+            py: 1,
+            borderBottom: 1,
+            borderColor: 'divider',
+          }}
         >
-          {title}
-        </Typography>
-        <IconButton aria-label='Mes siguiente' onClick={onNext} size='small'>
-          <ArrowForwardIcon />
-        </IconButton>
-      </Box>
+          <IconButton aria-label='Mes anterior' onClick={onPrev} size='small'>
+            <ArrowBackIcon />
+          </IconButton>
+          <Typography
+            variant='h6'
+            sx={{ fontWeight: 'bold', userSelect: 'none' }}
+            className={
+              headerTextClass
+                ? `${headerTextClass} calendar-header`
+                : 'calendar-header'
+            }
+          >
+            {title}
+          </Typography>
+          <IconButton aria-label='Mes siguiente' onClick={onNext} size='small'>
+            <ArrowForwardIcon />
+          </IconButton>
+        </Box>
+      )}
 
       <Box
         sx={{

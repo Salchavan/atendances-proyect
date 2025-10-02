@@ -18,6 +18,8 @@ interface ChartProps {
   justified: number[];
   unjustified: number[];
   partitioned: PartitionedData;
+  // When false, clicking the chart does nothing (used to disable opening DataTable)
+  clickEnabled?: boolean;
   onClickEach: () => void;
   onClickPartitioned: () => void;
 }
@@ -32,6 +34,7 @@ export const DynamicGraphChart: React.FC<ChartProps> = ({
   justified,
   unjustified,
   partitioned,
+  clickEnabled = true,
   onClickEach,
   onClickPartitioned,
 }) => {
@@ -74,6 +77,7 @@ export const DynamicGraphChart: React.FC<ChartProps> = ({
       ];
 
   const handleContainerClick = () => {
+    if (!clickEnabled) return;
     if (isEach) onClickEach();
     else onClickPartitioned();
   };
@@ -81,7 +85,12 @@ export const DynamicGraphChart: React.FC<ChartProps> = ({
   return (
     <ErrorBoundary fallback={<div>Error loading chart.</div>}>
       <Box
-        sx={{ width: '100%', height: '100%', minHeight: 0 }}
+        sx={{
+          width: '100%',
+          height: '100%',
+          minHeight: 0,
+          cursor: clickEnabled ? 'pointer' : 'default',
+        }}
         onClick={handleContainerClick}
       >
         <BarChart
@@ -89,7 +98,7 @@ export const DynamicGraphChart: React.FC<ChartProps> = ({
           series={series}
           height={height}
           barLabel='value'
-          margin={{ top: 12, right: 12, bottom: 48, left: 28 }}
+          margin={{ top: 12, right: 12, bottom: 48, left: 12 }}
         />
       </Box>
     </ErrorBoundary>

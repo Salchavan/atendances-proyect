@@ -1,8 +1,8 @@
 import { useEffect, useState, useLayoutEffect, type JSX } from 'react';
 
-import { useStore } from './Store/Store.ts';
-import { useCachedStore } from './Store/CachedStore.ts';
-import { useUserStore } from './Store/UserStore.ts';
+import { useStore } from './store/Store';
+import { useCachedStore } from './store/CachedStore';
+import { useUserStore } from './store/UserStore';
 
 import { Index } from './Pages/Index.tsx';
 import { Home } from './Pages/Home';

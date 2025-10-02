@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client';
 import { App } from './App.tsx';
 import './tailwindStyles.css';
 import { ThemeProvider, CssBaseline } from '@mui/material';
-import { useStore } from './Store/Store';
+import { useStore } from './store/Store';
 import { getTheme } from './theme';
 
 // Small wrapper to provide MUI theme based on global store

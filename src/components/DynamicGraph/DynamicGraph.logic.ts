@@ -4,7 +4,7 @@ import {
   useGraphStore,
   getLastWeekdays,
 } from '../../store/specificStore/GraphStore.ts';
-import { useStore } from '../../Store/Store.ts';
+import { useStore } from '../../store/Store.ts';
 import { DataTable } from '../DataTable/DataTable';
 
 interface Unassistance {

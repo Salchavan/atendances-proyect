@@ -11,10 +11,27 @@ type Props = {
   tableData: RowDataType[];
   /** Permite forzar la visibilidad de la barra de filtros. Si es undefined usa el valor del store. */
   filtersEnabled?: boolean;
+  /** Clase(s) para integrarlo en un grid externo (por ejemplo Tailwind). */
+  grid?: string;
+  /** Habilita/Deshabilita el toolbar explícitamente (tiene prioridad sobre filtersEnabled). */
+  toolbarEnabled?: boolean;
+  /** Lista de fields a mostrar (filtra las columnas definidas por defecto). */
+  visibleFields?: string[];
 };
 
-export const DataTable = ({ tableData, filtersEnabled }: Props) => {
-  const logic = useDataTableLogic({ tableData, filtersEnabled });
+export const DataTable = ({
+  tableData,
+  filtersEnabled,
+  grid,
+  toolbarEnabled,
+  visibleFields,
+}: Props) => {
+  const effectiveFilters =
+    typeof toolbarEnabled === 'boolean' ? toolbarEnabled : filtersEnabled;
+  const logic = useDataTableLogic({
+    tableData,
+    filtersEnabled: effectiveFilters,
+  });
 
   return (
     <ErrorBoundary
@@ -25,11 +42,16 @@ export const DataTable = ({ tableData, filtersEnabled }: Props) => {
       }
     >
       <Box
+        className={grid}
         sx={{
           display: 'flex',
           flexDirection: 'column',
           height: '100%',
           minHeight: 0,
+          width: '100%',
+          maxWidth: '100%',
+          minWidth: 0,
+          overflow: 'hidden',
         }}
       >
         {logic.effectiveFiltersEnabled && (
@@ -42,15 +64,33 @@ export const DataTable = ({ tableData, filtersEnabled }: Props) => {
               setDayFilter={logic.setDayFilter}
               setGlobalSearch={logic.setGlobalSearch}
               clearAllFilters={logic.clearAllFilters}
+              onClearInput={logic.clearSearchInput}
             />
           </Box>
         )}
 
-        <Box sx={{ flex: 1, minHeight: 0 }}>
+        <Box
+          sx={{
+            flex: 1,
+            minHeight: 0,
+            width: '100%',
+            maxWidth: '100%',
+            minWidth: 0,
+            overflow: 'auto',
+          }}
+        >
           <MuiDataTable
-            columns={logic.columns}
+            columns={
+              Array.isArray(visibleFields) && visibleFields.length
+                ? (logic.columns || []).filter((c: any) =>
+                    visibleFields.includes(String(c.field))
+                  )
+                : logic.columns
+            }
             data={logic.filteredData}
             onRowClick={logic.onRowClick}
+            loading={logic.loading}
+            fitColumns
           />
         </Box>
       </Box>

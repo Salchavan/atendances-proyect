@@ -160,6 +160,35 @@ npm run build
 - DynamicGraph: puedes ocultar la toolbar con prop toolbarEnabled={false} y controla su layout con grid y contenedores h-full/min-h-0.
 - DataTable: ajusta columnas y filtros en DataTable.logic.
 
+### Props de DynamicGraph
+
+Uso básico:
+
+```tsx
+<DynamicGraph
+  graphName='Asistencias'
+  grid='col-span-2 row-span-2' // clases o nombre de grid del padre
+  toolbarEnabled={true}
+  initialAssignedDate={null}
+/>
+```
+
+Props disponibles:
+
+- graphName: string (requerido)
+  - Nombre que se muestra en el título: “Gráfico de {graphName}”.
+- grid: string (requerido)
+  - Clase(s) o identificador que se aplica como className al contenedor para integrarlo en tu grid/layout.
+- initialAssignedDate?: Date[] | null (opcional; por defecto null)
+  - Fechas preasignadas que el gráfico usará al iniciar. Si no hay fechas (o la selección resulta vacía), el componente selecciona automáticamente los últimos 5 días laborables para evitar pantalla en blanco.
+- toolbarEnabled?: boolean (opcional; por defecto true)
+  - Muestra/oculta la toolbar (rango de fechas, modos de vista y partición). Al desactivarla, el gráfico ocupa el alto disponible igualmente.
+
+Notas:
+
+- Altura: el gráfico ocupa el 100% del alto restante del contenedor y se recalcula con ResizeObserver para evitar recortes.
+- Tipografías: el gráfico fuerza una fuente del sistema para mantener legibilidad y no verse afectado por cambios globales de tipografía.
+
 ## Troubleshooting
 
 - “Invalid hook call” o “useNavigate fuera de Router”:

@@ -1,5 +1,5 @@
 import { createTheme, type ThemeOptions } from '@mui/material/styles';
-import { useStore } from './Store/Store';
+import { useStore } from './store/Store';
 
 export type AppMode = 'light' | 'dark';
 
@@ -80,15 +80,7 @@ export const getTheme = (mode: AppMode, overrides?: ThemeOverrides) => {
       // Do NOT change fonts for charts, data grid, and calendar:
       // 1) MUI X Charts (BarChart): override container and text to use system font
       MuiSvgIcon: {},
-      // 2) DataGrid: force system font regardless of theme typography
-      MuiDataGrid: {
-        styleOverrides: {
-          root: {
-            fontFamily:
-              'system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif',
-          },
-        },
-      },
+
       // 3) Calendar: scope specific classes to system font
       MuiTypography: {
         styleOverrides: {

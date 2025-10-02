@@ -1,7 +1,7 @@
 // components/CustomDialog.tsx
 
 import CloseIcon from '@mui/icons-material/Close';
-import { useStore } from '../Store/Store.ts';
+import { useStore } from '../store/Store.ts';
 import { Modal, Box, Typography, IconButton } from '@mui/material';
 
 import { ErrorBoundary } from 'react-error-boundary';

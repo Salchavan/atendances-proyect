@@ -1,4 +1,4 @@
-import { useStore } from '../Store/Store.ts';
+import { useStore } from '../store/Store.ts';
 import { useRef, useState } from 'react';
 import {
   Box,

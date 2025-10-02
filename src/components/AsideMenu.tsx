@@ -21,8 +21,8 @@ import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
 
 import { ErrorBoundary } from 'react-error-boundary';
 
-import { useUserStore } from '../Store/UserStore';
-import { useStore } from '../Store/Store.ts';
+import { useUserStore } from '../store/UserStore';
+import { useStore } from '../store/Store';
 
 import { useNavigateTo } from '../Logic.ts';
 

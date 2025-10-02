@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
-import type { User } from '../Store/UserStore';
-import { useCachedStore } from '../Store/CachedStore';
-import type { CachedStore } from '../Store/CachedStore';
-import { useUserStore } from '../Store/UserStore.ts';
+import type { User } from '../store/UserStore';
+import { useCachedStore } from '../store/CachedStore';
+import type { CachedStore } from '../store/CachedStore';
+import { useUserStore } from '../store/UserStore.ts';
 import { changePageTitle } from '../Logic';
 
 import Button from '@mui/material/Button';

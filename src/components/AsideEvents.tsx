@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { ErrorBoundary } from 'react-error-boundary';
-import { useStore } from '../Store/Store';
+import { useStore } from '../store/Store';
 import { fmtYmd } from './Calendar/utils';
 import {
   Box,

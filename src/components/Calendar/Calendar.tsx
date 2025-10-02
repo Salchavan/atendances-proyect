@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { ErrorBoundary } from 'react-error-boundary';
-import { useStore } from '../../Store/Store';
+import { useStore } from '../../store/Store';
 import { DataTable } from '../DataTable/DataTable';
 import { CalendarUI } from './CalendarUI';
 import { useCalendarLogic } from './useCalendarLogic';
@@ -93,6 +93,7 @@ export const Calendar: React.FC<CalendarProps> = (props) => {
         dayNumberClass={props.dayNumberClass}
         absencesNumberClass={props.absencesNumberClass}
         cellBgClass={props.cellBgClass}
+        toolbarEnabled={props.toolbarEnabled}
         viewDate={viewDate}
         today={today}
         gridDays={gridDays}

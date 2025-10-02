@@ -10,7 +10,7 @@ import {
 import { changePageTitle } from '../../Logic';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import FontDownloadIcon from '@mui/icons-material/FontDownload';
-import { useStore } from '../../Store/Store.ts';
+import { useStore } from '../../store/Store.ts';
 import { FontPicker } from '../../components/FontPicker';
 
 export const ConfigGeneral = () => {

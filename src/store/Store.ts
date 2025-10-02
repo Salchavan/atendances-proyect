@@ -86,7 +86,10 @@ export const useStore = create<Store>()(
     {
       name: 'app-preferences',
       // Only persist the theme mode for now
-      partialize: (state) => ({ themeMode: state.themeMode }),
+      partialize: (state) => ({
+        themeMode: state.themeMode,
+        fontFamily: state.fontFamily,
+      }),
     }
   )
 );
