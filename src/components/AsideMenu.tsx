@@ -18,6 +18,7 @@ import SettingsIcon from '@mui/icons-material/Settings';
 import DataSaverOffIcon from '@mui/icons-material/DataSaverOff';
 import FormatListBulletedIcon from '@mui/icons-material/FormatListBulleted';
 import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
+import HistoryIcon from '@mui/icons-material/History';
 
 import { ErrorBoundary } from 'react-error-boundary';
 
@@ -135,6 +136,14 @@ export const AsideMenu = ({ grid }: AsideMenuProps) => {
             </ListItemButton>
           </ListItem>
           <ListItem>
+            <ListItemButton onClick={() => navigate('statics')}>
+              <ListItemIcon>
+                <DataSaverOffIcon sx={{ color: 'primary.main' }} />
+              </ListItemIcon>
+              Estadisticas
+            </ListItemButton>
+          </ListItem>
+          <ListItem>
             <ListItemButton onClick={() => navigate('classrooms')}>
               <ListItemIcon>
                 <FormatListBulletedIcon sx={{ color: 'primary.main' }} />
@@ -143,21 +152,21 @@ export const AsideMenu = ({ grid }: AsideMenuProps) => {
             </ListItemButton>
           </ListItem>
           <ListItem>
-            <ListItemButton onClick={() => navigate('statics')}>
+            <ListItemButton onClick={() => navigate('log')}>
               <ListItemIcon>
-                <DataSaverOffIcon sx={{ color: 'primary.main' }} />
+                <HistoryIcon sx={{ color: 'primary.main' }} />
               </ListItemIcon>
-              Estadisticas
+              Registros
             </ListItemButton>
           </ListItem>
 
           {(userData as any)?.rol === 'admin' ? (
             <ListItem>
-              <ListItemButton onClick={() => navigate('admin-panel')}>
+              <ListItemButton onClick={() => navigate('control-panel')}>
                 <ListItemIcon>
                   <AdminPanelSettingsIcon sx={{ color: 'primary.main' }} />
                 </ListItemIcon>
-                Panel de administrador
+                Panel de control
               </ListItemButton>
             </ListItem>
           ) : null}

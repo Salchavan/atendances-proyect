@@ -1,5 +1,5 @@
 import { useStore } from '../store/Store.ts';
-import { useRef, useState } from 'react';
+
 import {
   Box,
   Typography,
@@ -7,12 +7,14 @@ import {
   Tooltip,
   IconButton,
   Paper,
-  TextField,
 } from '@mui/material';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 import { DynamicGraph } from '../components/DynamicGraph/DynamicGraph.tsx';
+import { Notes } from '../components/Notes.tsx';
 import { changePageTitle } from '../Logic.ts';
 import EditIcon from '@mui/icons-material/Edit';
+import { ProfileSettingsModal } from '../components/ProfileSettingsModal';
+import React from 'react';
 
 const fallback = 'NO Definido';
 
@@ -34,8 +36,6 @@ interface PerfilUser {
 }
 
 export const Profile = () => {
-  const [notes, setNotes] = useState<string>('');
-  const notesRef = useRef<HTMLInputElement | HTMLTextAreaElement | null>(null);
   const selectedUser = useStore((s) => s.perfilUserSelected) as
     | PerfilUser
     | undefined;
@@ -50,6 +50,7 @@ export const Profile = () => {
     if (!value) return;
     navigator.clipboard?.writeText(String(value)).catch(() => {});
   };
+  const openDialog = useStore((s) => s.openDialog);
 
   const field = (label: string, value?: string | number, copy?: boolean) => (
     <Box display='flex' alignItems='center' gap={1}>
@@ -109,6 +110,20 @@ export const Profile = () => {
             <Typography variant='h4' fontWeight='bold'>
               Perfil de {displayName || fallback}
             </Typography>
+            <Tooltip title='Editar perfil'>
+              <IconButton
+                size='small'
+                onClick={() =>
+                  openDialog(
+                    React.createElement(ProfileSettingsModal),
+                    'Opciones de perfil',
+                    'small'
+                  )
+                }
+              >
+                <EditIcon sx={{ color: 'primary.main' }} />
+              </IconButton>
+            </Tooltip>
             <Box display='flex' gap={1} flexWrap='wrap'>
               <Chip
                 label={
@@ -148,85 +163,19 @@ export const Profile = () => {
         </Paper>
 
         {/* Notas ocupan 1 fila */}
-        <Paper
-          variant='outlined'
-          sx={{
-            p: 2,
-            overflow: 'auto',
-            position: 'relative',
-            display: 'flex',
-            flexDirection: 'column',
-            height: '100%',
-            minHeight: 0,
-          }}
-          onClick={() => notesRef.current?.focus()}
-        >
-          <Typography variant='h6' gutterBottom>
-            Notas y Observaciones
-          </Typography>
-          <IconButton
-            size='small'
-            sx={{ position: 'absolute', top: 8, right: 8 }}
-            onClick={(e) => e.stopPropagation()}
-          >
-            <Tooltip title='Editar Notas'>
-              <EditIcon fontSize='inherit' sx={{ color: 'primary.main' }} />
-            </Tooltip>
-          </IconButton>
-          <TextField
-            inputRef={notesRef}
-            value={notes}
-            onChange={(e) => setNotes(e.target.value)}
-            placeholder='Escribe tus notas aquí...'
-            variant='outlined'
-            fullWidth
-            multiline
-            minRows={3}
-            sx={{
-              mt: 1,
-              flex: 1,
-              minHeight: 0,
-              display: 'flex',
-              '& .MuiInputBase-root': {
-                height: '100%',
-                alignItems: 'stretch',
-              },
-              '& .MuiInputBase-inputMultiline': {
-                height: '100%',
-                overflow: 'auto',
-              },
-              '& textarea': {
-                height: '100% !important',
-                resize: 'none',
-              },
-            }}
-          />
-        </Paper>
+        <Notes />
       </Box>
 
       {/* Otras 2 columnas: gráfico ocupa ambas columnas y todo el alto */}
       <Box
         sx={{ gridColumn: '2 / 4', gridRow: '1', height: '100%', minHeight: 0 }}
       >
-        <Paper
-          variant='outlined'
-          sx={{
-            p: 2,
-            height: '100%',
-            display: 'flex',
-            flexDirection: 'column',
-            minHeight: 0,
-          }}
-        >
-          <Box sx={{ flex: 1, minHeight: 0 }}>
-            <DynamicGraph
-              graphName={`Actividad de ${displayName || 'Usuario'}`}
-              initialAssignedDate={null}
-              toolbarEnabled={true}
-              grid=''
-            />
-          </Box>
-        </Paper>
+        <DynamicGraph
+          graphName={`Actividad de ${displayName || 'Usuario'}`}
+          initialAssignedDate={null}
+          toolbarEnabled={true}
+          grid=''
+        />
       </Box>
     </Box>
   );

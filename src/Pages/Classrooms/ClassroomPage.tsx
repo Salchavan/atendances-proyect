@@ -12,6 +12,7 @@ import {
 import Classroom from '../../../public/data/Classrooms.json';
 import { DynamicGraph } from '../../components/DynamicGraph/DynamicGraph';
 import { DataTable } from '../../components/DataTable/DataTable';
+import { Notes } from '../../components/Notes';
 
 type ClassroomItem = {
   id: number;
@@ -177,15 +178,8 @@ export const ClassroomPage: React.FC = () => {
                 </Box>
               </CardContent>
             </Card>
-            <Card sx={{ borderRadius: 2, boxShadow: 2 }}>
-              <CardContent>
-                <Typography variant='h6'>Notas</Typography>
-                <Divider sx={{ my: 2 }} />
-                <Typography variant='body2' color='text.secondary'>
-                  Espacio para observaciones, metas del curso o recordatorios.
-                </Typography>
-              </CardContent>
-            </Card>
+
+            <Notes />
           </Box>
         </Box>
 
@@ -216,28 +210,11 @@ export const ClassroomPage: React.FC = () => {
         </Card>
 
         {/* Gráfico en la columna derecha (dos filas) */}
-        <Card
-          sx={{
-            gridColumn: '2',
-            gridRow: '1 / span 2',
-            borderRadius: 2,
-            boxShadow: 2,
-            height: '100%',
-          }}
-        >
-          <CardContent
-            sx={{
-              height: '100%',
-              display: 'flex',
-              flexDirection: 'column',
-              minHeight: 0,
-            }}
-          >
-            <Box sx={{ flex: 1, minHeight: 0 }}>
-              <DynamicGraph graphName={title} grid='' />
-            </Box>
-          </CardContent>
-        </Card>
+
+        <DynamicGraph
+          graphName={title}
+          grid='col-start-2 row-start-1 row-span-2'
+        />
       </Box>
     </Box>
   );

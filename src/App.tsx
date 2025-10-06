@@ -10,16 +10,26 @@ import { Login } from './Pages/Login.tsx';
 import { Statics } from './Pages/Statics.tsx';
 import { IndexClassroomsPage } from './Pages/Classrooms/IndexClassroomsPage.tsx';
 import { ClassroomPage } from './Pages/Classrooms/ClassroomPage.tsx';
-import { AdminPanel } from './Pages/AdminPanel.tsx';
+import { Profile } from './Pages/Profile.tsx';
+import { Log } from './Pages/Log.tsx';
+
+import { AdminPanel } from './Pages/ControlPanel/ControlPanel.tsx';
+import { PanelUpload } from './Pages/ControlPanel/PanelUpload.tsx';
+import { PanelCourses } from './Pages/ControlPanel/PanelCourses.tsx';
+import { PanelDownload } from './Pages/ControlPanel/PanelDownload.tsx';
+import { PanelPreceptors } from './Pages/ControlPanel/PanelPreceptors.tsx';
+
 import { Config } from './Pages/config/Config.tsx';
+import { ConfigGeneral } from './Pages/config/ConfigGeneral.tsx';
+import { ConfigAccessibility } from './Pages/config/ConfigAccessibility.tsx';
+import { ConfigProfile } from './Pages/config/ConfigProfile.tsx';
+import { ConfigAbout } from './Pages/config/ConfigAbout.tsx';
 
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router';
 
 import { Alert, CircularProgress, Box } from '@mui/material';
+
 import { CustomModal } from './components/CustomModal';
-import { Profile } from './Pages/Profile.tsx';
-import { ConfigGeneral } from './Pages/config/ConfigGeneral.tsx';
-import { ConfigAccessibility } from './Pages/config/ConfigAccessibility.tsx';
 
 export const App = () => {
   const alert = useCachedStore((store) => store.alert);
@@ -85,16 +95,6 @@ export const App = () => {
         {isDialogOpen && <CustomModal />}
         <Routes>
           <Route
-            path='/'
-            element={
-              userVerified ? (
-                <Navigate to='/home' replace />
-              ) : (
-                <Navigate to='/login' replace />
-              )
-            }
-          />
-          <Route
             path='/login'
             element={userVerified ? <Navigate to='/home' replace /> : <Login />}
           />
@@ -109,22 +109,26 @@ export const App = () => {
             <Route index element={<Home />} />
             <Route path='profile' element={<Profile />} />
             <Route path='statics' element={<Statics />} />
-            <Route path='config' element={<Config />}>
-              <Route index element={<ConfigGeneral />} />
-              <Route path='general' element={<ConfigGeneral />} />
-              <Route path='accessibility' element={<ConfigAccessibility />} />
-            </Route>
+
             <Route path='classrooms' element={<IndexClassroomsPage />} />
             <Route path='classrooms/:id' element={<ClassroomPage />} />
+            <Route path='log' element={<Log />} />
 
-            <Route
-              path='admin-panel'
-              element={
-                <RequireAuth>
-                  <AdminPanel />
-                </RequireAuth>
-              }
-            />
+            <Route path='control-panel' element={<AdminPanel />}>
+              <Route index element={<PanelUpload />} />
+              <Route path='upload' element={<PanelUpload />} />
+              <Route path='download' element={<PanelDownload />} />
+              <Route path='courses' element={<PanelCourses />} />
+              <Route path='preceptors' element={<PanelPreceptors />} />
+            </Route>
+
+            <Route path='config' element={<Config />}>
+              <Route index element={<ConfigGeneral />} />
+              <Route index path='general' element={<ConfigGeneral />} />
+              <Route path='accessibility' element={<ConfigAccessibility />} />
+              <Route path='profile' element={<ConfigProfile />} />
+              <Route path='about' element={<ConfigAbout />} />
+            </Route>
           </Route>
         </Routes>
       </BrowserRouter>

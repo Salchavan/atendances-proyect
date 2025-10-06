@@ -60,7 +60,11 @@ export const Login = () => {
 
   return (
     <div className='flex flex-row justify-center items-center w-[100vw] h-[100vh]'>
-      <img src={Logo} alt='Logo IPETYM 69' className='mr-20' />
+      <img
+        src='https://www.ipetym69.edu.ar/images/colegiologo.png'
+        alt='Logo IPETYM 69'
+        className='mr-20'
+      />
       <div className='flex flex-col justify-center items-center'>
         <Typography variant='h2' component='h1' className='text-center'>
           Inicio de sesión
