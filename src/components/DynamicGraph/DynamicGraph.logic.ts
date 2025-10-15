@@ -4,8 +4,8 @@ import {
   useGraphStore,
   getLastWeekdays,
 } from '../../store/specificStore/GraphStore.ts';
-import { useStore } from '../../store/Store.ts';
-import { DataTable } from '../DataTable/DataTable';
+import { useStore } from '../../store/Store';
+import { DataTable } from '../DataTable/DataTable.tsx';
 
 interface Unassistance {
   day: string;

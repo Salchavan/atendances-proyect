@@ -17,6 +17,8 @@ type Props = {
   toolbarEnabled?: boolean;
   /** Lista de fields a mostrar (filtra las columnas definidas por defecto). */
   visibleFields?: string[];
+  /** Si true, las columnas se estiran para ocupar el ancho disponible (flex). Si false, respetan width/minWidth y no crecen al achicar otra. */
+  fitColumns?: boolean;
 };
 
 export const DataTable = ({
@@ -25,6 +27,7 @@ export const DataTable = ({
   grid,
   toolbarEnabled,
   visibleFields,
+  fitColumns,
 }: Props) => {
   const effectiveFilters =
     typeof toolbarEnabled === 'boolean' ? toolbarEnabled : filtersEnabled;
@@ -90,7 +93,7 @@ export const DataTable = ({
             data={logic.filteredData}
             onRowClick={logic.onRowClick}
             loading={logic.loading}
-            fitColumns
+            fitColumns={fitColumns}
           />
         </Box>
       </Box>

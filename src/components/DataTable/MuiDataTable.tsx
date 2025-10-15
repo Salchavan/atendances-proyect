@@ -28,25 +28,27 @@ export const MuiDataTable: React.FC<Props> = ({
   const theme = useTheme();
 
   const gridColumns: GridColDef[] = useMemo(() => {
-    const fit = !!fitColumns;
+    const fit = !!fitColumns; // default to fixed layout unless explicitly true
     return columns.map((c) => {
-      const field = String(c.field);
-      const isFixed = !fit && (field === 'id' || field === 'age');
       const col: GridColDef = {
-        field,
-        headerName: c.headerName,
-        sortable: c.sortable !== false,
+        field: String((c as any).field),
+        headerName: (c as any).headerName,
+        sortable: (c as any).sortable !== false,
       } as GridColDef;
-      if (isFixed) {
-        col.width = c.width ?? 60;
-        col.minWidth = c.minWidth ?? c.width ?? 60;
-      } else {
-        // Make most columns flexible to adapt to container width
+      if (fit) {
+        // Flexible layout: columns expand to fill available width
         col.flex = 1;
-        // Allow shrink while keeping readability
-        const defaultMin = fit ? 80 : 100;
-        const maxClamp = fit ? 160 : 180;
-        col.minWidth = Math.min(maxClamp, c.minWidth ?? defaultMin);
+        const defaultMin = 80;
+        const maxClamp = 160;
+        col.minWidth = Math.min(maxClamp, (c as any).minWidth ?? defaultMin);
+      } else {
+        // Fixed layout: no flex; avoid other columns growing when one shrinks
+        col.flex = undefined;
+        const fallbackWidth = (c as any).width ?? (c as any).minWidth ?? 140;
+        const fallbackMin = 100;
+        col.width = fallbackWidth;
+        col.minWidth =
+          (c as any).minWidth ?? Math.min(fallbackWidth, fallbackMin);
       }
       return col;
     });
@@ -69,7 +71,9 @@ export const MuiDataTable: React.FC<Props> = ({
       <DataGrid
         rows={rows}
         columns={gridColumns}
-        getRowId={(row: any) => row.id}
+        getRowId={(row: any) =>
+          row.id ?? row.ID ?? row.email ?? JSON.stringify(row)
+        }
         onRowClick={(params: GridRowParams) =>
           onRowClick(params.row as RowDataType)
         }

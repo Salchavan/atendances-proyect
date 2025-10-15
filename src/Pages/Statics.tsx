@@ -8,13 +8,13 @@ import {
 } from '@mui/material';
 import { useMemo } from 'react';
 import { changePageTitle } from '../Logic';
-import { DynamicGraph } from '../components/DynamicGraph/DynamicGraph';
 import { DataTable } from '../components/DataTable/DataTable';
 import Students from '../../public/data/Students.json';
 import FileDownloadIcon from '@mui/icons-material/FileDownload';
 import BuildIcon from '@mui/icons-material/Build';
 import LocationSearchingIcon from '@mui/icons-material/LocationSearching';
 import SearchIcon from '@mui/icons-material/Search';
+import { MultiChart } from '../components/MultiChart/MultiChart';
 
 type Student = {
   id: number | string;
@@ -135,11 +135,10 @@ export const Statics = () => {
           </Box>
           {/* Gráfico principal ocupando 2 filas */}
 
-          <DynamicGraph
-            graphName='Asistencias'
+          <MultiChart
+            title='Asistencias'
             grid='row-span-2'
-            toolbarEnabled={false}
-            disableClickToOpenTable
+            toolbarPosition='bottom'
           />
         </Box>
 
@@ -148,12 +147,12 @@ export const Statics = () => {
           className='col-span-1 col-start-3 row-span-1 row-start-1 grid grid-rows-3 gap-2'
           sx={{ minWidth: 0, overflow: 'hidden' }}
         >
-          <Paper elevation={1} sx={{ height: '100%', p: 1.5 }}>
-            <DynamicGraph
-              graphName='Inasistencias'
-              grid=''
-              toolbarEnabled={false}
-              disableClickToOpenTable
+          <Paper elevation={1} sx={{ p: 1.5 }}>
+            <MultiChart
+              title='Asistencias'
+              grid='row-span-1'
+              toolbarPosition='top'
+              initialChartType='pie'
             />
           </Paper>
 
@@ -178,6 +177,7 @@ export const Statics = () => {
                   tableData={tableData as any}
                   toolbarEnabled={false}
                   visibleFields={['id', 'firstName', 'lastName', 'classroom']}
+                  fitColumns={false}
                 />
               </Box>
             </Paper>

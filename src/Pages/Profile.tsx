@@ -1,4 +1,4 @@
-import { useStore } from '../store/Store.ts';
+import { useStore } from '../store/Store';
 
 import {
   Box,

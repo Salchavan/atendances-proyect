@@ -13,7 +13,7 @@ import {
 } from '@mui/material';
 import PhotoCameraIcon from '@mui/icons-material/PhotoCamera';
 import QueryStatsIcon from '@mui/icons-material/QueryStats';
-import { useStore } from '../store/Store.ts';
+import { useStore } from '../store/Store';
 
 export const ProfileSettingsModal = () => {
   const selectedUser = useStore((s) => s.perfilUserSelected) as

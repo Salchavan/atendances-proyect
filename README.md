@@ -160,6 +160,53 @@ npm run build
 - DynamicGraph: puedes ocultar la toolbar con prop toolbarEnabled={false} y controla su layout con grid y contenedores h-full/min-h-0.
 - DataTable: ajusta columnas y filtros en DataTable.logic.
 
+## MultiChart
+
+Componente de gráficos unificado que reemplaza y amplía DynamicGraph. Usa Material UI + X-Charts y soporta barras apiladas, torta y líneas, selección de rango por fechas y pantalla completa con el modal global.
+
+Ubicación:
+
+- `src/components/MultiChart/`
+  - `MultiChart.tsx` (contenedor + fullscreen via CustomModal)
+  - `MultiChart.logic.ts` (estado, datos y helpers)
+  - `MultiChartToolbar.tsx` (toolbar con rango, tipo de gráfico y menú de series)
+  - `MultiChartChart.tsx` (render de Bar/Pie/Line)
+
+Uso básico:
+
+```tsx
+import { MultiChart } from '@/components/MultiChart/MultiChart';
+
+<MultiChart title='Asistencias' grid='col-span-2 row-span-2' />;
+```
+
+Props principales:
+
+- `title?: string`
+  - Texto del encabezado de la toolbar.
+- `grid?: string`
+  - Clase(s) para integrarse al grid del contenedor padre.
+- `toolbarEnabled?: boolean` (default: true)
+  - Muestra/oculta la toolbar.
+- `disabledControls?: { date?: boolean; chartType?: boolean; series?: boolean; fullscreen?: boolean }`
+  - Deshabilita selectivamente controles de la toolbar.
+
+Características:
+
+- Tipos de gráfico: `bar`, `pie`, `line`.
+- Barras apiladas para "Justificadas" y "Injustificadas"; la serie "Total" no se apila.
+- Rango de fechas con MUI Date Pickers (AdapterDateFns). Si no hay rango, se usan los últimos días hábiles disponibles.
+- Menú compacto para activar/desactivar series (Total, Justificadas, Injustificadas).
+- Pantalla completa usando `CustomModal` tamaño "big"; se reutiliza una versión compacta de la toolbar dentro del modal.
+
+Notas de datos:
+
+- Los datos provienen de `public/data/Students.json`. La lógica agrega por días de la semana dentro del rango seleccionado y calcula totales/justificadas/no justificadas.
+
+Consejos de layout:
+
+- El alto del gráfico es responsivo mediante `ResizeObserver`. Asegúrate de que el contenedor tenga `min-height: 0` para evitar recortes y que el gráfico pueda ocupar el alto disponible.
+
 ### Props de DynamicGraph
 
 Uso básico:

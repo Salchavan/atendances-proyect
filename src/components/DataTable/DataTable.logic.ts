@@ -2,7 +2,7 @@ import { useEffect, useRef, useState, useTransition } from 'react';
 import type { RowDataType } from 'rsuite/esm/Table';
 import typeColumns from '../../../public/data/defaultDataTabletColumns.json';
 import { useFilterStore } from '../../store/specificStore/DataTableStore.ts';
-import { useStore } from '../../store/Store.ts';
+import { useStore } from '../../store/Store';
 import { useNavigateTo } from '../../Logic.ts';
 import FilterWorker from './filterWorker.ts?worker';
 
@@ -67,9 +67,19 @@ export const useDataTableLogic = ({
 
   // Init worker once
   useEffect(() => {
-    workerRef.current = new FilterWorker();
+    try {
+      workerRef.current = new FilterWorker();
+    } catch (e) {
+      // If worker fails (CSP, dev env, or bundler), fallback to sync mode
+      workerRef.current = null;
+      // console.warn('FilterWorker unavailable, using sync filtering.', e);
+    }
     return () => {
-      workerRef.current?.terminate();
+      try {
+        workerRef.current?.terminate();
+      } catch {
+        // ignore
+      }
       workerRef.current = null;
     };
   }, []);
@@ -79,7 +89,12 @@ export const useDataTableLogic = ({
     const w = workerRef.current;
     if (!w) {
       // Fallback sync filtering if worker unavailable
-      setFilteredData(getFilteredData(tableData) as RowDataType[]);
+      setLoading(true);
+      try {
+        setFilteredData(getFilteredData(tableData) as RowDataType[]);
+      } finally {
+        setLoading(false);
+      }
       return;
     }
     const id = ++requestIdRef.current;

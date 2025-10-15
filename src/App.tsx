@@ -90,7 +90,6 @@ export const App = () => {
           </Alert>
         </div>
       )}
-
       <BrowserRouter basename='/atendances-proyect'>
         {isDialogOpen && <CustomModal />}
         <Routes>
@@ -98,6 +97,13 @@ export const App = () => {
             path='/login'
             element={userVerified ? <Navigate to='/home' replace /> : <Login />}
           />
+          <Route path='/control-panel' element={<AdminPanel />}>
+            <Route index element={<PanelUpload />} />
+            <Route path='upload' element={<PanelUpload />} />
+            <Route path='download' element={<PanelDownload />} />
+            <Route path='courses' element={<PanelCourses />} />
+            <Route path='preceptors' element={<PanelPreceptors />} />
+          </Route>
           <Route
             path='/home'
             element={
@@ -113,7 +119,6 @@ export const App = () => {
             <Route path='classrooms' element={<IndexClassroomsPage />} />
             <Route path='classrooms/:id' element={<ClassroomPage />} />
             <Route path='log' element={<Log />} />
-
             <Route path='control-panel' element={<AdminPanel />}>
               <Route index element={<PanelUpload />} />
               <Route path='upload' element={<PanelUpload />} />
@@ -121,7 +126,6 @@ export const App = () => {
               <Route path='courses' element={<PanelCourses />} />
               <Route path='preceptors' element={<PanelPreceptors />} />
             </Route>
-
             <Route path='config' element={<Config />}>
               <Route index element={<ConfigGeneral />} />
               <Route index path='general' element={<ConfigGeneral />} />

@@ -9,7 +9,7 @@ import {
 import AccessibilityIcon from '@mui/icons-material/Accessibility';
 import SettingsIcon from '@mui/icons-material/Settings';
 import { changePageTitle, useNavigateTo } from '../../Logic';
-import { useStore } from '../../store/Store.ts';
+import { useStore } from '../../store/Store';
 import React from 'react';
 import { ProfileSettingsModal } from '../../components/ProfileSettingsModal';
 import { Outlet } from 'react-router';
