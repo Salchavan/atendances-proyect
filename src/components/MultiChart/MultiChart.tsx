@@ -4,6 +4,7 @@ import { useMultiChartLogic } from './MultiChart.logic.ts';
 import { MultiChartToolbar } from './MultiChartToolbar.tsx';
 import { MultiChartChart } from './MultiChartChart.tsx';
 import { useStore } from '../../store/Store';
+import { SafeBoundary } from '../SafeBoundary';
 
 type Props = {
   title?: string;
@@ -88,21 +89,30 @@ export const MultiChart: React.FC<Props> = ({
         minHeight: 0,
       }}
     >
-      {toolbarEnabled && toolbarPosition === 'top' && renderToolbar(false)}
+      <SafeBoundary>
+        {toolbarEnabled && toolbarPosition === 'top' && renderToolbar(false)}
+      </SafeBoundary>
 
-      <Box ref={logic.containerRef} sx={{ flex: 1, minHeight: 0, minWidth: 0 }}>
-        <MultiChartChart
-          type={logic.chartType}
-          height={logic.chartHeight}
-          data={logic.data}
-          activeSeries={logic.activeSeries}
-          showBarValueLabels={logic.showBarValueLabels}
-          showXAxisLabels={logic.showXAxisLabels}
-          containerWidth={logic.chartWidth}
-        />
-      </Box>
+      <SafeBoundary>
+        <Box
+          ref={logic.containerRef}
+          sx={{ flex: 1, minHeight: 0, minWidth: 0 }}
+        >
+          <MultiChartChart
+            type={logic.chartType}
+            height={logic.chartHeight}
+            data={logic.data}
+            activeSeries={logic.activeSeries}
+            showBarValueLabels={logic.showBarValueLabels}
+            showXAxisLabels={logic.showXAxisLabels}
+            containerWidth={logic.chartWidth}
+          />
+        </Box>
+      </SafeBoundary>
 
-      {toolbarEnabled && toolbarPosition === 'bottom' && renderToolbar(false)}
+      <SafeBoundary>
+        {toolbarEnabled && toolbarPosition === 'bottom' && renderToolbar(false)}
+      </SafeBoundary>
 
       {/* Fullscreen now handled via CustomModal through openDialog('big') */}
     </Box>

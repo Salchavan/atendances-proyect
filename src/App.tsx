@@ -30,6 +30,7 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router';
 import { Alert, CircularProgress, Box } from '@mui/material';
 
 import { CustomModal } from './components/CustomModal';
+import { SafeBoundary } from './components/SafeBoundary';
 
 export const App = () => {
   const alert = useCachedStore((store) => store.alert);
@@ -92,49 +93,53 @@ export const App = () => {
       )}
       <BrowserRouter basename='/atendances-proyect'>
         {isDialogOpen && <CustomModal />}
-        <Routes>
-          <Route
-            path='/login'
-            element={userVerified ? <Navigate to='/home' replace /> : <Login />}
-          />
-          <Route path='/control-panel' element={<AdminPanel />}>
-            <Route index element={<PanelUpload />} />
-            <Route path='upload' element={<PanelUpload />} />
-            <Route path='download' element={<PanelDownload />} />
-            <Route path='courses' element={<PanelCourses />} />
-            <Route path='preceptors' element={<PanelPreceptors />} />
-          </Route>
-          <Route
-            path='/home'
-            element={
-              <RequireAuth>
-                <Index />
-              </RequireAuth>
-            }
-          >
-            <Route index element={<Home />} />
-            <Route path='profile' element={<Profile />} />
-            <Route path='statics' element={<Statics />} />
-
-            <Route path='classrooms' element={<IndexClassroomsPage />} />
-            <Route path='classrooms/:id' element={<ClassroomPage />} />
-            <Route path='log' element={<Log />} />
-            <Route path='control-panel' element={<AdminPanel />}>
+        <SafeBoundary>
+          <Routes>
+            <Route
+              path='/login'
+              element={
+                userVerified ? <Navigate to='/home' replace /> : <Login />
+              }
+            />
+            <Route path='/control-panel' element={<AdminPanel />}>
               <Route index element={<PanelUpload />} />
               <Route path='upload' element={<PanelUpload />} />
               <Route path='download' element={<PanelDownload />} />
               <Route path='courses' element={<PanelCourses />} />
               <Route path='preceptors' element={<PanelPreceptors />} />
             </Route>
-            <Route path='config' element={<Config />}>
-              <Route index element={<ConfigGeneral />} />
-              <Route index path='general' element={<ConfigGeneral />} />
-              <Route path='accessibility' element={<ConfigAccessibility />} />
-              <Route path='profile' element={<ConfigProfile />} />
-              <Route path='about' element={<ConfigAbout />} />
+            <Route
+              path='/home'
+              element={
+                <RequireAuth>
+                  <Index />
+                </RequireAuth>
+              }
+            >
+              <Route index element={<Home />} />
+              <Route path='profile' element={<Profile />} />
+              <Route path='statics' element={<Statics />} />
+
+              <Route path='classrooms' element={<IndexClassroomsPage />} />
+              <Route path='classrooms/:id' element={<ClassroomPage />} />
+              <Route path='log' element={<Log />} />
+              <Route path='control-panel' element={<AdminPanel />}>
+                <Route index element={<PanelUpload />} />
+                <Route path='upload' element={<PanelUpload />} />
+                <Route path='download' element={<PanelDownload />} />
+                <Route path='courses' element={<PanelCourses />} />
+                <Route path='preceptors' element={<PanelPreceptors />} />
+              </Route>
+              <Route path='config' element={<Config />}>
+                <Route index element={<ConfigGeneral />} />
+                <Route index path='general' element={<ConfigGeneral />} />
+                <Route path='accessibility' element={<ConfigAccessibility />} />
+                <Route path='profile' element={<ConfigProfile />} />
+                <Route path='about' element={<ConfigAbout />} />
+              </Route>
             </Route>
-          </Route>
-        </Routes>
+          </Routes>
+        </SafeBoundary>
       </BrowserRouter>
     </>
   );

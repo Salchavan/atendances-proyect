@@ -1,6 +1,7 @@
 // components/DataTable.tsx (UI only)
 import type { RowDataType } from 'rsuite/esm/Table';
 import { ErrorBoundary } from 'react-error-boundary';
+import { SafeBoundary } from '../SafeBoundary';
 import { DataTableToolbar } from './DataTableToolbar';
 // Reemplazo basado en MUI (mantiene el RsuiteDataTable por si hay que volver)
 import { MuiDataTable } from './MuiDataTable';
@@ -37,66 +38,68 @@ export const DataTable = ({
   });
 
   return (
-    <ErrorBoundary
-      fallback={
-        <Paper sx={{ p: 2 }}>
-          <Typography color='error'>Error loading table.</Typography>
-        </Paper>
-      }
-    >
-      <Box
-        className={grid}
-        sx={{
-          display: 'flex',
-          flexDirection: 'column',
-          height: '100%',
-          minHeight: 0,
-          width: '100%',
-          maxWidth: '100%',
-          minWidth: 0,
-          overflow: 'hidden',
-        }}
+    <SafeBoundary>
+      <ErrorBoundary
+        fallback={
+          <Paper sx={{ p: 2 }}>
+            <Typography color='error'>Error loading table.</Typography>
+          </Paper>
+        }
       >
-        {logic.effectiveFiltersEnabled && (
-          <Box sx={{ flexShrink: 0 }}>
-            <DataTableToolbar
-              globalSearch={logic.globalSearch}
-              searchInput={logic.searchInput}
-              onSearchChange={logic.handleSearchChange}
-              dayFilter={logic.dayFilter}
-              setDayFilter={logic.setDayFilter}
-              setGlobalSearch={logic.setGlobalSearch}
-              clearAllFilters={logic.clearAllFilters}
-              onClearInput={logic.clearSearchInput}
-            />
-          </Box>
-        )}
-
         <Box
+          className={grid}
           sx={{
-            flex: 1,
+            display: 'flex',
+            flexDirection: 'column',
+            height: '100%',
             minHeight: 0,
             width: '100%',
             maxWidth: '100%',
             minWidth: 0,
-            overflow: 'auto',
+            overflow: 'hidden',
           }}
         >
-          <MuiDataTable
-            columns={
-              Array.isArray(visibleFields) && visibleFields.length
-                ? (logic.columns || []).filter((c: any) =>
-                    visibleFields.includes(String(c.field))
-                  )
-                : logic.columns
-            }
-            data={logic.filteredData}
-            onRowClick={logic.onRowClick}
-            loading={logic.loading}
-            fitColumns={fitColumns}
-          />
+          {logic.effectiveFiltersEnabled && (
+            <Box sx={{ flexShrink: 0 }}>
+              <DataTableToolbar
+                globalSearch={logic.globalSearch}
+                searchInput={logic.searchInput}
+                onSearchChange={logic.handleSearchChange}
+                dayFilter={logic.dayFilter}
+                setDayFilter={logic.setDayFilter}
+                setGlobalSearch={logic.setGlobalSearch}
+                clearAllFilters={logic.clearAllFilters}
+                onClearInput={logic.clearSearchInput}
+              />
+            </Box>
+          )}
+
+          <Box
+            sx={{
+              flex: 1,
+              minHeight: 0,
+              width: '100%',
+              maxWidth: '100%',
+              minWidth: 0,
+              overflow: 'auto',
+            }}
+          >
+            <MuiDataTable
+              columns={
+                Array.isArray(visibleFields) && visibleFields.length
+                  ? (logic.columns || []).filter((c: any) =>
+                      visibleFields.includes(String(c.field))
+                    )
+                  : logic.columns
+              }
+              data={logic.filteredData}
+              onRowClick={logic.onRowClick}
+              loading={logic.loading}
+              fitColumns={fitColumns}
+            />
+          </Box>
         </Box>
-      </Box>
-    </ErrorBoundary>
+      </ErrorBoundary>
+    </SafeBoundary>
   );
 };

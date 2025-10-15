@@ -1,7 +1,9 @@
 import React from 'react';
-import { Box, Typography, ButtonBase, Tooltip } from '@mui/material';
+import { Box, Typography, ButtonBase, Tooltip, Divider } from '@mui/material';
 import { fmtYmd } from './utils';
 import type { AbsencesMap, AbsencesDetailMap } from '../../types/generalTypes';
+
+import { SafeBoundary } from '../SafeBoundary';
 
 type DayCellProps = {
   date: Date;
@@ -127,25 +129,31 @@ export const DayCell: React.FC<DayCellProps> = ({
       </Typography>
       <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 0.5 }}>
         <Box
-          sx={{ width: 16, height: 16, borderRadius: 0.5, bgcolor: 'grey.800' }}
+          sx={{
+            width: 16,
+            height: 16,
+            borderRadius: 0.5,
+            bgcolor: 'error.main',
+          }}
         />
-        <Typography variant='body2' color='text.secondary'>
+        <Typography variant='body2' color='text.primary'>
           Total:
         </Typography>
         <Typography variant='body2' fontWeight={600}>
           {details.total}
         </Typography>
       </Box>
+      <Divider sx={{ my: 0.75 }} />
       <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 0.5 }}>
         <Box
           sx={{
             width: 16,
             height: 16,
             borderRadius: 0.5,
-            bgcolor: 'success.main',
+            bgcolor: 'warning.main',
           }}
         />
-        <Typography variant='body2' color='text.secondary'>
+        <Typography variant='body2' color='text.primary'>
           Justificadas:
         </Typography>
         <Typography variant='body2' fontWeight={600}>
@@ -161,7 +169,7 @@ export const DayCell: React.FC<DayCellProps> = ({
             bgcolor: 'error.main',
           }}
         />
-        <Typography variant='body2' color='text.secondary'>
+        <Typography variant='body2' color='text.primary'>
           No justificadas:
         </Typography>
         <Typography variant='body2' fontWeight={600}>
@@ -172,8 +180,27 @@ export const DayCell: React.FC<DayCellProps> = ({
   );
 
   return (
-    <Tooltip title={tooltip} placement='top-start' enterDelay={300} arrow>
-      {CellContent}
-    </Tooltip>
+    <SafeBoundary>
+      <Tooltip
+        title={tooltip}
+        placement='top-start'
+        enterDelay={300}
+        arrow
+        slotProps={{
+          tooltip: {
+            sx: {
+              bgcolor: 'background.paper',
+              color: 'text.primary',
+              border: '1px solid',
+              borderColor: 'divider',
+              boxShadow: 3,
+            },
+          },
+          arrow: { sx: { color: 'background.paper' } },
+        }}
+      >
+        {CellContent}
+      </Tooltip>
+    </SafeBoundary>
   );
 };

@@ -12,6 +12,7 @@ type PaletteTokens = {
   textPrimary: string;
   success: string;
   error: string;
+  warning: string;
 };
 
 const lightTokens: PaletteTokens = {
@@ -22,6 +23,7 @@ const lightTokens: PaletteTokens = {
   textPrimary: '#333333',
   success: '#3BA55C',
   error: '#D93025',
+  warning: '#FFB300',
 };
 
 const darkTokens: PaletteTokens = {
@@ -32,6 +34,7 @@ const darkTokens: PaletteTokens = {
   textPrimary: '#FFFFFF',
   success: '#81C784',
   error: '#EF5350',
+  warning: '#FFB300',
 };
 
 // If you want to override any token at runtime, pass here
@@ -59,6 +62,7 @@ export const getTheme = (mode: AppMode, overrides?: ThemeOverrides) => {
       text: { primary: tokens.textPrimary },
       success: { main: tokens.success },
       error: { main: tokens.error },
+      warning: { main: tokens.warning },
     },
     // Default app typography from selected font
     typography: { fontFamily: font },

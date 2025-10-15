@@ -4,6 +4,7 @@ import { ErrorBoundary } from 'react-error-boundary';
 import { useDynamicGraphLogic } from './DynamicGraph.logic.ts';
 import { DynamicGraphToolbar } from './DynamicGraphToolbar.tsx';
 import { DynamicGraphChart } from './DynamicGraphChart.tsx';
+import { SafeBoundary } from '../SafeBoundary';
 
 interface Props {
   graphName: string;
@@ -81,44 +82,48 @@ export const DynamicGraph = ({
         <Typography variant='h6' gutterBottom>
           Gráfico de {graphName}
         </Typography>
-        {toolbarEnabled && (
-          <DynamicGraphToolbar
-            listRef={toolbarRef}
-            range={logic.range}
-            predefinedRanges={logic.predefinedRanges}
-            onRangeChange={logic.onRangeChange}
-            onRangeOk={logic.onRangeOk}
-            onRangeClean={logic.onRangeClean}
-            graphMode={logic.graphMode}
-            setGraphMode={logic.setGraphMode}
-            partitionMode={logic.partitionMode}
-            setPartitionMode={logic.setPartitionMode}
-            partitionEnabled={logic.partitionEnabled}
-          />
-        )}
-        <Box
-          ref={chartAreaRef}
-          sx={{
-            flex: 1,
-            minHeight: 0,
-            width: '100%',
-            minWidth: 0,
-            display: 'flex',
-          }}
-        >
-          <DynamicGraphChart
-            mode={logic.graphMode}
-            height={chartHeight}
-            displayDates={logic.displayDates}
-            totals={logic.total}
-            justified={logic.justified}
-            unjustified={logic.unjustified}
-            partitioned={logic.partitioned}
-            clickEnabled={!disableClickToOpenTable}
-            onClickEach={logic.onChartClickEach}
-            onClickPartitioned={logic.onChartClickPartitioned}
-          />
-        </Box>
+        <SafeBoundary>
+          {toolbarEnabled && (
+            <DynamicGraphToolbar
+              listRef={toolbarRef}
+              range={logic.range}
+              predefinedRanges={logic.predefinedRanges}
+              onRangeChange={logic.onRangeChange}
+              onRangeOk={logic.onRangeOk}
+              onRangeClean={logic.onRangeClean}
+              graphMode={logic.graphMode}
+              setGraphMode={logic.setGraphMode}
+              partitionMode={logic.partitionMode}
+              setPartitionMode={logic.setPartitionMode}
+              partitionEnabled={logic.partitionEnabled}
+            />
+          )}
+        </SafeBoundary>
+        <SafeBoundary>
+          <Box
+            ref={chartAreaRef}
+            sx={{
+              flex: 1,
+              minHeight: 0,
+              width: '100%',
+              minWidth: 0,
+              display: 'flex',
+            }}
+          >
+            <DynamicGraphChart
+              mode={logic.graphMode}
+              height={chartHeight}
+              displayDates={logic.displayDates}
+              totals={logic.total}
+              justified={logic.justified}
+              unjustified={logic.unjustified}
+              partitioned={logic.partitioned}
+              clickEnabled={!disableClickToOpenTable}
+              onClickEach={logic.onChartClickEach}
+              onClickPartitioned={logic.onChartClickPartitioned}
+            />
+          </Box>
+        </SafeBoundary>
       </Box>
     </ErrorBoundary>
   );
