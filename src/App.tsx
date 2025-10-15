@@ -95,6 +95,8 @@ export const App = () => {
         {isDialogOpen && <CustomModal />}
         <SafeBoundary>
           <Routes>
+            {/* Root path should redirect to /home when served at base */}
+            <Route path='/' element={<Navigate to='/home' replace />} />
             <Route
               path='/login'
               element={

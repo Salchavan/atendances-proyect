@@ -19,6 +19,7 @@ Enlaces útiles:
   - Tooltip apilado en hover con total, justificadas y no justificadas (con indicadores de color).
   - Click en un día abre un modal con un DataTable de quienes faltaron ese día.
   - Totalmente estilizado con Tailwind. Props para personalizar colores de texto/números/fondo.
+  - Tooltip adaptado al tema (background, texto y separadores respetan light/dark).
 
 - Gráfico dinámico (DynamicGraph):
 
@@ -33,6 +34,8 @@ Enlaces útiles:
   - Se adapta al alto del contenedor (flex + ResizeObserver).
   - Al hacer click en un registro: guarda estudiante seleccionado en store y navega a Perfil.
   - Separado en UI, lógica y subcomponentes (toolbar + tabla rsuite).
+  - Columnas con layout fijo por defecto para evitar que otras columnas se expandan al redimensionar.
+  - Filtro con fallback sin worker si el navegador bloquea Web Workers.
 
 - Rutas y navegación:
 
@@ -54,11 +57,25 @@ Enlaces útiles:
 
   - Stores para gráfico, tabla, alertas, usuario, etc.
   - Modal global para abrir DataTable desde el calendario y el gráfico.
+  - Modal personalizado basado en portal con bloqueo de scroll del body, colocado bajo el Router para navegación segura.
+  - Límite de errores local con un componente SafeBoundary para aislar fallos en tablas, gráficos, celdas del calendario y rutas, evitando caída de toda la página.
 
 - Autenticación y datos:
   - users.json actualizado al nuevo formato:
     - { id, firstName, lastName, email, password, rol }
   - Adaptación de UI y lógica al nuevo shape (fallbacks para legacy donde aplica).
+
+## Novedades recientes
+
+- Gráfico unificado (MultiChart):
+  - Torta muestra totales agregados de Inasistencias Justificadas vs Injustificadas para el rango seleccionado.
+  - Márgenes laterales de la torta reducidos y radios adaptativos para mejor cabida en espacios estrechos.
+  - Pantalla completa estable usando el modal personalizado.
+- DataTable: columnas con layout fijo por defecto; al achicar una columna, las demás no se agrandan automáticamente.
+- Modal: reemplazado por un overlay con portal; cierre por backdrop; bloqueo de scroll; contenido envuelto con límite de errores.
+- Error boundaries: nuevo `SafeBoundary` aplicado en rutas principales, MultiChart, DynamicGraph, DataTable y celdas del calendario.
+- ChipAcount: componente para mostrar avatar, nombre y rol del usuario seleccionado o recibido por props. Soporta prioridad de datos por `idAcount` (busca en `users.json`), luego `nameAcount`/`roleAcount`/`avatarAcount`, y por último `perfilUserSelected` del store.
+- Página “Acerca de”: en Config ahora muestra objetivo/finalidad, licencia y colaboradores con avatar.
 
 ## Estructura del proyecto (resumen)
 
@@ -84,13 +101,24 @@ Enlaces útiles:
 │   │   │   ├── DataTable.logic.ts      (lógica)
 │   │   │   └── RsuiteDataTable.tsx     (subcomponentes)
 │   │   ├── CustomModal.tsx
+│   │   ├── ChipAcount.tsx
+│   │   ├── SafeBoundary.tsx
 │   │   └── AsideEvents.tsx
+│   │   ├── MultiChart/
+│   │   │   ├── MultiChart.tsx
+│   │   │   ├── MultiChart.logic.ts
+│   │   │   ├── MultiChartToolbar.tsx
+│   │   │   └── MultiChartChart.tsx
 │   ├── Pages/
 │   │   ├── Home.tsx
 │   │   ├── Classrooms/
 │   │   │   ├── IndexClassroomsPage.tsx
 │   │   │   └── ClassroomPage.tsx
 │   │   └── Perfil.tsx
+│   │   └── config/
+│   │       ├── ConfigAbout.tsx
+│   │       ├── ConfigGeneral.tsx
+│   │       └── ConfigAccessibility.tsx
 │   ├── data/
 │   │   ├── Students.json
 │   │   ├── users.json
@@ -143,6 +171,7 @@ npm run build
     - /home/perfil (perfil)
     - /home/config (configuración)
 - Si abres modales globales con contenido que usa useNavigate, asegúrate de que el modal esté bajo el Router (App.tsx ya lo hace).
+  - El modal personalizado ya está renderizado bajo el Router y bloquea el scroll del body para evitar saltos.
 
 ## Datos y formatos
 
@@ -159,6 +188,8 @@ npm run build
 - Estilos utilitarios: src/tailwindStyles.css y clases en componentes (Calendar, Classrooms, etc.).
 - DynamicGraph: puedes ocultar la toolbar con prop toolbarEnabled={false} y controla su layout con grid y contenedores h-full/min-h-0.
 - DataTable: ajusta columnas y filtros en DataTable.logic.
+- MultiChart: elige tipo de gráfico (bar/pie/line), rango de fechas y alterna series desde la toolbar. La torta agrega justificadas vs injustificadas para el rango.
+- ChipAcount: puedes pasar `idAcount` o `nameAcount`/`roleAcount`/`avatarAcount` para mostrar datos específicos.
 
 ## MultiChart
 
@@ -198,6 +229,7 @@ Características:
 - Rango de fechas con MUI Date Pickers (AdapterDateFns). Si no hay rango, se usan los últimos días hábiles disponibles.
 - Menú compacto para activar/desactivar series (Total, Justificadas, Injustificadas).
 - Pantalla completa usando `CustomModal` tamaño "big"; se reutiliza una versión compacta de la toolbar dentro del modal.
+- Pie: muestra agregados de Justificadas vs Injustificadas del rango; márgenes laterales minimizados; radios responsivos al contenedor.
 
 Notas de datos:
 
@@ -243,6 +275,12 @@ Notas:
   - Verifica que cualquier modal que use navegación esté dentro del Router.
 - Gráficos recortados:
   - Revisa contenedores con h-full y min-h-0; evita padding extra en el CardContent del gráfico.
+- Columnas que se agrandan al redimensionar:
+  - Por defecto, el DataTable usa layout fijo; verifica que no estés activando un modo de ajuste automático si no lo deseas.
+- El modal no abre o la página hace scroll al fondo:
+  - El modal fue reemplazado por un portal con bloqueo de scroll; asegúrate de no tener dos modales montados al mismo tiempo.
+- Colores del tooltip del calendario no se ven bien:
+  - Los tooltips respetan el tema; revisa overrides de theme o clases Tailwind que puedan estar afectando el fondo/texto.
 
 ## Licencia
 
