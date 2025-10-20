@@ -1,122 +1,205 @@
-import { useState, useEffect } from 'react';
-import type { User } from '../store/UserStore';
-import { useCachedStore } from '../store/CachedStore';
-import type { CachedStore } from '../store/CachedStore';
-import { useUserStore } from '../store/UserStore.ts';
+import { useState, useMemo } from 'react';
 import { changePageTitle } from '../Logic';
-
-import Button from '@mui/material/Button';
-import TextField from '@mui/material/TextField';
-import Typography from '@mui/material/Typography';
-import Skeleton from '@mui/material/Skeleton';
-
+import { useUserStore } from '../store/UserStore';
+import { useCachedStore } from '../store/CachedStore';
 import { useNavigate } from 'react-router';
+import {
+  Box,
+  Button,
+  CircularProgress,
+  FormControl,
+  IconButton,
+  InputAdornment,
+  InputLabel,
+  MenuItem,
+  Select,
+  Stack,
+  TextField,
+  Typography,
+} from '@mui/material';
+import Visibility from '@mui/icons-material/Visibility';
+import VisibilityOff from '@mui/icons-material/VisibilityOff';
+import { useMutation } from '@tanstack/react-query';
+import api, { getStaffById } from '../api/client';
+
+type RoleOption = 'STAFF' | 'PRECEPTOR';
 
 export const Login = () => {
-  const [users, setUsers] = useState<User[]>([]);
-  const [loading, setLoading] = useState(true);
   changePageTitle('Inicio de sesión');
 
-  useEffect(() => {
-    document.title = 'Inicio de sesion';
-    // Dynamic import for users
-    (async () => {
-      const usersData = (await import('../../public/data/users.json')).default;
-      setUsers(usersData);
-    })();
-  }, []);
-
-  // Simulación de carga de 0.7 segundos
-  useEffect(() => {
-    const t = setTimeout(() => setLoading(false), 700);
-    return () => clearTimeout(t);
-  }, []);
-
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-
-  const setAlert = useCachedStore((store: CachedStore) => store.setAlert);
-  const logIn = useUserStore((store) => store.logIn);
   const navigate = useNavigate();
+  const setAlert = useCachedStore((s) => s.setAlert);
+  const setAuthData = useUserStore((s) => s.setAuthData);
+  const setUserInfo = useUserStore((s) => s.setUserInfo);
 
-  const handleLogin = () => {
-    console.log(`[${email}] [${password}]`);
-    // Buscar usuario que coincida (case-insensitive)
-    const user = users.find(
-      (u) =>
-        u.email.toLowerCase() === email.toLowerCase() &&
-        u.password.toLowerCase() === password.toLowerCase()
-    );
+  const [role, setRole] = useState<RoleOption>('STAFF');
+  const [dni, setDni] = useState('');
+  const [password, setPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
 
-    if (user) {
-      setAlert({
-        type: 'success',
-        text: 'Inicio de sesion exitoso',
-      });
+  const dniError = useMemo(() => dni.length > 0 && dni.length !== 8, [dni]);
+  const isSubmitDisabled = useMemo(
+    () => dni.length !== 8 || password.length === 0,
+    [dni, password]
+  );
 
-      logIn?.(user.email, user.password);
-      navigate?.('/home');
-    } else {
-      setAlert({
-        type: 'error',
-        text: 'Email o contraseña incorrectos.',
-      });
+  // Mutation that logs in and, on success, fetches extra user info
+  const mutation = useMutation({
+    mutationKey: ['login', role],
+    mutationFn: async () => {
+      const url =
+        role === 'PRECEPTOR'
+          ? 'https://asistenciaescuela.onrender.com/api/v1/auth/preceptor/login'
+          : 'https://asistenciaescuela.onrender.com/api/v1/auth/staff/login';
+      const body = { dni, password };
+      const res = await api.post(url, body);
+      return res.data;
+    },
+    onSuccess: async (data) => {
+      // Save base auth payload/token
+      setAuthData(data);
+
+      // Try to fetch detailed staff info by id (if available)
+      try {
+        const id = data?.user?.id ?? data?.user?.dni ?? data?.dni ?? data?.id;
+        if (id) {
+          const profile = await getStaffById(id);
+          setUserInfo(profile);
+        }
+      } catch {}
+
+      setAlert({ type: 'success', text: 'Inicio de sesión exitoso' });
+      navigate('/home');
+    },
+    onError: () => {
+      setAlert({ type: 'error', text: 'DNI o contraseña incorrectos.' });
+      setDni('');
+      setPassword('');
+    },
+  });
+
+  const handleSubmit = () => {
+    if (!isSubmitDisabled) mutation.mutate();
+  };
+
+  const onKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      handleSubmit();
     }
   };
 
   return (
-    <div className='flex flex-row justify-center items-center w-[100vw] h-[100vh]'>
-      {loading ? (
-        <>
-          <Skeleton
-            variant='rounded'
-            width={160}
-            height={160}
-            className='mr-20'
-          />
-          <div className='flex flex-col justify-center items-center'>
-            <Skeleton variant='text' sx={{ fontSize: '2rem', width: 280 }} />
-            <div className='flex flex-col gap-2 w-100 mt-6'>
-              <Skeleton variant='rounded' height={56} width={320} />
-              <Skeleton variant='rounded' height={56} width={320} />
-              <Skeleton variant='rounded' height={40} width={140} />
-            </div>
-          </div>
-        </>
-      ) : (
-        <>
-          <img
-            src='https://www.ipetym69.edu.ar/images/colegiologo.png'
-            alt='Logo IPETYM 69'
-            className='mr-20'
-          />
-          <div className='flex flex-col justify-center items-center'>
-            <Typography variant='h2' component='h1' className='text-center'>
-              Inicio de sesión
+    <Box
+      sx={{
+        width: '100vw',
+        height: '100vh',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        p: 2,
+        gap: 4,
+      }}
+    >
+      <Box
+        sx={{
+          display: { xs: 'none', md: 'block' },
+          maxWidth: 420,
+          width: '100%',
+        }}
+      >
+        <Box
+          component='img'
+          alt='Logo IPETYM 69'
+          src='https://www.ipetym69.edu.ar/images/colegiologo.png'
+          sx={{
+            width: '70%',
+            height: 'auto',
+            display: 'block',
+            objectFit: 'contain',
+            borderRadius: 1,
+          }}
+        />
+      </Box>
+      <Box
+        sx={{ maxWidth: 420, width: '100%', backgroundColor: 'transparent' }}
+      >
+        <Stack spacing={2} onKeyDown={onKeyDown}>
+          <Box>
+            <Typography variant='h5'>Inicio de sesión</Typography>
+            <Typography variant='body2' color='text.secondary'>
+              Selecciona tu rol e ingresa tus credenciales
             </Typography>
+          </Box>
 
-            <div className='flex flex-col gap-2 w-100 mt-6'>
-              <TextField
-                label='Email'
-                type='email'
-                variant='outlined'
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
+          <FormControl fullWidth>
+            <InputLabel id='role-label'>Rol</InputLabel>
+            <Select
+              labelId='role-label'
+              label='Rol'
+              value={role}
+              onChange={(e) => setRole(e.target.value as RoleOption)}
+            >
+              <MenuItem value='STAFF'>STAFF</MenuItem>
+              <MenuItem value='PRECEPTOR'>PRECEPTOR</MenuItem>
+            </Select>
+          </FormControl>
+
+          <TextField
+            label='DNI'
+            inputMode='numeric'
+            value={dni}
+            onChange={(e) =>
+              setDni(e.target.value.replace(/\D/g, '').slice(0, 8))
+            }
+            error={dniError}
+            fullWidth
+          />
+
+          <TextField
+            label='Contraseña'
+            type={showPassword ? 'text' : 'password'}
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            InputProps={{
+              endAdornment: (
+                <InputAdornment position='end'>
+                  <IconButton
+                    aria-label='toggle password visibility'
+                    onClick={() => setShowPassword((v) => !v)}
+                    edge='end'
+                  >
+                    {showPassword ? <VisibilityOff /> : <Visibility />}
+                  </IconButton>
+                </InputAdornment>
+              ),
+            }}
+            fullWidth
+          />
+
+          <Box sx={{ position: 'relative' }}>
+            <Button
+              variant='contained'
+              fullWidth
+              disabled={isSubmitDisabled || mutation.isPending}
+              onClick={handleSubmit}
+            >
+              Ingresar
+            </Button>
+            {mutation.isPending && (
+              <CircularProgress
+                size={22}
+                sx={{
+                  position: 'absolute',
+                  right: 12,
+                  top: '50%',
+                  mt: '-11px',
+                }}
               />
-              <TextField
-                label='Contraseña'
-                variant='outlined'
-                type='password'
-                value={password}
-                onChange={(e) => setPassword(e.target.value.toLowerCase())}
-              />
-              <Button variant='contained' onClick={handleLogin}>
-                Ingresar
-              </Button>
-            </div>
-          </div>
-        </>
-      )}
-    </div>
+            )}
+          </Box>
+        </Stack>
+      </Box>
+    </Box>
   );
 };
