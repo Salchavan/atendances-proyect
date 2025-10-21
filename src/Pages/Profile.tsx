@@ -7,14 +7,16 @@ import {
   Tooltip,
   IconButton,
   Paper,
+  ListItem,
 } from '@mui/material';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
-import { DynamicGraph } from '../components/DynamicGraph/DynamicGraph.tsx';
+import { MultiChart } from '../components/MultiChart/MultiChart.tsx';
 import { Notes } from '../components/Notes.tsx';
 import { changePageTitle } from '../Logic.ts';
 import EditIcon from '@mui/icons-material/Edit';
 import { ProfileSettingsModal } from '../components/ProfileSettingsModal';
 import React from 'react';
+import { List } from 'rsuite';
 
 const fallback = 'NO Definido';
 
@@ -139,12 +141,18 @@ export const Profile = () => {
               )}
             </Box>
           </Box>
-          <Box sx={{ mt: 2 }}>
+          <List>
             {selectedUser ? (
-              <Box
+              <ListItem
                 sx={{
-                  display: 'grid',
-                  gridTemplateColumns: { xs: '1fr', sm: '1fr 1fr' },
+                  display: 'flex',
+                  gridTemplateColumns: {
+                    xs: '1fr',
+                    sm: '1fr 1fr',
+                    flexDirection: 'column',
+                    justifyContent: 'start',
+                    alignItems: 'start',
+                  },
                   gap: 2,
                 }}
               >
@@ -153,13 +161,13 @@ export const Profile = () => {
                 {field('Rol', selectedUser?.rol, false)}
                 {field('ID', selectedUser?.id, true)}
                 {field('DNI', selectedUser?.DNI, true)}
-              </Box>
+              </ListItem>
             ) : (
               <Typography variant='body2' color='text.secondary'>
                 No hay un usuario seleccionado actualmente.
               </Typography>
             )}
-          </Box>
+          </List>
         </Paper>
 
         {/* Notas ocupan 1 fila */}
@@ -170,9 +178,8 @@ export const Profile = () => {
       <Box
         sx={{ gridColumn: '2 / 4', gridRow: '1', height: '100%', minHeight: 0 }}
       >
-        <DynamicGraph
-          graphName={`Actividad de ${displayName || 'Usuario'}`}
-          initialAssignedDate={null}
+        <MultiChart
+          title={`Actividad de ${displayName || 'Usuario'}`}
           toolbarEnabled={true}
           grid=''
         />
