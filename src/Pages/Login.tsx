@@ -19,8 +19,9 @@ import {
 } from '@mui/material';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
+
 import { useMutation } from '@tanstack/react-query';
-import api, { getStaffById } from '../api/client';
+import { loginStaff, loginPreceptor } from '../api/client';
 
 type RoleOption = 'STAFF' | 'PRECEPTOR';
 
@@ -29,8 +30,9 @@ export const Login = () => {
 
   const navigate = useNavigate();
   const setAlert = useCachedStore((s) => s.setAlert);
-  const setAuthData = useUserStore((s) => s.setAuthData);
-  const setUserInfo = useUserStore((s) => s.setUserInfo);
+  const setUserData = useUserStore((s) => s.setUserData);
+  const setUserVerified = useUserStore((s) => s.setUserVerified);
+  const setUserAuthData = useUserStore((s) => s.setUserAuthData);
 
   const [role, setRole] = useState<RoleOption>('STAFF');
   const [dni, setDni] = useState('');
@@ -43,43 +45,33 @@ export const Login = () => {
     [dni, password]
   );
 
-  // Mutation that logs in and, on success, fetches extra user info
-  const mutation = useMutation({
-    mutationKey: ['login', role],
+  const loginMutation = useMutation({
     mutationFn: async () => {
-      const url =
-        role === 'PRECEPTOR'
-          ? 'https://asistenciaescuela.onrender.com/api/v1/auth/preceptor/login'
-          : 'https://asistenciaescuela.onrender.com/api/v1/auth/staff/login';
-      const body = { dni, password };
-      const res = await api.post(url, body);
-      return res.data;
+      if (role === 'STAFF') {
+        const res = await loginStaff({ dni, password });
+        return res;
+      } else {
+        const res = await loginPreceptor({ dni, password });
+        return res;
+      }
     },
-    onSuccess: async (data) => {
-      // Save base auth payload/token
-      setAuthData(data);
-
-      // Try to fetch detailed staff info by id (if available)
-      try {
-        const id = data?.user?.id ?? data?.user?.dni ?? data?.dni ?? data?.id;
-        if (id) {
-          const profile = await getStaffById(id);
-          setUserInfo(profile);
-        }
-      } catch {}
-
+    onSuccess: (data) => {
+      setUserVerified(true);
+      setUserAuthData(data);
+      setUserData(data.user);
       setAlert({ type: 'success', text: 'Inicio de sesión exitoso' });
       navigate('/home');
     },
-    onError: () => {
+    onError: (error) => {
       setAlert({ type: 'error', text: 'DNI o contraseña incorrectos.' });
       setDni('');
       setPassword('');
+      console.log(error);
     },
   });
 
   const handleSubmit = () => {
-    if (!isSubmitDisabled) mutation.mutate();
+    if (!isSubmitDisabled) loginMutation.mutate();
   };
 
   const onKeyDown = (e: React.KeyboardEvent) => {
@@ -181,12 +173,12 @@ export const Login = () => {
             <Button
               variant='contained'
               fullWidth
-              disabled={isSubmitDisabled || mutation.isPending}
+              disabled={isSubmitDisabled || loginMutation.isPending}
               onClick={handleSubmit}
             >
               Ingresar
             </Button>
-            {mutation.isPending && (
+            {loginMutation.isPending && (
               <CircularProgress
                 size={22}
                 sx={{
