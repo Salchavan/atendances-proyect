@@ -7,7 +7,7 @@ import {
   Stack,
   Typography,
 } from '@mui/material';
-import Classroom from '../../../public/data/Classrooms.json';
+import Classroom from '../../data/Classrooms.json';
 import { useNavigateTo } from '../../Logic.ts';
 
 type ClassroomItem = {

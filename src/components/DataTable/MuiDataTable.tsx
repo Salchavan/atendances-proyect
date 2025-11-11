@@ -5,7 +5,7 @@ import {
   type GridColDef,
   type GridRowParams,
 } from '@mui/x-data-grid';
-import typeColumns from '../../../public/data/defaultDataTabletColumns.json';
+import { typeColumns } from '../../types/generalTypes.ts';
 import type { RowDataType } from 'rsuite/esm/Table';
 
 interface Props {

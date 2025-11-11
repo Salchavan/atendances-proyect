@@ -9,7 +9,7 @@ import {
 import { useMemo } from 'react';
 import { changePageTitle } from '../Logic';
 import { DataTable } from '../components/DataTable/DataTable';
-import Students from '../../public/data/Students.json';
+import Students from '../data/Students.json';
 import FileDownloadIcon from '@mui/icons-material/FileDownload';
 import BuildIcon from '@mui/icons-material/Build';
 import LocationSearchingIcon from '@mui/icons-material/LocationSearching';
@@ -176,7 +176,13 @@ export const Statics = () => {
                 <DataTable
                   tableData={tableData as any}
                   toolbarEnabled={false}
-                  visibleFields={['id', 'firstName', 'lastName', 'classroom']}
+                  visibleFields={[
+                    'id',
+                    'dni',
+                    'first_name',
+                    'last_name',
+                    'classroom',
+                  ]}
                   fitColumns={false}
                 />
               </Box>

@@ -1,7 +1,7 @@
 import { Box, Paper, Typography, Chip } from '@mui/material';
 import { DataTable } from '../components/DataTable/DataTable';
 // Datos de ejemplo: reutilizamos Students.json hasta tener logs reales
-import students from '../../public/data/Students.json';
+import students from '../data/Students.json';
 import ChipAcount from '../components/ChipAcount';
 import { SafeBoundary } from '../components/SafeBoundary';
 

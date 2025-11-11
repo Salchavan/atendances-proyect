@@ -34,7 +34,7 @@ export const useMultiChartLogic = (options?: {
   useEffect(() => {
     let mounted = true;
     (async () => {
-      const mod = await import('../../../public/data/Students.json');
+      const mod = await import('../../data/Students.json');
       if (mounted) setStudents(mod.default || mod);
     })();
     return () => {

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 import {
   Box,
@@ -26,6 +26,8 @@ import { useUserStore } from '../store/UserStore';
 import { useStore } from '../store/Store';
 
 import { useNavigateTo } from '../Logic.ts';
+import { useQuery } from '@tanstack/react-query';
+import { getUserInfo } from '../api/client.ts';
 
 interface AsideMenuProps {
   grid: string;
@@ -36,14 +38,32 @@ export const AsideMenu = ({ grid }: AsideMenuProps) => {
   const logOut = useUserStore((s) => s.logOut);
 
   const userData = useUserStore((s) => s.userData);
+
   const setPerfilUserSelected = useStore((s) => s.setPerfilUserSelected);
+
+  // const query = useQuery({
+  //   queryKey: ['userInfo'],
+  //   queryFn: async () => {
+  //     const res = await getUserInfo();
+  //     return res;
+  //   },
+  // });
+
+  // useEffect(() => {
+  //   if (!query.data) return;
+  //   useUserStore.getState().setUserData(query.data);
+  // }, [query.data]);
+
+  // if (query.isLoading) {
+  //   return null;
+  // }
 
   const displayName = useUserStore((store) => {
     const u = store.userData as any;
     if (!u) return undefined;
     // Prefer new schema full name
-    if (u.firstName || u.lastName) {
-      return `${u.firstName ?? ''} ${u.lastName ?? ''}`.trim();
+    if (u.first_name || u.last_name) {
+      return `${u.first_name ?? ''} ${u.last_name ?? ''}`.trim();
     }
     return u.Username; // legacy fallback
   });

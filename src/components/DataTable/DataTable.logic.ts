@@ -1,6 +1,6 @@
-import { useEffect, useRef, useState, useTransition } from 'react';
+import { useEffect, useRef, useState, useTransition, useMemo } from 'react';
 import type { RowDataType } from 'rsuite/esm/Table';
-import typeColumns from '../../../public/data/defaultDataTabletColumns.json';
+import { typeColumns } from '../../types/generalTypes.ts';
 import { useFilterStore } from '../../store/specificStore/DataTableStore.ts';
 import { useStore } from '../../store/Store';
 import { useNavigateTo } from '../../Logic.ts';
@@ -13,15 +13,13 @@ export const useDataTableLogic = ({
   tableData: RowDataType[];
   filtersEnabled?: boolean;
 }) => {
-  const [columns, setColumns] = useState<typeof typeColumns>([]);
-  useEffect(() => {
-    (async () => {
-      const data = (
-        await import('../../../public/data/defaultDataTabletColumns.json')
-      ).default;
-      setColumns(data);
-    })();
-  }, []);
+  // Initialize columns from the shared `typeColumns` definition.
+  // Previously this code called `setColumns(columns)` which re-set the
+  // state to the empty initial value — leaving `columns` empty and
+  // producing a table with rows but no visible columns. Use the
+  // canonical `typeColumns` here so the grid receives the proper defs.
+  // Columns canonical defined in shared types
+  const columns = useMemo(() => typeColumns, []);
 
   const {
     getFilteredData,

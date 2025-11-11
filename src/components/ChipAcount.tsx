@@ -45,7 +45,7 @@ export const ChipAcount: React.FC<Props> = ({
           lastName?: string;
           email?: string;
           rol?: string | number;
-        }> = (await import('../../public/data/users.json')).default as any;
+        }> = (await import('../data/users.json')).default as any;
         const found = users.find((u) => String(u.id) === String(id));
         if (!found) return setOverride(undefined);
         const first = (found.firstName || '').trim();

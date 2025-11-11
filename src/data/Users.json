@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "dni": 47668329,
+    "first_name": "Salvador",
+    "last_name": "Castellanos",
+    "email": "salvador@example.com",
+    "password": "260107",
+    "role": "ADMIN"
+  },
+  {
+    "id": 2,
+    "dni": 12345678,
+    "first_name": "Agustin",
+    "last_name": "Turcheti",
+    "email": "agustin@example.com",
+    "password": "4321",
+    "role": "ADMIN"
+  },
+  {
+    "id": 3,
+    "dni": 69696969,
+    "first_name": "Juan",
+    "last_name": "Cruz Ojeda",
+    "email": "juan@example.com",
+    "password": "4321",
+    "role": "STAFF"
+  },
+  {
+    "id": 4,
+    "dni": 87654321,
+    "first_name": "Veronica",
+    "last_name": "Conterno",
+    "email": "veronica@example.com",
+    "password": "0987",
+    "role": "PRECEPTOR"
+  }
+]

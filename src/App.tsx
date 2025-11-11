@@ -1,5 +1,7 @@
 import { useEffect, useState, useLayoutEffect, type JSX } from 'react';
 
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
+
 import { useStore } from './store/Store';
 import { useCachedStore } from './store/CachedStore';
 import { useUserStore } from './store/UserStore';
@@ -7,6 +9,7 @@ import { useUserStore } from './store/UserStore';
 import { Index } from './Pages/Index.tsx';
 import { Home } from './Pages/Home';
 import { Login } from './Pages/Login.tsx';
+import { LoginLocal } from './Pages/LoginLocal.tsx';
 import { Statics } from './Pages/Statics.tsx';
 import { IndexClassroomsPage } from './Pages/Classrooms/IndexClassroomsPage.tsx';
 import { ClassroomPage } from './Pages/Classrooms/ClassroomPage.tsx';
@@ -80,6 +83,8 @@ export const App = () => {
 
   return (
     <>
+      {/* {generateStudents(1500)} */}
+      <ReactQueryDevtools initialIsOpen={false} />
       {alert && (
         <div className='absolute w-full mt-7 flex flex-col items-center gap-2 px-4'>
           <Alert
@@ -100,7 +105,7 @@ export const App = () => {
             <Route
               path='/login'
               element={
-                userVerified ? <Navigate to='/home' replace /> : <Login />
+                userVerified ? <Navigate to='/home' replace /> : <LoginLocal />
               }
             />
             <Route path='/control-panel' element={<AdminPanel />}>

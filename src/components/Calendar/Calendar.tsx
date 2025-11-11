@@ -29,7 +29,7 @@ export const Calendar: React.FC<CalendarProps> = (props) => {
     let active = true;
     const load = async () => {
       try {
-        const mod = await import('../../../public/data/Students.json');
+        const mod = await import('../../data/Students.json');
         const students: StudentRec[] = (mod as any).default || mod;
         if (active) setStudentsCache(students);
       } catch {
@@ -59,8 +59,10 @@ export const Calendar: React.FC<CalendarProps> = (props) => {
           if (toIsoFromDdMmYy(u.day) === iso) {
             rows.push({
               id: s.id,
-              firstName: s.firstName,
-              lastName: s.lastName,
+              dni: s.dni,
+              first_name: s.first_name,
+              last_name: s.last_name,
+              age: s.age,
               email: s.email,
               classroom: s.classroom,
               day: iso,

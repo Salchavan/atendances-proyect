@@ -32,7 +32,7 @@ export const useDynamicGraphLogic = ({
   const [Students, setStudents] = useState<Student[]>([]);
   useEffect(() => {
     const fetchData = async () => {
-      const studentsData = await import('../../../public/data/Students.json');
+      const studentsData = await import('../../data/Students.json');
       setStudents(studentsData.default);
     };
     fetchData();
