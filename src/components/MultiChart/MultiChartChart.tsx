@@ -1,7 +1,12 @@
 import React, { useMemo } from 'react';
-import { Box } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import { BarChart, PieChart, LineChart } from '@mui/x-charts';
-import type { ChartType, MultiChartData, SeriesKey } from './MultiChart.logic';
+import type {
+  ChartType,
+  MultiChartData,
+  SeriesKey,
+  GenericChartData,
+} from './MultiChart.logic';
 
 type Props = {
   type: ChartType;
@@ -11,6 +16,8 @@ type Props = {
   showBarValueLabels?: boolean;
   showXAxisLabels?: boolean;
   containerWidth?: number;
+  actionBreakdown?: Record<string, number>;
+  genericData?: GenericChartData;
 };
 
 export const MultiChartChart: React.FC<Props> = ({
@@ -21,6 +28,8 @@ export const MultiChartChart: React.FC<Props> = ({
   showBarValueLabels = true,
   showXAxisLabels = true,
   containerWidth = 0,
+  actionBreakdown,
+  genericData,
 }) => {
   const barSeries = useMemo(() => {
     const s: any[] = [];
@@ -63,110 +72,194 @@ export const MultiChartChart: React.FC<Props> = ({
     const verticalPadding = effectiveWidth < 380 ? 8 : 12;
     const leftPad = 4;
     const rightPad = 4;
-    const maxByWidth = Math.max(
-      20,
-      Math.floor((effectiveWidth - leftPad - rightPad) / 2)
-    );
-    const maxByHeight = Math.max(
-      20,
-      Math.floor((height - verticalPadding * 2) / 2)
-    );
-    // Use almost all available space, keep a tiny gap
-    const outerRadius = Math.max(20, Math.min(maxByWidth, maxByHeight) - 2);
+    const availableWidth = Math.max(0, effectiveWidth - leftPad - rightPad);
+    const availableHeight = Math.max(0, height - verticalPadding * 2);
+    // The pie diameter must fit both width and height; choose the limiting dimension
+    const diameter = Math.max(20, Math.min(availableWidth, availableHeight));
+    // outerRadius is half the usable diameter, minus a small margin
+    const outerRadius = Math.max(20, Math.floor(diameter / 2) - 2);
     const innerRadius = Math.floor(
       outerRadius * (effectiveWidth < 380 ? 0.45 : 0.55)
     );
-    return { outerRadius, innerRadius, leftPad, rightPad, verticalPadding };
+    return {
+      outerRadius: outerRadius / 1.4, // apicamos la division para solucionar temporalmente el problema de que se corte el grafico
+      innerRadius: innerRadius / 1.5, // apicamos la division para solucionar temporalmente el problema de que se corte el grafico
+      leftPad,
+      rightPad,
+      verticalPadding,
+    };
   }, [containerWidth, height]);
 
+  // calcula antes boxWidth/boxHeight (px) con la lógica que ya uses (containerWidth/height)
+  const boxWidth = Math.max(
+    160,
+    Math.floor((containerWidth || 800) - pieSizing.leftPad - pieSizing.rightPad)
+  );
+  const boxHeight = Math.max(
+    160,
+    Math.floor(height - pieSizing.verticalPadding * 2)
+  );
+
+  // Prepare pie items (slices) according to genericData, actionBreakdown or activeSeries fallback
+  const pieItems = useMemo(() => {
+    // try genericData slices first
+    const slicesFromGeneric =
+      genericData &&
+      genericData.series?.find((s) => s.slices && s.slices.length)?.slices;
+    if (slicesFromGeneric) return slicesFromGeneric.map((s) => ({ ...s }));
+
+    if (actionBreakdown && Object.keys(actionBreakdown).length) {
+      return Object.entries(actionBreakdown).map(([label, value], i) => ({
+        id: i,
+        label,
+        value: Number(value),
+        color: [
+          '#4caf50',
+          '#2196f3',
+          '#ff9800',
+          '#9c27b0',
+          '#f44336',
+          '#00bcd4',
+        ][i % 6],
+      }));
+    }
+
+    // fallback to justified/unjustified totals
+    const arr: any[] = [];
+    if (activeSeries.justified) {
+      arr.push({
+        id: 'j',
+        label: 'Justificadas',
+        value: pieTotals.justifiedTotal,
+        color: '#ffaf45',
+      });
+    }
+    if (activeSeries.unjustified) {
+      arr.push({
+        id: 'u',
+        label: 'Injustificadas',
+        value: pieTotals.unjustifiedTotal,
+        color: '#ff6b6b',
+      });
+    }
+    return arr;
+  }, [genericData, actionBreakdown, activeSeries, pieTotals]);
+
+  const pieTotalValue = useMemo(
+    () => pieItems.reduce((acc, it) => acc + (Number(it.value) || 0), 0),
+    [pieItems]
+  );
+
   return (
-    <Box sx={{ width: '100%', height: '100%', minHeight: 0 }}>
+    <Box
+      sx={{ width: '100%', height: '100%', minHeight: 0, overflow: 'visible' }}
+    >
       {type === 'bar' ? (
         <BarChart
           xAxis={[
             {
               scaleType: 'band',
-              data: data.labels,
+              data: genericData?.labels ?? data.labels,
               disableTicks: !showXAxisLabels,
               valueFormatter: (v: any) => (showXAxisLabels ? String(v) : ''),
             },
           ]}
-          series={barSeries}
+          series={
+            genericData && genericData.series.length
+              ? genericData.series.map((s) => ({
+                  data: s.data ?? [],
+                  label: s.label ?? String(s.id ?? ''),
+                  color: s.color,
+                }))
+              : barSeries
+          }
           height={height}
           barLabel={showBarValueLabels ? 'value' : undefined}
           margin={{ top: 12, right: 12, bottom: 48, left: 12 }}
         />
       ) : type === 'pie' ? (
-        <PieChart
-          sx={{ maxWidth: '85%' }}
-          height={height}
-          margin={{
-            top: pieSizing.verticalPadding,
-            right: pieSizing.rightPad,
-            bottom: pieSizing.verticalPadding,
-            left: pieSizing.leftPad,
-          }}
-          series={[
-            {
-              // Show two slices: Justificadas vs Injustificadas within the selected range
-              data: [
-                ...(activeSeries.justified
-                  ? [
-                      {
-                        id: 0,
-                        label: 'Justificadas',
-                        value: pieTotals.justifiedTotal,
-                        color: '#ffaf45',
-                      },
-                    ]
-                  : []),
-                ...(activeSeries.unjustified
-                  ? [
-                      {
-                        id: 1,
-                        label: 'Injustificadas',
-                        value: pieTotals.unjustifiedTotal,
-                        color: '#ff6b6b',
-                      },
-                    ]
-                  : []),
-              ],
-              // Adapt radii for small containers
-              innerRadius: pieSizing.innerRadius,
-              outerRadius: pieSizing.outerRadius,
-              paddingAngle: 2,
-              // Hide pie labels if too narrow
-              valueFormatter: (item: any) =>
-                containerWidth < 320 ? '' : String(item.value),
-            },
-          ]}
-        />
+        pieTotalValue <= 0 ? (
+          <Box
+            sx={{
+              width: '100%',
+              height: '100%',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            <Typography color='text.secondary'>No data to display</Typography>
+          </Box>
+        ) : (
+          <PieChart
+            sx={{
+              width: `${boxWidth}px`,
+              '& svg': {
+                width: '100% !important',
+                height: '100% !important',
+                display: 'block',
+              },
+            }}
+            height={boxHeight}
+            margin={{
+              top: pieSizing.verticalPadding,
+              right: pieSizing.rightPad,
+              bottom: pieSizing.verticalPadding,
+              left: pieSizing.leftPad,
+            }}
+            series={[
+              {
+                data: pieItems.map((sl) => ({
+                  id: sl.id,
+                  label: sl.label,
+                  value: sl.value,
+                  color: sl.color,
+                })),
+                innerRadius: pieSizing.innerRadius,
+                outerRadius: pieSizing.outerRadius,
+                paddingAngle: 2,
+                valueFormatter: (item: any) =>
+                  containerWidth < 320 ? '' : String(item.value),
+              },
+            ]}
+          />
+        )
       ) : (
         <LineChart
-          xAxis={[{ scaleType: 'point', data: data.labels }]}
-          series={[
-            ...(activeSeries.total
-              ? [{ data: data.total, label: 'Total', color: '#ff5b5b' }]
-              : []),
-            ...(activeSeries.justified
-              ? [
-                  {
-                    data: data.justified,
-                    label: 'Justificadas',
-                    color: '#ffaf45',
-                  },
-                ]
-              : []),
-            ...(activeSeries.unjustified
-              ? [
-                  {
-                    data: data.unjustified,
-                    label: 'Injustificadas',
-                    color: '#ff6b6b',
-                  },
-                ]
-              : []),
+          xAxis={[
+            { scaleType: 'point', data: genericData?.labels ?? data.labels },
           ]}
+          series={
+            genericData && genericData.series.length
+              ? genericData.series.map((s) => ({
+                  data: s.data ?? [],
+                  label: s.label ?? String(s.id ?? ''),
+                  color: s.color,
+                }))
+              : [
+                  ...(activeSeries.total
+                    ? [{ data: data.total, label: 'Total', color: '#ff5b5b' }]
+                    : []),
+                  ...(activeSeries.justified
+                    ? [
+                        {
+                          data: data.justified,
+                          label: 'Justificadas',
+                          color: '#ffaf45',
+                        },
+                      ]
+                    : []),
+                  ...(activeSeries.unjustified
+                    ? [
+                        {
+                          data: data.unjustified,
+                          label: 'Injustificadas',
+                          color: '#ff6b6b',
+                        },
+                      ]
+                    : []),
+                ]
+          }
           height={height}
           margin={{ top: 12, right: 12, bottom: 48, left: 12 }}
         />

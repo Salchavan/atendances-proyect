@@ -98,7 +98,9 @@ export const AsideEvents = ({ grid }: AsideEventsProps) => {
             mb: 1,
           }}
         >
-          <Typography variant='h5'>Próximos Días Especiales</Typography>
+          <Typography variant='h5' sx={{ fontSize: '1.2rem !important' }}>
+            Próximos Días Especiales
+          </Typography>
         </Box>
         <List disablePadding>
           {specialDays.map((day, index) => (

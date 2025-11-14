@@ -12,3 +12,34 @@
   --color-danger: #ffba49;
   --color-check: #3ba55c;
 }
+
+/* Responsive global font scaling
+   If the viewport width is <= 1500px, make general text smaller so the UI fits better.
+   We scale the root font-size (affects rem-based sizes) and apply a small reduction
+   to common UI text elements (MUI classes, inputs, buttons) to cover px-based sizes.
+*/
+@media (max-width: 1500px) {
+  :root {
+    /* scale factor: 0.88 (12% smaller). Adjust if you want larger/smaller change) */
+    --app-font-scale: 0.95;
+  }
+
+  html {
+    font-size: calc(100% * var(--app-font-scale));
+  }
+
+  /* Ensure MUI Typography and common controls also reduce size */
+  body,
+  .MuiTypography-root,
+  .MuiButton-root,
+  .MuiChip-root,
+  input,
+  textarea,
+  button,
+  select,
+  .MuiDataGrid-root,
+  .MuiTable-root {
+    /* use relative scaling so we don't override specific size classes too aggressively */
+    font-size: 0.92em !important;
+  }
+}

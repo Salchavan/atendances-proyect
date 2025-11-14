@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 import {
   Box,
@@ -26,8 +26,7 @@ import { useUserStore } from '../store/UserStore';
 import { useStore } from '../store/Store';
 
 import { useNavigateTo } from '../Logic.ts';
-import { useQuery } from '@tanstack/react-query';
-import { getUserInfo } from '../api/client.ts';
+// query and API hooks currently unused; keep commented examples above if needed
 
 interface AsideMenuProps {
   grid: string;

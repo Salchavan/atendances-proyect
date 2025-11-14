@@ -10,8 +10,11 @@ import {
   Typography,
 } from '@mui/material';
 import Classroom from '../../data/Classrooms.json';
-import { DynamicGraph } from '../../components/DynamicGraph/DynamicGraph';
+import { MultiChart } from '../../components/MultiChart/MultiChart';
 import { DataTable } from '../../components/DataTable/DataTable';
+import Students from '../../data/Students.json';
+import { Button } from '@mui/material';
+import { useStore } from '../../store/Store';
 import { Notes } from '../../components/Notes';
 
 type ClassroomItem = {
@@ -50,6 +53,21 @@ export const ClassroomPage: React.FC = () => {
     ...stateItem,
   } as ClassroomItem;
 
+  // students for this classroom (by id). Use the JSON file and filter by studentIds
+  const openDialog = useStore((s) => s.openDialog);
+  const studentIds: number[] = ((jsonItem as any)?.studentIds ||
+    (stateItem as any)?.studentIds ||
+    []) as number[];
+  const studentsInClass = useMemo(() => {
+    try {
+      const list = (Students as any[]) || [];
+      if (!studentIds || !studentIds.length) return [] as any[];
+      return list.filter((s) => studentIds.includes(s.id));
+    } catch (e) {
+      return [] as any[];
+    }
+  }, [studentIds]);
+
   const title = `${item.year}º "${item.char}"`;
 
   return (
@@ -66,19 +84,21 @@ export const ClassroomPage: React.FC = () => {
         sx={{
           display: 'grid',
           gridTemplateColumns: '1fr 1fr',
-          gridTemplateRows: 'auto 1fr',
+          gridTemplateRows: 'repeat(10, 1fr)', // 10 filas iguales
           gap: 2,
           height: '100%',
           minHeight: 0,
         }}
       >
-        {/* Cuadrante 1: Título + Detalles + Notas (sin imagen) */}
+        {/* Primer cuadrante: ocupar columna 1 y las primeras 9 filas */}
         <Box
           sx={{
             display: 'flex',
             flexDirection: 'column',
             gap: 2,
             minHeight: 0,
+            gridColumn: '1 / 2',
+            gridRow: '1 / span 9', // ocupa filas 1..9
           }}
         >
           {/* Header sin imagen: sólo título y chips */}
@@ -122,9 +142,25 @@ export const ClassroomPage: React.FC = () => {
           </Card>
 
           {/* Detalles y Notas en dos columnas */}
-          <Box sx={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 2 }}>
-            <Card sx={{ borderRadius: 2, boxShadow: 2 }}>
-              <CardContent>
+          <Box
+            sx={{
+              display: 'grid',
+              gridTemplateColumns: '1fr 1fr',
+              gap: 2,
+              flex: 1,
+              minHeight: 0,
+            }}
+          >
+            <Card
+              sx={{
+                borderRadius: 2,
+                boxShadow: 2,
+                height: '100%',
+                display: 'flex',
+                flexDirection: 'column',
+              }}
+            >
+              <CardContent sx={{ flex: 1, overflow: 'auto' }}>
                 <Typography variant='h6'>Detalles de la clase</Typography>
                 <Divider sx={{ my: 2 }} />
                 <Box
@@ -179,42 +215,55 @@ export const ClassroomPage: React.FC = () => {
               </CardContent>
             </Card>
 
-            <Notes />
+            <Box sx={{ height: '100%', minHeight: 0 }}>
+              <Notes />
+            </Box>
           </Box>
         </Box>
 
-        {/* DataTable en abajo-izquierda */}
-        <Card
+        {/* Aquí podrías colocar otro elemento en la columna derecha que ocupe filas 1..10
+      por ejemplo el MultiChart: */}
+        <Box
           sx={{
-            gridColumn: '1',
-            gridRow: '2',
-            borderRadius: 2,
-            boxShadow: 2,
+            gridColumn: '2 / 3',
+            gridRow: '1 / span 10', // ocupa toda la columna derecha
             height: '100%',
           }}
         >
-          <CardContent
-            sx={{
-              height: '100%',
-              display: 'flex',
-              flexDirection: 'column',
-            }}
+          <MultiChart
+            title={title}
+            grid='col-start-2 row-start-1 row-span-2'
+            students={studentsInClass}
+          />
+        </Box>
+
+        {/* Botón que ocupará la fila 10 y las 2 columnas */}
+        <Box
+          sx={{
+            gridColumn: '1 / -1', // ocupa ambas columnas
+            gridRow: '10 / 11', // última fila (fila 10)
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'flex-start',
+            p: 1,
+            gap: 1,
+          }}
+        >
+          <Button
+            sx={{ width: '50%' }}
+            variant='contained'
+            onClick={() =>
+              openDialog(
+                <DataTable tableData={studentsInClass} filtersEnabled={true} />,
+
+                `Estudiantes - ${title}`,
+                'big'
+              )
+            }
           >
-            <Typography variant='h6' sx={{ mb: 2 }}>
-              Lista de estudiantes
-            </Typography>
-            <Box sx={{ flex: 1, minHeight: 0 }}>
-              <DataTable tableData={[]} filtersEnabled={false} />
-            </Box>
-          </CardContent>
-        </Card>
-
-        {/* Gráfico en la columna derecha (dos filas) */}
-
-        <DynamicGraph
-          graphName={title}
-          grid='col-start-2 row-start-1 row-span-2'
-        />
+            Ver estudiantes
+          </Button>
+        </Box>
       </Box>
     </Box>
   );

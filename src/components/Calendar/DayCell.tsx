@@ -112,7 +112,7 @@ export const DayCell: React.FC<DayCellProps> = ({
               ? `${absencesNumberClass} calendar-absences-number`
               : 'calendar-absences-number'
           }
-          sx={{ userSelect: 'none' }}
+          sx={{ userSelect: 'none', fontSize: '1.2rem !important' }}
         >
           {absences}
         </Typography>

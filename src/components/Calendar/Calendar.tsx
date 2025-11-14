@@ -7,6 +7,7 @@ import { useCalendarLogic } from './useCalendarLogic';
 import type { CalendarProps } from './types';
 import { fmtYmd } from './utils';
 import type { StudentRec } from '../../types/generalTypes';
+import { Typography } from '@mui/material';
 
 export const Calendar: React.FC<CalendarProps> = (props) => {
   const {
@@ -89,6 +90,14 @@ export const Calendar: React.FC<CalendarProps> = (props) => {
 
   return (
     <ErrorBoundary fallback={<div>Error loading calendar.</div>}>
+      <Typography
+        variant='h1'
+        fontWeight={500}
+        className='col-span-6 row-span-1'
+        sx={{ fontSize: '1.5rem !important' }}
+      >
+        Calendario de inasistencias
+      </Typography>
       <CalendarUI
         className={props.className}
         headerTextClass={props.headerTextClass}

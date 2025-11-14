@@ -90,9 +90,9 @@ export function generateRandomStudent(id: number): Student {
   const age = randomInt(12, 21);
   const email = `${first_name.toLowerCase()}.${last_name.toLowerCase()}${id}@ejemplo.com`;
 
-  const classroom = `${String.fromCharCode(
-    65 + Math.floor(Math.random() * 6)
-  )}${Math.floor(Math.random() * 7) + 1}`;
+  const divisions = ['A', 'B', 'C', 'D', 'E', 'F'];
+  const years = ['1', '2', '3', '4', '5', '6', '7'];
+  const classroom = `${randomItem(years)}${randomItem(divisions)}`;
 
   const dni = generateUniqueDni(usedDnis);
 

@@ -45,15 +45,15 @@ export const typeColumns = [
   {
     field: 'first_name',
     headerName: 'Nombre',
-    width: 150,
-    minWidth: 150,
+    width: 100,
+    minWidth: 100,
     sortable: true,
   },
   {
     field: 'last_name',
     headerName: 'Apellido',
-    width: 150,
-    minWidth: 150,
+    width: 100,
+    minWidth: 100,
     sortable: true,
   },
   {

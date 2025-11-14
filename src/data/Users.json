@@ -5,8 +5,34 @@
     "first_name": "Salvador",
     "last_name": "Castellanos",
     "email": "salvador@example.com",
-    "password": "260107",
-    "role": "ADMIN"
+    "password": "262507",
+    "role": "ADMIN",
+    "activity": [
+      {
+        "date": "11-11-25",
+        "action": "LOGIN"
+      },
+      {
+        "date": "11-11-25",
+        "action": "LOGOUT"
+      },
+      {
+        "date": "11-11-25",
+        "action": "REMOVE STUDENT"
+      },
+      {
+        "date": "11-11-25",
+        "action": "ADD STAFF"
+      },
+      {
+        "date": "11-11-25",
+        "action": "UPDATE PROFILE"
+      },
+      {
+        "date": "11-11-25",
+        "action": "LOGIN"
+      }
+    ]
   },
   {
     "id": 2,
@@ -15,7 +41,33 @@
     "last_name": "Turcheti",
     "email": "agustin@example.com",
     "password": "4321",
-    "role": "ADMIN"
+    "role": "ADMIN",
+    "activity": [
+      {
+        "date": "11-11-25",
+        "action": "LOGIN"
+      },
+      {
+        "date": "11-11-25",
+        "action": "LOGOUT"
+      },
+      {
+        "date": "11-11-25",
+        "action": "REMOVE STUDENT"
+      },
+      {
+        "date": "11-11-25",
+        "action": "ADD STAFF"
+      },
+      {
+        "date": "11-11-25",
+        "action": "UPDATE PROFILE"
+      },
+      {
+        "date": "11-11-25",
+        "action": "LOGIN"
+      }
+    ]
   },
   {
     "id": 3,
@@ -24,7 +76,33 @@
     "last_name": "Cruz Ojeda",
     "email": "juan@example.com",
     "password": "4321",
-    "role": "STAFF"
+    "role": "STAFF",
+    "activity": [
+      {
+        "date": "11-11-25",
+        "action": "LOGIN"
+      },
+      {
+        "date": "11-11-25",
+        "action": "LOGOUT"
+      },
+      {
+        "date": "11-11-25",
+        "action": "REMOVE STUDENT"
+      },
+      {
+        "date": "11-11-25",
+        "action": "ADD STAFF"
+      },
+      {
+        "date": "11-11-25",
+        "action": "UPDATE PROFILE"
+      },
+      {
+        "date": "11-11-25",
+        "action": "LOGIN"
+      }
+    ]
   },
   {
     "id": 4,
@@ -33,6 +111,32 @@
     "last_name": "Conterno",
     "email": "veronica@example.com",
     "password": "0987",
-    "role": "PRECEPTOR"
+    "role": "PRECEPTOR",
+    "activity": [
+      {
+        "date": "11-11-25",
+        "action": "LOGIN"
+      },
+      {
+        "date": "11-11-25",
+        "action": "LOGOUT"
+      },
+      {
+        "date": "11-11-25",
+        "action": "REMOVE STUDENT"
+      },
+      {
+        "date": "11-11-25",
+        "action": "ADD STAFF"
+      },
+      {
+        "date": "11-11-25",
+        "action": "UPDATE PROFILE"
+      },
+      {
+        "date": "11-11-25",
+        "action": "LOGIN"
+      }
+    ]
   }
 ]

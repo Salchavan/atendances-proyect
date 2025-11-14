@@ -23,18 +23,12 @@ const fallback = 'NO Definido';
 interface PerfilUser {
   // new schema
   id?: number | string;
-  firstName?: string;
-  lastName?: string;
+  dni?: string | number;
+  role?: string;
+  first_name?: string;
+  last_name?: string;
   email?: string;
-  password?: string;
   rol?: string;
-  // legacy fields
-  Username?: string;
-  Area?: string;
-  ID?: string | number;
-  DNI?: string | number;
-  Role?: string;
-  Active?: boolean;
 }
 
 export const Profile = () => {
@@ -42,10 +36,58 @@ export const Profile = () => {
     | PerfilUser
     | undefined;
 
-  const fullName = [selectedUser?.firstName, selectedUser?.lastName]
+  const [resolvedUser, setResolvedUser] = React.useState<any | null>(null);
+
+  React.useEffect(() => {
+    let mounted = true;
+    const su = selectedUser as any;
+    if (!su) {
+      setResolvedUser(null);
+      return;
+    }
+    const hasActivity = Array.isArray(su.activity) && su.activity.length > 0;
+    if (hasActivity) {
+      setResolvedUser(su);
+      return;
+    }
+    // try to resolve full user from Users.json when activity missing
+    (async () => {
+      try {
+        const mod = await import('../data/users.json');
+        const all: any[] = mod.default || mod || [];
+        const id = su.id ?? su.ID ?? null;
+        const dni = su.dni ?? su.DNI ?? null;
+        let found = null as any | null;
+        if (id != null)
+          found = all.find(
+            (x) => String(x.id) === String(id) || String(x.ID) === String(id)
+          );
+        if (!found && dni != null)
+          found = all.find(
+            (x) =>
+              String(x.dni) === String(dni) || String(x.DNI) === String(dni)
+          );
+        if (!found) {
+          const nameCandidate = `${su.first_name ?? ''}`.trim();
+          if (nameCandidate)
+            found = all.find(
+              (x) => String(x.first_name ?? '').trim() === nameCandidate
+            );
+        }
+        if (mounted) setResolvedUser(found || su);
+      } catch (e) {
+        if (mounted) setResolvedUser(su);
+      }
+    })();
+    return () => {
+      mounted = false;
+    };
+  }, [selectedUser]);
+
+  const fullName = [selectedUser?.first_name, selectedUser?.last_name]
     .filter(Boolean)
     .join(' ');
-  const displayName = fullName || selectedUser?.Username || 'Usuario';
+  const displayName = fullName || selectedUser?.first_name || 'Usuario';
   changePageTitle(`Perfil - ${displayName}`);
 
   const copyToClipboard = (value?: string | number) => {
@@ -109,8 +151,12 @@ export const Profile = () => {
           }}
         >
           <Box display='flex' alignItems='center' gap={2}>
-            <Typography variant='h4' fontWeight='bold'>
-              Perfil de {displayName || fallback}
+            <Typography
+              variant='h4'
+              fontWeight='bold'
+              sx={{ fontSize: '1.5rem !important' }}
+            >
+              {displayName || fallback}
             </Typography>
             <Tooltip title='Editar perfil'>
               <IconButton
@@ -127,18 +173,20 @@ export const Profile = () => {
               </IconButton>
             </Tooltip>
             <Box display='flex' gap={1} flexWrap='wrap'>
-              <Chip
-                label={
-                  typeof selectedUser?.rol === 'number'
-                    ? `Rol ${selectedUser.rol}`
-                    : selectedUser?.Area || 'SIN ROL'
-                }
-                color='primary'
-                variant='outlined'
-              />
-              {selectedUser?.Active === false && (
-                <Chip label='INACTIVO' color='error' variant='filled' />
-              )}
+              {/* Mostrar rol especificado o 'STUDENT' por defecto. Preferir resolvedUser cuando esté disponible */}
+              {(() => {
+                const resolvedRole =
+                  (resolvedUser as any)?.role ??
+                  (selectedUser as any)?.role ??
+                  'STUDENT';
+                return (
+                  <Chip
+                    label={String(resolvedRole)}
+                    color='primary'
+                    variant='outlined'
+                  />
+                );
+              })()}
             </Box>
           </Box>
           <List>
@@ -157,10 +205,34 @@ export const Profile = () => {
                 }}
               >
                 {field('Nombre', displayName, false)}
-                {field('Email', selectedUser?.email, true)}
-                {field('Rol', selectedUser?.rol, false)}
-                {field('ID', selectedUser?.id, true)}
-                {field('DNI', selectedUser?.DNI, true)}
+                {field('Email', (resolvedUser ?? selectedUser)?.email, true)}
+                {field(
+                  'Rol',
+                  ((resolvedUser as any)?.role ??
+                    (selectedUser as any)?.role ??
+                    (selectedUser as any)?.rol ??
+                    (selectedUser as any)?.Role) ||
+                    'STUDENT',
+                  false
+                )}
+                {field('ID', (resolvedUser ?? selectedUser)?.id, true)}
+                {field('DNI', (resolvedUser ?? selectedUser)?.dni, true)}
+                {/* New summary field: total absences for students, total contributions for users. Prefer resolvedUser when available */}
+                {(() => {
+                  const su = (resolvedUser ?? selectedUser) as any;
+                  const hasRole = su && (su.role || su.Role || su.rol);
+                  if (hasRole) {
+                    const contribs = Array.isArray(su.activity)
+                      ? su.activity.length
+                      : 0;
+                    return field('Contribuciones totales', contribs, false);
+                  } else {
+                    const abs = Array.isArray(su?.unassistences)
+                      ? su.unassistences.length
+                      : 0;
+                    return field('Faltas totales', abs, false);
+                  }
+                })()}
               </ListItem>
             ) : (
               <Typography variant='body2' color='text.secondary'>
@@ -182,6 +254,7 @@ export const Profile = () => {
           title={`Actividad de ${displayName || 'Usuario'}`}
           toolbarEnabled={true}
           grid=''
+          selectedUser={resolvedUser ?? selectedUser}
         />
       </Box>
     </Box>

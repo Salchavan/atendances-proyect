@@ -2,7 +2,7 @@ import { changePageTitle } from '../Logic';
 import { AsideEvents } from '../components/AsideEvents.tsx';
 
 import 'rsuite/dist/rsuite.min.css';
-import { Box, Typography } from '@mui/material';
+import { Box } from '@mui/material';
 import { Calendar } from '../components/Calendar/Calendar.tsx';
 
 export const Home = () => {
@@ -11,14 +11,6 @@ export const Home = () => {
   return (
     <>
       <Box className='col-span-6 row-span-9 grid grid-cols-6 grid-rows-9 min-h-0'>
-        <Typography
-          variant='h3'
-          fontWeight={500}
-          mb={1}
-          className='col-span-6 row-span-1'
-        >
-          Calendario de inasistencias
-        </Typography>
         {/* DynamicGraph temporalmente oculto mientras se usa el calendario */}
         <Calendar absences={{}} className='col-span-6 row-span-8 min-h-0' />
       </Box>

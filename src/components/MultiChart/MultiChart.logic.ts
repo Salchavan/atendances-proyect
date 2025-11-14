@@ -12,8 +12,37 @@ export interface MultiChartData {
   unjustified: number[];
 }
 
+export type ActionBreakdown = Record<string, number>;
+
+// Generic chart series for a configurable chart
+export type GenericSlice = {
+  id?: string | number;
+  label: string;
+  value: number;
+  color?: string;
+};
+
+export type GenericSeries = {
+  id?: string | number;
+  label?: string;
+  // for bar/line
+  data?: number[];
+  color?: string;
+  // for pie
+  slices?: GenericSlice[];
+};
+
+export type GenericChartData = {
+  labels: string[];
+  series: GenericSeries[];
+};
+
 export const useMultiChartLogic = (options?: {
   initialChartType?: ChartType;
+  students?: any[];
+  selectedUser?: any;
+  // Optional generic data passed directly from the invoker to render arbitrary datasets
+  genericData?: GenericChartData;
 }) => {
   // Shared date range selection (persist across modal) via GraphStore
   const assignedRange = useGraphStore((s) => s.assignedDateRange);
@@ -30,67 +59,202 @@ export const useMultiChartLogic = (options?: {
     unjustified: true,
   });
   const [students, setStudents] = useState<any[]>([]);
+  const [resolvedSelectedUser, setResolvedSelectedUser] = useState<any | null>(
+    options?.selectedUser ?? null
+  );
 
   useEffect(() => {
     let mounted = true;
-    (async () => {
-      const mod = await import('../../data/Students.json');
-      if (mounted) setStudents(mod.default || mod);
-    })();
+
+    if (options?.students && Array.isArray(options.students)) {
+      setStudents(options.students);
+      return () => {
+        mounted = false;
+      };
+    }
+
+    const resolver = async (su: any) => {
+      try {
+        // try resolve student record first
+        const studentsMod = await import('../../data/Students.json');
+        const allStudents: any[] = studentsMod.default || studentsMod || [];
+        const id = su.id ?? su.ID ?? su.id_student ?? null;
+        const dni = su.dni ?? su.DNI ?? null;
+        let foundStudent: any | null = null;
+        if (id != null) {
+          foundStudent = allStudents.find(
+            (x) => String(x.id) === String(id) || String(x.ID) === String(id)
+          );
+        }
+        if (!foundStudent && dni != null) {
+          foundStudent = allStudents.find(
+            (x) =>
+              String(x.dni) === String(dni) || String(x.DNI) === String(dni)
+          );
+        }
+        if (!foundStudent) {
+          const nameCandidate = `${su.firstName ?? su.first_name ?? ''}`.trim();
+          if (nameCandidate) {
+            foundStudent = allStudents.find(
+              (x) =>
+                `${(x.firstName ?? x.first_name ?? '').trim()} ${(
+                  x.lastName ??
+                  x.last_name ??
+                  ''
+                ).trim()}`.trim() === nameCandidate ||
+                `${(x.first_name ?? x.firstName ?? '').trim()}`.trim() ===
+                  nameCandidate
+            );
+          }
+        }
+        if (foundStudent) {
+          if (mounted) {
+            setStudents([foundStudent]);
+            setResolvedSelectedUser(foundStudent);
+          }
+          return;
+        }
+
+        // try resolve full user record
+        const usersMod = await import('../../data/users.json');
+        const allUsers: any[] = usersMod.default || usersMod || [];
+        let foundUser: any | null = null;
+        if (id != null) {
+          foundUser = allUsers.find(
+            (x) => String(x.id) === String(id) || String(x.ID) === String(id)
+          );
+        }
+        if (!foundUser && dni != null) {
+          foundUser = allUsers.find(
+            (x) =>
+              String(x.dni) === String(dni) || String(x.DNI) === String(dni)
+          );
+        }
+        if (!foundUser) {
+          const nameCandidate = `${su.firstName ?? su.first_name ?? ''}`.trim();
+          if (nameCandidate) {
+            foundUser = allUsers.find(
+              (x) =>
+                `${(x.firstName ?? x.first_name ?? '').trim()}` ===
+                nameCandidate
+            );
+          }
+        }
+        if (foundUser) {
+          if (mounted) setResolvedSelectedUser(foundUser);
+          return;
+        }
+
+        // fallback: use provided object
+        if (mounted) setResolvedSelectedUser(su);
+      } catch (e) {
+        if (mounted) setResolvedSelectedUser(su);
+      }
+    };
+
+    if (options?.selectedUser) {
+      const su = options.selectedUser as any;
+      const hasRole = !!(su.role || su.Role || su.rol);
+      const hasActivity = Array.isArray(su.activity) && su.activity.length > 0;
+      const hasUnassistences =
+        Array.isArray(su.unassistences) && su.unassistences.length > 0;
+
+      // If it's clearly a student object (has unassistences), use it directly
+      if (!hasRole && hasUnassistences) {
+        setStudents([su]);
+        setResolvedSelectedUser(su);
+        return () => {
+          mounted = false;
+        };
+      }
+
+      // If it's a user with role and it already has activity, use it
+      if (hasRole && hasActivity) {
+        setResolvedSelectedUser(su);
+        return () => {
+          mounted = false;
+        };
+      }
+
+      // otherwise attempt to resolve from data files
+      void resolver(su);
+    }
+
     return () => {
       mounted = false;
     };
-  }, []);
+  }, [options?.students, options?.selectedUser]);
 
-  // helpers
-  const fmtLabel = (d: Date) =>
-    `${String(d.getDate()).padStart(2, '0')}/${String(
-      d.getMonth() + 1
-    ).padStart(2, '0')}`;
-  const cmpKey = (d: Date) =>
-    `${String(d.getDate()).padStart(2, '0')}-${String(
-      d.getMonth() + 1
-    ).padStart(2, '0')}-${String(d.getFullYear()).slice(2)}`;
-  const isBusinessDay = (d: Date) => d.getDay() >= 1 && d.getDay() <= 5;
+  const labelsKeys = useMemo(() => {
+    // helper to format keys like Students.json: DD-MM-YY
+    const fmtKey = (d: Date) => {
+      const dd = String(d.getDate()).padStart(2, '0');
+      const mm = String(d.getMonth() + 1).padStart(2, '0');
+      const yy = String(d.getFullYear()).slice(-2);
+      return `${dd}-${mm}-${yy}`;
+    };
+    const fmtLabel = (d: Date) => {
+      const dd = String(d.getDate()).padStart(2, '0');
+      const mm = String(d.getMonth() + 1).padStart(2, '0');
+      return `${dd}-${mm}`;
+    };
 
-  // Build weekdays within range (fallback to last 7 up to today)
-  const { labels, keys } = useMemo(() => {
-    let start = selectedRange?.[0] ?? null;
-    let end = selectedRange?.[1] ?? null;
-    const today = new Date();
-    if (!start || !end) {
-      end = today;
-      const days: Date[] = [];
-      const cursor = new Date(end);
-      while (days.length < 7) {
-        if (isBusinessDay(cursor)) days.push(new Date(cursor));
-        cursor.setDate(cursor.getDate() - 1);
-      }
-      days.reverse();
-      return { labels: days.map(fmtLabel), keys: days.map(cmpKey) };
-    }
+    const start = selectedRange?.[0];
+    const end = selectedRange?.[1];
     const days: Date[] = [];
-    const cursor = new Date(start);
-    while (cursor.getTime() <= end.getTime()) {
-      if (isBusinessDay(cursor)) days.push(new Date(cursor));
-      cursor.setDate(cursor.getDate() + 1);
+    if (!start || !end) {
+      // default: last 7 days (including today)
+      const cursor = new Date();
+      for (let i = 6; i >= 0; i--) {
+        const d = new Date(cursor);
+        d.setDate(cursor.getDate() - i);
+        days.push(d);
+      }
+    } else {
+      const cursor = new Date(start);
+      while (cursor.getTime() <= end.getTime()) {
+        days.push(new Date(cursor));
+        cursor.setDate(cursor.getDate() + 1);
+      }
     }
-    return { labels: days.map(fmtLabel), keys: days.map(cmpKey) };
+
+    const labels = days.map(fmtLabel);
+    const keys = days.map(fmtKey);
+    return { labels, keys };
   }, [selectedRange]);
 
   const data: MultiChartData = useMemo(() => {
-    if (!students || !students.length) {
-      return {
-        labels,
-        total: new Array(labels.length).fill(0),
-        justified: new Array(labels.length).fill(0),
-        unjustified: new Array(labels.length).fill(0),
-      };
+    // If a selectedUser is provided and has a role => treat as 'user' and show activity
+    const sel = resolvedSelectedUser ?? options?.selectedUser;
+    const { labels, keys } = labelsKeys;
+    const indexByKey = new Map(keys.map((k, i) => [k, i] as const));
+    const makeEmpty = () => ({
+      labels,
+      total: new Array(labels.length).fill(0),
+      justified: new Array(labels.length).fill(0),
+      unjustified: new Array(labels.length).fill(0),
+    });
+
+    if (sel && (sel.role || sel.Role || sel.rol)) {
+      const res = makeEmpty();
+      // Activity array: { date: 'dd-mm-yy', action: 'LOGIN' }
+      // tolerate multiple keys and normalize
+      const rawActivity = sel.activity || sel.Activity || sel.actions || [];
+      rawActivity.forEach((a: any) => {
+        const dateKey = a.date ?? a.day ?? a.fecha ?? null;
+        if (!dateKey) return;
+        const idx = indexByKey.get(dateKey);
+        if (idx === undefined) return;
+        res.total[idx] += 1; // count actions per day
+      });
+      return res;
     }
+
+    // Default: use students' unassistences
+    if (!students || !students.length) return makeEmpty();
     const total = new Array(labels.length).fill(0);
     const justified = new Array(labels.length).fill(0);
     const unjustified = new Array(labels.length).fill(0);
-    const indexByKey = new Map(keys.map((k, i) => [k, i] as const));
     students.forEach((s) => {
       (s.unassistences || []).forEach((u: any) => {
         const idx = indexByKey.get(u.day);
@@ -101,7 +265,88 @@ export const useMultiChartLogic = (options?: {
       });
     });
     return { labels, total, justified, unjustified };
-  }, [students, labels, keys]);
+  }, [students, labelsKeys, options?.selectedUser]);
+
+  // DEBUG: log key pieces to help diagnose empty charts
+  // (Left in intentionally for quick local debugging; remove if noisy.)
+  try {
+    // guard to avoid heavy output in production builds
+    if (typeof window !== 'undefined' && (window as any).__DEV__ !== false) {
+      // small timeout to avoid interfering with render
+      setTimeout(() => {
+        // eslint-disable-next-line no-console
+        console.debug('[MultiChart] debug:', {
+          selectedUser: options?.selectedUser,
+          studentsCount: students?.length,
+          labels: labelsKeys.labels,
+          data,
+        });
+      }, 0);
+    }
+  } catch (e) {
+    // ignore
+  }
+
+  // Build a generic chart representation so callers can pass arbitrary datasets.
+  const genericData: GenericChartData = useMemo(() => {
+    // If caller provided a generic dataset, use it directly
+    if (options?.genericData) return options.genericData;
+
+    const sel = options?.selectedUser;
+    // If selectedUser is a user with role, show action breakdown as a single pie series
+    if (sel && (sel.role || sel.Role || sel.rol)) {
+      const actionCounts = (sel.activity || []).reduce(
+        (acc: Record<string, number>, a: any) => {
+          const k = String(a.action || 'unknown');
+          acc[k] = (acc[k] || 0) + 1;
+          return acc;
+        },
+        {} as Record<string, number>
+      );
+      const slices: GenericSlice[] = Object.entries(actionCounts).map(
+        ([label, value], i) => ({ id: i, label, value: Number(value) })
+      );
+      return { labels: [], series: [{ label: 'activity', slices }] };
+    }
+
+    // Otherwise convert the computed MultiChartData into a generic representation
+    const series: GenericSeries[] = [];
+    if (data && data.labels) {
+      series.push({
+        id: 'total',
+        label: 'Total',
+        data: data.total,
+        color: '#ff5b5b',
+      });
+      series.push({
+        id: 'justified',
+        label: 'Justificadas',
+        data: data.justified,
+        color: '#ffaf45',
+      });
+      series.push({
+        id: 'unjustified',
+        label: 'Injustificadas',
+        data: data.unjustified,
+        color: '#ff6b6b',
+      });
+      return { labels: data.labels, series };
+    }
+    return { labels: [], series };
+  }, [options?.genericData, data, options?.selectedUser]);
+
+  // If selectedUser is a 'user' (has role), produce an action breakdown map
+  const actionBreakdown: ActionBreakdown = useMemo(() => {
+    const sel = resolvedSelectedUser ?? options?.selectedUser;
+    if (!sel || !(sel.role || sel.Role || sel.rol)) return {};
+    const map: ActionBreakdown = {};
+    const rawActivity = sel.activity || sel.Activity || sel.actions || [];
+    rawActivity.forEach((a: any) => {
+      const key = String(a.action || a.type || 'unknown');
+      map[key] = (map[key] || 0) + 1;
+    });
+    return map;
+  }, [resolvedSelectedUser, options?.selectedUser]);
 
   // container size tracking to set chart height
   const containerRef = useRef<HTMLDivElement | null>(null);
@@ -160,7 +405,9 @@ export const useMultiChartLogic = (options?: {
       isJustified: boolean;
     }> = [];
     students.forEach((s) => {
-      const name = `${s.firstName ?? ''} ${s.lastName ?? ''}`.trim();
+      const name = `${s.firstName ?? s.first_name ?? ''} ${
+        s.lastName ?? s.last_name ?? ''
+      }`.trim();
       (s.unassistences || []).forEach((u: any) => {
         if (u.day === dayKey) {
           rows.push({
@@ -184,6 +431,9 @@ export const useMultiChartLogic = (options?: {
   };
 
   return {
+    // exposed students array (if provided or loaded)
+    students,
+    actionBreakdown,
     // state
     selectedRange,
     chartType,
@@ -195,7 +445,8 @@ export const useMultiChartLogic = (options?: {
 
     // data
     data,
-    dayKeys: keys,
+    dayKeys: labelsKeys.keys,
+    genericData,
 
     // actions
     setSelectedRange,

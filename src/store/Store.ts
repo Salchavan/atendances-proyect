@@ -43,6 +43,9 @@ type Store = {
   specialDates: string[];
   setSpecialDates: (dates: string[]) => void;
   clearSpecialDates: () => void;
+  // Selected date range used by Statics page: [start, end]
+  selectedRange: [Date | null, Date | null];
+  setSelectedRange: (r: [Date | null, Date | null]) => void;
 };
 
 export const useStore = create<Store>()(
@@ -82,6 +85,14 @@ export const useStore = create<Store>()(
       setSpecialDates: (dates) =>
         set({ specialDates: Array.from(new Set(dates)) }),
       clearSpecialDates: () => set({ specialDates: [] }),
+      // Default selected range: last 7 days
+      selectedRange: (() => {
+        const end = new Date();
+        const start = new Date();
+        start.setDate(end.getDate() - 6);
+        return [start, end];
+      })(),
+      setSelectedRange: (r) => set({ selectedRange: r }),
     }),
     {
       name: 'app-preferences',

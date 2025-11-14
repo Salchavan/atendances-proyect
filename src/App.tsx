@@ -1,6 +1,6 @@
 import { useEffect, useState, useLayoutEffect, type JSX } from 'react';
 
-import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
+// import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 
 import { useStore } from './store/Store';
 import { useCachedStore } from './store/CachedStore';
@@ -8,9 +8,9 @@ import { useUserStore } from './store/UserStore';
 
 import { Index } from './Pages/Index.tsx';
 import { Home } from './Pages/Home';
-import { Login } from './Pages/Login.tsx';
+// import { Login } from './Pages/Login.tsx'; // Note: login by api, replaced by LoginLocal
 import { LoginLocal } from './Pages/LoginLocal.tsx';
-import { Statics } from './Pages/Statics.tsx';
+import { Statics } from './Pages/Statics/Statics.tsx';
 import { IndexClassroomsPage } from './Pages/Classrooms/IndexClassroomsPage.tsx';
 import { ClassroomPage } from './Pages/Classrooms/ClassroomPage.tsx';
 import { Profile } from './Pages/Profile.tsx';
@@ -84,7 +84,7 @@ export const App = () => {
   return (
     <>
       {/* {generateStudents(1500)} */}
-      <ReactQueryDevtools initialIsOpen={false} />
+      {/* <ReactQueryDevtools initialIsOpen={false} /> */}
       {alert && (
         <div className='absolute w-full mt-7 flex flex-col items-center gap-2 px-4'>
           <Alert

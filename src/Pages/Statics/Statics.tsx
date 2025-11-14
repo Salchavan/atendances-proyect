@@ -6,15 +6,14 @@ import {
   Paper,
   Typography,
 } from '@mui/material';
-import { useMemo } from 'react';
-import { changePageTitle } from '../Logic';
-import { DataTable } from '../components/DataTable/DataTable';
-import Students from '../data/Students.json';
+import { changePageTitle } from '../../Logic';
+import { DataTable } from '../../components/DataTable/DataTable';
+import Students from '../../data/Students.json';
+import useStaticsLogic from './Statics.logic';
 import FileDownloadIcon from '@mui/icons-material/FileDownload';
 import BuildIcon from '@mui/icons-material/Build';
 import LocationSearchingIcon from '@mui/icons-material/LocationSearching';
-import SearchIcon from '@mui/icons-material/Search';
-import { MultiChart } from '../components/MultiChart/MultiChart';
+import { MultiChart } from '../../components/MultiChart/MultiChart';
 
 type Student = {
   id: number | string;
@@ -31,20 +30,8 @@ export const Statics = () => {
   // Datos base
   const tableData = Students as unknown as Student[];
 
-  // Métricas simples para las cards
-  const { totalStudents, totalAbsences, justifiedRate } = useMemo(() => {
-    const totalStudents = tableData.length;
-    let totalAbsences = 0;
-    let justified = 0;
-    for (const s of tableData) {
-      const arr = Array.isArray(s.unassistences) ? s.unassistences : [];
-      totalAbsences += arr.length;
-      justified += arr.filter((a) => a.isJustified).length;
-    }
-    const justifiedRate =
-      totalAbsences > 0 ? Math.round((justified / totalAbsences) * 100) : 0;
-    return { totalStudents, totalAbsences, justifiedRate };
-  }, [tableData]);
+  // use logic hook for Statics
+  const logic = useStaticsLogic();
   return (
     <Box
       className='col-span-8 row-span-9 grid grid-cols-20 grid-rows-9 gap-2'
@@ -63,9 +50,6 @@ export const Statics = () => {
             alignItems: 'center',
           }}
         >
-          <IconButton aria-label='Buscar' size='medium'>
-            <SearchIcon fontSize='medium' />
-          </IconButton>
           <IconButton aria-label='Localizar' size='medium'>
             <LocationSearchingIcon fontSize='medium' />
           </IconButton>
@@ -93,11 +77,11 @@ export const Statics = () => {
                   <Typography variant='overline' color='text.secondary'>
                     Estudiantes
                   </Typography>
-                  <Typography variant='h4' fontWeight={700}>
-                    {totalStudents}
+                  <Typography variant='h6' fontWeight={700}>
+                    {logic.periodSummary}
                   </Typography>
                   <Typography variant='body2' color='text.secondary'>
-                    Total registrados
+                    Comparación con periodo anterior
                   </Typography>
                 </CardContent>
               </Card>
@@ -108,11 +92,18 @@ export const Statics = () => {
                   <Typography variant='overline' color='text.secondary'>
                     Inasistencias
                   </Typography>
-                  <Typography variant='h4' fontWeight={700}>
-                    {totalAbsences}
+                  <Typography
+                    variant='h4'
+                    sx={{
+                      fontSize: '2rem !important',
+                      color: 'error.main',
+                    }}
+                    fontWeight={700}
+                  >
+                    {logic.totalAbsences}
                   </Typography>
                   <Typography variant='body2' color='text.secondary'>
-                    Acumuladas
+                    Inasistencias en el periodo
                   </Typography>
                 </CardContent>
               </Card>
@@ -120,14 +111,23 @@ export const Statics = () => {
             <Box className='col-span-1 col-start-3 row-span-1 row-start-1'>
               <Card sx={{ height: '100%' }}>
                 <CardContent>
-                  <Typography variant='overline' color='text.secondary'>
-                    Justificadas
-                  </Typography>
-                  <Typography variant='h4' fontWeight={700}>
-                    {justifiedRate}%
+                  <Typography variant='subtitle2'>
+                    Alumno con más faltas:
                   </Typography>
                   <Typography variant='body2' color='text.secondary'>
-                    Tasa sobre inasistencias
+                    {logic.topStudent.id ?? 'N/A'} ({logic.topStudent.count})
+                  </Typography>
+                  <Typography variant='subtitle2' sx={{ mt: 1 }}>
+                    Curso con más faltas:
+                  </Typography>
+                  <Typography variant='body2' color='text.secondary'>
+                    {logic.topClass.name ?? 'N/A'} ({logic.topClass.count})
+                  </Typography>
+                  <Typography variant='subtitle2' sx={{ mt: 1 }}>
+                    Turno con más faltas:
+                  </Typography>
+                  <Typography variant='body2' color='text.secondary'>
+                    {logic.topShift.name} ({logic.topShift.count})
                   </Typography>
                 </CardContent>
               </Card>
@@ -139,55 +139,37 @@ export const Statics = () => {
             title='Asistencias'
             grid='row-span-2'
             toolbarPosition='bottom'
+            disabledControls={{ date: true }}
           />
         </Box>
 
         {/* Columna derecha: gráfico pequeño + DataTable */}
         <Box
-          className='col-span-1 col-start-3 row-span-1 row-start-1 grid grid-rows-3 gap-2'
+          className='col-span-1 col-start-3 row-span-1 row-start-1  gap-2'
           sx={{ minWidth: 0, overflow: 'hidden' }}
         >
-          <Paper elevation={1} sx={{ p: 1.5 }}>
-            <MultiChart
-              title='Asistencias'
-              grid='row-span-1'
-              toolbarPosition='top'
-              initialChartType='pie'
-            />
+          <Paper
+            elevation={1}
+            sx={{
+              height: '100%',
+              p: 1.5,
+              display: 'flex',
+              flexDirection: 'column',
+              minHeight: 0,
+              minWidth: 0,
+              overflow: 'hidden',
+              contain: 'layout paint',
+            }}
+          >
+            <Box sx={{ flex: 1, minHeight: 0, minWidth: 0, overflow: 'auto' }}>
+              <DataTable
+                tableData={tableData as any}
+                toolbarEnabled={false}
+                visibleFields={['first_name', 'last_name', 'classroom']}
+                fitColumns={true}
+              />
+            </Box>
           </Paper>
-
-          <Box className='row-span-2 col-span-1 row-start-2'>
-            <Paper
-              elevation={1}
-              sx={{
-                height: '100%',
-                p: 1.5,
-                display: 'flex',
-                flexDirection: 'column',
-                minHeight: 0,
-                minWidth: 0,
-                overflow: 'hidden',
-                contain: 'layout paint',
-              }}
-            >
-              <Box
-                sx={{ flex: 1, minHeight: 0, minWidth: 0, overflow: 'auto' }}
-              >
-                <DataTable
-                  tableData={tableData as any}
-                  toolbarEnabled={false}
-                  visibleFields={[
-                    'id',
-                    'dni',
-                    'first_name',
-                    'last_name',
-                    'classroom',
-                  ]}
-                  fitColumns={false}
-                />
-              </Box>
-            </Paper>
-          </Box>
         </Box>
       </Box>
     </Box>

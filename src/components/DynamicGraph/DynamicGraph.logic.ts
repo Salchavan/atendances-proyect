@@ -33,7 +33,13 @@ export const useDynamicGraphLogic = ({
   useEffect(() => {
     const fetchData = async () => {
       const studentsData = await import('../../data/Students.json');
-      setStudents(studentsData.default);
+      // normalize incoming student fields (some files use snake_case)
+      const normalized = (studentsData.default || []).map((s: any) => ({
+        ...s,
+        firstName: s.firstName ?? s.first_name ?? '',
+        lastName: s.lastName ?? s.last_name ?? '',
+      }));
+      setStudents(normalized);
     };
     fetchData();
   }, []);

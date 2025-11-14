@@ -1,0 +1,21 @@
+{
+  "numero_de_estudiantes": 1500,
+  "numero_total_de_faltas": 21736,
+  "numero_de_faltas_justificadas": 10784,
+  "numero_de_faltas_injustificadas": 10952,
+  "estudiante_con_mayor_cantidad_de_faltas": {
+    "id": 53,
+    "dni": 47528588,
+    "first_name": "Camila",
+    "last_name": "Fernández",
+    "email": "camila.fernández53@ejemplo.com",
+    "classroom": "6F",
+    "total_faltas": 30
+  },
+  "curso_con_mayor_cantidad_de_faltas": "6F",
+  "curso_con_mayor_cantidad_de_faltas_count": 746,
+  "division_con_mayor_cantidad_de_faltas": "D",
+  "division_con_mayor_cantidad_de_faltas_count": 3961,
+  "ano_con_mayor_cantidad_de_faltas": "6",
+  "ano_con_mayor_cantidad_de_faltas_count": 3507
+}

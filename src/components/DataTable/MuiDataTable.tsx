@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useRef, useState, useEffect } from 'react';
 import { Box, useTheme } from '@mui/material';
 import {
   DataGrid,
@@ -26,6 +26,34 @@ export const MuiDataTable: React.FC<Props> = ({
   fitColumns,
 }) => {
   const theme = useTheme();
+  const containerRef = useRef<HTMLDivElement | null>(null);
+  const [isNarrow, setIsNarrow] = useState(false);
+
+  useEffect(() => {
+    const el = containerRef.current;
+    if (!el) return;
+
+    const check = () => {
+      const w = el.getBoundingClientRect().width;
+      setIsNarrow(w < 410);
+    };
+
+    // Use ResizeObserver when available to measure the component's width
+    if (typeof ResizeObserver !== 'undefined') {
+      const ro = new ResizeObserver(() => check());
+      ro.observe(el);
+      // initial check
+      check();
+      return () => ro.disconnect();
+    }
+
+    // Fallback: listen to window resize
+    const onResize = () => check();
+    window.addEventListener('resize', onResize);
+    // initial
+    check();
+    return () => window.removeEventListener('resize', onResize);
+  }, []);
 
   const gridColumns: GridColDef[] = useMemo(() => {
     const fit = !!fitColumns; // default to fixed layout unless explicitly true
@@ -58,6 +86,7 @@ export const MuiDataTable: React.FC<Props> = ({
 
   return (
     <Box
+      ref={containerRef}
       className={className}
       sx={{
         height: '100%',
@@ -114,6 +143,31 @@ export const MuiDataTable: React.FC<Props> = ({
           '& .MuiDataGrid-virtualScroller': {
             minWidth: 0,
           },
+          // Conditionally hide the rows-per-page label when this component is narrow
+          ...(isNarrow
+            ? {
+                '& .MuiDataGrid-footerContainer .MuiTablePagination-selectLabel':
+                  {
+                    display: 'none',
+                  },
+                // hide the select control itself so it doesn't occupy space
+                '& .MuiDataGrid-footerContainer .MuiTablePagination-select': {
+                  display: 'none',
+                },
+                // ensure the pagination toolbar collapses and aligns to the end
+                '& .MuiDataGrid-footerContainer .MuiTablePagination-root': {
+                  paddingLeft: 8,
+                  paddingRight: 8,
+                  minWidth: 0,
+                },
+                '& .MuiDataGrid-footerContainer .MuiTablePagination-root .MuiTablePagination-toolbar':
+                  {
+                    display: 'flex',
+                    justifyContent: 'flex-end',
+                    gap: 8,
+                  },
+              }
+            : {}),
         }}
       />
     </Box>

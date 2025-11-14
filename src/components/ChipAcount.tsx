@@ -119,11 +119,13 @@ export const ChipAcount: React.FC<Props> = ({
         storeUser?.Username ||
         storeUser?.email ||
         'Sin selección';
-      const roleText =
-        (storeUser?.Role && String(storeUser?.Role)) ||
-        (typeof storeUser?.rol !== 'undefined'
-          ? `Rol ${storeUser?.rol}`
-          : 'Sin rol');
+      // Resolve role from multiple possible fields; default to 'STUDENT'
+      const resolvedRole =
+        (storeUser as any)?.role ??
+        (storeUser as any)?.rol ??
+        (storeUser as any)?.Role ??
+        'STUDENT';
+      const roleText = String(resolvedRole);
       return { initials, fullName, roleText, avatarUrl: undefined };
     }
 
