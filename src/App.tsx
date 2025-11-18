@@ -6,10 +6,10 @@ import { useStore } from './store/Store';
 import { useCachedStore } from './store/CachedStore';
 import { useUserStore } from './store/UserStore';
 
-import { Index } from './Pages/Index.tsx';
+import { Preset } from './Pages/Preset.tsx';
 import { Home } from './Pages/Home';
-// import { Login } from './Pages/Login.tsx'; // Note: login by api, replaced by LoginLocal
-import { LoginLocal } from './Pages/LoginLocal.tsx';
+import { Login } from './Pages/Login.tsx'; // Note: login by api, replaced by LoginLocal
+// import { LoginLocal } from './Pages/LoginLocal.tsx';
 import { Statics } from './Pages/Statics/Statics.tsx';
 import { IndexClassroomsPage } from './Pages/Classrooms/IndexClassroomsPage.tsx';
 import { ClassroomPage } from './Pages/Classrooms/ClassroomPage.tsx';
@@ -105,7 +105,7 @@ export const App = () => {
             <Route
               path='/login'
               element={
-                userVerified ? <Navigate to='/home' replace /> : <LoginLocal />
+                userVerified ? <Navigate to='/home' replace /> : <Login />
               }
             />
             <Route path='/control-panel' element={<AdminPanel />}>
@@ -119,7 +119,7 @@ export const App = () => {
               path='/home'
               element={
                 <RequireAuth>
-                  <Index />
+                  <Preset />
                 </RequireAuth>
               }
             >

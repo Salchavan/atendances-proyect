@@ -16,6 +16,7 @@ type Student = {
   email: string;
   classroom: string;
   unassistences: Unassistence[];
+  role: string;
 };
 
 const DNI_MIN = 40_000_000;
@@ -122,6 +123,7 @@ export function generateRandomStudent(id: number): Student {
     last_name,
     age,
     email,
+    role: 'STUDENT',
     classroom,
     unassistences,
   };

@@ -73,85 +73,6 @@ export const useMultiChartLogic = (options?: {
       };
     }
 
-    const resolver = async (su: any) => {
-      try {
-        // try resolve student record first
-        const studentsMod = await import('../../data/Students.json');
-        const allStudents: any[] = studentsMod.default || studentsMod || [];
-        const id = su.id ?? su.ID ?? su.id_student ?? null;
-        const dni = su.dni ?? su.DNI ?? null;
-        let foundStudent: any | null = null;
-        if (id != null) {
-          foundStudent = allStudents.find(
-            (x) => String(x.id) === String(id) || String(x.ID) === String(id)
-          );
-        }
-        if (!foundStudent && dni != null) {
-          foundStudent = allStudents.find(
-            (x) =>
-              String(x.dni) === String(dni) || String(x.DNI) === String(dni)
-          );
-        }
-        if (!foundStudent) {
-          const nameCandidate = `${su.firstName ?? su.first_name ?? ''}`.trim();
-          if (nameCandidate) {
-            foundStudent = allStudents.find(
-              (x) =>
-                `${(x.firstName ?? x.first_name ?? '').trim()} ${(
-                  x.lastName ??
-                  x.last_name ??
-                  ''
-                ).trim()}`.trim() === nameCandidate ||
-                `${(x.first_name ?? x.firstName ?? '').trim()}`.trim() ===
-                  nameCandidate
-            );
-          }
-        }
-        if (foundStudent) {
-          if (mounted) {
-            setStudents([foundStudent]);
-            setResolvedSelectedUser(foundStudent);
-          }
-          return;
-        }
-
-        // try resolve full user record
-        const usersMod = await import('../../data/users.json');
-        const allUsers: any[] = usersMod.default || usersMod || [];
-        let foundUser: any | null = null;
-        if (id != null) {
-          foundUser = allUsers.find(
-            (x) => String(x.id) === String(id) || String(x.ID) === String(id)
-          );
-        }
-        if (!foundUser && dni != null) {
-          foundUser = allUsers.find(
-            (x) =>
-              String(x.dni) === String(dni) || String(x.DNI) === String(dni)
-          );
-        }
-        if (!foundUser) {
-          const nameCandidate = `${su.firstName ?? su.first_name ?? ''}`.trim();
-          if (nameCandidate) {
-            foundUser = allUsers.find(
-              (x) =>
-                `${(x.firstName ?? x.first_name ?? '').trim()}` ===
-                nameCandidate
-            );
-          }
-        }
-        if (foundUser) {
-          if (mounted) setResolvedSelectedUser(foundUser);
-          return;
-        }
-
-        // fallback: use provided object
-        if (mounted) setResolvedSelectedUser(su);
-      } catch (e) {
-        if (mounted) setResolvedSelectedUser(su);
-      }
-    };
-
     if (options?.selectedUser) {
       const su = options.selectedUser as any;
       const hasRole = !!(su.role || su.Role || su.rol);
@@ -176,8 +97,8 @@ export const useMultiChartLogic = (options?: {
         };
       }
 
-      // otherwise attempt to resolve from data files
-      void resolver(su);
+      // Otherwise, no external data resolution — just store the lightweight object
+      if (mounted) setResolvedSelectedUser(su);
     }
 
     return () => {

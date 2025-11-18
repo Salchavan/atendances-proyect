@@ -94,7 +94,7 @@ export const Calendar: React.FC<CalendarProps> = (props) => {
         variant='h1'
         fontWeight={500}
         className='col-span-6 row-span-1'
-        sx={{ fontSize: '1.5rem !important' }}
+        sx={{ fontSize: '2rem !important' }}
       >
         Calendario de inasistencias
       </Typography>

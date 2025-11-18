@@ -19,6 +19,8 @@ type Props = {
   >[0]['disabledControls'];
   students?: any[];
   selectedUser?: any;
+  // pass the dataset to display (students/rows) via `data` prop
+  data?: any[];
   // Allow passing a fully custom dataset (labels + series). Series can include colors and slices for pie.
   customData?: GenericChartData;
   // disable the default click behavior that opens a DataTable modal
@@ -34,15 +36,15 @@ export const MultiChart: React.FC<Props> = ({
   toolbarPosition = 'top',
   initialChartType = 'bar',
   disabledControls,
-  students,
   selectedUser,
+  data,
   customData,
   disableTableOnClick = false,
   customTableData,
 }) => {
   const logic = useMultiChartLogic({
     initialChartType,
-    students,
+    students: data,
     selectedUser,
     genericData: customData,
   });

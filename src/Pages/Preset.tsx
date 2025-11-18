@@ -5,7 +5,7 @@ import { Navbar } from '../components/Navbar';
 import { Outlet } from 'react-router';
 import { SafeBoundary } from '../components/SafeBoundary';
 
-export const Index = () => {
+export const Preset = () => {
   return (
     <SafeBoundary>
       <Box className='h-[100vh] w-[100vw] p-2 grid grid-cols-10 grid-rows-10 gap-2 overflow-hidden'>

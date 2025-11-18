@@ -63,6 +63,7 @@ export const Login = () => {
       navigate('/home');
     },
     onError: (error) => {
+      setUserVerified(false);
       setAlert({ type: 'error', text: 'DNI o contraseña incorrectos.' });
       setDni('');
       setPassword('');

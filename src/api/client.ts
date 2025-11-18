@@ -58,3 +58,15 @@ export const getUserInfo = async () => {
     throw error;
   }
 };
+
+export const getAttendancesByDate = async (from: string, to: string) => {
+  try {
+    const res = await api.get(
+      `/api/v1/attendance?from=${from}&to=${to}&page=1&pageSize=100`
+    );
+    return res.data;
+  } catch (error) {
+    console.error('Error in getMonthAttendances:', error);
+    throw error;
+  }
+};

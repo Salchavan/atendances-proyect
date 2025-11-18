@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useQuery } from '@tanstack/react-query';
 
 import {
   Box,
@@ -27,6 +28,8 @@ import { useStore } from '../store/Store';
 
 import { useNavigateTo } from '../Logic.ts';
 // query and API hooks currently unused; keep commented examples above if needed
+
+import { getUserInfo } from '../api/client.ts';
 
 interface AsideMenuProps {
   grid: string;
@@ -67,16 +70,16 @@ export const AsideMenu = ({ grid }: AsideMenuProps) => {
     return u.Username; // legacy fallback
   });
 
-  const [anchorElAcountMenu, setAnchorElAcountMenu] =
+  const [anchorElAccountMenu, setAnchorElAccountMenu] =
     useState<null | HTMLElement>(null);
-  const open = Boolean(anchorElAcountMenu);
+  const open = Boolean(anchorElAccountMenu);
 
-  const handleClickAcountMenu = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorElAcountMenu(event.currentTarget);
+  const handleClickAccountMenu = (event: React.MouseEvent<HTMLElement>) => {
+    setAnchorElAccountMenu(event.currentTarget);
   };
 
-  const handleCloseAcountMenu = () => {
-    setAnchorElAcountMenu(null);
+  const handleCloseAccountMenu = () => {
+    setAnchorElAccountMenu(null);
   };
 
   return (
@@ -87,7 +90,7 @@ export const AsideMenu = ({ grid }: AsideMenuProps) => {
         <List className='text-xl'>
           <ListItem>
             <ListItemButton
-              onClick={handleClickAcountMenu}
+              onClick={handleClickAccountMenu}
               id='basic-button'
               aria-controls={open ? 'basic-menu' : undefined}
               aria-haspopup='true'
@@ -106,9 +109,9 @@ export const AsideMenu = ({ grid }: AsideMenuProps) => {
 
             <Menu
               id='basic-menu'
-              anchorEl={anchorElAcountMenu}
+              anchorEl={anchorElAccountMenu}
               open={open}
-              onClose={handleCloseAcountMenu}
+              onClose={handleCloseAccountMenu}
               slotProps={{
                 list: {
                   'aria-labelledby': 'basic-button',
