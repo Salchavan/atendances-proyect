@@ -11,6 +11,39 @@ export type AbsencesDetail = {
 };
 export type AbsencesDetailMap = Record<string, AbsencesDetail>;
 
+export type AttendanceRecord = {
+  id: number;
+  student_id: number;
+  classroom_id: number;
+  date: string;
+  status: string;
+  fraction?: number | null;
+  notes?: string | null;
+  checkInTime?: string | null;
+  checkOutTime?: string | null;
+};
+
+export type AttendanceMap = Record<string, number>;
+export type AttendanceDetail = {
+  total: number;
+  present: number;
+  fractionSum: number;
+};
+export type AttendanceDetailMap = Record<string, AttendanceDetail>;
+
+export type CalendarProps = {
+  absences?: AbsencesMap;
+  initialDate?: Date;
+  onDayClick?: (date: Date) => void;
+  className?: string;
+  headerTextClass?: string;
+  dayNumberClass?: string;
+  absencesNumberClass?: string;
+  cellBgClass?: string;
+  /** Muestra/oculta la barra superior (título y navegación). Default: true */
+  toolbarEnabled?: boolean;
+};
+
 export interface Unassistance {
   day: string; // 'dd-mm-yy'
   isJustified: boolean;
@@ -18,12 +51,15 @@ export interface Unassistance {
 
 export interface StudentRec {
   id: number;
-  dni: number;
+  dni?: number;
   first_name: string;
   last_name: string;
-  age: number;
-  email: string;
-  classroom: string;
+  age?: number;
+  email?: string;
+  classroom?: string;
+  username?: string;
+  classroom_id?: number;
+  active?: boolean;
   unassistences: Unassistance[];
 }
 

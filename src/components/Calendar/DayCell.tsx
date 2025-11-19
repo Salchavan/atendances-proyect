@@ -1,7 +1,10 @@
 import React from 'react';
 import { Box, Typography, ButtonBase, Tooltip, Divider } from '@mui/material';
 import { fmtYmd } from './utils';
-import type { AbsencesMap, AbsencesDetailMap } from '../../types/generalTypes';
+import type {
+  AttendanceMap,
+  AttendanceDetailMap,
+} from '../../types/generalTypes';
 
 import { SafeBoundary } from '../SafeBoundary';
 
@@ -10,8 +13,8 @@ type DayCellProps = {
   viewMonth: number;
   today: Date;
   onClick: (d: Date) => void;
-  absencesSource: AbsencesMap;
-  detailsSource: AbsencesDetailMap;
+  attendanceSource: AttendanceMap;
+  detailsSource: AttendanceDetailMap;
   dayNumberClass?: string;
   absencesNumberClass?: string;
   cellBgClass?: string;
@@ -24,7 +27,7 @@ export const DayCell: React.FC<DayCellProps> = ({
   viewMonth,
   today,
   onClick,
-  absencesSource,
+  attendanceSource,
   detailsSource,
   dayNumberClass,
   absencesNumberClass,
@@ -41,8 +44,11 @@ export const DayCell: React.FC<DayCellProps> = ({
     date.getDate() === today.getDate();
 
   const weekendLike = isWeekend || isSpecial;
-  const absences = absencesSource[ymd] || 0;
   const details = detailsSource[ymd];
+  const fallbackCount = attendanceSource[ymd] ?? 0;
+  const attendances = details?.present ?? fallbackCount;
+  const totalRecords = details?.total ?? fallbackCount;
+  const absences = Math.max(totalRecords - attendances, 0);
 
   const handleClick = () => {
     onClick(date);
@@ -101,21 +107,44 @@ export const DayCell: React.FC<DayCellProps> = ({
         {date.getDate()}
       </Typography>
 
-      {/* Número de inasistencias (oculto en fines de semana y días especiales) */}
+      {/* Números de asistencias y faltas (ocultos en fines de semana y días especiales) */}
       {!weekendLike && (
-        <Typography
-          variant='h5'
-          fontWeight={800}
-          color='error.main'
-          className={
-            absencesNumberClass
-              ? `${absencesNumberClass} calendar-absences-number`
-              : 'calendar-absences-number'
-          }
-          sx={{ userSelect: 'none', fontSize: '1.2rem !important' }}
+        <Box
+          sx={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: 2,
+            userSelect: 'none',
+          }}
         >
-          {absences}
-        </Typography>
+          <Typography
+            variant='h5'
+            fontWeight={800}
+            color='success.dark'
+            className={
+              absencesNumberClass
+                ? `${absencesNumberClass} calendar-absences-number`
+                : 'calendar-absences-number'
+            }
+            sx={{ fontSize: '1.2rem !important' }}
+          >
+            {attendances}
+          </Typography>
+          <Typography
+            variant='h5'
+            fontWeight={800}
+            color='error.main'
+            className={
+              absencesNumberClass
+                ? `${absencesNumberClass} calendar-absences-number`
+                : 'calendar-absences-number'
+            }
+            sx={{ fontSize: '1.2rem !important' }}
+          >
+            {absences}
+          </Typography>
+        </Box>
       )}
     </Box>
   );
@@ -125,8 +154,24 @@ export const DayCell: React.FC<DayCellProps> = ({
   const tooltip = (
     <Box sx={{ p: 1 }}>
       <Typography variant='subtitle2' fontWeight={600} sx={{ mb: 0.5 }}>
-        Inasistencias
+        Resumen del día
       </Typography>
+      <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 0.5 }}>
+        <Box
+          sx={{
+            width: 16,
+            height: 16,
+            borderRadius: 0.5,
+            bgcolor: 'success.main',
+          }}
+        />
+        <Typography variant='body2' color='text.primary'>
+          Asistencias:
+        </Typography>
+        <Typography variant='body2' fontWeight={600} color='success.main'>
+          {attendances}
+        </Typography>
+      </Box>
       <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 0.5 }}>
         <Box
           sx={{
@@ -137,10 +182,10 @@ export const DayCell: React.FC<DayCellProps> = ({
           }}
         />
         <Typography variant='body2' color='text.primary'>
-          Total:
+          Faltas:
         </Typography>
-        <Typography variant='body2' fontWeight={600}>
-          {details.total}
+        <Typography variant='body2' fontWeight={600} color='error.main'>
+          {absences}
         </Typography>
       </Box>
       <Divider sx={{ my: 0.75 }} />
@@ -150,14 +195,14 @@ export const DayCell: React.FC<DayCellProps> = ({
             width: 16,
             height: 16,
             borderRadius: 0.5,
-            bgcolor: 'warning.main',
+            bgcolor: 'success.light',
           }}
         />
         <Typography variant='body2' color='text.primary'>
-          Justificadas:
+          Total registros:
         </Typography>
         <Typography variant='body2' fontWeight={600}>
-          {details.justified}
+          {totalRecords}
         </Typography>
       </Box>
       <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
@@ -166,14 +211,14 @@ export const DayCell: React.FC<DayCellProps> = ({
             width: 16,
             height: 16,
             borderRadius: 0.5,
-            bgcolor: 'error.main',
+            bgcolor: 'info.main',
           }}
         />
         <Typography variant='body2' color='text.primary'>
-          No justificadas:
+          Fracción acumulada:
         </Typography>
         <Typography variant='body2' fontWeight={600}>
-          {details.unjustified}
+          {details.fractionSum.toFixed(2)}
         </Typography>
       </Box>
     </Box>

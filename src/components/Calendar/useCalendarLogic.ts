@@ -1,75 +1,57 @@
-import { useEffect, useMemo, useState } from 'react';
-import type { CalendarProps } from './types';
+import { useMemo, useState } from 'react';
+import { useQuery } from '@tanstack/react-query';
 import type {
-  AbsencesDetailMap,
-  AbsencesMap,
-  StudentRec,
+  CalendarProps,
+  AttendanceDetailMap,
+  AttendanceMap,
+  AttendanceRecord,
 } from '../../types/generalTypes';
 import { addDays, fmtYmd, getMonday, startOfMonth } from './utils';
+import { getAttendancesByDate } from '../../api/client';
 
 export function useCalendarLogic(props: CalendarProps) {
-  const { absences = {}, initialDate, onDayClick } = props;
+  const { initialDate, onDayClick } = props;
 
   const today = useMemo(() => new Date(), []);
   const [viewDate, setViewDate] = useState<Date>(() =>
     startOfMonth(initialDate ?? today)
   );
 
-  // Aggregated data (fallback to Students.json when no absences prop)
-  const [aggregatedAbsences, setAggregatedAbsences] = useState<AbsencesMap>({});
-  const [aggregatedDetails, setAggregatedDetails] = useState<AbsencesDetailMap>(
-    {}
+  const monthStart = useMemo(() => startOfMonth(viewDate), [viewDate]);
+  const monthEnd = useMemo(
+    () => new Date(viewDate.getFullYear(), viewDate.getMonth() + 1, 0),
+    [viewDate]
   );
+  const from = fmtYmd(monthStart);
+  const to = fmtYmd(monthEnd);
 
-  useEffect(() => {
-    let mounted = true;
-    const load = async () => {
-      try {
-        const mod = await import('../../data/Students.json');
-        const students: StudentRec[] = (mod as any).default || mod;
-        const mapTotals: AbsencesMap = {};
-        const mapDetails: AbsencesDetailMap = {};
-        const toISOKey = (key: string) => {
-          const [dd, mm, yy] = key.split('-').map((v) => parseInt(v, 10));
-          const yyyy = 2000 + yy;
-          const d = new Date(yyyy, mm - 1, dd);
-          return fmtYmd(d);
-        };
-        students.forEach((s) => {
-          if (!s.unassistences) return;
-          s.unassistences.forEach((u) => {
-            const iso = toISOKey(u.day);
-            mapTotals[iso] = (mapTotals[iso] || 0) + 1;
-            if (!mapDetails[iso])
-              mapDetails[iso] = { total: 0, justified: 0, unjustified: 0 };
-            mapDetails[iso].total += 1;
-            if (u.isJustified) mapDetails[iso].justified += 1;
-            else mapDetails[iso].unjustified += 1;
-          });
-        });
-        if (mounted) {
-          setAggregatedAbsences(mapTotals);
-          setAggregatedDetails(mapDetails);
-        }
-      } catch (e) {
-        // ignore
-      }
-    };
-    if (!absences || Object.keys(absences).length === 0) {
-      load();
-    }
-    return () => {
-      mounted = false;
-    };
-  }, [absences]);
+  const { data: attendanceResponse, isLoading: attendancesLoading } = useQuery({
+    queryKey: ['attendances', from, to],
+    queryFn: () => getAttendancesByDate(from, to),
+    enabled: Boolean(from && to),
+    staleTime: 60_000,
+  });
 
-  const absencesSource: AbsencesMap =
-    absences && Object.keys(absences).length > 0
-      ? absences
-      : aggregatedAbsences;
+  const attendanceList: AttendanceRecord[] =
+    attendanceResponse?.attendances ?? [];
 
-  const detailsSource: AbsencesDetailMap =
-    absences && Object.keys(absences).length > 0 ? {} : aggregatedDetails;
+  const attendanceAggregates = useMemo(() => {
+    const totals: AttendanceMap = {};
+    const details: AttendanceDetailMap = {};
+    const byDay: Record<string, AttendanceRecord[]> = {};
+    attendanceList.forEach((record) => {
+      const dateIso = fmtYmd(new Date(record.date));
+      totals[dateIso] = (totals[dateIso] || 0) + 1;
+      if (!details[dateIso])
+        details[dateIso] = { total: 0, present: 0, fractionSum: 0 };
+      details[dateIso].total += 1;
+      if (record.status === 'PRESENT') details[dateIso].present += 1;
+      details[dateIso].fractionSum += Number(record.fraction ?? 0);
+      if (!byDay[dateIso]) byDay[dateIso] = [];
+      byDay[dateIso].push(record);
+    });
+    return { totals, details, byDay };
+  }, [attendanceList]);
 
   const gridDays = useMemo(() => {
     const start = getMonday(startOfMonth(viewDate));
@@ -80,6 +62,8 @@ export function useCalendarLogic(props: CalendarProps) {
     setViewDate((d) => new Date(d.getFullYear(), d.getMonth() - 1, 1));
   const nextMonth = () =>
     setViewDate((d) => new Date(d.getFullYear(), d.getMonth() + 1, 1));
+  const selectMonth = (monthIndex: number) =>
+    setViewDate((d) => new Date(d.getFullYear(), monthIndex, 1));
 
   const handleDayClick = (date: Date) => onDayClick?.(date);
 
@@ -87,11 +71,14 @@ export function useCalendarLogic(props: CalendarProps) {
     today,
     viewDate,
     setViewDate,
-    absencesSource,
-    detailsSource,
+    attendanceSource: attendanceAggregates.totals,
+    attendanceDetails: attendanceAggregates.details,
+    attendancesByDay: attendanceAggregates.byDay,
     gridDays,
     prevMonth,
     nextMonth,
+    selectMonth,
     handleDayClick,
+    attendancesLoading,
   } as const;
 }

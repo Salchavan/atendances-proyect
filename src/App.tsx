@@ -13,7 +13,8 @@ import { Login } from './Pages/Login.tsx'; // Note: login by api, replaced by Lo
 import { Statics } from './Pages/Statics/Statics.tsx';
 import { IndexClassroomsPage } from './Pages/Classrooms/IndexClassroomsPage.tsx';
 import { ClassroomPage } from './Pages/Classrooms/ClassroomPage.tsx';
-import { Profile } from './Pages/Profile.tsx';
+import { UserProfile } from './Pages/UserProfile.tsx';
+import { StudentProfile } from './Pages/StudentProfile.tsx';
 import { Log } from './Pages/Log.tsx';
 
 import { AdminPanel } from './Pages/ControlPanel/ControlPanel.tsx';
@@ -124,7 +125,8 @@ export const App = () => {
               }
             >
               <Route index element={<Home />} />
-              <Route path='profile' element={<Profile />} />
+              <Route path='uprofile' element={<UserProfile />} />
+              <Route path='sprofile' element={<StudentProfile />} />
               <Route path='statics' element={<Statics />} />
 
               <Route path='classrooms' element={<IndexClassroomsPage />} />

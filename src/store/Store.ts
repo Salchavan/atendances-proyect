@@ -7,18 +7,12 @@ import { type HTMLElementType } from 'react';
 type User = {
   // new fields
   id?: number | string;
-  firstName?: string;
-  lastName?: string;
-  email?: string;
-  password?: string;
-  rol?: number;
-  // legacy fields kept for backward compat in components using Perfil
-  Username?: string;
-  Area?: string;
-  Role?: string;
-  Active?: boolean;
-  ID?: string | number;
-  DNI?: string | number;
+  first_name?: string;
+  last_name?: string;
+  role?: number;
+  active?: boolean;
+  username?: string;
+  classroom_id?: number;
 };
 type DialogSize = 'big' | 'small' | { width: number; height: number };
 

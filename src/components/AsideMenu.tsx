@@ -1,5 +1,4 @@
-import { useState, useEffect } from 'react';
-import { useQuery } from '@tanstack/react-query';
+import { useState } from 'react';
 
 import {
   Box,
@@ -29,8 +28,6 @@ import { useStore } from '../store/Store';
 import { useNavigateTo } from '../Logic.ts';
 // query and API hooks currently unused; keep commented examples above if needed
 
-import { getUserInfo } from '../api/client.ts';
-
 interface AsideMenuProps {
   grid: string;
 }
@@ -42,23 +39,6 @@ export const AsideMenu = ({ grid }: AsideMenuProps) => {
   const userData = useUserStore((s) => s.userData);
 
   const setPerfilUserSelected = useStore((s) => s.setPerfilUserSelected);
-
-  // const query = useQuery({
-  //   queryKey: ['userInfo'],
-  //   queryFn: async () => {
-  //     const res = await getUserInfo();
-  //     return res;
-  //   },
-  // });
-
-  // useEffect(() => {
-  //   if (!query.data) return;
-  //   useUserStore.getState().setUserData(query.data);
-  // }, [query.data]);
-
-  // if (query.isLoading) {
-  //   return null;
-  // }
 
   const displayName = useUserStore((store) => {
     const u = store.userData as any;
@@ -120,7 +100,7 @@ export const AsideMenu = ({ grid }: AsideMenuProps) => {
             >
               <MenuItem
                 onClick={() => {
-                  navigate('profile');
+                  navigate('uprofile');
                   setPerfilUserSelected(
                     userData
                       ? { ...userData, rol: Number((userData as any).rol) }
