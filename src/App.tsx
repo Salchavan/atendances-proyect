@@ -17,10 +17,13 @@ import { MultiProfile } from './Pages/profile/MultiProfile.tsx';
 import { Log } from './Pages/Log.tsx';
 
 import { AdminPanel } from './Pages/ControlPanel/ControlPanel.tsx';
-import { PanelUpload } from './Pages/ControlPanel/PanelUpload.tsx';
+import { ControlPanelHome } from './Pages/ControlPanel/ControlPanelHome.tsx';
 import { PanelCourses } from './Pages/ControlPanel/PanelCourses.tsx';
-import { PanelDownload } from './Pages/ControlPanel/PanelDownload.tsx';
+
 import { PanelPreceptors } from './Pages/ControlPanel/PanelPreceptors.tsx';
+import { ControlStudents } from './Pages/ControlPanel/ControlStudents.tsx';
+import { ControlDivisions } from './Pages/ControlPanel/ControlDivisions.tsx';
+import { ControlYears } from './Pages/ControlPanel/ControlYears.tsx';
 
 import { Config } from './Pages/config/Config.tsx';
 import { ConfigGeneral } from './Pages/config/ConfigGeneral.tsx';
@@ -109,10 +112,12 @@ export const App = () => {
               }
             />
             <Route path='/control-panel' element={<AdminPanel />}>
-              <Route index element={<PanelUpload />} />
-              <Route path='upload' element={<PanelUpload />} />
-              <Route path='download' element={<PanelDownload />} />
+              <Route index element={<ControlPanelHome />} />
+
+              <Route path='students' element={<ControlStudents />} />
               <Route path='courses' element={<PanelCourses />} />
+              <Route path='divisions' element={<ControlDivisions />} />
+              <Route path='years' element={<ControlYears />} />
               <Route path='preceptors' element={<PanelPreceptors />} />
             </Route>
             <Route
@@ -132,10 +137,12 @@ export const App = () => {
               <Route path='classrooms/:id' element={<ClassroomPage />} />
               <Route path='log' element={<Log />} />
               <Route path='control-panel' element={<AdminPanel />}>
-                <Route index element={<PanelUpload />} />
-                <Route path='upload' element={<PanelUpload />} />
-                <Route path='download' element={<PanelDownload />} />
+                <Route index element={<ControlPanelHome />} />
+
+                <Route path='students' element={<ControlStudents />} />
                 <Route path='courses' element={<PanelCourses />} />
+                <Route path='divisions' element={<ControlDivisions />} />
+                <Route path='years' element={<ControlYears />} />
                 <Route path='preceptors' element={<PanelPreceptors />} />
               </Route>
               <Route path='config' element={<Config />}>

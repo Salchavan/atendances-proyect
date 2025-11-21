@@ -38,6 +38,9 @@ export const AsideMenu = ({ grid }: AsideMenuProps) => {
   const logOut = useUserStore((s) => s.logOut);
 
   const userData = useUserStore((s) => s.userData);
+  const normalizedRole = String(
+    (userData as any)?.role ?? (userData as any)?.rol ?? ''
+  ).toUpperCase();
 
   const setPerfilUserSelected = useStore((s) => s.setPerfilUserSelected);
 
@@ -144,7 +147,7 @@ export const AsideMenu = ({ grid }: AsideMenuProps) => {
               <ListItemIcon>
                 <DataSaverOffIcon sx={{ color: 'primary.main' }} />
               </ListItemIcon>
-              Estadisticas
+              Estadísticas
             </ListItemButton>
           </ListItem>
           <ListItem>
@@ -164,7 +167,7 @@ export const AsideMenu = ({ grid }: AsideMenuProps) => {
             </ListItemButton>
           </ListItem>
 
-          {(userData as any)?.rol === 'admin' ? (
+          {normalizedRole === 'ADMIN' || normalizedRole === 'STAFF' ? (
             <ListItem>
               <ListItemButton onClick={() => navigate('control-panel')}>
                 <ListItemIcon>
