@@ -60,6 +60,7 @@ type PaletteOption = {
 
 export const CommandK = () => {
   const navigate = useNavigateTo();
+  const setViewProfile = useStore((s) => s.setProfileView);
   const [open, setOpen] = useState(false);
   const [search, setSearch] = useState('');
   const [debouncedSearch, setDebouncedSearch] = useState('');
@@ -164,7 +165,8 @@ export const CommandK = () => {
         unassistences: [],
       };
       setPerfilUserSelected(mappedStudent);
-      navigate('sprofile');
+      setViewProfile('STUDENT');
+      navigate('profile');
       handleClosePalette();
       console.info('Estudiante seleccionado:', student);
     },

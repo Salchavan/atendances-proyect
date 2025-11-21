@@ -34,6 +34,9 @@ type Store = {
   setFontFamily: (font: string) => void;
   perfilUserSelected: User | undefined;
   setPerfilUserSelected: (user: User | undefined) => void;
+  profileView: 'STUDENT' | 'STAFF' | 'CLASSROOM' | undefined;
+  setProfileView: (view: 'STUDENT' | 'STAFF' | 'CLASSROOM' | undefined) => void;
+
   specialDates: string[];
   setSpecialDates: (dates: string[]) => void;
   clearSpecialDates: () => void;
@@ -75,6 +78,8 @@ export const useStore = create<Store>()(
       setFontFamily: (font) => set({ fontFamily: font }),
       perfilUserSelected: undefined,
       setPerfilUserSelected: (user) => set({ perfilUserSelected: user }),
+      profileView: undefined,
+      setProfileView: (view) => set({ profileView: view }),
       specialDates: [],
       setSpecialDates: (dates) =>
         set({ specialDates: Array.from(new Set(dates)) }),

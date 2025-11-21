@@ -107,3 +107,21 @@ export const getStudentById = async (id: number) => {
     throw error;
   }
 };
+
+type StatsTarget = {
+  type: 'STUDENT' | 'CLASSROOM' | 'YEAR' | 'SHIFT';
+  id: number;
+};
+
+export const getStats = async (data: StatsTarget) => {
+  try {
+    const res = await api.post('/api/v1/stats/query', {
+      target: { type: data.type, id: data.id },
+    });
+    console.log('getMetrics response data:', res.data);
+    return res.data;
+  } catch (error) {
+    console.error('Error in getMetrics:', error);
+    throw error;
+  }
+};

@@ -1,15 +1,13 @@
-import { useStore } from '../store/Store.ts';
-
+import React from 'react';
 import {
   Box,
-  Typography,
-  Chip,
-  Tooltip,
-  IconButton,
   Paper,
   Stack,
+  Tooltip,
+  IconButton,
   Button,
   Divider,
+  Typography,
 } from '@mui/material';
 import {
   DataGrid,
@@ -18,15 +16,17 @@ import {
   type GridRowSelectionModel,
   type GridRowId,
 } from '@mui/x-data-grid';
-import ContentCopyIcon from '@mui/icons-material/ContentCopy';
-import { MultiChart } from '../components/MultiChart/MultiChart.tsx';
-import { Notes } from '../components/Notes.tsx';
-import { changePageTitle } from '../Logic.ts';
 import EditIcon from '@mui/icons-material/Edit';
-import { ProfileSettingsModal } from '../components/ProfileSettingsModal.tsx';
-import React from 'react';
 
-const fallback = 'NO Definido';
+import { useStore } from '../../../store/Store';
+import { changePageTitle } from '../../../Logic';
+import { MultiChart } from '../../../components/MultiChart/MultiChart';
+import { Notes } from '../../../components/Notes';
+import { ProfileSettingsModal } from '../../../components/ProfileSettingsModal';
+import { EmptyProfileState } from './EmptyProfileState';
+import { InfoField } from './InfoField';
+import { ProfileHeader } from './ProfileHeader';
+import type { StudentRec } from '../../../types/generalTypes';
 
 interface PerfilUser {
   id?: number | string;
@@ -36,6 +36,10 @@ interface PerfilUser {
   last_name?: string;
   email?: string;
   rol?: string;
+  unassistences?: StudentRec['unassistences'];
+  activity?: ActivityEntry[];
+  Activity?: ActivityEntry[];
+  actions?: ActivityEntry[];
 }
 
 type ActivityEntry = {
@@ -78,12 +82,12 @@ const formatActionDate = (value?: string) => {
   return value;
 };
 
-export const UserProfile = () => {
+export const StaffProfileView: React.FC = () => {
   const selectedUser = useStore((s) => s.perfilUserSelected) as
     | PerfilUser
     | undefined;
-
   const [resolvedUser, setResolvedUser] = React.useState<any | null>(null);
+  const openDialog = useStore((s) => s.openDialog);
 
   React.useEffect(() => {
     let mounted = true;
@@ -99,7 +103,7 @@ export const UserProfile = () => {
     }
     (async () => {
       try {
-        const mod = await import('../data/users.json');
+        const mod = await import('../../../data/users.json');
         const all: any[] = mod.default || mod || [];
         const id = su.id ?? su.ID ?? null;
         const dni = su.dni ?? su.DNI ?? null;
@@ -146,55 +150,12 @@ export const UserProfile = () => {
     normalizedRole === 'STUDENT' ||
     (!normalizedRole && Array.isArray(staffUser?.unassistences));
 
-  const copyToClipboard = (value?: string | number) => {
-    if (!value) return;
-    navigator.clipboard?.writeText(String(value)).catch(() => {});
-  };
-  const openDialog = useStore((s) => s.openDialog);
-
-  const field = (label: string, value?: string | number, copy?: boolean) => (
-    <Box display='flex' alignItems='center' gap={1}>
-      <Box>
-        <Typography variant='caption' color='text.secondary'>
-          {label}
-        </Typography>
-        <Typography variant='body1' fontWeight={500}>
-          {value ?? fallback}
-        </Typography>
-      </Box>
-      {copy && value && (
-        <Tooltip title={`Copiar ${label}`}>
-          <IconButton size='small' onClick={() => copyToClipboard(value)}>
-            <ContentCopyIcon fontSize='inherit' />
-          </IconButton>
-        </Tooltip>
-      )}
-    </Box>
-  );
-
   if (!staffUser || looksLikeStudent) {
     return (
-      <Box
-        sx={{
-          p: 4,
-          height: '100%',
-          gridColumn: '1 / -1',
-          gridRow: '1 / -1',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-        }}
-      >
-        <Paper sx={{ p: 4, maxWidth: 480, textAlign: 'center' }}>
-          <Typography variant='h6' gutterBottom>
-            Selecciona un preceptor o miembro del staff
-          </Typography>
-          <Typography color='text.secondary'>
-            Usa la tabla de usuarios o el menú lateral para elegir un perfil del
-            personal.
-          </Typography>
-        </Paper>
-      </Box>
+      <EmptyProfileState
+        title='Selecciona un preceptor o miembro del staff'
+        description='Usa la tabla de usuarios o el menú lateral para elegir un perfil del personal.'
+      />
     );
   }
 
@@ -252,41 +213,51 @@ export const UserProfile = () => {
             overflow: 'auto',
           }}
         >
-          <Box display='flex' alignItems='center' gap={2} flexWrap='wrap'>
-            <Typography
-              variant='h4'
-              fontWeight='bold'
-              sx={{ fontSize: '1.5rem !important' }}
-            >
-              {displayName}
-            </Typography>
-            <Chip
-              label={normalizedRole || 'STAFF'}
-              color='primary'
-              variant='outlined'
-            />
-            <Tooltip title='Editar perfil'>
-              <IconButton
-                size='small'
-                onClick={() =>
-                  openDialog(
-                    React.createElement(ProfileSettingsModal),
-                    'Opciones de perfil',
-                    'small'
-                  )
-                }
-              >
-                <EditIcon sx={{ color: 'primary.main' }} />
-              </IconButton>
-            </Tooltip>
-          </Box>
+          <ProfileHeader
+            title={displayName}
+            chips={[
+              {
+                label: normalizedRole || 'STAFF',
+                color: 'primary',
+                variant: 'outlined',
+              },
+            ]}
+            actions={
+              <Tooltip title='Editar perfil'>
+                <IconButton
+                  size='small'
+                  onClick={() =>
+                    openDialog(
+                      React.createElement(ProfileSettingsModal),
+                      'Opciones de perfil',
+                      'small'
+                    )
+                  }
+                >
+                  <EditIcon sx={{ color: 'primary.main' }} />
+                </IconButton>
+              </Tooltip>
+            }
+          />
 
           <Stack spacing={2} sx={{ mt: 2 }}>
-            {field('Nombre completo', displayName)}
-            {field('Email', staffUser.email ?? staffUser.Email, true)}
-            {field('ID', staffUser.id ?? staffUser.ID, true)}
-            {field('DNI', staffUser.dni ?? staffUser.DNI, true)}
-            {field('Acciones registradas', totalActions, false)}
+            <InfoField label='Nombre completo' value={displayName} />
+            <InfoField
+              label='Email'
+              value={staffUser.email ?? staffUser.Email}
+              copyValue={staffUser.email ?? staffUser.Email}
+            />
+            <InfoField
+              label='ID'
+              value={staffUser.id ?? staffUser.ID}
+              copyValue={staffUser.id ?? staffUser.ID}
+            />
+            <InfoField
+              label='DNI'
+              value={staffUser.dni ?? staffUser.DNI}
+              copyValue={staffUser.dni ?? staffUser.DNI}
+            />
+            <InfoField label='Acciones registradas' value={totalActions} />
           </Stack>
         </Paper>
 

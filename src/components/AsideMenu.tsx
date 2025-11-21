@@ -33,6 +33,7 @@ interface AsideMenuProps {
 }
 
 export const AsideMenu = ({ grid }: AsideMenuProps) => {
+  const setViewProfile = useStore((s) => s.setProfileView);
   const navigate = useNavigateTo();
   const logOut = useUserStore((s) => s.logOut);
 
@@ -100,10 +101,11 @@ export const AsideMenu = ({ grid }: AsideMenuProps) => {
             >
               <MenuItem
                 onClick={() => {
-                  navigate('uprofile');
+                  setViewProfile('STAFF');
+                  navigate('profile');
                   setPerfilUserSelected(
                     userData
-                      ? { ...userData, rol: Number((userData as any).rol) }
+                      ? { ...userData, role: Number((userData as any).rol) }
                       : undefined
                   );
                 }}
