@@ -18,12 +18,15 @@ import { Log } from './Pages/Log.tsx';
 
 import { AdminPanel } from './Pages/ControlPanel/ControlPanel.tsx';
 import { ControlPanelHome } from './Pages/ControlPanel/ControlPanelHome.tsx';
-import { PanelCourses } from './Pages/ControlPanel/PanelCourses.tsx';
+import { PanelCourses } from './Pages/ControlPanel/ControlCourses.tsx';
 
-import { PanelPreceptors } from './Pages/ControlPanel/PanelPreceptors.tsx';
+import { PanelPreceptors } from './Pages/ControlPanel/ControlPreceptors.tsx';
 import { ControlStudents } from './Pages/ControlPanel/ControlStudents.tsx';
 import { ControlDivisions } from './Pages/ControlPanel/ControlDivisions.tsx';
 import { ControlYears } from './Pages/ControlPanel/ControlYears.tsx';
+import { ControlSpecialDays } from './Pages/ControlPanel/ControlSpecialDays.tsx';
+import { ControlAdministrators } from './Pages/ControlPanel/ControlAdministrators.tsx';
+import { ControlSecretary } from './Pages/ControlPanel/ControlSecretary.tsx';
 
 import { Config } from './Pages/config/Config.tsx';
 import { ConfigGeneral } from './Pages/config/ConfigGeneral.tsx';
@@ -118,6 +121,12 @@ export const App = () => {
               <Route path='courses' element={<PanelCourses />} />
               <Route path='divisions' element={<ControlDivisions />} />
               <Route path='years' element={<ControlYears />} />
+              <Route path='special-days' element={<ControlSpecialDays />} />
+              <Route
+                path='administration'
+                element={<ControlAdministrators />}
+              />
+              <Route path='secretary' element={<ControlSecretary />} />
               <Route path='preceptors' element={<PanelPreceptors />} />
             </Route>
             <Route
@@ -143,6 +152,12 @@ export const App = () => {
                 <Route path='courses' element={<PanelCourses />} />
                 <Route path='divisions' element={<ControlDivisions />} />
                 <Route path='years' element={<ControlYears />} />
+                <Route path='special-days' element={<ControlSpecialDays />} />
+                <Route
+                  path='administration'
+                  element={<ControlAdministrators />}
+                />
+                <Route path='secretary' element={<ControlSecretary />} />
                 <Route path='preceptors' element={<PanelPreceptors />} />
               </Route>
               <Route path='config' element={<Config />}>

@@ -251,7 +251,7 @@ export const PanelCourses = () => {
   const handleMenuClose = () => setMenuAnchorEl(null);
 
   const deleteClassroomMutation = useMutation({
-    mutationFn: (ids: number[]) => delClassrooms(ids),
+    mutationFn: (ids: Array<number | string>) => delClassrooms(ids),
     onSuccess: async () => {
       await queryClient.invalidateQueries({ queryKey: ['classrooms'] });
       await queryClient.invalidateQueries({ queryKey: ['students'] });
@@ -280,22 +280,19 @@ export const PanelCourses = () => {
   };
 
   const handleDeleteCourse = async () => {
-    if (!selectedRow?.record?.id) return;
-    const classroomId = Number(selectedRow.record.id);
-    if (!Number.isInteger(classroomId)) {
-      console.warn('Invalid classroom id for deletion', selectedRow.record.id);
-      handleMenuClose();
-      return;
-    }
+    const rawId = selectedRow?.record?.id;
+    if (rawId === undefined || rawId === null) return;
+    const classroomId = Number(rawId);
+    const payloadId = Number.isFinite(classroomId) ? classroomId : rawId;
     const confirmed = window.confirm(
-      `¿Eliminar el curso ${selectedRow.yearLabel} ${selectedRow.divisionLabel}? Esta acción no se puede deshacer.`
+      `¿Eliminar el curso ${selectedRow?.yearLabel} ${selectedRow?.divisionLabel}? Esta acción no se puede deshacer.`
     );
     if (!confirmed) {
       handleMenuClose();
       return;
     }
     try {
-      await deleteClassroomMutation.mutateAsync([classroomId]);
+      await deleteClassroomMutation.mutateAsync([payloadId]);
     } catch (error) {
       console.error('Error deleting course', error);
     } finally {

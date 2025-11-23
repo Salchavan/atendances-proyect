@@ -1,4 +1,5 @@
 import { useMemo, useState, useCallback, type MouseEvent } from 'react';
+import axios from 'axios';
 import {
   Stack,
   Typography,
@@ -19,7 +20,12 @@ import {
 } from '@mui/x-data-grid';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 
-import { getAllStudents, delStudents } from '../../api/client';
+import {
+  getAllStudents,
+  delStudents,
+  endEnrollment,
+  getEnrollmentsByStudentId,
+} from '../../api/client';
 import { useAcademicCatalog } from '../../store/APIStore';
 import { useStore } from '../../store/Store';
 import { useNavigateTo } from '../../Logic';
@@ -87,6 +93,7 @@ export const ControlStudents = () => {
   const setPerfilUserSelected = useStore((s) => s.setPerfilUserSelected);
   const setProfileView = useStore((s) => s.setProfileView);
   const openDialog = useStore((s) => s.openDialog);
+  const closeDialog = useStore((s) => s.closeDialog);
   const navigateTo = useNavigateTo();
 
   const classroomMap = useMemo(() => {
@@ -220,11 +227,74 @@ export const ControlStudents = () => {
   const handleMenuClose = () => setMenuAnchorEl(null);
 
   const deleteStudentMutation = useMutation({
-    mutationFn: (ids: number[]) => delStudents(ids),
+    mutationFn: (studentId: number) => delStudents(studentId),
     onSuccess: async () => {
       await queryClient.invalidateQueries({ queryKey: ['students'] });
     },
   });
+
+  const extractEnrollmentsIds = (payload: unknown): number[] => {
+    if (!payload) return [];
+    const normalizeEntries = (
+      entries: Array<{ id?: number | string }>
+    ): number[] =>
+      entries
+        .map((entry) => {
+          const rawId = entry?.id;
+          if (rawId === undefined || rawId === null) return undefined;
+          const parsed = Number(rawId);
+          return Number.isFinite(parsed) ? parsed : undefined;
+        })
+        .filter((value): value is number => value !== undefined);
+
+    if (Array.isArray(payload)) {
+      return normalizeEntries(payload as Array<{ id?: number | string }>);
+    }
+
+    const source = payload as Record<string, unknown>;
+    const enrollmentsData = source?.['enrollments'] as
+      | Array<{ id?: number | string }>
+      | undefined;
+    if (Array.isArray(enrollmentsData)) {
+      return normalizeEntries(enrollmentsData);
+    }
+    return [];
+  };
+
+  const cascadeDeleteStudent = async (student: StudentRow) => {
+    const studentId = Number(student.id);
+    const enrollmentsResponse = await getEnrollmentsByStudentId(studentId);
+    const enrollmentIds = extractEnrollmentsIds(enrollmentsResponse);
+    if (enrollmentIds.length) {
+      await Promise.all(
+        enrollmentIds.map((enrollmentId) => endEnrollment(enrollmentId))
+      );
+      await queryClient.invalidateQueries({ queryKey: ['enrollments'] });
+    } else {
+      console.warn(
+        'No encontramos inscripciones asociadas; continuamos con la baja del estudiante.'
+      );
+    }
+    await deleteStudentMutation.mutateAsync(studentId);
+  };
+
+  const openCascadeDialog = (student: StudentRow, message: string) => {
+    openDialog(
+      <CascadeDeleteDialog
+        message={message}
+        studentName={`${student.first_name} ${student.last_name}`}
+        onCancel={() => {
+          closeDialog();
+        }}
+        onConfirm={async () => {
+          await cascadeDeleteStudent(student);
+          closeDialog();
+        }}
+      />,
+      'Registros asociados',
+      { width: 420, height: 280 }
+    );
+  };
 
   const handleGoToProfile = () => {
     if (!selectedRow) return;
@@ -235,7 +305,7 @@ export const ControlStudents = () => {
   };
 
   const handleDeleteStudent = async () => {
-    if (!selectedRow?.id) return;
+    if (selectedRow?.id === undefined || selectedRow.id === null) return;
     const confirmed = window.confirm(
       `¿Eliminar al estudiante "${selectedRow.first_name} ${selectedRow.last_name}"? Esta acción no se puede deshacer.`
     );
@@ -244,9 +314,23 @@ export const ControlStudents = () => {
       return;
     }
     try {
-      await deleteStudentMutation.mutateAsync([Number(selectedRow.id)]);
+      await deleteStudentMutation.mutateAsync(Number(selectedRow.id));
     } catch (error) {
-      console.error('Error deleting student', error);
+      if (
+        selectedRow &&
+        axios.isAxiosError(error) &&
+        error.response?.status === 400 &&
+        (error.response.data as { message?: string } | undefined)?.message ===
+          'No se puede eliminar: tiene registros asociados'
+      ) {
+        openCascadeDialog(
+          selectedRow,
+          (error.response.data as { message?: string })?.message ??
+            'No se puede eliminar: tiene registros asociados'
+        );
+      } else {
+        console.error('Error deleting student', error);
+      }
     } finally {
       handleMenuClose();
     }
@@ -368,5 +452,61 @@ export const ControlStudents = () => {
         </Menu>
       </Stack>
     </Box>
+  );
+};
+
+type CascadeDeleteDialogProps = {
+  message: string;
+  studentName: string;
+  onConfirm: () => Promise<void>;
+  onCancel: () => void;
+};
+
+const CascadeDeleteDialog = ({
+  message,
+  studentName,
+  onConfirm,
+  onCancel,
+}: CascadeDeleteDialogProps) => {
+  const [isProcessing, setIsProcessing] = useState(false);
+  const [localError, setLocalError] = useState<string | null>(null);
+
+  const handleConfirm = async () => {
+    setIsProcessing(true);
+    setLocalError(null);
+    try {
+      await onConfirm();
+    } catch (error) {
+      console.error('Error deleting associated enrollments', error);
+      setLocalError(
+        'No pudimos eliminar los registros asociados. Intenta nuevamente.'
+      );
+    } finally {
+      setIsProcessing(false);
+    }
+  };
+
+  return (
+    <Stack spacing={2} sx={{ mt: 1 }}>
+      <Typography variant='body1'>{message}</Typography>
+      <Typography variant='body2' color='text.secondary'>
+        ¿Deseas eliminar los registros asociados y continuar con la baja de
+        {` ${studentName}`}?
+      </Typography>
+      {localError ? <Alert severity='error'>{localError}</Alert> : null}
+      <Stack direction='row' spacing={1} justifyContent='flex-end'>
+        <Button onClick={onCancel} disabled={isProcessing}>
+          Cancelar
+        </Button>
+        <Button
+          variant='contained'
+          color='error'
+          onClick={handleConfirm}
+          disabled={isProcessing}
+        >
+          Eliminar registros
+        </Button>
+      </Stack>
+    </Stack>
   );
 };

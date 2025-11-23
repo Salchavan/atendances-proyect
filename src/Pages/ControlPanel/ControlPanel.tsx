@@ -58,19 +58,19 @@ export const AdminPanel = () => {
       key: 'special-days',
       label: 'Dias especiales',
       icon: <EventAvailableIcon sx={{ color: 'primary.main' }} />,
-      disabled: true,
+      disabled: false,
     },
     {
       key: 'administration',
       label: 'Administradores',
       icon: <AdminPanelSettingsIcon sx={{ color: 'primary.main' }} />,
-      disabled: true,
+      disabled: false,
     },
     {
       key: 'secretary',
       label: 'Secretaria',
       icon: <BadgeIcon sx={{ color: 'primary.main' }} />,
-      disabled: true,
+      disabled: false,
     },
     {
       key: 'preceptors',

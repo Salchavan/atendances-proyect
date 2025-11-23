@@ -142,7 +142,7 @@ export const ControlYears = () => {
   };
 
   const handleDeleteYear = async () => {
-    if (!selectedRow?.id) return;
+    if (selectedRow?.id === undefined || selectedRow.id === null) return;
     const confirmed = window.confirm(
       `¿Eliminar el año "${selectedRow.number}"? Esta acción no se puede deshacer.`
     );

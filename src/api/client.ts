@@ -75,6 +75,74 @@ export const getUserInfo = async () => {
   }
 };
 
+// * STAFF REQUESTS
+
+type StaffQueryParams = {
+  page?: number;
+  pageSize?: number;
+  role?: string;
+  q?: string;
+};
+
+export const getStaff = async (params?: StaffQueryParams) => {
+  try {
+    const res = await api.get('/api/v1/staff', { params });
+    console.log('getStaff response data:', res.data);
+    return res.data;
+  } catch (error) {
+    console.error('Error in getStaff:', error);
+    throw error;
+  }
+};
+
+type PostStaffPayload = {
+  dni: string;
+  password: string;
+  first_name: string;
+  last_name: string;
+  role: string | number;
+};
+
+export const postStaff = async (data: PostStaffPayload) => {
+  try {
+    console.log('postStaff data:', data);
+    const res = await api.post('/api/v1/auth/staff', data);
+    console.log('postStaff response data:', res.data);
+    return res.data;
+  } catch (error) {
+    console.error('Error in postStaff:', error);
+    throw error;
+  }
+};
+
+type PutStaffPayload = {
+  first_name?: string;
+  last_name?: string;
+  role?: string | number;
+};
+
+export const putStaff = async (id: string | number, data: PutStaffPayload) => {
+  try {
+    const res = await api.put(`/api/v1/staff/${id}`, data);
+    console.log('putStaff response data:', res.data);
+    return res.data;
+  } catch (error) {
+    console.error('Error in putStaff:', error);
+    throw error;
+  }
+};
+
+export const delStaff = async (id: string | number) => {
+  try {
+    const res = await api.delete(`/api/v1/staff/${id}`);
+    console.log('delStaff response data:', res.data);
+    return res.data;
+  } catch (error) {
+    console.error('Error in delStaff:', error);
+    throw error;
+  }
+};
+
 // * ATTENDANCE REQUESTS
 
 export const getAttendancesByDate = async (from: string, to: string) => {
@@ -176,15 +244,77 @@ export const putStudent = async (id: number, data: Partial<PutStudentData>) => {
   }
 };
 
-export const delStudents = async (id: number[]) => {
+export const delStudents = async (id: number) => {
+  console.log('delStudents id:', id);
   try {
-    const res = await api.delete('/api/v1/students', {
-      data: { id },
-    });
+    const res = await api.delete(`/api/v1/students/${id}`);
     console.log('delStudents response data:', res.data);
     return res.data;
   } catch (error) {
     console.error('Error in delStudents:', error);
+    throw error;
+  }
+};
+
+// * SUBSCRIPTION REQUESTS
+
+export const getAllEnrollments = async () => {
+  try {
+    const res = await api.get('/api/v1/enrollments');
+    console.log('getEnrollments response data:', res.data);
+    return res.data;
+  } catch (error) {
+    console.error('Error in getEnrollments:', error);
+    throw error;
+  }
+};
+export const getEnrollmentsByStudentId = async (studentId: number) => {
+  try {
+    const res = await api.get(`/api/v1/enrollments?studentId=${studentId}`);
+    console.log('getEnrollmentsByStudentId response data:', res.data);
+    return res.data;
+  } catch (error) {
+    console.error('Error in getEnrollmentsByStudentId:', error);
+    throw error;
+  }
+};
+
+export const getEnrollmentsByClassroom = async (classroomId: number) => {
+  try {
+    const res = await api.get(`/api/v1/enrollments?classroomId=${classroomId}`);
+    console.log('getEnrollmentsByClassroom response data:', res.data);
+    return res.data;
+  } catch (error) {
+    console.error('Error in getEnrollmentsByClassroom:', error);
+    throw error;
+  }
+};
+
+export const postEnrollment = async (data: {
+  studentId: number;
+  classroomId: number;
+  startDate: string;
+  endDate?: string | null;
+}) => {
+  try {
+    const res = await api.post('/api/v1/enrollments', data);
+    console.log('postEnrollment response data:', res.data);
+    return res.data;
+  } catch (error) {
+    console.error('Error in postEnrollment:', error);
+    throw error;
+  }
+};
+
+export const endEnrollment = async (id: number) => {
+  try {
+    const endDate = '2025-12-31';
+    console.log('endEnrollment payload:', { endDate });
+    const res = await api.post(`/api/v1/enrollments/${id}/end`, { endDate });
+    console.log('endEnrollment response data:', res.data);
+    return res.data;
+  } catch (error) {
+    console.error('Error in endEnrollment:', error);
     throw error;
   }
 };
@@ -238,7 +368,7 @@ export const postClassroom = async (data: {
   }
 };
 
-export const delClassrooms = async (id: number[]) => {
+export const delClassrooms = async (id: Array<number | string>) => {
   try {
     const res = await api.delete('/api/v1/classrooms', {
       data: { id },
@@ -321,6 +451,81 @@ export const delYears = async (id: number[]) => {
     return res.data;
   } catch (error) {
     console.error('Error in delYears:', error);
+    throw error;
+  }
+};
+
+// * SPECIAL DAYS REQUESTS
+
+export const getNotSchoolDays = async () => {
+  try {
+    const res = await api.get('/api/v1/not-school-days');
+    console.log('getNotSchoolDays response data:', res.data);
+    return res.data;
+  } catch (error) {
+    console.error('Error in getNotSchoolDays:', error);
+    throw error;
+  }
+};
+
+export const postNotSchoolDay = async (data: {
+  date: string;
+  reason: string;
+}) => {
+  try {
+    const res = await api.post('/api/v1/not-school-days', data);
+    console.log('postNotSchoolDay response data:', res.data);
+    return res.data;
+  } catch (error) {
+    console.error('Error in postNotSchoolDay:', error);
+    throw error;
+  }
+};
+
+export const delNotSchoolDay = async (id: number | string) => {
+  try {
+    const res = await api.delete(`/api/v1/not-school-days/${id}`);
+    console.log('delNotSchoolDay response data:', res.data);
+    return res.data;
+  } catch (error) {
+    console.error('Error in delNotSchoolDay:', error);
+    throw error;
+  }
+};
+
+export const assignNotSchoolDay = async (data: {
+  classroomId: number | string;
+  date: string;
+  reason: string;
+}) => {
+  try {
+    const res = await api.post('/api/v1/not-school-days/assign', data);
+    console.log('assignNotSchoolDay response data:', res.data);
+    return res.data;
+  } catch (error) {
+    console.error('Error in assignNotSchoolDay:', error);
+    throw error;
+  }
+};
+
+export const getNotSchoolDayAssignments = async () => {
+  try {
+    const res = await api.get('/api/v1/not-school-days/assignments');
+    console.log('getNotSchoolDayAssignments response data:', res.data);
+    return res.data;
+  } catch (error) {
+    console.error('Error in getNotSchoolDayAssignments:', error);
+    throw error;
+  }
+};
+
+export const delNotSchoolDayAssignment = async (id: number | string) => {
+  try {
+    const res = await api.delete(`/api/v1/not-school-days/assignments/${id}`);
+    console.log('delNotSchoolDayAssignment response data:', res.data);
+    return res.data;
+  } catch (error) {
+    console.error('Error in delNotSchoolDayAssignment:', error);
     throw error;
   }
 };

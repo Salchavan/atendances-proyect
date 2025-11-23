@@ -147,7 +147,7 @@ export const ControlDivisions = () => {
   };
 
   const handleDeleteDivision = async () => {
-    if (!selectedRow?.id) return;
+    if (selectedRow?.id === undefined || selectedRow.id === null) return;
     const confirmed = window.confirm(
       `¿Eliminar la división "${selectedRow.letter}"? Esta acción no se puede deshacer.`
     );
