@@ -3,10 +3,12 @@ import { Box, Button, Stack, TextField, Typography } from '@mui/material';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 
 import { postDivision } from '../../../api/client';
+import { useCachedStore } from '../../../store/CachedStore';
 import { useStore } from '../../../store/Store';
 
 export const AddDivisionForm = () => {
   const closeDialog = useStore((s) => s.closeDialog);
+  const setAlert = useCachedStore((s) => s.setAlert);
   const queryClient = useQueryClient();
   const [divisionLetter, setDivisionLetter] = useState('');
   const [formError, setFormError] = useState<string | null>(null);
@@ -15,6 +17,7 @@ export const AddDivisionForm = () => {
     mutationFn: (payload: { label: string }) => postDivision(payload),
     onSuccess: async () => {
       await queryClient.invalidateQueries({ queryKey: ['divisions'] });
+      setAlert({ type: 'success', text: 'División creada correctamente.' });
       closeDialog();
     },
   });
@@ -36,6 +39,7 @@ export const AddDivisionForm = () => {
     } catch (error) {
       console.error('Error creating division', error);
       setFormError('No pudimos crear la división. Intenta nuevamente.');
+      setAlert({ type: 'error', text: 'No pudimos crear la división.' });
     }
   };
 

@@ -1,5 +1,6 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useMemo } from 'react';
 import { ErrorBoundary } from 'react-error-boundary';
+import { useQuery } from '@tanstack/react-query';
 import { useStore } from '../store/Store';
 import { fmtYmd } from './Calendar/utils';
 import {
@@ -10,63 +11,85 @@ import {
   Stack,
   CircularProgress,
 } from '@mui/material';
+import { getNotSchoolDays } from '../api/client';
 
 interface AsideEventsProps {
   grid: string;
 }
 
-interface SpecialDay {
-  date: string;
-  title: string;
-}
-
 export const AsideEvents = ({ grid }: AsideEventsProps) => {
-  const [specialDays, setSpecialDays] = useState<SpecialDay[]>([]);
-  const [loading, setLoading] = useState(true);
   const setSpecialDates = useStore((s) => s.setSpecialDates);
+  const { data, isLoading, isError } = useQuery({
+    queryKey: ['not-school-days', 'aside-events'],
+    queryFn: getNotSchoolDays,
+    staleTime: 5 * 60 * 1000,
+  });
+
+  type ApiRecord = {
+    date?: string;
+    day?: string;
+    reason?: string;
+    title?: string;
+    description?: string;
+    [key: string]: any;
+  };
+
+  const specialDays = useMemo(() => {
+    if (!data)
+      return [] as { dateLabel: string; title: string; dateObj: Date }[];
+
+    const candidateSources = Array.isArray(data)
+      ? data
+      : ['notSchoolDays', 'days', 'items', 'data', 'list'].reduce<any[]>(
+          (acc, key) => {
+            if (acc.length) return acc;
+            const value = (data as any)?.[key];
+            return Array.isArray(value) ? value : acc;
+          },
+          []
+        );
+
+    const records: ApiRecord[] = Array.isArray(candidateSources)
+      ? candidateSources
+      : [];
+
+    const todayStart = new Date();
+    todayStart.setHours(0, 0, 0, 0);
+
+    return records
+      .map((record) => {
+        const rawDate = record.date ?? record.day ?? record.date_iso;
+        if (!rawDate) return null;
+        const parsed = new Date(rawDate);
+        if (Number.isNaN(parsed.getTime())) return null;
+        return {
+          dateObj: parsed,
+          dateLabel: parsed.toLocaleDateString('es-AR'),
+          title:
+            record.reason ??
+            record.title ??
+            record.description ??
+            'Día sin clases',
+        };
+      })
+      .filter(
+        (
+          entry
+        ): entry is { dateLabel: string; title: string; dateObj: Date } => {
+          if (!entry) return false;
+          return entry.dateObj.getTime() >= todayStart.getTime();
+        }
+      )
+      .sort((a, b) => a.dateObj.getTime() - b.dateObj.getTime());
+  }, [data]);
 
   useEffect(() => {
-    async function fetchHolidays() {
-      try {
-        const currentYear = new Date().getFullYear();
-        const response = await fetch(
-          `https://date.nager.at/api/v3/PublicHolidays/${currentYear}/AR`
-        );
-        const holidays = await response.json();
+    if (!specialDays.length) return;
+    const ymdList = specialDays.map((day) => fmtYmd(day.dateObj));
+    setSpecialDates(ymdList);
+  }, [specialDays, setSpecialDates]);
 
-        type HolidayApiResponse = {
-          date: string;
-          localName: string;
-          [key: string]: any;
-        };
-
-        const formattedHolidays = (holidays as HolidayApiResponse[]).map(
-          (holiday) => ({
-            title: holiday.localName,
-            date: new Date(holiday.date).toLocaleDateString('es-AR'),
-            dateObj: new Date(holiday.date),
-          })
-        );
-
-        const futureHolidays = formattedHolidays.filter(
-          (day) => day.dateObj.getTime() >= new Date().setHours(0, 0, 0, 0)
-        );
-
-        setSpecialDays(futureHolidays);
-
-        // Publicar al store en formato YYYY-MM-DD
-        const ymdList = futureHolidays.map((d) => fmtYmd(d.dateObj));
-        setSpecialDates(ymdList);
-      } catch (error) {
-        console.error('Error fetching holidays', error);
-      } finally {
-        setLoading(false);
-      }
-    }
-    fetchHolidays();
-  }, [setSpecialDates]);
-
-  if (loading) {
+  if (isLoading) {
     return (
       <Box
         className={grid}
@@ -83,6 +106,24 @@ export const AsideEvents = ({ grid }: AsideEventsProps) => {
             Cargando días especiales…
           </Typography>
         </Stack>
+      </Box>
+    );
+  }
+
+  if (isError) {
+    return (
+      <Box
+        className={grid}
+        sx={{
+          p: 2,
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}
+      >
+        <Typography variant='body2' color='error'>
+          No pudimos cargar los días especiales.
+        </Typography>
       </Box>
     );
   }
@@ -116,11 +157,20 @@ export const AsideEvents = ({ grid }: AsideEventsProps) => {
               }}
             >
               <Typography variant='subtitle1' fontWeight={700}>
-                {day.date}
+                {day.dateLabel}
               </Typography>
               <Typography variant='body2'>{day.title}</Typography>
             </ListItem>
           ))}
+          {!specialDays.length && (
+            <Typography
+              variant='body2'
+              color='text.secondary'
+              sx={{ mt: 2, px: 2 }}
+            >
+              No hay días sin clases próximos registrados.
+            </Typography>
+          )}
         </List>
       </Box>
     </ErrorBoundary>

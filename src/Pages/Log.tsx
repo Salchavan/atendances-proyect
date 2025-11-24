@@ -15,7 +15,7 @@ import {
 } from '@mui/x-data-grid';
 import { useMemo, useState, useEffect } from 'react';
 import { useQuery } from '@tanstack/react-query';
-import ChipAcount from '../components/ChipAcount';
+import ChipAcount from '../components/ChipAccount';
 import { SafeBoundary } from '../components/SafeBoundary';
 import { getLogs } from '../api/client';
 

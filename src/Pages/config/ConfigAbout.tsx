@@ -1,7 +1,7 @@
 import { changePageTitle } from '../../Logic';
 import { Box, Chip, Divider, Paper, Stack, Typography } from '@mui/material';
 
-import { ChipAcount } from '../../components/ChipAcount';
+import { ChipAcount } from '../../components/ChipAccount';
 
 type Contributor = {
   name: string;

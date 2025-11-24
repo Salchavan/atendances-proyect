@@ -36,6 +36,7 @@ import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 
 import { getStaff, postStaff, putStaff, delStaff } from '../../api/client';
 import { useStore } from '../../store/Store';
+import { useCachedStore } from '../../store/CachedStore';
 import { useDebouncedValue } from '../../hooks/useDebouncedValue';
 import { SearchActionBar } from './components/SearchActionBar';
 
@@ -88,6 +89,7 @@ export const ControlAdministrators = () => {
   const openDialog = useStore((s) => s.openDialog);
   const closeDialog = useStore((s) => s.closeDialog);
   const queryClient = useQueryClient();
+  const setAlert = useCachedStore((s) => s.setAlert);
 
   const staffQuery = useQuery({
     queryKey: ['staff', 'ADMIN', debouncedSearch],
@@ -129,7 +131,19 @@ export const ControlAdministrators = () => {
 
   const createMutation = useMutation({
     mutationFn: postStaff,
-    onSuccess: invalidateStaff,
+    onSuccess: async (response: any) => {
+      await invalidateStaff();
+      const message =
+        response?.message ?? 'Administrador creado correctamente.';
+      setAlert({ type: 'success', text: message });
+    },
+    onError: (error: unknown) => {
+      console.error('Error creating administrator', error);
+      setAlert({
+        type: 'error',
+        text: 'No pudimos crear el administrador. Intenta nuevamente.',
+      });
+    },
   });
 
   const updateMutation = useMutation({
@@ -145,12 +159,36 @@ export const ControlAdministrators = () => {
         last_name: payload.last_name,
         role: payload.role,
       }),
-    onSuccess: invalidateStaff,
+    onSuccess: async (response: any) => {
+      await invalidateStaff();
+      const message =
+        response?.message ?? 'Administrador actualizado correctamente.';
+      setAlert({ type: 'success', text: message });
+    },
+    onError: (error: unknown) => {
+      console.error('Error updating administrator', error);
+      setAlert({
+        type: 'error',
+        text: 'No pudimos actualizar el administrador. Intenta nuevamente.',
+      });
+    },
   });
 
   const deleteMutation = useMutation({
     mutationFn: (id: string | number) => delStaff(id),
-    onSuccess: invalidateStaff,
+    onSuccess: async (response: any) => {
+      await invalidateStaff();
+      const message =
+        response?.message ?? 'Administrador eliminado correctamente.';
+      setAlert({ type: 'success', text: message });
+    },
+    onError: (error: unknown) => {
+      console.error('Error deleting administrator', error);
+      setAlert({
+        type: 'error',
+        text: 'No pudimos eliminar el administrador. Intenta nuevamente.',
+      });
+    },
   });
 
   const handleOpenCreate = () => {

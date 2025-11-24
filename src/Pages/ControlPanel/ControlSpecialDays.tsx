@@ -40,6 +40,7 @@ import {
   delNotSchoolDayAssignment,
 } from '../../api/client';
 import { useStore } from '../../store/Store';
+import { useCachedStore } from '../../store/CachedStore';
 import { useDebouncedValue } from '../../hooks/useDebouncedValue';
 import { SearchActionBar } from './components/SearchActionBar';
 import { useAcademicCatalog } from '../../store/APIStore';
@@ -166,6 +167,7 @@ export const ControlSpecialDays = () => {
   const queryClient = useQueryClient();
   const openDialog = useStore((s) => s.openDialog);
   const closeDialog = useStore((s) => s.closeDialog);
+  const setAlert = useCachedStore((s) => s.setAlert);
   const { classrooms, divisions, years } = useAcademicCatalog();
 
   const divisionMap = useMemo(() => buildDivisionMap(divisions), [divisions]);
@@ -321,32 +323,72 @@ export const ControlSpecialDays = () => {
 
   const createGlobalMutation = useMutation({
     mutationFn: postNotSchoolDay,
-    onSuccess: async () => {
+    onSuccess: async (response: any) => {
       await queryClient.invalidateQueries({ queryKey: ['not-school-days'] });
+      const message =
+        response?.message ?? 'Día sin clases registrado correctamente.';
+      setAlert({ type: 'success', text: message });
+    },
+    onError: (error: unknown) => {
+      console.error('Error creating special day', error);
+      setAlert({
+        type: 'error',
+        text: 'No pudimos registrar el día. Intenta nuevamente.',
+      });
     },
   });
 
   const deleteGlobalMutation = useMutation({
     mutationFn: (id: number | string) => delNotSchoolDay(id),
-    onSuccess: async () => {
+    onSuccess: async (response: any) => {
       await queryClient.invalidateQueries({ queryKey: ['not-school-days'] });
+      const message =
+        response?.message ?? 'Día sin clases eliminado correctamente.';
+      setAlert({ type: 'success', text: message });
+    },
+    onError: (error: unknown) => {
+      console.error('Error deleting special day', error);
+      setAlert({
+        type: 'error',
+        text: 'No pudimos eliminar el día. Intenta nuevamente.',
+      });
     },
   });
 
   const assignDayMutation = useMutation({
     mutationFn: assignNotSchoolDay,
-    onSuccess: async () => {
+    onSuccess: async (response: any) => {
       await queryClient.invalidateQueries({
         queryKey: ['not-school-day-assignments'],
+      });
+      const message =
+        response?.message ?? 'Día asignado al curso correctamente.';
+      setAlert({ type: 'success', text: message });
+    },
+    onError: (error: unknown) => {
+      console.error('Error assigning special day', error);
+      setAlert({
+        type: 'error',
+        text: 'No pudimos asignar el día. Intenta nuevamente.',
       });
     },
   });
 
   const deleteAssignmentMutation = useMutation({
     mutationFn: (id: number | string) => delNotSchoolDayAssignment(id),
-    onSuccess: async () => {
+    onSuccess: async (response: any) => {
       await queryClient.invalidateQueries({
         queryKey: ['not-school-day-assignments'],
+      });
+      const message =
+        response?.message ?? 'Asignación eliminada correctamente.';
+      setAlert({ type: 'success', text: message });
+    },
+    onError: (error: unknown) => {
+      console.error('Error deleting special day assignment', error);
+      setAlert({
+        type: 'error',
+        text: 'No pudimos eliminar la asignación. Intenta nuevamente.',
       });
     },
   });

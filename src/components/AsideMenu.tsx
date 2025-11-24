@@ -143,7 +143,7 @@ export const AsideMenu = ({ grid }: AsideMenuProps) => {
             </ListItemButton>
           </ListItem>
           <ListItem>
-            <ListItemButton onClick={() => navigate('statics')}>
+            <ListItemButton onClick={() => navigate('statics')} disabled>
               <ListItemIcon>
                 <DataSaverOffIcon sx={{ color: 'primary.main' }} />
               </ListItemIcon>

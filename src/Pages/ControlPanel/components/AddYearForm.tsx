@@ -3,10 +3,12 @@ import { Box, Button, Stack, TextField, Typography } from '@mui/material';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 
 import { postYear } from '../../../api/client';
+import { useCachedStore } from '../../../store/CachedStore';
 import { useStore } from '../../../store/Store';
 
 export const AddYearForm = () => {
   const closeDialog = useStore((s) => s.closeDialog);
+  const setAlert = useCachedStore((s) => s.setAlert);
   const queryClient = useQueryClient();
   const [yearNumber, setYearNumber] = useState('');
   const [formError, setFormError] = useState<string | null>(null);
@@ -15,6 +17,7 @@ export const AddYearForm = () => {
     mutationFn: (payload: { label: number }) => postYear(payload),
     onSuccess: async () => {
       await queryClient.invalidateQueries({ queryKey: ['years'] });
+      setAlert({ type: 'success', text: 'Año creado correctamente.' });
       closeDialog();
     },
   });
@@ -36,6 +39,7 @@ export const AddYearForm = () => {
     } catch (error) {
       console.error('Error creating year', error);
       setFormError('No pudimos crear el año. Intenta nuevamente.');
+      setAlert({ type: 'error', text: 'No pudimos crear el año.' });
     }
   };
 

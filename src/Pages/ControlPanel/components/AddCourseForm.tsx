@@ -10,6 +10,7 @@ import {
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 
 import { postClassroom } from '../../../api/client';
+import { useCachedStore } from '../../../store/CachedStore';
 import { useStore } from '../../../store/Store';
 import type { DivisionRecord, YearRecord } from '../../../store/APIStore';
 
@@ -28,6 +29,7 @@ interface AddCourseFormProps {
 
 export const AddCourseForm = ({ years, divisions }: AddCourseFormProps) => {
   const closeDialog = useStore((s) => s.closeDialog);
+  const setAlert = useCachedStore((s) => s.setAlert);
   const queryClient = useQueryClient();
   const [formValues, setFormValues] = useState({
     idYear: '',
@@ -63,6 +65,7 @@ export const AddCourseForm = ({ years, divisions }: AddCourseFormProps) => {
     }) => postClassroom(payload),
     onSuccess: async () => {
       await queryClient.invalidateQueries({ queryKey: ['classrooms'] });
+      setAlert({ type: 'success', text: 'Curso creado correctamente.' });
       closeDialog();
     },
   });
@@ -99,6 +102,7 @@ export const AddCourseForm = ({ years, divisions }: AddCourseFormProps) => {
     } catch (error) {
       console.error(error);
       setFormError('No pudimos crear el curso. Intenta nuevamente.');
+      setAlert({ type: 'error', text: 'No pudimos crear el curso.' });
     }
   };
 

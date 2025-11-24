@@ -3,9 +3,10 @@
 import CloseIcon from '@mui/icons-material/Close';
 import { useStore } from '../store/Store';
 import { Box, Typography, IconButton } from '@mui/material';
-import { createPortal } from 'react-dom';
+
 import { ErrorBoundary } from 'react-error-boundary';
 import { useEffect, useMemo } from 'react';
+import { createPortal } from 'react-dom';
 
 export const CustomModal = () => {
   const dialogTitle = useStore((state) => state.dialogTitle);
@@ -80,7 +81,11 @@ export const CustomModal = () => {
         <Box
           id='custom-modal-title'
           className='flex justify-between items-center rounded-t-md'
-          sx={{ flexShrink: 0 }}
+          sx={{
+            flexShrink: 0,
+            pb: 1,
+            borderBottom: '1px solid rgba(0,0,0,0.08)',
+          }}
         >
           <Typography>{dialogTitle}</Typography>
           <IconButton onClick={() => closeDialog()} aria-label='Cerrar'>
@@ -95,6 +100,7 @@ export const CustomModal = () => {
             minWidth: 0,
             overflowY: 'auto',
             overflowX: 'hidden',
+            pt: 1,
           }}
         >
           <ErrorBoundary

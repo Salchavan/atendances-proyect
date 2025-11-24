@@ -21,9 +21,11 @@ export type ClassroomRecord = {
   division_id?: number;
   division_letter?: string;
   division?: string;
+  char?: string;
   shift?: string;
   turn?: string;
   students_count?: number;
+  numberStudents?: number;
   created_at?: string;
   updated_at?: string;
 };

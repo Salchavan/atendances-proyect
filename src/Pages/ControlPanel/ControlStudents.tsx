@@ -28,6 +28,7 @@ import {
 } from '../../api/client';
 import { useAcademicCatalog } from '../../store/APIStore';
 import { useStore } from '../../store/Store';
+import { useCachedStore } from '../../store/CachedStore';
 import { useNavigateTo } from '../../Logic';
 import { useDebouncedValue } from '../../hooks/useDebouncedValue';
 import { SearchActionBar } from './components/SearchActionBar';
@@ -95,6 +96,7 @@ export const ControlStudents = () => {
   const openDialog = useStore((s) => s.openDialog);
   const closeDialog = useStore((s) => s.closeDialog);
   const navigateTo = useNavigateTo();
+  const setAlert = useCachedStore((s) => s.setAlert);
 
   const classroomMap = useMemo(() => {
     const map = new Map<string, (typeof classrooms)[number]>();
@@ -228,8 +230,18 @@ export const ControlStudents = () => {
 
   const deleteStudentMutation = useMutation({
     mutationFn: (studentId: number) => delStudents(studentId),
-    onSuccess: async () => {
+    onSuccess: async (response: any) => {
       await queryClient.invalidateQueries({ queryKey: ['students'] });
+      const serverMessage =
+        response?.message ?? 'Estudiante eliminado correctamente.';
+      setAlert({ type: 'success', text: serverMessage });
+    },
+    onError: (error: unknown) => {
+      console.error('Error deleting student', error);
+      setAlert({
+        type: 'error',
+        text: 'No pudimos eliminar el estudiante. Intenta nuevamente.',
+      });
     },
   });
 

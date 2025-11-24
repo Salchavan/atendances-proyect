@@ -36,6 +36,7 @@ import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 
 import { getStaff, postStaff, putStaff, delStaff } from '../../api/client';
 import { useStore } from '../../store/Store';
+import { useCachedStore } from '../../store/CachedStore';
 import { useDebouncedValue } from '../../hooks/useDebouncedValue';
 import { SearchActionBar } from './components/SearchActionBar';
 
@@ -90,6 +91,7 @@ export const ControlSecretary = () => {
   const openDialog = useStore((s) => s.openDialog);
   const closeDialog = useStore((s) => s.closeDialog);
   const queryClient = useQueryClient();
+  const setAlert = useCachedStore((s) => s.setAlert);
 
   const staffQuery = useQuery({
     queryKey: ['staff', ROLE_FILTER, debouncedSearch],
@@ -133,7 +135,19 @@ export const ControlSecretary = () => {
 
   const createMutation = useMutation({
     mutationFn: postStaff,
-    onSuccess: invalidateStaff,
+    onSuccess: async (response: any) => {
+      await invalidateStaff();
+      const message =
+        response?.message ?? 'Miembro de secretaría creado correctamente.';
+      setAlert({ type: 'success', text: message });
+    },
+    onError: (error: unknown) => {
+      console.error('Error creating staff member', error);
+      setAlert({
+        type: 'error',
+        text: 'No pudimos crear el registro. Intenta nuevamente.',
+      });
+    },
   });
 
   const updateMutation = useMutation({
@@ -149,12 +163,35 @@ export const ControlSecretary = () => {
         last_name: payload.last_name,
         role: payload.role,
       }),
-    onSuccess: invalidateStaff,
+    onSuccess: async (response: any) => {
+      await invalidateStaff();
+      const message =
+        response?.message ?? 'Registro actualizado correctamente.';
+      setAlert({ type: 'success', text: message });
+    },
+    onError: (error: unknown) => {
+      console.error('Error updating staff member', error);
+      setAlert({
+        type: 'error',
+        text: 'No pudimos actualizar el registro. Intenta nuevamente.',
+      });
+    },
   });
 
   const deleteMutation = useMutation({
     mutationFn: (id: string | number) => delStaff(id),
-    onSuccess: invalidateStaff,
+    onSuccess: async (response: any) => {
+      await invalidateStaff();
+      const message = response?.message ?? 'Registro eliminado correctamente.';
+      setAlert({ type: 'success', text: message });
+    },
+    onError: (error: unknown) => {
+      console.error('Error deleting staff member', error);
+      setAlert({
+        type: 'error',
+        text: 'No pudimos eliminar el registro. Intenta nuevamente.',
+      });
+    },
   });
 
   const handleOpenCreate = () => {

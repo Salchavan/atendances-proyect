@@ -8,11 +8,11 @@ import { useUserStore } from './store/UserStore';
 
 import { Preset } from './Pages/Preset.tsx';
 import { Home } from './Pages/Home';
-import { Login } from './Pages/Login.tsx'; // Note: login by api, replaced by LoginLocal
-// import { LoginLocal } from './Pages/LoginLocal.tsx';
+import { Login } from './Pages/Login.tsx';
 import { Statics } from './Pages/Statics/Statics.tsx';
-import { IndexClassroomsPage } from './Pages/Classrooms/IndexClassroomsPage.tsx';
-import { ClassroomPage } from './Pages/Classrooms/ClassroomPage.tsx';
+import { IndexClassroomsPage } from './Pages/IndexClassroomsPage.tsx';
+import { ClassroomProfileView } from './Pages/profile/components/ClassroomProfileView.tsx';
+
 import { MultiProfile } from './Pages/profile/MultiProfile.tsx';
 import { Log } from './Pages/Log.tsx';
 
@@ -89,18 +89,29 @@ export const App = () => {
 
   return (
     <>
-      {/* {generateStudents(1500)} */}
-      {/* <ReactQueryDevtools initialIsOpen={false} /> */}
       {alert && (
-        <div className='absolute w-full mt-7 flex flex-col items-center gap-2 px-4'>
+        <Box
+          sx={{
+            position: 'fixed',
+            top: 16,
+            left: 0,
+            right: 0,
+            display: 'flex',
+            justifyContent: 'center',
+            px: 2,
+            zIndex: 2100,
+            pointerEvents: 'none',
+          }}
+        >
           <Alert
             className='m-auto w-full max-w-lg'
             severity={alert.type}
             onClose={() => setAlert(null)}
+            sx={{ pointerEvents: 'auto', boxShadow: 6 }}
           >
             {alert.text}
           </Alert>
-        </div>
+        </Box>
       )}
       <BrowserRouter basename='/atendances-proyect'>
         {isDialogOpen && <CustomModal />}
@@ -143,7 +154,7 @@ export const App = () => {
               <Route path='statics' element={<Statics />} />
 
               <Route path='classrooms' element={<IndexClassroomsPage />} />
-              <Route path='classrooms/:id' element={<ClassroomPage />} />
+              <Route path='classrooms/:id' element={<ClassroomProfileView />} />
               <Route path='log' element={<Log />} />
               <Route path='control-panel' element={<AdminPanel />}>
                 <Route index element={<ControlPanelHome />} />

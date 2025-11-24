@@ -321,20 +321,146 @@ export const endEnrollment = async (id: number) => {
 
 // * STATS REQUESTS
 
-type StatsTarget = {
-  type: 'STUDENT' | 'CLASSROOM' | 'YEAR' | 'SHIFT';
-  id: number;
-};
+export type StatsTarget =
+  | { type: 'STUDENT'; id: number }
+  | { type: 'CLASSROOM'; id: number }
+  | { type: 'YEAR'; year: number }
+  | { type: 'SHIFT'; value: string };
 
-export const getStats = async (data: StatsTarget) => {
+export const getStatsOptions = async () => {
   try {
-    const res = await api.post('/api/v1/stats/query', {
-      target: { type: data.type, id: data.id },
-    });
-    console.log('getMetrics response data:', res.data);
+    const res = await api.get('/api/v1/stats/options');
+    console.log('getStatsOptions response data:', res.data);
     return res.data;
   } catch (error) {
-    console.error('Error in getMetrics:', error);
+    console.error('Error in getStatsOptions:', error);
+    throw error;
+  }
+};
+
+export const getStats = async (target: StatsTarget) => {
+  try {
+    const res = await api.post('/api/v1/stats/query', {
+      target,
+    });
+    console.log('getStats response data:', res.data);
+    return res.data;
+  } catch (error) {
+    console.error('Error in getStats:', error);
+    throw error;
+  }
+};
+
+export const compareStats = async (targets: StatsTarget[]) => {
+  try {
+    const res = await api.post('/api/v1/stats/compare', { targets });
+    console.log('compareStats response data:', res.data);
+    return res.data;
+  } catch (error) {
+    console.error('Error in compareStats:', error);
+    throw error;
+  }
+};
+
+export type StatsRankingParams = {
+  scope?: 'CLASSROOM' | 'STUDENT';
+  metric?: string;
+  limit?: number;
+};
+
+export const getStatsRankings = async (params?: StatsRankingParams) => {
+  try {
+    const res = await api.get('/api/v1/stats/rankings', { params });
+    console.log('getStatsRankings response data:', res.data);
+    return res.data;
+  } catch (error) {
+    console.error('Error in getStatsRankings:', error);
+    throw error;
+  }
+};
+
+export type StatsTimeseriesParams = {
+  type: StatsTarget['type'];
+  id?: number;
+  year?: number;
+  value?: string;
+  granularity?: 'day' | 'week' | 'month' | 'year';
+  metric?: string;
+  from?: string;
+  to?: string;
+};
+
+export const getStatsTimeseries = async (params: StatsTimeseriesParams) => {
+  try {
+    const res = await api.get('/api/v1/stats/timeseries', { params });
+    console.log('getStatsTimeseries response data:', res.data);
+    return res.data;
+  } catch (error) {
+    console.error('Error in getStatsTimeseries:', error);
+    throw error;
+  }
+};
+
+export type StatsIntervalsParams = {
+  type: StatsTarget['type'];
+  id?: number;
+  year?: number;
+  value?: string;
+  dimension?: 'weekday' | 'hour';
+  metric?: string;
+  from?: string;
+  to?: string;
+};
+
+export const getStatsIntervals = async (params: StatsIntervalsParams) => {
+  try {
+    const res = await api.get('/api/v1/stats/intervals', { params });
+    console.log('getStatsIntervals response data:', res.data);
+    return res.data;
+  } catch (error) {
+    console.error('Error in getStatsIntervals:', error);
+    throw error;
+  }
+};
+
+export type StatsDispersionParams = {
+  scope?: 'STUDENT' | 'CLASSROOM';
+  type: StatsTarget['type'];
+  id?: number;
+  year?: number;
+  value?: string;
+  metric?: string;
+};
+
+export const getStatsDispersion = async (params: StatsDispersionParams) => {
+  try {
+    const res = await api.get('/api/v1/stats/dispersion', { params });
+    console.log('getStatsDispersion response data:', res.data);
+    return res.data;
+  } catch (error) {
+    console.error('Error in getStatsDispersion:', error);
+    throw error;
+  }
+};
+
+export type StatsImprovementsParams = {
+  scope?: 'STUDENT' | 'CLASSROOM';
+  type: StatsTarget['type'];
+  id?: number;
+  year?: number;
+  value?: string;
+  metric?: string;
+  windowDays?: number;
+  limit?: number;
+};
+
+export const getStatsImprovements = async (params: StatsImprovementsParams) => {
+  try {
+    const res = await api.get('/api/v1/stats/improvements', { params });
+    console.log('getStatsImprovements response data:', res.data);
+    return res.data;
+  } catch (error) {
+    console.error('Error in getStatsImprovements:', error);
     throw error;
   }
 };

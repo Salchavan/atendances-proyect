@@ -36,6 +36,7 @@ import { useDebouncedValue } from '../../hooks/useDebouncedValue';
 import { SearchActionBar } from './components/SearchActionBar';
 import { AddCourseForm } from './components/AddCourseForm';
 import { buildDivisionMap, buildYearMap } from './components/classroomUtils';
+import { useCachedStore } from '../../store/CachedStore';
 
 type ClassroomRecord = {
   id?: number | string;
@@ -120,6 +121,7 @@ export const PanelCourses = () => {
   const setPerfilUserSelected = useStore((s) => s.setPerfilUserSelected);
   const setProfileView = useStore((s) => s.setProfileView);
   const navigateTo = useNavigateTo();
+  const setAlert = useCachedStore((s) => s.setAlert);
 
   const divisionMap = useMemo(() => buildDivisionMap(divisions), [divisions]);
   const yearMap = useMemo(() => buildYearMap(years), [years]);
@@ -252,9 +254,19 @@ export const PanelCourses = () => {
 
   const deleteClassroomMutation = useMutation({
     mutationFn: (ids: Array<number | string>) => delClassrooms(ids),
-    onSuccess: async () => {
+    onSuccess: async (response: any) => {
       await queryClient.invalidateQueries({ queryKey: ['classrooms'] });
       await queryClient.invalidateQueries({ queryKey: ['students'] });
+      const serverMessage =
+        response?.message ?? 'Curso eliminado correctamente.';
+      setAlert({ type: 'success', text: serverMessage });
+    },
+    onError: (error: unknown) => {
+      console.error('Error deleting course', error);
+      setAlert({
+        type: 'error',
+        text: 'No pudimos eliminar el curso. Intenta nuevamente.',
+      });
     },
   });
 

@@ -24,6 +24,7 @@ import { SearchActionBar } from './components/SearchActionBar';
 import { useDebouncedValue } from '../../hooks/useDebouncedValue';
 import { AddDivisionForm } from './components/AddDivisionForm';
 import { useStore } from '../../store/Store';
+import { useCachedStore } from '../../store/CachedStore';
 
 type DivisionRecord = {
   id?: number;
@@ -85,6 +86,7 @@ export const ControlDivisions = () => {
   const [selectedRow, setSelectedRow] = useState<DivisionRow | null>(null);
   const queryClient = useQueryClient();
   const openDialog = useStore((s) => s.openDialog);
+  const setAlert = useCachedStore((s) => s.setAlert);
 
   const divisions = useMemo<DivisionRecord[]>(() => {
     if (!data) return [];
@@ -122,9 +124,19 @@ export const ControlDivisions = () => {
 
   const deleteDivisionMutation = useMutation({
     mutationFn: (payload: number[]) => delDivisions(payload),
-    onSuccess: async () => {
+    onSuccess: async (response: any) => {
       await queryClient.invalidateQueries({ queryKey: ['divisions'] });
       await queryClient.invalidateQueries({ queryKey: ['classrooms'] });
+      const serverMessage =
+        response?.message ?? 'División eliminada correctamente.';
+      setAlert({ type: 'success', text: serverMessage });
+    },
+    onError: (error: unknown) => {
+      console.error('Error deleting division', error);
+      setAlert({
+        type: 'error',
+        text: 'No pudimos eliminar la división. Intenta nuevamente.',
+      });
     },
   });
 

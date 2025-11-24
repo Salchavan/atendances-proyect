@@ -24,6 +24,7 @@ import { useDebouncedValue } from '../../hooks/useDebouncedValue';
 import { SearchActionBar } from './components/SearchActionBar';
 import { AddYearForm } from './components/AddYearForm';
 import { useStore } from '../../store/Store';
+import { useCachedStore } from '../../store/CachedStore';
 
 type YearRecord = {
   id?: number;
@@ -81,6 +82,7 @@ export const ControlYears = () => {
   const debouncedSearch = useDebouncedValue(searchValue, 750);
   const queryClient = useQueryClient();
   const openDialog = useStore((state) => state.openDialog);
+  const setAlert = useCachedStore((state) => state.setAlert);
   const [menuAnchorEl, setMenuAnchorEl] = useState<null | HTMLElement>(null);
   const [selectedRow, setSelectedRow] = useState<YearRow | null>(null);
 
@@ -117,9 +119,18 @@ export const ControlYears = () => {
 
   const deleteYearMutation = useMutation({
     mutationFn: (payload: number[]) => delYears(payload),
-    onSuccess: async () => {
+    onSuccess: async (response: any) => {
       await queryClient.invalidateQueries({ queryKey: ['years'] });
       await queryClient.invalidateQueries({ queryKey: ['classrooms'] });
+      const serverMessage = response?.message ?? 'Año eliminado correctamente.';
+      setAlert({ type: 'success', text: serverMessage });
+    },
+    onError: (error: unknown) => {
+      console.error('Error deleting year', error);
+      setAlert({
+        type: 'error',
+        text: 'No pudimos eliminar el año. Intenta nuevamente.',
+      });
     },
   });
 

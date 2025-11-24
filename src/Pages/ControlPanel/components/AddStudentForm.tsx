@@ -11,6 +11,7 @@ import { useMutation, useQueryClient } from '@tanstack/react-query';
 
 import { postStudent } from '../../../api/client';
 import { useStore } from '../../../store/Store';
+import { useCachedStore } from '../../../store/CachedStore';
 import type {
   ClassroomRecord,
   DivisionRecord,
@@ -34,6 +35,7 @@ export const AddStudentForm = ({
   years,
 }: AddStudentFormProps) => {
   const closeDialog = useStore((s) => s.closeDialog);
+  const setAlert = useCachedStore((s) => s.setAlert);
   const queryClient = useQueryClient();
   const [formValues, setFormValues] = useState({
     first_name: '',
@@ -45,9 +47,31 @@ export const AddStudentForm = ({
 
   const mutation = useMutation({
     mutationFn: postStudent,
-    onSuccess: async () => {
-      await queryClient.invalidateQueries({ queryKey: ['students'] });
-      closeDialog();
+    onSuccess: async (response: any) => {
+      const successFlag =
+        response?.success === true || response?.status === 'success';
+      const serverMessage =
+        response?.message ?? response?.msg ?? response?.detail;
+      if (successFlag) {
+        await queryClient.invalidateQueries({ queryKey: ['students'] });
+        setAlert({
+          type: 'success',
+          text: serverMessage ?? 'Estudiante creado correctamente.',
+        });
+        closeDialog();
+      } else {
+        const errorMsg =
+          serverMessage ??
+          'El servidor no confirmó la creación del estudiante.';
+        setAlert({ type: 'error', text: errorMsg });
+        setFormError(errorMsg);
+      }
+    },
+    onError: (error: unknown) => {
+      console.error('Error creating student', error);
+      const errorText = 'No pudimos crear el estudiante. Intenta nuevamente.';
+      setAlert({ type: 'error', text: errorText });
+      setFormError(errorText);
     },
   });
 
@@ -78,17 +102,12 @@ export const AddStudentForm = ({
       return;
     }
 
-    try {
-      await mutation.mutateAsync({
-        first_name: formValues.first_name.trim(),
-        last_name: formValues.last_name.trim(),
-        username: formValues.username.trim(),
-        classroomId: Number(formValues.classroomId),
-      });
-    } catch (error) {
-      setFormError('No pudimos crear el estudiante. Intenta nuevamente.');
-      console.error(error);
-    }
+    await mutation.mutateAsync({
+      first_name: formValues.first_name.trim(),
+      last_name: formValues.last_name.trim(),
+      username: formValues.username.trim(),
+      classroomId: Number(formValues.classroomId),
+    });
   };
 
   return (
@@ -133,7 +152,11 @@ export const AddStudentForm = ({
         ) : null}
         <Stack direction='row' spacing={1} justifyContent='flex-end'>
           <Button onClick={closeDialog}>Cancelar</Button>
-          <Button type='submit' variant='contained'>
+          <Button
+            type='submit'
+            variant='contained'
+            disabled={mutation.isPending}
+          >
             Guardar
           </Button>
         </Stack>

@@ -90,48 +90,11 @@ export const StaffProfileView: React.FC = () => {
   const openDialog = useStore((s) => s.openDialog);
 
   React.useEffect(() => {
-    let mounted = true;
-    const su = selectedUser as any;
-    if (!su) {
+    if (!selectedUser) {
       setResolvedUser(null);
       return;
     }
-    const hasActivity = Array.isArray(su.activity) && su.activity.length > 0;
-    if (hasActivity) {
-      setResolvedUser(su);
-      return;
-    }
-    (async () => {
-      try {
-        const mod = await import('../../../data/users.json');
-        const all: any[] = mod.default || mod || [];
-        const id = su.id ?? su.ID ?? null;
-        const dni = su.dni ?? su.DNI ?? null;
-        let found = null as any | null;
-        if (id != null)
-          found = all.find(
-            (x) => String(x.id) === String(id) || String(x.ID) === String(id)
-          );
-        if (!found && dni != null)
-          found = all.find(
-            (x) =>
-              String(x.dni) === String(dni) || String(x.DNI) === String(dni)
-          );
-        if (!found) {
-          const nameCandidate = `${su.first_name ?? ''}`.trim();
-          if (nameCandidate)
-            found = all.find(
-              (x) => String(x.first_name ?? '').trim() === nameCandidate
-            );
-        }
-        if (mounted) setResolvedUser(found || su);
-      } catch (e) {
-        if (mounted) setResolvedUser(su);
-      }
-    })();
-    return () => {
-      mounted = false;
-    };
+    setResolvedUser(selectedUser);
   }, [selectedUser]);
 
   const staffUser = (resolvedUser ?? selectedUser) as any | null;
