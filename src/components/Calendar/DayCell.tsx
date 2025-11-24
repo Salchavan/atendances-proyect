@@ -205,22 +205,6 @@ export const DayCell: React.FC<DayCellProps> = ({
           {totalRecords}
         </Typography>
       </Box>
-      <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-        <Box
-          sx={{
-            width: 16,
-            height: 16,
-            borderRadius: 0.5,
-            bgcolor: 'info.main',
-          }}
-        />
-        <Typography variant='body2' color='text.primary'>
-          Fracción acumulada:
-        </Typography>
-        <Typography variant='body2' fontWeight={600}>
-          {details.fractionSum.toFixed(2)}
-        </Typography>
-      </Box>
     </Box>
   );
 

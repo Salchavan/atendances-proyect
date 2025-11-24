@@ -529,3 +529,26 @@ export const delNotSchoolDayAssignment = async (id: number | string) => {
     throw error;
   }
 };
+
+// * LOG REQUESTS
+
+type LogsQueryParams = {
+  page?: number;
+  pageSize?: number;
+  search?: string;
+  from?: string;
+  to?: string;
+};
+
+export const getLogs = async (params?: LogsQueryParams) => {
+  try {
+    const res = await api.get('/api/v1/audit-logs', {
+      params,
+    });
+    console.log('getLogs response data:', res.data);
+    return res.data;
+  } catch (error) {
+    console.error('Error in getLogs:', error);
+    throw error;
+  }
+};

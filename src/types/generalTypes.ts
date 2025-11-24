@@ -21,6 +21,14 @@ export type AttendanceRecord = {
   notes?: string | null;
   checkInTime?: string | null;
   checkOutTime?: string | null;
+  student_first_name?: string | null;
+  student_last_name?: string | null;
+  first_name?: string | null;
+  last_name?: string | null;
+  student?: {
+    first_name?: string | null;
+    last_name?: string | null;
+  } | null;
 };
 
 export type AttendanceMap = Record<string, number>;

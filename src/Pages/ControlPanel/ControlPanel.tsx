@@ -62,7 +62,7 @@ export const AdminPanel = () => {
     },
     {
       key: 'administration',
-      label: 'Administradores',
+      label: 'Administración',
       icon: <AdminPanelSettingsIcon sx={{ color: 'primary.main' }} />,
       disabled: false,
     },
