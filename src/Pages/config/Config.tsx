@@ -60,7 +60,15 @@ export const Config = () => {
                 );
                 setPerfilUserSelected(
                   userData
-                    ? { ...userData, rol: Number((userData as any).rol) }
+                    ? {
+                        ...userData,
+                        role: Number(
+                          (userData as any).role ??
+                            (userData as any).rol ??
+                            userData.role ??
+                            0
+                        ),
+                      }
                     : undefined
                 );
               }}

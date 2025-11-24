@@ -1,11 +1,13 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { addDays, startOfYear, getISOWeek, getISOWeekYear } from 'date-fns';
+import { useQuery } from '@tanstack/react-query';
 import {
   useGraphStore,
   getLastWeekdays,
 } from '../../store/specificStore/GraphStore.ts';
 import { useStore } from '../../store/Store';
 import { DataTable } from '../DataTable/DataTable.tsx';
+import { getAllStudents } from '../../api/client';
 
 interface Unassistance {
   day: string;
@@ -29,20 +31,52 @@ export const useDynamicGraphLogic = ({
   graphName: string;
   initialAssignedDate?: Date[] | null;
 }) => {
-  const [Students, setStudents] = useState<Student[]>([]);
-  useEffect(() => {
-    const fetchData = async () => {
-      const studentsData = await import('../../data/Students.json');
-      // normalize incoming student fields (some files use snake_case)
-      const normalized = (studentsData.default || []).map((s: any) => ({
-        ...s,
-        firstName: s.firstName ?? s.first_name ?? '',
-        lastName: s.lastName ?? s.last_name ?? '',
+  const studentsQuery = useQuery({
+    queryKey: ['dynamic-graph-students'],
+    queryFn: getAllStudents,
+    staleTime: 5 * 60 * 1000,
+  });
+
+  const Students = useMemo<Student[]>(() => {
+    const payload = studentsQuery.data;
+    const collection = Array.isArray(payload)
+      ? payload
+      : Array.isArray((payload as any)?.students)
+      ? (payload as any).students
+      : Array.isArray((payload as any)?.data)
+      ? (payload as any).data
+      : [];
+
+    return collection.map((raw: any) => {
+      const firstName = (raw.first_name ?? raw.firstName ?? '').trim();
+      const lastName = (raw.last_name ?? raw.lastName ?? '').trim();
+      const unassistencesSource = Array.isArray(raw.unassistences)
+        ? raw.unassistences
+        : Array.isArray(raw.absences)
+        ? raw.absences
+        : [];
+      const normalizedUnassistences = unassistencesSource.map((entry: any) => ({
+        day: entry.day ?? entry.date ?? entry.fecha ?? '',
+        isJustified: Boolean(
+          entry.isJustified ?? entry.justified ?? entry.is_justified ?? false
+        ),
       }));
-      setStudents(normalized);
-    };
-    fetchData();
-  }, []);
+      return {
+        id: Number(raw.id ?? raw.student_id ?? raw.dni ?? 0),
+        firstName,
+        lastName,
+        age: Number(raw.age ?? 0),
+        email: raw.email ?? raw.username ?? '',
+        classroom:
+          raw.classroom ??
+          raw.classroom_name ??
+          raw.classroomId ??
+          raw.classroom_id ??
+          '',
+        unassistences: normalizedUnassistences,
+      };
+    });
+  }, [studentsQuery.data]);
 
   const openDataTable = useStore((s) => s.openDialog);
   const assignedWeekdays = useGraphStore((s) => s.assignedWeekdays);

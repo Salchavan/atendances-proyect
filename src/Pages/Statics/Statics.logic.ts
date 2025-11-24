@@ -1,43 +1,160 @@
 import { useMemo } from 'react';
-import StudentsJson from '../../data/Students.json';
-import StaticsJson from '../../data/Statics.json';
+import { useQuery } from '@tanstack/react-query';
 import { useStore } from '../../store/Store';
+import { getAllStudents, getAttendancesByDate } from '../../api/client';
+import type { AttendanceRecord, StudentRec } from '../../types/generalTypes';
 
-type Student = any;
-
-const parseDdMmYy = (s: string): Date | null => {
-  if (!s || typeof s !== 'string') return null;
-  const parts = s.split('-').map((p) => parseInt(p, 10));
-  if (parts.length !== 3) return null;
-  const [dd, mm, yy] = parts;
-  const yyyy = 2000 + yy;
-  return new Date(yyyy, mm - 1, dd);
+type AbsenceRow = {
+  student?: StudentRec;
+  studentId: number | null;
+  classroomId?: number | null;
+  absence: {
+    day: string;
+    status?: string | null;
+    isJustified: boolean;
+    notes?: string | null;
+  };
+  date: Date;
 };
 
-const inRangeInclusive = (d: Date, start: Date | null, end: Date | null) => {
-  if (!start || !end) return false;
-  const lo = new Date(
-    start.getFullYear(),
-    start.getMonth(),
-    start.getDate()
-  ).getTime();
-  const hi = new Date(
-    end.getFullYear(),
-    end.getMonth(),
-    end.getDate()
-  ).getTime();
-  const t = new Date(d.getFullYear(), d.getMonth(), d.getDate()).getTime();
-  return t >= lo && t <= hi;
+const MS_PER_DAY = 24 * 60 * 60 * 1000;
+
+const formatIsoDate = (date: Date | null) => {
+  if (!date) return null;
+  const yyyy = date.getFullYear();
+  const mm = String(date.getMonth() + 1).padStart(2, '0');
+  const dd = String(date.getDate()).padStart(2, '0');
+  return `${yyyy}-${mm}-${dd}`;
+};
+
+const formatLegacyDay = (date: Date) => {
+  const dd = String(date.getDate()).padStart(2, '0');
+  const mm = String(date.getMonth() + 1).padStart(2, '0');
+  const yy = String(date.getFullYear()).slice(-2);
+  return `${dd}-${mm}-${yy}`;
+};
+
+const safeDate = (input?: string | Date | null) => {
+  if (!input) return null;
+  const date = input instanceof Date ? input : new Date(input);
+  return Number.isNaN(date.getTime()) ? null : date;
+};
+
+const normalizeId = (value: unknown): number | null => {
+  if (value === undefined || value === null) return null;
+  const parsed = Number(value);
+  return Number.isFinite(parsed) ? parsed : null;
+};
+
+const isAbsenceStatus = (status?: string | null) => {
+  if (!status) return false;
+  const normalized = status.toUpperCase();
+  return normalized.includes('ABSENT') || normalized.includes('UNASSIST');
+};
+
+const isJustifiedStatus = (status?: string | null) => {
+  if (!status) return false;
+  const normalized = status.toUpperCase();
+  return normalized.includes('JUSTIFIED') || normalized.includes('JUSTIFICADA');
+};
+
+const unwrapStudents = (payload: unknown): StudentRec[] => {
+  if (!payload) return [];
+  if (Array.isArray(payload)) return payload as StudentRec[];
+  const candidates = ['students', 'data', 'items', 'results', 'list'];
+  for (const key of candidates) {
+    const maybe = (payload as Record<string, unknown>)[key];
+    if (Array.isArray(maybe)) return maybe as StudentRec[];
+  }
+  return [];
+};
+
+const unwrapAttendances = (payload: unknown): AttendanceRecord[] => {
+  if (!payload) return [];
+  if (Array.isArray(payload)) return payload as AttendanceRecord[];
+  const candidates = ['attendances', 'data', 'items', 'results', 'list'];
+  for (const key of candidates) {
+    const maybe = (payload as Record<string, unknown>)[key];
+    if (Array.isArray(maybe)) return maybe as AttendanceRecord[];
+  }
+  return [];
+};
+
+const synthesizeStudent = (
+  record: AttendanceRecord,
+  studentId: number | null
+): StudentRec | undefined => {
+  if (
+    studentId === null &&
+    !record.student &&
+    !record.first_name &&
+    !record.last_name
+  ) {
+    return undefined;
+  }
+  const fallbackFirstName =
+    record.student?.first_name ??
+    record.student_first_name ??
+    record.first_name ??
+    'N/A';
+  const fallbackLastName =
+    record.student?.last_name ??
+    record.student_last_name ??
+    record.last_name ??
+    'N/A';
+  return {
+    id: studentId ?? record.student_id ?? 0,
+    first_name: fallbackFirstName,
+    last_name: fallbackLastName,
+    classroom_id: record.classroom_id,
+    classroom: record.classroom_id
+      ? `Curso #${record.classroom_id}`
+      : undefined,
+    username: undefined,
+    unassistences: [],
+  };
+};
+
+const buildAbsenceRows = (
+  records: AttendanceRecord[],
+  studentMap: Map<number, StudentRec>
+): AbsenceRow[] => {
+  return records.reduce<AbsenceRow[]>((rows, record) => {
+    if (!isAbsenceStatus(record.status)) return rows;
+    const date = safeDate(record.date);
+    if (!date) return rows;
+    const studentId = normalizeId(record.student_id);
+    const student =
+      (studentId !== null ? studentMap.get(studentId) : undefined) ??
+      synthesizeStudent(record, studentId);
+    rows.push({
+      student,
+      studentId,
+      classroomId: normalizeId(record.classroom_id),
+      absence: {
+        day: formatLegacyDay(date),
+        status: record.status,
+        isJustified: isJustifiedStatus(record.status),
+        notes: record.notes,
+      },
+      date,
+    });
+    return rows;
+  }, []);
+};
+
+const deriveShiftFromClassName = (name?: string | null) => {
+  if (!name) return null;
+  const lastChar = name.trim().slice(-1).toUpperCase();
+  if (!lastChar) return null;
+  return ['A', 'B', 'C'].includes(lastChar) ? 'Mañana' : 'Tarde';
 };
 
 const daysBetweenInclusive = (start: Date, end: Date) => {
-  const msPerDay = 24 * 60 * 60 * 1000;
-  return Math.round((end.getTime() - start.getTime()) / msPerDay) + 1;
+  return Math.round((end.getTime() - start.getTime()) / MS_PER_DAY) + 1;
 };
 
 export const useStaticsLogic = () => {
-  const students: Student[] = StudentsJson as any;
-  // Selectors separated to avoid returning a new array each render
   const selectedRange = useStore((s) => s.selectedRange);
   const setSelectedRange = useStore((s) => s.setSelectedRange);
 
@@ -48,89 +165,93 @@ export const useStaticsLogic = () => {
     return { start: s, end: e, daysCount: days };
   }, [selectedRange]);
 
-  const absencesInRange = useMemo(() => {
-    if (!start || !end) return [] as any[];
-    const rows: any[] = [];
-    for (const stu of students) {
-      const list = Array.isArray(stu.unassistences) ? stu.unassistences : [];
-      for (const u of list) {
-        const d = parseDdMmYy(u.day);
-        if (d && inRangeInclusive(d, start, end)) {
-          rows.push({ student: stu, absence: u, date: d });
-        }
+  const range = useMemo(() => {
+    return { from: formatIsoDate(start), to: formatIsoDate(end) };
+  }, [start, end]);
+
+  const prevPeriod = useMemo(() => {
+    if (!start || !end)
+      return { start: null as Date | null, end: null as Date | null };
+    const len = end.getTime() - start.getTime() + MS_PER_DAY;
+    const prevEnd = new Date(start.getTime() - MS_PER_DAY);
+    const prevStart = new Date(prevEnd.getTime() - (len - MS_PER_DAY));
+    return { start: prevStart, end: prevEnd };
+  }, [start, end]);
+
+  const prevRange = useMemo(() => {
+    return {
+      from: formatIsoDate(prevPeriod.start),
+      to: formatIsoDate(prevPeriod.end),
+    };
+  }, [prevPeriod]);
+
+  const { data: studentsResponse } = useQuery({
+    queryKey: ['statics', 'students'],
+    queryFn: getAllStudents,
+    staleTime: 5 * 60 * 1000,
+  });
+
+  const students = useMemo(
+    () => unwrapStudents(studentsResponse),
+    [studentsResponse]
+  );
+
+  const studentMap = useMemo(() => {
+    const map = new Map<number, StudentRec>();
+    students.forEach((student) => {
+      const fallback = student as unknown as Record<string, unknown>;
+      const candidateId = student.id ?? fallback?.['student_id'];
+      const studentId = normalizeId(candidateId);
+      if (studentId !== null) {
+        map.set(studentId, student);
       }
-    }
-    return rows;
-  }, [students, start, end]);
+    });
+    return map;
+  }, [students]);
+
+  const { data: attendanceResponse } = useQuery({
+    queryKey: ['statics', 'attendances', range.from, range.to],
+    queryFn: () =>
+      range.from && range.to
+        ? getAttendancesByDate(range.from, range.to)
+        : Promise.resolve(null),
+    enabled: Boolean(range.from && range.to),
+    staleTime: 60 * 1000,
+  });
+
+  const attendanceList = useMemo(
+    () => unwrapAttendances(attendanceResponse),
+    [attendanceResponse]
+  );
+
+  const absencesInRange = useMemo(
+    () => buildAbsenceRows(attendanceList, studentMap),
+    [attendanceList, studentMap]
+  );
+
+  const { data: prevAttendanceResponse } = useQuery({
+    queryKey: ['statics', 'attendances', 'prev', prevRange.from, prevRange.to],
+    queryFn: () =>
+      prevRange.from && prevRange.to
+        ? getAttendancesByDate(prevRange.from, prevRange.to)
+        : Promise.resolve(null),
+    enabled: Boolean(prevRange.from && prevRange.to),
+    staleTime: 60 * 1000,
+  });
+
+  const prevAttendanceList = useMemo(
+    () => unwrapAttendances(prevAttendanceResponse),
+    [prevAttendanceResponse]
+  );
+
+  const absencesPrev = useMemo(
+    () => buildAbsenceRows(prevAttendanceList, studentMap),
+    [prevAttendanceList, studentMap]
+  );
 
   const totalAbsences = absencesInRange.length;
   const justified = absencesInRange.filter((r) => r.absence.isJustified).length;
   const unjustified = totalAbsences - justified;
-
-  // If a precomputed Statics.json exists, prefer its global totals and top entries
-  // Map fields from Statics.json to the hook outputs. We still keep range-based
-  // absencesInRange for table use, but override summary numbers for the UI cards.
-  // these individual overridden totals were removed because UI uses the
-  // computed range-based totals; keep other overrides for students/classes
-  let overriddenTotalStudents: number | null = null;
-  let overriddenTopStudent: { id: any; count: number } | null = null;
-  let overriddenTopClass: { name: string | null; count: number } | null = null;
-  let overriddenTopShift: { name: string | null; count: number } | null = null;
-
-  try {
-    if (StaticsJson && typeof StaticsJson === 'object') {
-      overriddenTotalStudents = StaticsJson.numero_de_estudiantes ?? null;
-
-      const est = StaticsJson.estudiante_con_mayor_cantidad_de_faltas ?? null;
-      if (est) {
-        overriddenTopStudent = {
-          id: est.id ?? est.dni ?? est.email ?? null,
-          count: est.total_faltas ?? 0,
-        };
-      }
-
-      const cursoName = StaticsJson.curso_con_mayor_cantidad_de_faltas ?? null;
-      const cursoCount =
-        StaticsJson.curso_con_mayor_cantidad_de_faltas_count ?? 0;
-      if (cursoName)
-        overriddenTopClass = { name: cursoName, count: cursoCount };
-
-      // Derive turno (Mañana/Tarde) from the classroom letter (A-C => Mañana, D-F => Tarde)
-      if (cursoName && typeof cursoName === 'string') {
-        const lastChar = cursoName.trim().slice(-1).toUpperCase();
-        const turno = ['A', 'B', 'C'].includes(lastChar) ? 'Mañana' : 'Tarde';
-        overriddenTopShift = { name: turno, count: cursoCount };
-      }
-    }
-  } catch (err) {
-    // silent fallback to computed values
-    // console.warn('Failed to read Statics.json', err);
-  }
-
-  // Previous period (same length) for comparison
-  const prevPeriod = useMemo(() => {
-    if (!start || !end)
-      return { start: null as Date | null, end: null as Date | null };
-    const len = end.getTime() - start.getTime() + 24 * 60 * 60 * 1000;
-    const prevEnd = new Date(start.getTime() - 24 * 60 * 60 * 1000);
-    const prevStart = new Date(prevEnd.getTime() - (len - 24 * 60 * 60 * 1000));
-    return { start: prevStart, end: prevEnd };
-  }, [start, end]);
-
-  const absencesPrev = useMemo(() => {
-    if (!prevPeriod.start || !prevPeriod.end) return [] as any[];
-    const rows: any[] = [];
-    for (const stu of students) {
-      const list = Array.isArray(stu.unassistences) ? stu.unassistences : [];
-      for (const u of list) {
-        const d = parseDdMmYy(u.day);
-        if (d && inRangeInclusive(d, prevPeriod.start, prevPeriod.end)) {
-          rows.push({ student: stu, absence: u, date: d });
-        }
-      }
-    }
-    return rows;
-  }, [students, prevPeriod]);
 
   const prevTotal = absencesPrev.length;
   const percentChange =
@@ -138,30 +259,27 @@ export const useStaticsLogic = () => {
       ? null
       : Math.round(((totalAbsences - prevTotal) / prevTotal) * 100);
 
-  // Total possible attendances = students * daysCount
-  const totalStudents = overriddenTotalStudents ?? students.length;
+  const totalStudents = students.length;
   const totalPossible = daysCount * totalStudents;
-  // totalAbsences should reflect the selected range (absencesInRange), not global Statics.json
-  const totalAttendances = totalPossible - totalAbsences;
+  const totalAttendances = Math.max(totalPossible - totalAbsences, 0);
 
-  // Rankings
   const studentCounts = useMemo(() => {
     const m = new Map<string | number, number>();
     for (const r of absencesInRange) {
-      const id = r.student?.id ?? r.student?.dni ?? 'unknown';
-      m.set(id, (m.get(id) ?? 0) + 1);
+      const key =
+        r.student?.id ?? r.student?.dni ?? r.studentId ?? 'unknown_student';
+      m.set(key, (m.get(key) ?? 0) + 1);
     }
     return m;
   }, [absencesInRange]);
 
   const topStudent = useMemo(() => {
-    if (overriddenTopStudent) return overriddenTopStudent;
     let max = 0;
-    let id: any = null;
-    for (const [k, v] of studentCounts.entries()) {
-      if (v > max) {
-        max = v;
-        id = k;
+    let id: string | number | null = null;
+    for (const [key, value] of studentCounts.entries()) {
+      if (value > max) {
+        max = value;
+        id = key;
       }
     }
     return { id, count: max };
@@ -170,27 +288,30 @@ export const useStaticsLogic = () => {
   const classCounts = useMemo(() => {
     const m = new Map<string, number>();
     for (const r of absencesInRange) {
-      const cls = r.student?.classroom ?? 'N/A';
-      m.set(cls, (m.get(cls) ?? 0) + 1);
+      const label =
+        (typeof r.student?.classroom === 'string' && r.student.classroom) ||
+        (r.classroomId ? `Curso #${r.classroomId}` : 'N/A');
+      m.set(label, (m.get(label) ?? 0) + 1);
     }
     return m;
   }, [absencesInRange]);
 
   const topClass = useMemo(() => {
-    if (overriddenTopClass) return overriddenTopClass;
     let max = 0;
     let name: string | null = null;
-    for (const [k, v] of classCounts.entries()) {
-      if (v > max) {
-        max = v;
-        name = k;
+    for (const [label, total] of classCounts.entries()) {
+      if (total > max) {
+        max = total;
+        name = label;
       }
     }
     return { name, count: max };
   }, [classCounts]);
 
-  // Placeholder for turn/shift (can be overridden from Statics.json derivation)
-  const topShift = overriddenTopShift ?? { name: 'Mañana', count: 0 };
+  const topShift = useMemo(() => {
+    const shiftName = deriveShiftFromClassName(topClass.name) ?? 'Sin datos';
+    return { name: shiftName, count: topClass.count };
+  }, [topClass]);
 
   const periodLabel = useMemo(() => {
     if (!start || !end) return 'Periodo';
@@ -209,10 +330,8 @@ export const useStaticsLogic = () => {
   }`;
 
   return {
-    // state
     selectedRange,
     setSelectedRange,
-    // computed
     totalStudents,
     daysCount,
     totalPossible,
@@ -223,11 +342,9 @@ export const useStaticsLogic = () => {
     prevTotal,
     percentChange,
     periodSummary,
-    // references
     topStudent,
     topClass,
     topShift,
-    // raw rows for tables if needed
     absencesInRange,
   } as const;
 };
