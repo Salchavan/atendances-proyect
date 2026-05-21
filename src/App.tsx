@@ -6,27 +6,27 @@ import { useStore } from './store/Store';
 import { useCachedStore } from './store/CachedStore';
 import { useUserStore } from './store/UserStore';
 
-import { Index } from './Pages/Index.tsx';
-import { Home } from './Pages/Home';
+import { Index } from './Pages/private/Index.tsx';
+import { Home } from './Pages/private/Home.tsx';
 // import { Login } from './Pages/Login.tsx'; // Note: login by api, replaced by LoginLocal
-import { LoginLocal } from './Pages/LoginLocal.tsx';
-import { Statics } from './Pages/Statics/Statics.tsx';
-import { IndexClassroomsPage } from './Pages/Classrooms/IndexClassroomsPage.tsx';
-import { ClassroomPage } from './Pages/Classrooms/ClassroomPage.tsx';
-import { Profile } from './Pages/Profile.tsx';
-import { Log } from './Pages/Log.tsx';
+import { LoginLocal } from './Pages/public/LoginLocal.tsx';
+import { Statics } from './Pages/private/Statics/Statics.tsx';
+import { IndexClassroomsPage } from './Pages/private/Classrooms/IndexClassroomsPage.tsx';
+import { ClassroomPage } from './Pages/private/Classrooms/ClassroomPage.tsx';
+import { Profile } from './Pages/private/Profile.tsx';
+import { Log } from './Pages/private/Log.tsx';
 
-import { AdminPanel } from './Pages/ControlPanel/ControlPanel.tsx';
-import { PanelUpload } from './Pages/ControlPanel/PanelUpload.tsx';
-import { PanelCourses } from './Pages/ControlPanel/PanelCourses.tsx';
-import { PanelDownload } from './Pages/ControlPanel/PanelDownload.tsx';
-import { PanelPreceptors } from './Pages/ControlPanel/PanelPreceptors.tsx';
+import { AdminPanel } from './Pages/private/ControlPanel/ControlPanel.tsx';
+import { PanelUpload } from './Pages/private/ControlPanel/PanelUpload.tsx';
+import { PanelCourses } from './Pages/private/ControlPanel/PanelCourses.tsx';
+import { PanelDownload } from './Pages/private/ControlPanel/PanelDownload.tsx';
+import { PanelPreceptors } from './Pages/private/ControlPanel/PanelPreceptors.tsx';
 
-import { Config } from './Pages/config/Config.tsx';
-import { ConfigGeneral } from './Pages/config/ConfigGeneral.tsx';
-import { ConfigAccessibility } from './Pages/config/ConfigAccessibility.tsx';
-import { ConfigProfile } from './Pages/config/ConfigProfile.tsx';
-import { ConfigAbout } from './Pages/config/ConfigAbout.tsx';
+import { Config } from './Pages/private/config/Config.tsx';
+import { ConfigGeneral } from './Pages/private/config/ConfigGeneral.tsx';
+import { ConfigAccessibility } from './Pages/private/config/ConfigAccessibility.tsx';
+import { ConfigProfile } from './Pages/private/config/ConfigProfile.tsx';
+import { ConfigAbout } from './Pages/private/config/ConfigAbout.tsx';
 
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router';
 

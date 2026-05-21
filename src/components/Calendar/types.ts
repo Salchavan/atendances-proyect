@@ -1,5 +1,7 @@
 // Absences types moved to src/types/generalTypes.ts
 
+import type { StudentRec } from '../../types/generalTypes';
+
 export type CalendarProps = {
   absences?: import('../../types/generalTypes').AbsencesMap;
   initialDate?: Date;
@@ -9,6 +11,6 @@ export type CalendarProps = {
   dayNumberClass?: string;
   absencesNumberClass?: string;
   cellBgClass?: string;
-  /** Muestra/oculta la barra superior (título y navegación). Default: true */
   toolbarEnabled?: boolean;
+  students?: StudentRec[];
 };

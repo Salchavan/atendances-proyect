@@ -6,6 +6,7 @@ import {
 } from '../../store/specificStore/GraphStore.ts';
 import { useStore } from '../../store/Store';
 import { DataTable } from '../DataTable/DataTable.tsx';
+import { getStudents } from '../../api/client.ts';
 
 interface Unassistance {
   day: string;
@@ -31,17 +32,30 @@ export const useDynamicGraphLogic = ({
 }) => {
   const [Students, setStudents] = useState<Student[]>([]);
   useEffect(() => {
+    let mounted = true;
     const fetchData = async () => {
-      const studentsData = await import('../../data/Students.json');
-      // normalize incoming student fields (some files use snake_case)
-      const normalized = (studentsData.default || []).map((s: any) => ({
-        ...s,
-        firstName: s.firstName ?? s.first_name ?? '',
-        lastName: s.lastName ?? s.last_name ?? '',
-      }));
-      setStudents(normalized);
+      try {
+        const apiData = await getStudents();
+        const list = apiData?.students ?? [];
+        const normalized = list.map((s: any) => ({
+          ...s,
+          firstName: s.firstName ?? s.first_name ?? '',
+          lastName: s.lastName ?? s.last_name ?? '',
+        }));
+        if (mounted) setStudents(normalized);
+        return;
+      } catch {
+        const studentsData = await import('../../data/Students.json');
+        const normalized = (studentsData.default || []).map((s: any) => ({
+          ...s,
+          firstName: s.firstName ?? s.first_name ?? '',
+          lastName: s.lastName ?? s.last_name ?? '',
+        }));
+        if (mounted) setStudents(normalized);
+      }
     };
     fetchData();
+    return () => { mounted = false; };
   }, []);
 
   const openDataTable = useStore((s) => s.openDialog);

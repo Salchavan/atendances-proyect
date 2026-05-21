@@ -8,14 +8,13 @@ import type {
 import { addDays, fmtYmd, getMonday, startOfMonth } from './utils';
 
 export function useCalendarLogic(props: CalendarProps) {
-  const { absences = {}, initialDate, onDayClick } = props;
+  const { absences = {}, initialDate, onDayClick, students: propStudents } = props;
 
   const today = useMemo(() => new Date(), []);
   const [viewDate, setViewDate] = useState<Date>(() =>
     startOfMonth(initialDate ?? today)
   );
 
-  // Aggregated data (fallback to Students.json when no absences prop)
   const [aggregatedAbsences, setAggregatedAbsences] = useState<AbsencesMap>({});
   const [aggregatedDetails, setAggregatedDetails] = useState<AbsencesDetailMap>(
     {}
@@ -25,8 +24,9 @@ export function useCalendarLogic(props: CalendarProps) {
     let mounted = true;
     const load = async () => {
       try {
-        const mod = await import('../../data/Students.json');
-        const students: StudentRec[] = (mod as any).default || mod;
+        const students: StudentRec[] = propStudents && propStudents.length > 0
+          ? propStudents
+          : ((await import('../../data/Students.json')) as any).default || [];
         const mapTotals: AbsencesMap = {};
         const mapDetails: AbsencesDetailMap = {};
         const toISOKey = (key: string) => {
@@ -61,7 +61,7 @@ export function useCalendarLogic(props: CalendarProps) {
     return () => {
       mounted = false;
     };
-  }, [absences]);
+  }, [absences, propStudents]);
 
   const absencesSource: AbsencesMap =
     absences && Object.keys(absences).length > 0

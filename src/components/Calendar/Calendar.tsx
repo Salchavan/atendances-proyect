@@ -22,11 +22,16 @@ export const Calendar: React.FC<CalendarProps> = (props) => {
   } = useCalendarLogic(props);
 
   const specialDates = useStore((s) => s.specialDates);
-
   const openDialog = useStore((s) => s.openDialog);
-  const [studentsCache, setStudentsCache] = useState<StudentRec[] | null>(null);
+  const [studentsCache, setStudentsCache] = useState<StudentRec[] | null>(
+    props.students ?? null
+  );
 
   useEffect(() => {
+    if (props.students) {
+      setStudentsCache(props.students);
+      return;
+    }
     let active = true;
     const load = async () => {
       try {
@@ -41,7 +46,7 @@ export const Calendar: React.FC<CalendarProps> = (props) => {
     return () => {
       active = false;
     };
-  }, [studentsCache]);
+  }, [props.students, studentsCache]);
 
   const toIsoFromDdMmYy = (key: string) => {
     const [dd, mm, yy] = key.split('-').map((v) => parseInt(v, 10));
