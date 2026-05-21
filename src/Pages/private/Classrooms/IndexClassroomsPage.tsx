@@ -81,13 +81,13 @@ export const IndexClassroomsPage = () => {
                     <Stack
                       direction='column'
                       spacing={0.5}
-                      alignItems='flex-start'
+                      sx={{ alignItems: 'flex-start' }}
                     >
                       <Typography
                         variant='h6'
-                        fontWeight={700}
                         color='text.primary'
                         noWrap
+                        sx={{ fontWeight: 700 }}
                       >
                         {title}
                       </Typography>
@@ -102,8 +102,7 @@ export const IndexClassroomsPage = () => {
                     <Stack
                       direction='row'
                       spacing={1}
-                      alignItems='center'
-                      sx={{ mt: 0.5 }}
+                      sx={{ mt: 0.5, alignItems: 'center' }}
                     >
                       <Typography variant='body2' color='text.secondary'>
                         Estudiantes: {item.numberStudents}

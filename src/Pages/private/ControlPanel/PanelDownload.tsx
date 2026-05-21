@@ -46,7 +46,7 @@ export const PanelDownload = () => {
             anchorEl={anchorEl}
             open={openMenu}
             onClose={handleCloseMenu}
-            MenuListProps={{ 'aria-labelledby': 'download-button' }}
+            slotProps={{ list: { 'aria-labelledby': 'download-button' } }}
           >
             <MenuItem onClick={handleCloseMenu}>
               <ListItemIcon>

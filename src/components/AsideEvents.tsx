@@ -77,7 +77,7 @@ export const AsideEvents = ({ grid }: AsideEventsProps) => {
           p: 2,
         }}
       >
-        <Stack direction='row' spacing={1} alignItems='center'>
+        <Stack direction='row' spacing={1} sx={{ alignItems: 'center' }}>
           <CircularProgress size={20} />
           <Typography variant='body2' color='text.secondary'>
             Cargando días especiales…
@@ -115,7 +115,7 @@ export const AsideEvents = ({ grid }: AsideEventsProps) => {
                 backgroundColor: 'background.paper',
               }}
             >
-              <Typography variant='subtitle1' fontWeight={700}>
+              <Typography variant='subtitle1' sx={{ fontWeight: 700 }}>
                 {day.date}
               </Typography>
               <Typography variant='body2'>{day.title}</Typography>

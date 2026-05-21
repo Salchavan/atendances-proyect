@@ -40,20 +40,22 @@ export const DynamicGraphChart: React.FC<ChartProps> = ({
 }) => {
   const isEach = mode === 'each';
   const xData = isEach ? displayDates : partitioned?.labels || [];
-  const series = isEach
+  const series: import('@mui/x-charts').BarSeries[] = isEach
     ? [
-        { data: totals, color: '#ff5b5b', label: 'Total' },
+        { data: totals, color: '#ff5b5b', label: 'Total', barLabel: 'value' },
         {
           data: justified,
           color: '#ffaf45',
           label: 'Justificadas',
           stack: 'total',
+          barLabel: 'value',
         },
         {
           data: unjustified,
           color: '#ff6b6b',
           label: 'Injustificadas',
           stack: 'total',
+          barLabel: 'value',
         },
       ]
     : [
@@ -61,18 +63,21 @@ export const DynamicGraphChart: React.FC<ChartProps> = ({
           data: partitioned?.totals || [],
           color: '#ff5b5b',
           label: 'Prom. Total',
+          barLabel: 'value',
         },
         {
           data: partitioned?.justs || [],
           color: '#ffaf45',
           label: 'Prom. Justificadas',
           stack: 'total',
+          barLabel: 'value',
         },
         {
           data: partitioned?.unjs || [],
           color: '#ff6b6b',
           label: 'Prom. Injustificadas',
           stack: 'total',
+          barLabel: 'value',
         },
       ];
 
@@ -97,7 +102,6 @@ export const DynamicGraphChart: React.FC<ChartProps> = ({
           xAxis={[{ scaleType: 'band', data: xData }]}
           series={series}
           height={height}
-          barLabel='value'
           margin={{ top: 12, right: 12, bottom: 48, left: 12 }}
         />
       </Box>

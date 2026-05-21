@@ -97,9 +97,8 @@ export const Calendar: React.FC<CalendarProps> = (props) => {
     <ErrorBoundary fallback={<div>Error loading calendar.</div>}>
       <Typography
         variant='h1'
-        fontWeight={500}
         className='col-span-6 row-span-1'
-        sx={{ fontSize: '1.5rem !important' }}
+        sx={{ fontSize: '1.5rem !important', fontWeight: 500 }}
       >
         Calendario de inasistencias
       </Typography>

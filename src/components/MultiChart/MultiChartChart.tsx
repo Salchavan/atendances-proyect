@@ -170,11 +170,11 @@ export const MultiChartChart: React.FC<Props> = ({
                   data: s.data ?? [],
                   label: s.label ?? String(s.id ?? ''),
                   color: s.color,
+                  barLabel: showBarValueLabels ? 'value' : undefined,
                 }))
-              : barSeries
+              : barSeries.map((s) => ({ ...s, barLabel: showBarValueLabels ? 'value' : undefined }))
           }
           height={height}
-          barLabel={showBarValueLabels ? 'value' : undefined}
           margin={{ top: 12, right: 12, bottom: 48, left: 12 }}
         />
       ) : type === 'pie' ? (

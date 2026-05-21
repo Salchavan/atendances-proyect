@@ -194,11 +194,13 @@ export const CommandK = () => {
         onClose={handleClose}
         maxWidth='md'
         fullWidth
-        PaperProps={{
-          sx: {
-            borderRadius: 2,
-            mt: 10,
-            maxHeight: '60vh',
+        slotProps={{
+          paper: {
+            sx: {
+              borderRadius: 2,
+              mt: 10,
+              maxHeight: '60vh',
+            },
           },
         }}
       >
@@ -211,18 +213,20 @@ export const CommandK = () => {
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               inputRef={inputRef}
-              InputProps={{
-                startAdornment: (
-                  <Search sx={{ mr: 1, color: 'text.secondary' }} />
-                ),
-                endAdornment: (
-                  <Chip
-                    label='Esc'
-                    size='small'
-                    variant='outlined'
-                    sx={{ fontSize: '0.75rem' }}
-                  />
-                ),
+              slotProps={{
+                input: {
+                  startAdornment: (
+                    <Search sx={{ mr: 1, color: 'text.secondary' }} />
+                  ),
+                  endAdornment: (
+                    <Chip
+                      label='Esc'
+                      size='small'
+                      variant='outlined'
+                      sx={{ fontSize: '0.75rem' }}
+                    />
+                  ),
+                },
               }}
               variant='standard'
               sx={{

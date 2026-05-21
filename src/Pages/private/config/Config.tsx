@@ -14,7 +14,7 @@ import React from 'react';
 import { ProfileSettingsModal } from '../../../components/ProfileSettingsModal';
 import { Outlet } from 'react-router';
 import PersonIcon from '@mui/icons-material/Person';
-import InfoOutlineIcon from '@mui/icons-material/InfoOutline';
+import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 import { useUserStore } from '../../../store/UserStore';
 
 export const Config = () => {
@@ -75,7 +75,7 @@ export const Config = () => {
           <ListItem>
             <ListItemButton onClick={() => navigateTo('about')}>
               <ListItemIcon>
-                <InfoOutlineIcon sx={{ color: 'primary.main' }} />
+                <InfoOutlinedIcon sx={{ color: 'primary.main' }} />
               </ListItemIcon>
               Acerca de
             </ListItemButton>

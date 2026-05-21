@@ -119,12 +119,12 @@ export const MultiChartToolbar: React.FC<Props> = ({
               anchorEl={collapsedAnchor}
               open={Boolean(collapsedAnchor)}
               onClose={closeCollapsedMenu}
-              MenuListProps={{ dense: true }}
+              slotProps={{ list: { dense: true } }}
             >
               {/* Date range */}
               <Box sx={{ px: 1.5, py: 1 }}>
                 <LocalizationProvider dateAdapter={AdapterDateFns}>
-                  <Stack direction='row' spacing={1} alignItems='center'>
+                  <Stack direction='row' spacing={1} sx={{ alignItems: 'center' }}>
                     <DatePicker
                       label='Inicio'
                       value={selectedRange[0]}
@@ -257,7 +257,7 @@ export const MultiChartToolbar: React.FC<Props> = ({
             )}
 
             <LocalizationProvider dateAdapter={AdapterDateFns}>
-              <Stack direction='row' spacing={1} alignItems='center'>
+              <Stack direction='row' spacing={1} sx={{ alignItems: 'center' }}>
                 <DatePicker
                   label='Inicio'
                   value={selectedRange[0]}
@@ -279,7 +279,7 @@ export const MultiChartToolbar: React.FC<Props> = ({
               </Stack>
             </LocalizationProvider>
 
-            <Stack direction='row' spacing={1} alignItems='center'>
+            <Stack direction='row' spacing={1} sx={{ alignItems: 'center' }}>
               <ToggleButtonGroup exclusive size='small' value={chartType}>
                 <ToggleButton
                   value='bar'

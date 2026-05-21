@@ -81,11 +81,7 @@ export const DataTableToolbar: React.FC<ToolbarProps> = ({
     <ErrorBoundary fallback={<div>Error loading toolbar.</div>}>
       <Paper elevation={1} sx={{ p: 1, mb: 1 }}>
         <Box
-          display='flex'
-          alignItems='center'
-          gap={1}
-          flexWrap='wrap'
-          minHeight={40}
+          sx={{ display: 'flex', alignItems: 'center', gap: 1, flexWrap: 'wrap', minHeight: 40 }}
         >
           <FilterListIcon color='primary' fontSize='small' />
           <TextField
@@ -95,13 +91,15 @@ export const DataTableToolbar: React.FC<ToolbarProps> = ({
             value={searchInput}
             onChange={onSearchChange}
             sx={{ minWidth: 220 }}
-            InputProps={{
-              startAdornment: (
-                <SearchIcon
-                  fontSize='small'
-                  sx={{ color: 'text.secondary', mr: 1 }}
-                />
-              ),
+            slotProps={{
+              input: {
+                startAdornment: (
+                  <SearchIcon
+                    fontSize='small'
+                    sx={{ color: 'text.secondary', mr: 1 }}
+                  />
+                ),
+              },
             }}
             placeholder='Nombre, email, aula...'
           />
@@ -119,7 +117,7 @@ export const DataTableToolbar: React.FC<ToolbarProps> = ({
             anchorEl={anchorEl}
             open={Boolean(anchorEl)}
             onClose={handleMenuClose}
-            PaperProps={{ sx: { maxHeight: 300 } }}
+            slotProps={{ paper: { sx: { maxHeight: 300 } } }}
           >
             <MenuItem
               onClick={() => handleDayFilterSelect('weekdays')}
@@ -176,10 +174,10 @@ export const DataTableToolbar: React.FC<ToolbarProps> = ({
         </Box>
         {hasActiveFilters && (
           <Box sx={{ mt: 1 }}>
-            <Typography variant='body2' color='text.secondary' gutterBottom>
+            <Typography variant='body2' color='text.secondary' sx={{ mb: 1 }}>
               Filtros activos:
             </Typography>
-            <Box display='flex' gap={0.5} flexWrap='wrap'>
+            <Box sx={{ display: 'flex', gap: 0.5, flexWrap: 'wrap' }}>
               {(globalSearch ?? '') && (
                 <Chip
                   label={`Búsqueda: "${globalSearch}"`}

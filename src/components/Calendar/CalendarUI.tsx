@@ -108,13 +108,13 @@ export const CalendarUI: React.FC<CalendarUIProps> = ({
           <Box key={d} sx={{ textAlign: 'center' }}>
             <Typography
               variant='subtitle2'
-              fontWeight={600}
               className={
                 headerTextClass
                   ? `${headerTextClass} calendar-header`
                   : 'calendar-header'
               }
               color={!headerTextClass ? 'text.secondary' : undefined}
+              sx={{ fontWeight: 600 }}
             >
               {d}
             </Typography>

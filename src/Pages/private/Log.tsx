@@ -34,7 +34,7 @@ export const Log = () => {
             minWidth: 0,
           }}
         >
-          <Typography variant='h4' gutterBottom>
+          <Typography variant='h4' sx={{ mb: 1 }}>
             Detalle de la operación
           </Typography>
           <Typography variant='body2' color='text.secondary'>

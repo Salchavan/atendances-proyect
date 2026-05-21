@@ -2,7 +2,7 @@ import React from 'react';
 import { ErrorBoundary } from 'react-error-boundary';
 import { Box, Button, Typography } from '@mui/material';
 
-const Fallback: React.FC<{ error: Error; resetErrorBoundary: () => void }> = ({
+const Fallback: React.FC<{ error: unknown; resetErrorBoundary: () => void }> = ({
   error,
   resetErrorBoundary,
 }) => {
@@ -18,11 +18,11 @@ const Fallback: React.FC<{ error: Error; resetErrorBoundary: () => void }> = ({
         borderRadius: 1,
       }}
     >
-      <Typography variant='subtitle1' fontWeight={700} gutterBottom>
+      <Typography variant='subtitle1' sx={{ fontWeight: 700, mb: 1 }}>
         Ocurrió un error en esta sección
       </Typography>
       <Typography variant='body2' sx={{ mb: 1 }}>
-        {error.message}
+        {error instanceof Error ? error.message : String(error)}
       </Typography>
       <Button variant='outlined' size='small' onClick={resetErrorBoundary}>
         Reintentar

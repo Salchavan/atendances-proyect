@@ -105,14 +105,13 @@ export const DayCell: React.FC<DayCellProps> = ({
       {!weekendLike && (
         <Typography
           variant='h5'
-          fontWeight={800}
           color='error.main'
           className={
             absencesNumberClass
               ? `${absencesNumberClass} calendar-absences-number`
               : 'calendar-absences-number'
           }
-          sx={{ userSelect: 'none', fontSize: '1.2rem !important' }}
+          sx={{ userSelect: 'none', fontSize: '1.2rem !important', fontWeight: 800 }}
         >
           {absences}
         </Typography>
@@ -124,7 +123,7 @@ export const DayCell: React.FC<DayCellProps> = ({
 
   const tooltip = (
     <Box sx={{ p: 1 }}>
-      <Typography variant='subtitle2' fontWeight={600} sx={{ mb: 0.5 }}>
+      <Typography variant='subtitle2' sx={{ mb: 0.5, fontWeight: 600 }}>
         Inasistencias
       </Typography>
       <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 0.5 }}>
@@ -139,7 +138,7 @@ export const DayCell: React.FC<DayCellProps> = ({
         <Typography variant='body2' color='text.primary'>
           Total:
         </Typography>
-        <Typography variant='body2' fontWeight={600}>
+        <Typography variant='body2' sx={{ fontWeight: 600 }}>
           {details.total}
         </Typography>
       </Box>
@@ -156,7 +155,7 @@ export const DayCell: React.FC<DayCellProps> = ({
         <Typography variant='body2' color='text.primary'>
           Justificadas:
         </Typography>
-        <Typography variant='body2' fontWeight={600}>
+        <Typography variant='body2' sx={{ fontWeight: 600 }}>
           {details.justified}
         </Typography>
       </Box>
@@ -172,7 +171,7 @@ export const DayCell: React.FC<DayCellProps> = ({
         <Typography variant='body2' color='text.primary'>
           No justificadas:
         </Typography>
-        <Typography variant='body2' fontWeight={600}>
+        <Typography variant='body2' sx={{ fontWeight: 600 }}>
           {details.unjustified}
         </Typography>
       </Box>

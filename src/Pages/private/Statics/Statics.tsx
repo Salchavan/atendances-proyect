@@ -65,7 +65,7 @@ export const Statics = () => {
                   <Typography variant='overline' color='text.secondary'>
                     Estudiantes
                   </Typography>
-                  <Typography variant='h6' fontWeight={700}>
+                  <Typography variant='h6' sx={{ fontWeight: 700 }}>
                     {logic.periodSummary}
                   </Typography>
                   <Typography variant='body2' color='text.secondary'>
@@ -85,8 +85,8 @@ export const Statics = () => {
                     sx={{
                       fontSize: '2rem !important',
                       color: 'error.main',
+                      fontWeight: 700,
                     }}
-                    fontWeight={700}
                   >
                     {logic.totalAbsences}
                   </Typography>

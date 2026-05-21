@@ -25,7 +25,7 @@ export const Notes = () => {
       }}
       onClick={() => notesRef.current?.focus()}
     >
-      <Typography variant='h6' gutterBottom>
+      <Typography variant='h6' sx={{ mb: 1 }}>
         Notas y Observaciones
       </Typography>
       <IconButton

@@ -30,7 +30,7 @@ export const ConfigAbout = () => {
       <Typography variant='h3'>Acerca del proyecto</Typography>
 
       <Paper sx={{ p: 2 }}>
-        <Typography variant='h6' gutterBottom>
+        <Typography variant='h6' sx={{ mb: 1 }}>
           Objetivo y finalidad
         </Typography>
         <Typography variant='body1' color='text.secondary'>
@@ -44,7 +44,7 @@ export const ConfigAbout = () => {
         <Divider sx={{ my: 2 }} />
         <Stack direction={{ xs: 'column', md: 'row' }} spacing={2}>
           <Box sx={{ flex: 1 }}>
-            <Typography variant='subtitle1' fontWeight={700} gutterBottom>
+            <Typography variant='subtitle1' sx={{ fontWeight: 700, mb: 1 }}>
               Características destacadas
             </Typography>
             <Stack spacing={1}>
@@ -68,7 +68,7 @@ export const ConfigAbout = () => {
             </Stack>
           </Box>
           <Box sx={{ flex: 1 }}>
-            <Typography variant='subtitle1' fontWeight={700} gutterBottom>
+            <Typography variant='subtitle1' sx={{ fontWeight: 700, mb: 1 }}>
               ¿Para quién está pensado?
             </Typography>
             <Typography variant='body2' color='text.secondary'>
@@ -82,7 +82,7 @@ export const ConfigAbout = () => {
       </Paper>
 
       <Paper sx={{ p: 2 }}>
-        <Typography variant='h6' gutterBottom>
+        <Typography variant='h6' sx={{ mb: 1 }}>
           Licencia
         </Typography>
         <Typography variant='body2' color='text.secondary'>
@@ -92,7 +92,7 @@ export const ConfigAbout = () => {
       </Paper>
 
       <Paper sx={{ p: 2 }}>
-        <Typography variant='h6' gutterBottom>
+        <Typography variant='h6' sx={{ mb: 1 }}>
           Equipo / Colaboradores
         </Typography>
         <Box
@@ -104,7 +104,7 @@ export const ConfigAbout = () => {
         >
           {contributors.map((c) => (
             <Box key={c.name}>
-              <Stack direction='row' spacing={1.5} alignItems='center'>
+              <Stack direction='row' spacing={1.5} sx={{ alignItems: 'center' }}>
                 <ChipAcount
                   size={40}
                   nameAcount={c.name}

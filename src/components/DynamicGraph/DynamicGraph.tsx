@@ -79,7 +79,7 @@ export const DynamicGraph = ({
             'system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif',
         }}
       >
-        <Typography variant='h6' gutterBottom>
+        <Typography variant='h6' sx={{ mb: 1 }}>
           Gráfico de {graphName}
         </Typography>
         <SafeBoundary>

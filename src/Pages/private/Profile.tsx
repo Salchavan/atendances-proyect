@@ -73,12 +73,12 @@ export const Profile = () => {
   const openDialog = useStore((s) => s.openDialog);
 
   const field = (label: string, value?: string | number, copy?: boolean) => (
-    <Box display='flex' alignItems='center' gap={1}>
+    <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
       <Box>
         <Typography variant='caption' color='text.secondary'>
           {label}
         </Typography>
-        <Typography variant='body1' fontWeight={500}>
+        <Typography variant='body1' sx={{ fontWeight: 500 }}>
           {value ?? fallback}
         </Typography>
       </Box>
@@ -124,11 +124,10 @@ export const Profile = () => {
             overflow: 'auto',
           }}
         >
-          <Box display='flex' alignItems='center' gap={2}>
+          <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
             <Typography
               variant='h4'
-              fontWeight='bold'
-              sx={{ fontSize: '1.5rem !important' }}
+              sx={{ fontSize: '1.5rem !important', fontWeight: 'bold' }}
             >
               {displayName || fallback}
             </Typography>
@@ -146,7 +145,7 @@ export const Profile = () => {
                 <EditIcon sx={{ color: 'primary.main' }} />
               </IconButton>
             </Tooltip>
-            <Box display='flex' gap={1} flexWrap='wrap'>
+            <Box sx={{ display: 'flex', gap: 1, flexWrap: 'wrap' }}>
               {(() => {
                 const resolvedRole =
                   (resolvedUser as any)?.role ??
